@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hand
+  - ground
+  - tower
+  - Enemy
   layers:
   - Default
   - TransparentFX
