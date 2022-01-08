@@ -6,10 +6,15 @@ public class FireArrow : MonoBehaviour
 {
     public float impactDamage;
     public float decayDamage;
+
+    private ParticleSystem ps;
+
+    private BlastWave bw;
     // Start is called before the first frame update
-    void Start()
+     void Start()
     {
-        
+        ps = transform.GetChild(2).GetComponent<ParticleSystem>();
+        bw = transform.GetChild(2).GetChild(2).GetComponent<BlastWave>();
     }
 
     // Update is called once per frame
@@ -23,6 +28,7 @@ public class FireArrow : MonoBehaviour
         //{
         //    FireDamage(collision.gameObject.GetComponent<Enemy>());
         //}
+        Explode(collision.transform.eulerAngles);
     }
 
     public void FireDamage(Enemy enemy)
@@ -33,5 +39,13 @@ public class FireArrow : MonoBehaviour
             enemy.DealDamage(decayDamage);
         }
         //Destroy(this.gameObject);
+    }
+
+    public void Explode(Vector3 rot)
+    {
+        bw.transform.eulerAngles =  Vector3.right * 90;
+        ps.Play();
+        StartCoroutine(bw.Blast());
+        Debug.Log("Hit");
     }
 }

@@ -116,6 +116,11 @@ public class Arrow : XRGrabInteractable
             TogglePhysics(false);
             ChildArrow(hit);
             CheckForHittable(hit);
+            FireArrow fa = GetComponent<FireArrow>();
+            if (fa != null)
+            {
+                fa.Explode(hit.collider.transform.eulerAngles);
+            }
         }
 
         return hit.collider != null;
