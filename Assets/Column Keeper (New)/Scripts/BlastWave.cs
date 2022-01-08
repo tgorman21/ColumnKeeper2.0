@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BlastWave : MonoBehaviour
 {
@@ -8,10 +9,15 @@ public class BlastWave : MonoBehaviour
     public float maxRadius;
     public float speed;
     public float startWidth;
+    private FireArrow fireArrow;
+    public float force;
 
     private LineRenderer lineRenderer;
-
-   private void Awake()
+    private void Start()
+    {
+        fireArrow = GetComponentInParent<FireArrow>();
+    }
+    private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
 
@@ -27,9 +33,29 @@ public class BlastWave : MonoBehaviour
             currentRadius += Time.deltaTime * speed;
             lineRenderer.enabled = true;
             Draw(currentRadius);
+            Damage(currentRadius);
             yield return null;
         }
         lineRenderer.enabled = false;
+    }
+    private void Damage(float currentRadius)
+    {
+        Collider[] hittingObjects = Physics.OverlapSphere(transform.position, currentRadius);
+        
+
+       
+        for (int i = 0; i < hittingObjects.Length; i++)
+        {
+            Rigidbody rb = hittingObjects[i].GetComponent<Rigidbody>();
+            if (!rb)
+                continue;
+            rb.isKinematic = false;
+            hittingObjects[i].GetComponent<NavMeshAgent>().enabled = false;
+            Vector3 direction = (hittingObjects[i].transform.position - transform.position).normalized;
+            rb.AddForce(direction * force, ForceMode.Impulse);
+            hittingObjects[i].GetComponent<Enemy>().FireDamage(fireArrow.impactDamage, fireArrow.decayDamage);
+        }
+        
     }
     private void Draw(float currentRadius)
     {

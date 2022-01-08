@@ -14584,6 +14584,7 @@ MonoBehaviour:
   maxRadius: 2
   speed: 1
   startWidth: 0.5
+  force: 1
 --- !u!1001 &3864359448871727575
 PrefabInstance:
   m_ObjectHideFlags: 0
