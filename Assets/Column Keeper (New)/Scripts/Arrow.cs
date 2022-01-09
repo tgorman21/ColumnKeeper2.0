@@ -15,7 +15,6 @@ public class Arrow : XRGrabInteractable
 
     private Vector3 lastPosition = Vector3.zero;
     private bool launched = false;
-    private bool canExplode = false;
     protected override void Awake()
     {
         base.Awake();
@@ -47,8 +46,7 @@ public class Arrow : XRGrabInteractable
         // If it's a notch, launch the arrow
         if (args.interactor is Notch notch)
             Launch(notch);
-        else
-            canExplode = false;
+       
     }
 
     private void Launch(Notch notch)
@@ -56,7 +54,6 @@ public class Arrow : XRGrabInteractable
         // Double-check incase the bow is dropped with arrow socketed
         if (notch.IsReady)
         {
-            canExplode = true;
             SetLaunch(true);
             UpdateLastPosition();
             ApplyForce(notch.PullMeasurer);
@@ -89,19 +86,21 @@ public class Arrow : XRGrabInteractable
 
         if (launched)
         {
-            // Check for collision as often as possible
-            if (updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
-            {
-                if (CheckForCollision())
-                    launched = false;
+          
+                // Check for collision as often as possible
+                if (updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
+                {
+                    if (CheckForCollision())
+                        launched = false;
 
-                UpdateLastPosition();
+                    UpdateLastPosition();
+                }
+
+                // Only set the direction with each physics update
+                if (updatePhase == XRInteractionUpdateOrder.UpdatePhase.Fixed)
+                    SetDirection();
             }
-
-            // Only set the direction with each physics update
-            if (updatePhase == XRInteractionUpdateOrder.UpdatePhase.Fixed)
-                SetDirection();
-        }
+        
     }
 
     private void SetDirection()
@@ -119,17 +118,15 @@ public class Arrow : XRGrabInteractable
             TogglePhysics(false);
             ChildArrow(hit);
             CheckForHittable(hit);
-            if (canExplode)
+            if (hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("ground"))
             {
-                if (hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("ground"))
+                FireArrow fa = GetComponent<FireArrow>();
+                if (fa != null)
                 {
-                    FireArrow fa = GetComponent<FireArrow>();
-                    if (fa != null)
-                    {
-                        fa.Explode(hit.collider.transform.eulerAngles);
-                    }
+                    fa.Explode(hit.collider.transform.eulerAngles);
                 }
             }
+            
             
         }
 
