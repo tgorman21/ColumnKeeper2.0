@@ -44,18 +44,31 @@ public class BlastWave : MonoBehaviour
         
 
        
-        for (int i = 0; i < hittingObjects.Length; i++)
+        //for (int i = 0; i < hittingObjects.Length; i++)
+        //{
+            
+        //        Rigidbody rb = hittingObjects[i].GetComponent<Rigidbody>();
+        //        if (!rb)
+        //            continue;
+        //        rb.isKinematic = false;
+        //        hittingObjects[i].GetComponent<NavMeshAgent>().enabled = false;
+        //        Vector3 direction = (hittingObjects[i].transform.position - transform.position).normalized;
+        //        rb.AddForce(direction * force, ForceMode.Impulse);
+        //        hittingObjects[i].GetComponent<Enemy>().FireDamage(fireArrow.impactDamage, fireArrow.decayDamage);
+            
+        //}
+        foreach (Collider col in hittingObjects)
         {
-            Rigidbody rb = hittingObjects[i].GetComponent<Rigidbody>();
+            Rigidbody rb = col.GetComponent<Rigidbody>();
             if (!rb)
                 continue;
             rb.isKinematic = false;
-            hittingObjects[i].GetComponent<NavMeshAgent>().enabled = false;
-            Vector3 direction = (hittingObjects[i].transform.position - transform.position).normalized;
+            col.GetComponent<NavMeshAgent>().enabled = false;
+            Vector3 direction = (col.transform.position - transform.position).normalized;
             rb.AddForce(direction * force, ForceMode.Impulse);
-            hittingObjects[i].GetComponent<Enemy>().FireDamage(fireArrow.impactDamage, fireArrow.decayDamage);
+            col.GetComponent<Enemy>().FireDamage(fireArrow.impactDamage, fireArrow.decayDamage);
         }
-        
+
     }
     private void Draw(float currentRadius)
     {
