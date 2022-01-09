@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   impactDamage: 10
-  decayDamage: 5
+  decayDamage: 0.16
 --- !u!1 &8589002692731022628
 GameObject:
   m_ObjectHideFlags: 0
