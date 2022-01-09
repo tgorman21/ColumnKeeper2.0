@@ -59,14 +59,19 @@ public class BlastWave : MonoBehaviour
         //}
         foreach (Collider col in hittingObjects)
         {
-            Rigidbody rb = col.GetComponent<Rigidbody>();
-            if (!rb)
-                continue;
-            rb.isKinematic = false;
-            col.GetComponent<NavMeshAgent>().enabled = false;
-            Vector3 direction = (col.transform.position - transform.position).normalized;
-            rb.AddForce(direction * force, ForceMode.Impulse);
-            col.GetComponent<Enemy>().FireDamage(fireArrow.impactDamage, fireArrow.decayDamage);
+            if (col.gameObject.CompareTag("Enemy"))
+            {
+
+
+                Rigidbody rb = col.GetComponent<Rigidbody>();
+                if (!rb)
+                    continue;
+                rb.isKinematic = false;
+                col.GetComponent<NavMeshAgent>().enabled = false;
+                Vector3 direction = (col.transform.position - transform.position).normalized;
+                rb.AddForce(direction * force, ForceMode.Impulse);
+                col.GetComponent<Enemy>().FireDamage(fireArrow.impactDamage, fireArrow.decayDamage);
+            }
         }
 
     }

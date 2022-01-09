@@ -15,7 +15,7 @@ public class Arrow : XRGrabInteractable
 
     private Vector3 lastPosition = Vector3.zero;
     private bool launched = false;
-
+    private bool canExplode = false;
     protected override void Awake()
     {
         base.Awake();
@@ -47,6 +47,8 @@ public class Arrow : XRGrabInteractable
         // If it's a notch, launch the arrow
         if (args.interactor is Notch notch)
             Launch(notch);
+        else
+            canExplode = false;
     }
 
     private void Launch(Notch notch)
@@ -54,6 +56,7 @@ public class Arrow : XRGrabInteractable
         // Double-check incase the bow is dropped with arrow socketed
         if (notch.IsReady)
         {
+            canExplode = true;
             SetLaunch(true);
             UpdateLastPosition();
             ApplyForce(notch.PullMeasurer);
@@ -116,11 +119,18 @@ public class Arrow : XRGrabInteractable
             TogglePhysics(false);
             ChildArrow(hit);
             CheckForHittable(hit);
-            FireArrow fa = GetComponent<FireArrow>();
-            if (fa != null)
+            if (canExplode)
             {
-                fa.Explode(hit.collider.transform.eulerAngles);
+                if (hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("ground"))
+                {
+                    FireArrow fa = GetComponent<FireArrow>();
+                    if (fa != null)
+                    {
+                        fa.Explode(hit.collider.transform.eulerAngles);
+                    }
+                }
             }
+            
         }
 
         return hit.collider != null;

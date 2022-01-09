@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour
         ////// Death Condition 
         if (health <= 0)
         {
+            ScoreText.score += 1;
             Destroy(gameObject);
         }
         
@@ -105,5 +106,19 @@ public class Enemy : MonoBehaviour
        
     }
 
+    public void IceArrow()
+    {
+
+    }
+
+    public void HypnoArrow()
+    {
+
+    }
+
+    public void HealingArrow()
+    {
+
+    }
 }
 
