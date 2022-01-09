@@ -53,13 +53,18 @@ public class Enemy : MonoBehaviour
         
         Debug.Log("Fire Damage");
         DealDamage(impactDamage);
+        
         for (int i = 0; i < 5; i++)
         {
-            DealDamage(decayDamage);
+            StartCoroutine(looseHealth(decayDamage));
         }
         
         //Destroy(this.gameObject);
     }
-
+    IEnumerator looseHealth(float decayDamage)
+    {
+        yield return new WaitForSeconds(1f);
+        DealDamage(decayDamage);
+    }
 }
 

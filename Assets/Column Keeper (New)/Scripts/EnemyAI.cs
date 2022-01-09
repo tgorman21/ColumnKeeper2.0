@@ -57,7 +57,7 @@ public class EnemyAI : MonoBehaviour
         
             agent.destination = towerPos.transform.position;
 
-        Debug.Log(towerPos.transform.position);
+        //Debug.Log(towerPos.transform.position);
 
 
     }
