@@ -30,11 +30,14 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (function)
-        {
-            FireDamage(10, 0.16f);
+        //Testing
+        //if (function)
+        //{
+        //    FireDamage(10, 0.16f);
 
-        }
+        //}
+
+        // Death Condition 
         if (health <= 0)
         {
             Destroy(gameObject);
@@ -43,6 +46,7 @@ public class Enemy : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        //Timer decay
         if (decay)
         {
             t += Time.deltaTime;
@@ -55,18 +59,18 @@ public class Enemy : MonoBehaviour
             {
                 decay = false;
                 t = 0;
-                impact = true;
+                impact = true; // Trigger impact damage once
             }
 
 
         }
 
-        Debug.Log(t);
+       
     }
     public void DealDamage(float damage)
     {
 
-        Debug.Log("Deal Damage");
+        //Deal Damage
         if (health >= 0)
         {
             health = health - damage;
@@ -86,7 +90,9 @@ public class Enemy : MonoBehaviour
     {
 
         decayDamage = decayDMG;
-        Debug.Log("Fire Damage");
+        //Debug.Log("Fire Damage");
+
+        //Condition for impact Damage to happen
         if (impact)
         {
             DealDamage(impactDamage);
@@ -94,9 +100,9 @@ public class Enemy : MonoBehaviour
         }
         
         decay = true;
-        //DecayDamage(decayDMG);
-        function = false;
-        //Destroy(this.gameObject);
+        
+        function = false; // Testing Bool
+       
     }
    //void DecayDamage(float decayDamage)
    // {
