@@ -54,7 +54,7 @@ public class Enemy : MonoBehaviour
         Debug.Log("Fire Damage");
         DealDamage(impactDamage);
         
-        for (int i = 0; i < 25; i += 5)
+        for (int i = 0; i < 25; i++)
         {
             if(i % 5 == 0)
             {
