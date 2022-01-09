@@ -27,11 +27,11 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (function)
-        {
-            FireDamage(10, 5);
+        //if (function)
+        //{
+        //    FireDamage(10, 5);
             
-        }
+        //}
         if (health <= 0)
         {
             Destroy(gameObject);
@@ -82,7 +82,7 @@ public class Enemy : MonoBehaviour
         DealDamage(impactDamage);
         decay = true;
         //DecayDamage(decayDMG);
-        function = false;
+        //function = false;
         //Destroy(this.gameObject);
     }
    //void DecayDamage(float decayDamage)
