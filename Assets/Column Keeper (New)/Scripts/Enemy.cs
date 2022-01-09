@@ -6,17 +6,17 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    public string enemyName;
-    [SerializeField]private float health;
-    public float damage;
-    Rigidbody rb;
-    NavMeshAgent agent;
-    public RectTransform healthBar;
-    float t = 0;
-    public bool function;
-    bool decay;
-    float decayDamage;
-    bool impact;
+    public string enemyName; //specific enemy
+    [SerializeField]private float health; // health points
+    public float damage; // damage
+    Rigidbody rb; //rigidbody
+    NavMeshAgent agent; //movement
+    public RectTransform healthBar; //bar for health
+    float t = 0; //timer
+    public bool function; //testing function
+    bool decay; // DOT bool
+    float decayDamage; //DOT 
+    bool impact; //initial hit damage
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
 
         //}
 
-        // Death Condition 
+        ////// Death Condition 
         if (health <= 0)
         {
             Destroy(gameObject);
@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        //Timer decay
+        //////Timer decay
         if (decay)
         {
             t += Time.deltaTime;
@@ -59,7 +59,7 @@ public class Enemy : MonoBehaviour
             {
                 decay = false;
                 t = 0;
-                impact = true; // Trigger impact damage once
+                impact = true; ////// Trigger impact damage once
             }
 
 
@@ -70,7 +70,7 @@ public class Enemy : MonoBehaviour
     public void DealDamage(float damage)
     {
 
-        //Deal Damage
+        //////Deal Damage
         if (health >= 0)
         {
             health = health - damage;
@@ -92,7 +92,7 @@ public class Enemy : MonoBehaviour
         decayDamage = decayDMG;
         //Debug.Log("Fire Damage");
 
-        //Condition for impact Damage to happen
+        //////Condition for impact Damage to happen
         if (impact)
         {
             DealDamage(impactDamage);
@@ -101,23 +101,9 @@ public class Enemy : MonoBehaviour
         
         decay = true;
         
-        function = false; // Testing Bool
+        function = false; ////// Testing Bool
        
     }
-   //void DecayDamage(float decayDamage)
-   // {
-   //     decay = true;
-   //     if (t % 5 == 0)
-   //     {
-   //         DealDamage(decayDamage);
-            
-   //     }
-   //     if(t >= 25)
-   //     {
-   //         decay = false;
-   //         t = 0;
-   //     }
-            
-   // }
+
 }
 
