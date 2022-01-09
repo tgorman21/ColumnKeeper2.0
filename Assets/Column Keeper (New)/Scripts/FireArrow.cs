@@ -44,8 +44,9 @@ public class FireArrow : MonoBehaviour
     public void Explode(Vector3 rot)
     {
         bw.transform.eulerAngles =  Vector3.right * 90;
-        ps.Play();
         StartCoroutine(bw.Blast());
+        ps.Play();
+        
         Debug.Log("Hit");
     }
 }
