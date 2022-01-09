@@ -16,42 +16,51 @@ public class Enemy : MonoBehaviour
     public bool function;
     bool decay;
     float decayDamage;
+    bool impact;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
         decay = false;
+        impact = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (function)
-        //{
-        //    FireDamage(10, 5);
-            
-        //}
+        if (function)
+        {
+            FireDamage(10, 0.16f);
+
+        }
         if (health <= 0)
         {
             Destroy(gameObject);
         }
+        
+    }
+    private void FixedUpdate()
+    {
         if (decay)
         {
-            t++;
-            if(t % 5 == 0 && t != 0)
+            t += Time.deltaTime;
+            if (t < 5.1f)
             {
                 DealDamage(decayDamage);
+
             }
-            if(t >= 35)
+            else
             {
                 decay = false;
                 t = 0;
-
+                impact = true;
             }
-           
-            
+
+
         }
+
         Debug.Log(t);
     }
     public void DealDamage(float damage)
@@ -78,11 +87,15 @@ public class Enemy : MonoBehaviour
 
         decayDamage = decayDMG;
         Debug.Log("Fire Damage");
-
-        DealDamage(impactDamage);
+        if (impact)
+        {
+            DealDamage(impactDamage);
+            impact = false;
+        }
+        
         decay = true;
         //DecayDamage(decayDMG);
-        //function = false;
+        function = false;
         //Destroy(this.gameObject);
     }
    //void DecayDamage(float decayDamage)
