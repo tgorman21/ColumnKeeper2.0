@@ -63,7 +63,7 @@ public class Enemy : MonoBehaviour
     }
     IEnumerator looseHealth(float decayDamage)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(5f);
         DealDamage(decayDamage);
     }
 }
