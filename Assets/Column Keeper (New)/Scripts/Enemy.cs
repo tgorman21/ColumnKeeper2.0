@@ -13,21 +13,46 @@ public class Enemy : MonoBehaviour
     NavMeshAgent agent;
     public RectTransform healthBar;
     float t = 0;
-
+    public bool function;
+    bool decay;
+    float decayDamage;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
+        decay = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (function)
+        {
+            FireDamage(10, 5);
+            
+        }
         if (health <= 0)
         {
             Destroy(gameObject);
         }
+        if (decay)
+        {
+            t++;
+            if(t % 5 == 0 && t != 0)
+            {
+                DealDamage(decayDamage);
+            }
+            if(t >= 35)
+            {
+                decay = false;
+                t = 0;
+
+            }
+           
+            
+        }
+        Debug.Log(t);
     }
     public void DealDamage(float damage)
     {
@@ -48,23 +73,32 @@ public class Enemy : MonoBehaviour
     {
         arrow.GetComponent<FireArrow>().FireDamage(this);
     }
-    public void FireDamage(float impactDamage, float decayDamage)
+    public void FireDamage(float impactDamage, float decayDMG)
     {
-        
+
+        decayDamage = decayDMG;
         Debug.Log("Fire Damage");
+
         DealDamage(impactDamage);
-        
-        for (int i = 0; i < 25; i++)
-        {
-            if(i % 5 == 0)
-            {
-                DealDamage(decayDamage);
-            }
-           
-        }
-        
+        decay = true;
+        //DecayDamage(decayDMG);
+        function = false;
         //Destroy(this.gameObject);
     }
-   
+   //void DecayDamage(float decayDamage)
+   // {
+   //     decay = true;
+   //     if (t % 5 == 0)
+   //     {
+   //         DealDamage(decayDamage);
+            
+   //     }
+   //     if(t >= 25)
+   //     {
+   //         decay = false;
+   //         t = 0;
+   //     }
+            
+   // }
 }
 

@@ -239,9 +239,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Enemy
-  health: 50
+  health: 100
   damage: 5
   healthBar: {fileID: 4464611373139375536}
+  function: 0
 --- !u!1 &5393308181060313285
 GameObject:
   m_ObjectHideFlags: 0
