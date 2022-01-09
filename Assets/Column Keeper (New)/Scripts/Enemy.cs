@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
     {
 
         Debug.Log("Deal Damage");
-        if (health > 0)
+        if (health >= 0)
         {
             health = health - damage;
             healthBar.localScale = new Vector3(health / 100, 1, 1);
