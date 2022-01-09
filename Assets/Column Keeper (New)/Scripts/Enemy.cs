@@ -30,6 +30,8 @@ public class Enemy : MonoBehaviour
     }
     public void DealDamage(float damage)
     {
+
+        Debug.Log("Deal Damage");
         if (health > 0)
         {
             health = health - damage;
@@ -47,6 +49,7 @@ public class Enemy : MonoBehaviour
     }
     public void FireDamage(float impactDamage, float decayDamage)
     {
+        Debug.Log("Fire Damage");
         DealDamage(impactDamage);
         for (int i = 0; i < 5; i++)
         {
