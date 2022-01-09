@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     NavMeshAgent agent;
     public RectTransform healthBar;
     
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,7 @@ public class Enemy : MonoBehaviour
     {
         if (health <= 0)
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
     public void DealDamage(float damage)
@@ -49,6 +50,7 @@ public class Enemy : MonoBehaviour
     }
     public void FireDamage(float impactDamage, float decayDamage)
     {
+        
         Debug.Log("Fire Damage");
         DealDamage(impactDamage);
         for (int i = 0; i < 5; i++)
