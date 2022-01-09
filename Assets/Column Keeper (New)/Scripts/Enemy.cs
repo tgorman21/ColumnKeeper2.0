@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     Rigidbody rb;
     NavMeshAgent agent;
     public RectTransform healthBar;
-    
+    float t = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -54,18 +54,17 @@ public class Enemy : MonoBehaviour
         Debug.Log("Fire Damage");
         DealDamage(impactDamage);
         
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 25; i += 5)
         {
-            StartCoroutine(looseHealth(decayDamage));
+            if(i % 5 == 0)
+            {
+                DealDamage(decayDamage);
+            }
+           
         }
         
         //Destroy(this.gameObject);
     }
-    IEnumerator looseHealth(float decayDamage)
-    {
-        yield return new WaitForSeconds(5f);
-        DealDamage(decayDamage);
-        yield return new WaitForSeconds(5f);
-    }
+   
 }
 
