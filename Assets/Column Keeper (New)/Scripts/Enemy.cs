@@ -118,7 +118,7 @@ public class Enemy : MonoBehaviour
     }
     IEnumerator IceArrowSpeed()
     {
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(10);
         agent.speed = initialSpeed;
     }
     public void HypnoArrow()
