@@ -1115,19 +1115,19 @@ MonoBehaviour:
   - name: GROUND PARTICLES
     collapsed: 1
   - name: GROUND ICE
-    collapsed: 0
+    collapsed: 1
   - name: PARTICLES FLYING
     collapsed: 1
   - name: SPIKES
-    collapsed: 0
+    collapsed: 1
   - name: SMOKE
     collapsed: 1
   uiBounds:
     serializedVersion: 2
     x: 1139
-    y: -3192
+    y: -3193
     width: 5810
-    height: 15358
+    height: 15359
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
