@@ -111,14 +111,14 @@ public class Enemy : MonoBehaviour
     public void IceArrow(float speedDamp)
     {
         
-            agent.speed *= speedDamp;
+            agent.speed = speedDamp * agent.speed;
         
         
         StartCoroutine(IceArrowSpeed());
     }
     IEnumerator IceArrowSpeed()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(15);
         agent.speed = initialSpeed;
     }
     public void HypnoArrow()
