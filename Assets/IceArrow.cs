@@ -48,6 +48,7 @@ public class IceArrow : MonoBehaviour
             {
                 if(col.gameObject.GetComponent<Enemy>() != null)
                 {
+                    Debug.Log("Collision with: "+col.gameObject.name);
                     col.gameObject.GetComponent<Enemy>().IceArrow(0.5f);
                 }
             }
