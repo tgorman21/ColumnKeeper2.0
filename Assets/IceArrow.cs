@@ -46,9 +46,10 @@ public class IceArrow : MonoBehaviour
             iceCollider.transform.localScale = Vector3.Lerp(iceCollider.transform.localScale, new Vector3(iceCollider.transform.localScale.x, iceCollider.transform.localScale.y, 6), Time.deltaTime * 5);
             if (col.gameObject.CompareTag("Enemy"))
             {
-                if(col.gameObject.GetComponent<Enemy>() != null)
+                Debug.Log("Collision with: " + col.gameObject.name);
+                if (col.gameObject.GetComponent<Enemy>() != null)
                 {
-                    Debug.Log("Collision with: "+col.gameObject.name);
+                   
                     col.gameObject.GetComponent<Enemy>().IceArrow(0.5f);
                 }
             }
