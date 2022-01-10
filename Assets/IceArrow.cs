@@ -19,5 +19,6 @@ public class IceArrow : MonoBehaviour
     public void IceEffect()
     {
         iceEffect.SetActive(true);
+        iceEffect.transform.rotation = Quaternion.identity;
     }
 }
