@@ -5,15 +5,14 @@ using UnityEngine.VFX;
 
 public class IceArrow : MonoBehaviour
 {
-    [SerializeField] GameObject iceEffect;
+    [SerializeField] GameObject iceEffect; // Ice Visual Effect
 
-    [SerializeField] GameObject iceCollider;
+    [SerializeField] GameObject iceCollider; //Ice Collider
 
-    public float DampSpeed;
-    public float damage;
-    public bool rise;
+    public float DampSpeed; //Damp enemy speed
+    public float damage; //Ice Arrow Impact Damage
+    public bool rise; //Test Function
 
-    float zPos;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +24,7 @@ public class IceArrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Test Function (Mac)
         if (rise)
         {
             IceEffect();
@@ -43,11 +43,16 @@ public class IceArrow : MonoBehaviour
 
         rise = false;
         Collider col = iceCollider.GetComponentInChildren<Collider>();
+
+        //enables collider
         col.enabled = true;
+
+        //Rises collider
         if (iceCollider.transform.localScale.z <= 2)
         {
             iceCollider.transform.localScale = Vector3.Lerp(iceCollider.transform.localScale, new Vector3(iceCollider.transform.localScale.x, iceCollider.transform.localScale.y, 6), Time.deltaTime * 5);
-            
+
+            //Lowers collider
             StartCoroutine(ColliderEffect());
         }
     }

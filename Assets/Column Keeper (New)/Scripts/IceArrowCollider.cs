@@ -18,7 +18,6 @@ public class IceArrowCollider : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Collision with: " + col.gameObject.name);
             if (col.gameObject.GetComponent<Enemy>() != null)
             {
                 //////Damp Speed For Enemy
