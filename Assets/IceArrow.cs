@@ -9,6 +9,7 @@ public class IceArrow : MonoBehaviour
 
     [SerializeField] GameObject iceCollider;
 
+    public float DampSpeed;
     public bool rise;
 
     float zPos;
@@ -44,15 +45,7 @@ public class IceArrow : MonoBehaviour
         if (iceCollider.transform.localScale.z <= 2)
         {
             iceCollider.transform.localScale = Vector3.Lerp(iceCollider.transform.localScale, new Vector3(iceCollider.transform.localScale.x, iceCollider.transform.localScale.y, 6), Time.deltaTime * 5);
-            if (col.gameObject.CompareTag("Enemy"))
-            {
-                Debug.Log("Collision with: " + col.gameObject.name);
-                if (col.gameObject.GetComponent<Enemy>() != null)
-                {
-                   
-                    col.gameObject.GetComponent<Enemy>().IceArrow(0.5f);
-                }
-            }
+            
             StartCoroutine(ColliderEffect());
         }
     }

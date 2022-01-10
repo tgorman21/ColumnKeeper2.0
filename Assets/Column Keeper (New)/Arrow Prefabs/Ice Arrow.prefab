@@ -377,6 +377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iceEffect: {fileID: 247433066543863630}
   iceCollider: {fileID: 85006892048354636}
+  DampSpeed: 0.5
   rise: 0
 --- !u!1 &8589002692731022628
 GameObject:

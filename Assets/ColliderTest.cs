@@ -22,7 +22,7 @@ public class ColliderTest : MonoBehaviour
             if (col.gameObject.GetComponent<Enemy>() != null)
             {
 
-                col.gameObject.GetComponent<Enemy>().IceArrow(0.5f);
+                col.gameObject.GetComponent<Enemy>().IceArrow(GetComponentInParent<IceArrow>().DampSpeed);
             }
         }
     }
