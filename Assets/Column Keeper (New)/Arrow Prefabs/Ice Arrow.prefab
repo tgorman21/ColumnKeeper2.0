@@ -376,6 +376,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iceEffect: {fileID: 247433066543863630}
+  iceCollider: {fileID: 85006892048354636}
+  rise: 0
 --- !u!1 &8589002692731022628
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,7 +443,7 @@ PrefabInstance:
     - target: {fileID: 3532985691826817129, guid: 88f9326b23ca5aa4ba27a9da840307ae,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.48800004
+      value: 0.432
       objectReference: {fileID: 0}
     - target: {fileID: 3532985691826817129, guid: 88f9326b23ca5aa4ba27a9da840307ae,
         type: 3}
@@ -477,6 +479,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532985692345636233, guid: 88f9326b23ca5aa4ba27a9da840307ae,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532985692345636233, guid: 88f9326b23ca5aa4ba27a9da840307ae,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3532985692345636234, guid: 88f9326b23ca5aa4ba27a9da840307ae,
         type: 3}
@@ -589,6 +601,12 @@ GameObject:
 --- !u!4 &247433066543863631 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3532985691826817129, guid: 88f9326b23ca5aa4ba27a9da840307ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 3632329934030528294}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &85006892048354636 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3694818140747256426, guid: 88f9326b23ca5aa4ba27a9da840307ae,
     type: 3}
   m_PrefabInstance: {fileID: 3632329934030528294}
   m_PrefabAsset: {fileID: 0}

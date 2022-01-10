@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     bool decay; // DOT bool
     float decayDamage; //DOT 
     bool impact; //initial hit damage
+    public float initialSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         decay = false;
         impact = true;
+        initialSpeed = agent.speed;
     }
 
     // Update is called once per frame
@@ -106,11 +108,19 @@ public class Enemy : MonoBehaviour
        
     }
 
-    public void IceArrow()
+    public void IceArrow(float speedDamp)
     {
-
+        
+            agent.speed *= speedDamp;
+        
+        
+        StartCoroutine(IceArrowSpeed());
     }
-
+    IEnumerator IceArrowSpeed()
+    {
+        yield return new WaitForSeconds(10);
+        agent.speed = initialSpeed;
+    }
     public void HypnoArrow()
     {
 
