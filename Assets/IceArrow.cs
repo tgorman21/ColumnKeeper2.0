@@ -10,6 +10,7 @@ public class IceArrow : MonoBehaviour
     [SerializeField] GameObject iceCollider;
 
     public float DampSpeed;
+    public float damage;
     public bool rise;
 
     float zPos;
@@ -31,6 +32,7 @@ public class IceArrow : MonoBehaviour
     }
     public void IceEffect()
     {
+        //////Turns Ice effect with right rotation
         iceEffect.SetActive(true);
         iceEffect.transform.rotation = Quaternion.identity;
         IceDamage();
@@ -38,10 +40,10 @@ public class IceArrow : MonoBehaviour
     }
     public void IceDamage()
     {
+
         rise = false;
         Collider col = iceCollider.GetComponentInChildren<Collider>();
         col.enabled = true;
-        //iceCollider.transform.rotation = Quaternion.identity;
         if (iceCollider.transform.localScale.z <= 2)
         {
             iceCollider.transform.localScale = Vector3.Lerp(iceCollider.transform.localScale, new Vector3(iceCollider.transform.localScale.x, iceCollider.transform.localScale.y, 6), Time.deltaTime * 5);
@@ -51,6 +53,7 @@ public class IceArrow : MonoBehaviour
     }
     IEnumerator ColliderEffect()
     {
+        //////Turns everything back to default after 2 seconds
         yield return new WaitForSeconds(2);
         iceCollider.transform.localScale = new Vector3(iceCollider.transform.localScale.x, iceCollider.transform.localScale.y, 0);
         iceEffect.SetActive(false);

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColliderTest : MonoBehaviour
+public class IceArrowCollider : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -21,8 +21,10 @@ public class ColliderTest : MonoBehaviour
             Debug.Log("Collision with: " + col.gameObject.name);
             if (col.gameObject.GetComponent<Enemy>() != null)
             {
-
+                //////Damp Speed For Enemy
                 col.gameObject.GetComponent<Enemy>().IceArrow(GetComponentInParent<IceArrow>().DampSpeed);
+                col.gameObject.GetComponent<Enemy>().DealDamage(GetComponentInParent<IceArrow>().damage);
+
             }
         }
     }

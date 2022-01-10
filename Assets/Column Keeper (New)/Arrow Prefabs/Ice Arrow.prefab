@@ -378,6 +378,7 @@ MonoBehaviour:
   iceEffect: {fileID: 247433066543863630}
   iceCollider: {fileID: 85006892048354636}
   DampSpeed: 0.5
+  damage: 25
   rise: 0
 --- !u!1 &8589002692731022628
 GameObject:
@@ -591,7 +592,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[18]
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3571348044500072323, guid: 88f9326b23ca5aa4ba27a9da840307ae, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 88f9326b23ca5aa4ba27a9da840307ae, type: 3}
 --- !u!1 &247433066543863630 stripped
 GameObject:
