@@ -55,7 +55,15 @@ public class Enemy : MonoBehaviour
         if (decay)
         {
             t += Time.deltaTime;
-            if (t < 5.1f)
+            if(t < 2.5f)
+            {
+                if (!rb.isKinematic || !agent.enabled)
+                {
+                    rb.isKinematic = true;
+                    agent.enabled = true;
+                }
+            }
+            else if (t < 5.1f)
             {
                 DealDamage(decayDamage);
 
@@ -65,6 +73,7 @@ public class Enemy : MonoBehaviour
                 decay = false;
                 t = 0;
                 impact = true; ////// Trigger impact damage once
+                
             }
 
 
@@ -80,11 +89,7 @@ public class Enemy : MonoBehaviour
         {
             health = health - damage;
             healthBar.localScale = new Vector3(health / 100, 1, 1);
-            if (!rb.isKinematic || !agent.enabled)
-            {
-                rb.isKinematic = true;
-                agent.enabled = true;
-            }
+            
         }
     }
     public void Hit(Arrow arrow)
