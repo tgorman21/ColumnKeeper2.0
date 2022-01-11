@@ -120,6 +120,7 @@ public class Arrow : XRGrabInteractable
             CheckForHittable(hit);
             if (hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("ground"))
             {
+                
                 if (this.gameObject.GetComponent<FireArrow>() != null)
                 {
                     FireArrow fa = GetComponent<FireArrow>();
@@ -136,6 +137,7 @@ public class Arrow : XRGrabInteractable
                         ia.IceEffect();
                     }
                 }
+                //if(this.gameObject.GetComponent<N>)
                 
             }
             

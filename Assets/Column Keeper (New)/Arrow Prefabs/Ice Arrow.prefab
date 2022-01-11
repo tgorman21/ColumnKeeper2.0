@@ -190,6 +190,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &6934264356537679518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7739977192006803717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97edc8fc0fce147bca51fb3777baba21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8542102953145869890
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +214,7 @@ GameObject:
   - component: {fileID: 7046829276956346025}
   - component: {fileID: 3544760493190169588}
   - component: {fileID: 961699093}
-  - component: {fileID: 46824440587075600}
+  - component: {fileID: 8820017371143917817}
   m_Layer: 2
   m_Name: Ice Arrow
   m_TagString: Untagged
@@ -363,7 +375,7 @@ CapsuleCollider:
   m_Height: 0.8
   m_Direction: 2
   m_Center: {x: 0.004637705, y: 0, z: -0.0002289713}
---- !u!114 &46824440587075600
+--- !u!114 &8820017371143917817
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -372,11 +384,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8542102953145869890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d7fe6da2e50449eab3d613231f40c95, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d66a403d7199467e95c9f0cc4c40f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iceEffect: {fileID: 247433066543863630}
-  iceCollider: {fileID: 85006892048354636}
+  iceEffect: {fileID: 0}
+  iceCollider: {fileID: 0}
   DampSpeed: 0.5
   damage: 25
   rise: 0
@@ -594,22 +606,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3571348044500072323, guid: 88f9326b23ca5aa4ba27a9da840307ae, type: 3}
+    - {fileID: 8965326887324974328, guid: 88f9326b23ca5aa4ba27a9da840307ae, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 88f9326b23ca5aa4ba27a9da840307ae, type: 3}
---- !u!1 &247433066543863630 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3532985691826817128, guid: 88f9326b23ca5aa4ba27a9da840307ae,
-    type: 3}
-  m_PrefabInstance: {fileID: 3632329934030528294}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &247433066543863631 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3532985691826817129, guid: 88f9326b23ca5aa4ba27a9da840307ae,
     type: 3}
   m_PrefabInstance: {fileID: 3632329934030528294}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &85006892048354636 stripped
+--- !u!1 &7739977192006803717 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 3694818140747256426, guid: 88f9326b23ca5aa4ba27a9da840307ae,
+  m_CorrespondingSourceObject: {fileID: 6413491920778608163, guid: 88f9326b23ca5aa4ba27a9da840307ae,
     type: 3}
   m_PrefabInstance: {fileID: 3632329934030528294}
   m_PrefabAsset: {fileID: 0}
