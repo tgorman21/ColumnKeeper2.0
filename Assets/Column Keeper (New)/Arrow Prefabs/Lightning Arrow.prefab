@@ -374,7 +374,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abbb6afa66629440a8c459a6ad7f8bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LightningCloud: {fileID: 0}
+  LightningCloud: {fileID: 7023088893534770528, guid: 6336ba4bf088d4491a151d395f60f994,
+    type: 3}
 --- !u!1 &8589002692731022628
 GameObject:
   m_ObjectHideFlags: 0
