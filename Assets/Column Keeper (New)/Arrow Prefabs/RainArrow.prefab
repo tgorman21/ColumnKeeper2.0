@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrow: {fileID: 8542102953145869890, guid: 5c51937e899ec9443a1757aefe9d49cb, type: 3}
-  spawnAmount: 5
+  spawnAmount: 25
   yPos: 25
 --- !u!1 &8589002692731022628
 GameObject:

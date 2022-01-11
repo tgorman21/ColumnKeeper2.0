@@ -24,7 +24,7 @@ public class RainOfArrows : MonoBehaviour
         for(int i = 0; i < spawnAmount; i++)
         {
             GameObject arrowInstance = Instantiate(arrow);
-            arrowInstance.transform.position = RandomCircle(transform.position, 15);
+            arrowInstance.transform.position = RandomCircle(transform.position, 1);
             arrowInstance.GetComponent<Arrow>().launched = true;
 
         }
