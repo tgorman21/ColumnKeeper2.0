@@ -63,7 +63,7 @@ public class EnemyAI : MonoBehaviour
 
 
     }
-    void HypnoEnemy()
+    public void HypnoEnemy()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         float dist = float.MaxValue;
@@ -80,6 +80,7 @@ public class EnemyAI : MonoBehaviour
             Debug.Log(enemies[closestEnemy].gameObject.name + " Is the closest");
         }
         agent.destination = enemies[closestEnemy].transform.position;
+        
         Debug.Log(enemies.Length);
     }
     void Stop()
