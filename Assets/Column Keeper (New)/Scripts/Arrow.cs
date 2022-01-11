@@ -142,7 +142,10 @@ public class Arrow : XRGrabInteractable
                     HypnoArrow hypno = GetComponent<HypnoArrow>();
                     if(hypno != null)
                     {
-                        hypno.Hypnotize(hit.collider.GetComponent<EnemyAI>());
+                        if (hit.collider.GetComponent<EnemyAI>() != null)
+                        {
+                            hypno.Hypnotize(hit.collider.GetComponent<EnemyAI>());
+                        }
                     }
                 }
 
