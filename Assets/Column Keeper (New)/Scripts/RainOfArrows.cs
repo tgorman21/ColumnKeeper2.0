@@ -21,6 +21,7 @@ public class RainOfArrows : MonoBehaviour
 
     public void Rain()
     {
+        Debug.Log("Rain")
         Vector3 pos = new Vector3(this.transform.position.x, this.transform.position.y + yPos, this.transform.position.z);
         for(int i = 0; i < spawnAmount; i++)
         {
