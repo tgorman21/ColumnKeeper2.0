@@ -148,7 +148,14 @@ public class Arrow : XRGrabInteractable
                         }
                     }
                 }
-
+                if(this.gameObject.GetComponent<LightningArrow>() != null)
+                {
+                    LightningArrow lightning = GetComponent<LightningArrow>();
+                    if(lightning != null)
+                    {
+                        lightning.LightningStrike();
+                    }
+                }
 
             }
             
