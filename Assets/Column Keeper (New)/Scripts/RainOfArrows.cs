@@ -25,7 +25,7 @@ public class RainOfArrows : MonoBehaviour
         {
             GameObject arrowInstance = Instantiate(arrow);
             arrowInstance.transform.position = RandomCircle(transform.position, 1);
-            arrowInstance.transform.rotation = Quaternion.Euler(90, 0, 0);
+            arrowInstance.transform.rotation = Quaternion.Euler(-90, 0, 0);
             arrowInstance.GetComponent<Rigidbody>().AddForce(transform.up * arrowInstance.GetComponent<Arrow>().speed, ForceMode.Acceleration);
             arrowInstance.GetComponent<Arrow>().launched = true;
 
