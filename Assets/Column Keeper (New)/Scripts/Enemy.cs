@@ -125,7 +125,7 @@ public class Enemy : MonoBehaviour
     }
     public void HypnoArrow()
     {
-
+        GetComponent<EnemyAI>().currentState = EnemyAI.BehaviorState.Hypno;
     }
 
     public void HealingArrow()
