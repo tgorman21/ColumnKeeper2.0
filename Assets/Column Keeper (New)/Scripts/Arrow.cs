@@ -14,7 +14,7 @@ public class Arrow : XRGrabInteractable
     private new Rigidbody rigidbody = null;
 
     private Vector3 lastPosition = Vector3.zero;
-    private bool launched = false;
+    public bool launched = false;
     protected override void Awake()
     {
         base.Awake();
@@ -156,7 +156,14 @@ public class Arrow : XRGrabInteractable
                         lightning.LightningStrike();
                     }
                 }
-
+                if (this.gameObject.GetComponent<RainOfArrows>() != null)
+                {
+                    RainOfArrows rain = GetComponent<RainOfArrows>();
+                    if (rain != null)
+                    {
+                        rain.Rain();
+                    }
+                }
             }
             
             

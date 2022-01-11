@@ -202,8 +202,9 @@ GameObject:
   - component: {fileID: 7046829276956346025}
   - component: {fileID: 3544760493190169588}
   - component: {fileID: 961699093}
+  - component: {fileID: 6534947862213420928}
   m_Layer: 2
-  m_Name: Arrow
+  m_Name: RainArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -331,6 +332,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 4294967291
+  launched: 0
 --- !u!54 &3544760493190169588
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -361,6 +363,21 @@ CapsuleCollider:
   m_Height: 0.8
   m_Direction: 2
   m_Center: {x: 0.004637705, y: 0, z: -0.0002289713}
+--- !u!114 &6534947862213420928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8542102953145869890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 996c10f3f9e6f4549965d8ff3666337c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrow: {fileID: 8542102953145869890, guid: 5c51937e899ec9443a1757aefe9d49cb, type: 3}
+  spawnAmount: 5
+  yPos: 25
 --- !u!1 &8589002692731022628
 GameObject:
   m_ObjectHideFlags: 0
