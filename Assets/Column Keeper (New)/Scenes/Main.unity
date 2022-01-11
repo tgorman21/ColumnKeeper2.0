@@ -5548,6 +5548,11 @@ PrefabInstance:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 817467329141612853, guid: 5d087403df724a24e933f46820f54e2a,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 827455024024771786, guid: 5d087403df724a24e933f46820f54e2a,
         type: 3}
       propertyPath: m_NavMeshLayer
