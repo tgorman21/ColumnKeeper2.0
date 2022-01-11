@@ -26,7 +26,7 @@ public class RainOfArrows : MonoBehaviour
         {
             GameObject arrowInstance = Instantiate(arrow);
             arrowInstance.transform.position = pos;
-            arrowInstance.GetComponent<Rigidbody>().AddForce(-transform.up * arrowInstance.GetComponent<Arrow>().speed, ForceMode.Impulse);
+            arrowInstance.GetComponent<Rigidbody>().AddForce(-transform.up * arrowInstance.GetComponent<Arrow>().speed, ForceMode.Acceleration);
             arrowInstance.GetComponent<Arrow>().launched = true;
 
         }
