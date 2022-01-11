@@ -445,6 +445,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5591402395672976173, guid: e9aecca3e456e45c6881198f87fd4967,
         type: 3}
+      propertyPath: arrowPrefab
+      value: 
+      objectReference: {fileID: 8542102953145869890, guid: c12c3c78efa484c209a90c8f203c1b00,
+        type: 3}
+    - target: {fileID: 5591402395672976173, guid: e9aecca3e456e45c6881198f87fd4967,
+        type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1549864981}

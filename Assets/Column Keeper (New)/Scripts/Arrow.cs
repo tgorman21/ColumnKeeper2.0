@@ -137,8 +137,16 @@ public class Arrow : XRGrabInteractable
                         ia.IceEffect();
                     }
                 }
-                //if(this.gameObject.GetComponent<N>)
-                
+                if (this.gameObject.GetComponent<HypnoArrow>() != null)
+                {
+                    HypnoArrow hypno = GetComponent<HypnoArrow>();
+                    if(hypno != null)
+                    {
+                        hypno.Hypnotize(hit.collider.GetComponent<EnemyAI>());
+                    }
+                }
+
+
             }
             
             
