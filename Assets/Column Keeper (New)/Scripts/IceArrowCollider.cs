@@ -22,7 +22,7 @@ public class IceArrowCollider : MonoBehaviour
             {
                 //////Damp Speed For Enemy
                 col.gameObject.GetComponent<Enemy>().IceArrow(GetComponentInParent<IceArrow>().DampSpeed);
-                col.gameObject.GetComponent<Enemy>().DealDamage(GetComponentInParent<IceArrow>().damage);
+                col.gameObject.GetComponent<Enemy>().DealDamage(GetComponentInParent<IceArrow>().damageIce);
 
             }
         }

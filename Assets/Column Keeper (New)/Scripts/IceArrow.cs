@@ -10,7 +10,7 @@ public class IceArrow : MonoBehaviour
     [SerializeField] GameObject iceCollider; //Ice Collider
 
     public float DampSpeed; //Damp enemy speed
-    public float damage; //Ice Arrow Impact Damage
+    public float damageIce; //Ice Arrow Impact Damage
     public bool rise; //Test Function
 
 
@@ -27,14 +27,15 @@ public class IceArrow : MonoBehaviour
         //Test Function (Mac)
         if (rise)
         {
-            IceEffect();
+            IceEffect(damageIce);
         }
     }
-    public void IceEffect()
+    public void IceEffect(float damage)
     {
         //////Turns Ice effect with right rotation
         iceEffect.SetActive(true);
         iceEffect.transform.rotation = Quaternion.identity;
+        damageIce = damage;
         IceDamage();
        
     }

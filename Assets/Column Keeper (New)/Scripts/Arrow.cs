@@ -152,7 +152,7 @@ public class Arrow : XRGrabInteractable
                         IceArrow ia = GetComponent<IceArrow>();
                         if (ia != null)
                         {
-                            ia.IceEffect();
+                            ia.IceEffect(arrow.damage);
                         }
 
                         break;
@@ -171,6 +171,7 @@ public class Arrow : XRGrabInteractable
                         LightningArrow lightning = GetComponent<LightningArrow>();
                         if (lightning != null)
                         {
+                            hit.collider.GetComponent<Enemy>().DealDamage(arrow.damage);
                             lightning.LightningStrike();
                         }
 

@@ -392,7 +392,7 @@ MonoBehaviour:
   iceEffect: {fileID: 247433066543863630}
   iceCollider: {fileID: 85006892048354636}
   DampSpeed: 0.5
-  damage: 25
+  damageIce: 25
   rise: 0
 --- !u!114 &2136282394778349108
 MonoBehaviour:
@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeOfArrow: 2
-  damage: 0
+  damage: 25
 --- !u!1 &8589002692731022628
 GameObject:
   m_ObjectHideFlags: 0
