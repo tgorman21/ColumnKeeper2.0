@@ -25,12 +25,13 @@ public class RainOfArrows : MonoBehaviour
         
         if (RainArrows)
         {
-            t++;
-            if (t < 20)
+            t += Time.deltaTime;
+            Debug.Log(t);
+            if (t < 3)
             {
                 SpawnArrows();
             }
-            else if(t > 20)
+            else if(t > 3)
             {
                 t = 0;
                 RainArrows = false;
