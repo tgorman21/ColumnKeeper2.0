@@ -67,7 +67,7 @@ public class BlastWave : MonoBehaviour
                 if (!rb)
                     continue;
                 rb.isKinematic = false;
-                col.GetComponent<NavMeshAgent>().enabled = false;
+                //col.GetComponent<NavMeshAgent>().enabled = false;
                 Vector3 direction = (col.transform.position - transform.position).normalized;
                 rb.AddForce(direction * force, ForceMode.Impulse);
                 col.GetComponent<Enemy>().FireDamage(fireArrow.impactDamage, fireArrow.decayDamage);
