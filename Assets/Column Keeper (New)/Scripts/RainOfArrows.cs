@@ -23,6 +23,7 @@ public class RainOfArrows : MonoBehaviour
     {
         Debug.Log("Rain");
         Vector3 pos = new Vector3(this.transform.position.x, this.transform.position.y + yPos, this.transform.position.z);
+        Debug.Log(pos);
         for (int i = 0; i < spawnAmount; i++)
         {
             GameObject arrowInstance = Instantiate(arrow);
