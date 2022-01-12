@@ -7,6 +7,7 @@ public class RainOfArrows : MonoBehaviour
     [SerializeField] GameObject arrow;
     public int spawnAmount;
     public float yPos;
+    bool RainArrows;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,7 @@ public class RainOfArrows : MonoBehaviour
             //arrowInstance.transform.position = pos;
             arrowInstance.transform.Rotate(90, 0, 0,Space.World);
             arrowInstance.GetComponent<Rigidbody>().freezeRotation = true;
-            //     arrowInstance.GetComponent<Arrow>().launched = true;
+            arrowInstance.GetComponent<Arrow>().launched = true;
             // arrowInstance.GetComponent<Arrow>().trackRotation = false;
             //arrowInstance.GetComponent<Arrow>().throwSmoothingDuration = 0;
             // arrowInstance.GetComponent<Arrow>().throwVelocityScale = 0;
