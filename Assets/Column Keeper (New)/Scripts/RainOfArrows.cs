@@ -70,8 +70,8 @@ public class RainOfArrows : MonoBehaviour
     }
     void SpawnArrows()
     {
-        float x = Random.Range(-4, 4);
-        float z = Random.Range(-4, 4);
+        float x = Random.Range(-4, 5);
+        float z = Random.Range(-4, 5);
         Vector3 pos = new Vector3(this.transform.position.x + x, this.transform.position.y + yPos, this.transform.position.z + z);
         GameObject arrowInstance = Instantiate(arrow, pos, Quaternion.identity);
         //arrowInstance.transform.position = pos;
