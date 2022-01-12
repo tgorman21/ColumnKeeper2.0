@@ -8,6 +8,7 @@ public class RainOfArrows : MonoBehaviour
     public int spawnAmount;
     public float yPos;
     bool RainArrows;
+    float t = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,15 +20,29 @@ public class RainOfArrows : MonoBehaviour
     {
         
     }
-
+    private void FixedUpdate()
+    {
+        if (RainArrows)
+        {
+            if(t < 20)
+            {
+                SpawnArrows();
+            }
+            else if(t> 20)
+            {
+                RainArrows = false;
+            }
+        }
+    }
     public void Rain()
     {
+        RainArrows = true;
         Debug.Log("Rain");
-        
+        /*
         for (int i = 0; i < spawnAmount; i++)
         {
-            float x = Random.Range(-2, 2);
-            float z = Random.Range(-2, 2);
+            float x = Random.Range(-4, 4);
+            float z = Random.Range(-4, 4);
             Vector3 pos = new Vector3(this.transform.position.x + x, this.transform.position.y + yPos, this.transform.position.z + z);
             GameObject arrowInstance = Instantiate(arrow,pos,Quaternion.identity);
             //arrowInstance.transform.position = pos;
@@ -44,6 +59,19 @@ public class RainOfArrows : MonoBehaviour
 
 
         }
+        */
+    }
+    void SpawnArrows()
+    {
+        float x = Random.Range(-4, 4);
+        float z = Random.Range(-4, 4);
+        Vector3 pos = new Vector3(this.transform.position.x + x, this.transform.position.y + yPos, this.transform.position.z + z);
+        GameObject arrowInstance = Instantiate(arrow, pos, Quaternion.identity);
+        //arrowInstance.transform.position = pos;
+        arrowInstance.transform.Rotate(90, 0, 0, Space.World);
+        arrowInstance.GetComponent<Rigidbody>().freezeRotation = true;
+        arrowInstance.GetComponent<Arrow>().launched = true;
+        arrowInstance.GetComponent<Arrow>().Rain(2);
     }
    
 }
