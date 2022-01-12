@@ -25,8 +25,8 @@ public class RainOfArrows : MonoBehaviour
         
         if (RainArrows)
         {
-            t += Time.deltaTime;
-            if (t % 60 == 0)
+            t++;
+            if (t < 20)
             {
                 SpawnArrows();
             }
