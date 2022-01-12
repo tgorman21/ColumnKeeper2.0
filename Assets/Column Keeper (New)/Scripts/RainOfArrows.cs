@@ -23,11 +23,12 @@ public class RainOfArrows : MonoBehaviour
     {
         Debug.Log("Rain");
         Vector3 pos = new Vector3(transform.position.x, transform.position.y + yPos, transform.position.z);
-        for(int i = 0; i < spawnAmount; i++)
+        //arrowInstance.transform.Rotate(90, 0, 0, Space.World); //This Works
+        
+        for (int i = 0; i < spawnAmount; i++)
         {
-            GameObject arrowInstance = Instantiate(arrow);
-            arrowInstance.transform.position = pos;
-            arrowInstance.transform.Rotate(90, 0, 0,Space.World);
+            GameObject arrowInstance = Instantiate(arrow, pos, transform.rotation = Quaternion.Euler(90,0,0));
+            
             arrowInstance.GetComponent<Rigidbody>().AddForce(-transform.up * arrowInstance.GetComponent<Arrow>().speed, ForceMode.Acceleration);
             arrowInstance.GetComponent<Arrow>().launched = true;
 
