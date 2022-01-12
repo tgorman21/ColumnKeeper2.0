@@ -22,15 +22,16 @@ public class RainOfArrows : MonoBehaviour
     public void Rain()
     {
         Debug.Log("Rain");
-        Vector3 pos = new Vector3(transform.position.x, transform.position.y + yPos, transform.position.z);
-        //arrowInstance.transform.Rotate(90, 0, 0, Space.World); //This Works
-        
+        Vector3 pos = new Vector3(this.transform.position.x, this.transform.position.y + yPos, this.transform.position.z);
         for (int i = 0; i < spawnAmount; i++)
         {
-            GameObject arrowInstance = Instantiate(arrow, pos, transform.rotation = Quaternion.Euler(90,0,0));
-            
-            arrowInstance.GetComponent<Rigidbody>().AddForce(-transform.up * arrowInstance.GetComponent<Arrow>().speed, ForceMode.Acceleration);
+            GameObject arrowInstance = Instantiate(arrow);
+            arrowInstance.transform.position = pos;
+            arrowInstance.transform.Rotate(90, 0, 0,Space.World);
+            arrowInstance.GetComponent<Rigidbody>().freezeRotation = true;
             arrowInstance.GetComponent<Arrow>().launched = true;
+            arrowInstance.GetComponent<Rigidbody>().AddForce(-transform.up * arrowInstance.GetComponent<Arrow>().speed, ForceMode.Acceleration);
+      
 
         }
     }
