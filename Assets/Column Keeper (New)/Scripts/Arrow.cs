@@ -72,7 +72,7 @@ public class Arrow : XRGrabInteractable
         lastPosition = tip.position;
     }
 
-    private void ApplyForce(PullMeasurer pullMeasurer)
+    public void ApplyForce(PullMeasurer pullMeasurer)
     {
         // Apply force to the arrow
         float power = pullMeasurer.PullAmount;
