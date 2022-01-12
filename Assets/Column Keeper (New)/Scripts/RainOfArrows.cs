@@ -22,16 +22,19 @@ public class RainOfArrows : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        t += Time.deltaTime;
+        
         if (RainArrows)
         {
-            if(t % 60 == 0)
+            t += Time.deltaTime;
+            if (t % 60 == 0)
             {
                 SpawnArrows();
             }
             else if(t > 20)
             {
+                t = 0;
                 RainArrows = false;
+                
             }
         }
     }
