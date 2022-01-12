@@ -22,20 +22,25 @@ public class RainOfArrows : MonoBehaviour
     public void Rain()
     {
         Debug.Log("Rain");
-        Vector3 pos = new Vector3(this.transform.position.x, this.transform.position.y + yPos, this.transform.position.z);
-        Debug.Log(pos);
-        //for (int i = 0; i < spawnAmount; i++)
-        //{
-        GameObject arrowInstance = Instantiate(arrow,pos,Quaternion.identity);
+        
+        for (int i = 0; i < spawnAmount; i++)
+        {
+            float x = Random.Range(-2, 2);
+            float z = Random.Range(-2, 2);
+            Vector3 pos = new Vector3(this.transform.position.x + x, this.transform.position.y + yPos, this.transform.position.z + z);
+            GameObject arrowInstance = Instantiate(arrow,pos,Quaternion.identity);
             //arrowInstance.transform.position = pos;
             arrowInstance.transform.Rotate(90, 0, 0,Space.World);
             arrowInstance.GetComponent<Rigidbody>().freezeRotation = true;
-            arrowInstance.GetComponent<Arrow>().launched = true;
-        arrowInstance.GetComponent<Arrow>().throwAngularVelocityScale = 0;
-            arrowInstance.GetComponent<Rigidbody>().AddForce(-transform.up * arrowInstance.GetComponent<Arrow>().speed);
+            //     arrowInstance.GetComponent<Arrow>().launched = true;
+            // arrowInstance.GetComponent<Arrow>().trackRotation = false;
+            //arrowInstance.GetComponent<Arrow>().throwSmoothingDuration = 0;
+            // arrowInstance.GetComponent<Arrow>().throwVelocityScale = 0;
+            //arrowInstance.GetComponent<Arrow>().throwAngularVelocityScale = 0;
+            //     arrowInstance.GetComponent<Rigidbody>().AddForce(-transform.up * arrowInstance.GetComponent<Arrow>().speed);
 
 
-        //}
+        }
     }
    
 }
