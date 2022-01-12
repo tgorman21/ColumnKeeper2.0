@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeOfArrow: 4
-  damage: 0
+  damage: 50
 --- !u!1 &8589002692731022628
 GameObject:
   m_ObjectHideFlags: 0

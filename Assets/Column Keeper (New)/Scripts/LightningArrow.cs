@@ -19,11 +19,13 @@ public class LightningArrow : MonoBehaviour
         
     }
 
-    public void LightningStrike()
+    public void LightningStrike(float damage)
     {
         Vector3 pos = new Vector3(this.transform.position.x, this.transform.position.y + yPos, this.transform.position.z);
         cloud = Instantiate(LightningCloud);
+        cloud.gameObject.GetComponentInChildren<LightninDamage>().damage = damage;
         cloud.transform.position = pos;
+
         StartCoroutine(Strike());
     }
     IEnumerator Strike()
