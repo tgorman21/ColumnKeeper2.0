@@ -180,7 +180,8 @@ public class Arrow : XRGrabInteractable
                         RainOfArrows rain = GetComponent<RainOfArrows>();
                         if (rain != null)
                         {
-                            hit.collider.GetComponent<Enemy>().DealDamage(arrow.damage);
+                            if(hit.collider.GetComponent<Enemy>() != null)
+                                hit.collider.GetComponent<Enemy>().DealDamage(arrow.damage);
                             rain.Rain();
                         }
 
