@@ -377,7 +377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LightningCloud: {fileID: 7023088893534770528, guid: 6336ba4bf088d4491a151d395f60f994,
     type: 3}
-  yPos: 50
+  yPos: 25
 --- !u!1 &8589002692731022628
 GameObject:
   m_ObjectHideFlags: 0
