@@ -24,9 +24,9 @@ public class RainOfArrows : MonoBehaviour
         Debug.Log("Rain");
         Vector3 pos = new Vector3(this.transform.position.x, this.transform.position.y + yPos, this.transform.position.z);
         Debug.Log(pos);
-        for (int i = 0; i < spawnAmount; i++)
-        {
-            GameObject arrowInstance = Instantiate(arrow);
+        //for (int i = 0; i < spawnAmount; i++)
+        //{
+        GameObject arrowInstance = Instantiate(arrow);
             arrowInstance.transform.position = pos;
             arrowInstance.transform.Rotate(90, 0, 0,Space.World);
             arrowInstance.GetComponent<Rigidbody>().freezeRotation = true;
@@ -34,7 +34,7 @@ public class RainOfArrows : MonoBehaviour
             arrowInstance.GetComponent<Rigidbody>().AddForce(-transform.up * arrowInstance.GetComponent<Arrow>().speed, ForceMode.Acceleration);
       
 
-        }
+        //}
     }
    
 }
