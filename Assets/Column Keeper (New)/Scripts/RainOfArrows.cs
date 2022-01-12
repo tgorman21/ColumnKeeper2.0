@@ -27,7 +27,7 @@ public class RainOfArrows : MonoBehaviour
         if (RainArrows)
         {
             t += Time.deltaTime;
-            Debug.Log(t);
+            //Debug.Log(t);
             if (t < 3)
             {
                 SpawnArrows();
@@ -71,7 +71,7 @@ public class RainOfArrows : MonoBehaviour
     void SpawnArrows()
     {
         float x = Random.Range(-4, 5);
-        float z = Random.Range(-4, 5);
+        float z = Random.Range(-2, 4);
         Vector3 pos = new Vector3(this.transform.position.x + x, this.transform.position.y + yPos, this.transform.position.z + z);
         GameObject arrowInstance = Instantiate(arrow, pos, Quaternion.identity);
         //arrowInstance.transform.position = pos;
