@@ -61,13 +61,11 @@ public class BlastWave : MonoBehaviour
         {
             if (col.gameObject.CompareTag("Enemy"))
             {
-
-
                 Rigidbody rb = col.GetComponent<Rigidbody>();
                 if (!rb)
                     continue;
                 rb.isKinematic = false;
-                //col.GetComponent<NavMeshAgent>().enabled = false;
+                col.GetComponent<NavMeshAgent>().speed = 0;
                 Vector3 direction = (col.transform.position - transform.position).normalized;
                 rb.AddForce(direction * force, ForceMode.Impulse);
                 col.GetComponent<Enemy>().FireDamage(fireArrow.impactDamage, fireArrow.decayDamage);

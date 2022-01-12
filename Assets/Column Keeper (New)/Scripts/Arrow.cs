@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
+
 public class Arrow : XRGrabInteractable
 {
+    ArrowType arrow = new ArrowType();
     [Header("Settings")]
     public float speed = 2000.0f;
-
+   
+    
     [Header("Hit")]
     public Transform tip = null;
     public LayerMask layerMask = ~Physics.IgnoreRaycastLayer;
@@ -15,6 +18,7 @@ public class Arrow : XRGrabInteractable
 
     private Vector3 lastPosition = Vector3.zero;
     public bool launched = false;
+
     protected override void Awake()
     {
         base.Awake();
@@ -127,53 +131,63 @@ public class Arrow : XRGrabInteractable
             CheckForHittable(hit);
             if (hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("ground"))
             {
-                
-                if (this.gameObject.GetComponent<FireArrow>() != null)
+                switch (arrow.typeOfArrow)
                 {
-                    FireArrow fa = GetComponent<FireArrow>();
-                    if (fa != null)
-                    {
-                        fa.Explode(hit.collider.transform.eulerAngles);
-                    }
-                }
-                if(this.gameObject.GetComponent<IceArrow>() != null)
-                {
-                    IceArrow ia = GetComponent<IceArrow>();
-                    if (ia != null)
-                    {
-                        ia.IceEffect();
-                    }
-                }
-                if (this.gameObject.GetComponent<HypnoArrow>() != null)
-                {
-                    HypnoArrow hypno = GetComponent<HypnoArrow>();
-                    if(hypno != null)
-                    {
-                        if (hit.collider.GetComponent<EnemyAI>() != null)
+                    case ArrowType.TypeOfArrow.Regular:
+                        if(hit.collider.GetComponent<Enemy>() != null)
                         {
-                            hypno.Hypnotize(hit.collider.GetComponent<EnemyAI>());
+                            hit.collider.GetComponent<Enemy>().DealDamage(arrow.damage);
                         }
-                    }
-                }
-                if(this.gameObject.GetComponent<LightningArrow>() != null)
-                {
-                    LightningArrow lightning = GetComponent<LightningArrow>();
-                    if(lightning != null)
-                    {
-                        lightning.LightningStrike();
-                    }
-                }
-                if (this.gameObject.GetComponent<RainOfArrows>() != null)
-                {
-                    RainOfArrows rain = GetComponent<RainOfArrows>();
-                    if (rain != null)
-                    {
-                        rain.Rain();
-                    }
+                        break;
+                    case ArrowType.TypeOfArrow.Fire:
+                        FireArrow fa = GetComponent<FireArrow>();
+                        if (fa != null)
+                        {
+                            fa.Explode(hit.collider.transform.eulerAngles);
+                        }
+
+                        break;
+                    case ArrowType.TypeOfArrow.Ice:
+                        IceArrow ia = GetComponent<IceArrow>();
+                        if (ia != null)
+                        {
+                            ia.IceEffect();
+                        }
+
+                        break;
+                    case ArrowType.TypeOfArrow.Hypno:
+                        HypnoArrow hypno = GetComponent<HypnoArrow>();
+                        if (hypno != null)
+                        {
+                            if (hit.collider.GetComponent<EnemyAI>() != null)
+                            {
+                                hypno.Hypnotize(hit.collider.GetComponent<EnemyAI>());
+                            }
+
+                        }
+                        break;
+                    case ArrowType.TypeOfArrow.Lightning:
+                        LightningArrow lightning = GetComponent<LightningArrow>();
+                        if (lightning != null)
+                        {
+                            lightning.LightningStrike();
+                        }
+
+                        break;
+                    case ArrowType.TypeOfArrow.Rain:
+                        RainOfArrows rain = GetComponent<RainOfArrows>();
+                        if (rain != null)
+                        {
+                            rain.Rain();
+                        }
+
+                        break;
+                    default:
+                        Debug.Log("Not an Arrow");
+                        break;
+
                 }
             }
-            
-            
         }
 
         return hit.collider != null;

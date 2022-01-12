@@ -76,6 +76,7 @@ public class RainOfArrows : MonoBehaviour
         GameObject arrowInstance = Instantiate(arrow, pos, Quaternion.identity);
         //arrowInstance.transform.position = pos;
         arrowInstance.transform.Rotate(90, 0, 0, Space.World);
+        arrowInstance.GetComponent<ArrowType>().damage = GetComponent<ArrowType>().damage;
         arrowInstance.GetComponent<Rigidbody>().freezeRotation = true;
         arrowInstance.GetComponent<Arrow>().launched = true;
         arrowInstance.GetComponent<Arrow>().Rain(2);

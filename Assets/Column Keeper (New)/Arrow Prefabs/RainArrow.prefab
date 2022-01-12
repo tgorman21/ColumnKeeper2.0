@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 3544760493190169588}
   - component: {fileID: 961699093}
   - component: {fileID: 6534947862213420928}
+  - component: {fileID: 3536795957971821178}
   m_Layer: 2
   m_Name: RainArrow
   m_TagString: Untagged
@@ -378,6 +379,20 @@ MonoBehaviour:
   arrow: {fileID: 8542102953145869890, guid: 5c51937e899ec9443a1757aefe9d49cb, type: 3}
   spawnAmount: 25
   yPos: 50
+--- !u!114 &3536795957971821178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8542102953145869890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6cdb4c4e5df94af5801c8c2954b5ca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeOfArrow: 5
+  damage: 1
 --- !u!1 &8589002692731022628
 GameObject:
   m_ObjectHideFlags: 0

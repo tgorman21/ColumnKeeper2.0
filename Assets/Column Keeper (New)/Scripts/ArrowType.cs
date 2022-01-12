@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrowType
+public class ArrowType : MonoBehaviour
 {
-    public string arrowName;
-    public float impactDamage;
+   
+    public enum TypeOfArrow { Regular, Fire, Ice, Hypno, Lightning, Rain };
 
-  
+    public TypeOfArrow typeOfArrow;
+    public float damage;
+
+
 }
