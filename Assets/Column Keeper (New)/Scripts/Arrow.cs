@@ -72,10 +72,17 @@ public class Arrow : XRGrabInteractable
         lastPosition = tip.position;
     }
 
-    public void ApplyForce(PullMeasurer pullMeasurer)
+    private void ApplyForce(PullMeasurer pullMeasurer)
     {
         // Apply force to the arrow
         float power = pullMeasurer.PullAmount;
+        Vector3 force = transform.forward * (power * speed);
+        rigidbody.AddForce(force);
+    }
+    public void Rain(float forceArrow)
+    {
+        // Apply force to the arrow
+        float power = forceArrow;
         Vector3 force = transform.forward * (power * speed);
         rigidbody.AddForce(force);
     }
