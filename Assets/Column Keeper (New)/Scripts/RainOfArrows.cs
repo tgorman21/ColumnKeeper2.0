@@ -9,6 +9,7 @@ public class RainOfArrows : MonoBehaviour
     public float yPos;
     bool RainArrows;
     float t = 0;
+    float spawn;
     // Start is called before the first frame update
     void Start()
     {
