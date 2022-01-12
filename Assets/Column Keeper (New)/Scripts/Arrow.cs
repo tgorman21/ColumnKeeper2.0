@@ -4,10 +4,10 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Arrow : XRGrabInteractable
 {
-    ArrowType arrow = new ArrowType();
+    
+    
     [Header("Settings")]
     public float speed = 2000.0f;
-   
     
     [Header("Hit")]
     public Transform tip = null;
@@ -18,7 +18,7 @@ public class Arrow : XRGrabInteractable
 
     private Vector3 lastPosition = Vector3.zero;
     public bool launched = false;
-
+   
     protected override void Awake()
     {
         base.Awake();
@@ -126,6 +126,7 @@ public class Arrow : XRGrabInteractable
         // Check if there was a hit
         if (Physics.Linecast(lastPosition, tip.position, out RaycastHit hit, layerMask))
         {
+            ArrowType arrow = GetComponent<ArrowType>();
             TogglePhysics(false);
             ChildArrow(hit);
             CheckForHittable(hit);
