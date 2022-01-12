@@ -17,6 +17,6 @@ public class HypnoArrow : MonoBehaviour
     }
     public void Hypnotize(EnemyAI enemyAI)
     {
-        enemyAI.HypnoEnemy();
+        enemyAI.currentState = EnemyAI.BehaviorState.Hypno;
     }
 }

@@ -80,7 +80,7 @@ public class EnemyAI : MonoBehaviour
             Debug.Log(enemies[closestEnemy].gameObject.name + " Is the closest");
         }
         agent.destination = enemies[closestEnemy].transform.position;
-        
+        //Attack enemy
         Debug.Log(enemies.Length);
     }
     void Stop()
