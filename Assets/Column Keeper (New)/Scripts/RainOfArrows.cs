@@ -34,9 +34,10 @@ public class RainOfArrows : MonoBehaviour
             }
             else if(t > 3)
             {
-                t = 0;
+               
                 RainArrows = false;
-                
+                t = 0;
+
             }
         }
     }
