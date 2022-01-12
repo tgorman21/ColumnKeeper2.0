@@ -31,8 +31,8 @@ public class RainOfArrows : MonoBehaviour
             arrowInstance.transform.Rotate(90, 0, 0,Space.World);
             arrowInstance.GetComponent<Rigidbody>().freezeRotation = true;
             arrowInstance.GetComponent<Arrow>().launched = true;
-            //arrowInstance.GetComponent<Rigidbody>().AddForce(-transform.up * arrowInstance.GetComponent<Arrow>().speed, ForceMode.Acceleration);
-      
+            arrowInstance.GetComponent<Rigidbody>().AddForce(-transform.up * arrowInstance.GetComponent<Arrow>().speed);
+
 
         //}
     }
