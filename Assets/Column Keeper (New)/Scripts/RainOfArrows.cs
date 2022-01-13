@@ -4,82 +4,46 @@ using UnityEngine;
 
 public class RainOfArrows : MonoBehaviour
 {
-    [SerializeField] GameObject arrow;
-    public int spawnAmount;
-    public float yPos;
-    bool RainArrows;
-    float t = 0;
-    float spawn;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject arrow;
+    [SerializeField] private int spawnAmount;
+    [SerializeField] private float yPos;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] private bool RainArrows;
+    private float t = 0;
+
+    private void Update()
     {
-        
-    }
-    private void FixedUpdate()
-    {
-        
-        if (RainArrows)
+        if (!RainArrows) return; //don't do anything below unless raining arrows
+
+        t += Time.deltaTime;
+        SpawnArrow();
+
+        //Debug.Log(t);
+
+        if (t > 3) //once done raining, reset variables
         {
-            t += Time.deltaTime;
-            //Debug.Log(t);
-            if (t < 3)
-            {
-                SpawnArrows();
-            }
-            else if(t > 3)
-            {
-               
-                RainArrows = false;
-                t = 0;
-
-            }
+            RainArrows = false;
+            t = 0;
         }
     }
+
     public void Rain()
     {
         RainArrows = true;
         Debug.Log("Rain");
-        /*
-        for (int i = 0; i < spawnAmount; i++)
-        {
-            float x = Random.Range(-4, 4);
-            float z = Random.Range(-4, 4);
-            Vector3 pos = new Vector3(this.transform.position.x + x, this.transform.position.y + yPos, this.transform.position.z + z);
-            GameObject arrowInstance = Instantiate(arrow,pos,Quaternion.identity);
-            //arrowInstance.transform.position = pos;
-            arrowInstance.transform.Rotate(90, 0, 0,Space.World);
-            arrowInstance.GetComponent<Rigidbody>().freezeRotation = true;
-            arrowInstance.GetComponent<Arrow>().launched = true;
-            arrowInstance.GetComponent<Arrow>().Rain(2);
-            //arrowInstance.GetComponent<Rigidbody>().velocity = new Vector3(0, -arrowInstance.GetComponent<Arrow>().speed, 0);
-            // arrowInstance.GetComponent<Arrow>().trackRotation = false;
-            //arrowInstance.GetComponent<Arrow>().throwSmoothingDuration = 0;
-            // arrowInstance.GetComponent<Arrow>().throwVelocityScale = 0;
-            //arrowInstance.GetComponent<Arrow>().throwAngularVelocityScale = 0;
-            //     arrowInstance.GetComponent<Rigidbody>().AddForce(-transform.up * arrowInstance.GetComponent<Arrow>().speed);
-
-
-        }
-        */
+       
     }
-    void SpawnArrows()
+    private void SpawnArrow()
     {
-        float x = Random.Range(-4, 5);
-        float z = Random.Range(-2, 4);
-        Vector3 pos = new Vector3(this.transform.position.x + x, this.transform.position.y + yPos, this.transform.position.z + z);
-        GameObject arrowInstance = Instantiate(arrow, pos, Quaternion.identity);
-        //arrowInstance.transform.position = pos;
-        arrowInstance.transform.Rotate(90, 0, 0, Space.World);
+        float x = Random.Range(-4f, 4f);
+        float z = Random.Range(-4f, 4f);
+        Vector3 pos = new Vector3(transform.position.x + x, transform.position.y + yPos, transform.position.z + z);
+        GameObject arrowInstance = Instantiate(arrow, pos, Quaternion.Euler(90, 0, 0));
         arrowInstance.GetComponent<ArrowType>().damage = GetComponent<ArrowType>().damage;
         arrowInstance.GetComponent<Rigidbody>().freezeRotation = true;
         arrowInstance.GetComponent<Arrow>().launched = true;
         arrowInstance.GetComponent<Arrow>().Rain(2);
     }
-   
+
+
 }
