@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 {
     public string enemyName; //specific enemy
     [SerializeField]private float health; // health points
-    public float damage; // damage
+    [SerializeField] private float damage; // damage
     Rigidbody rb; //rigidbody
     NavMeshAgent agent; //movement
     public RectTransform healthBar; //bar for health
@@ -81,6 +81,10 @@ public class Enemy : MonoBehaviour
         }
 
        
+    }
+    public void TowerDamage(GameObject tower)
+    {
+        tower.GetComponent<TowerHealth>().DealDamage(damage);
     }
     public void DealDamage(float damage)
     {

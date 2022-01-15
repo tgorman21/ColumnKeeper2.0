@@ -2322,8 +2322,28 @@ PrefabInstance:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7262020063155382125, guid: 5d087403df724a24e933f46820f54e2a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5d087403df724a24e933f46820f54e2a, type: 3}
+--- !u!1 &1127020639 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3297337438302082566, guid: 5d087403df724a24e933f46820f54e2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1127020638}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1127020640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127020639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d8bc859f6a4f149c67e2eefead623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
 --- !u!1 &1199665428
 GameObject:
   m_ObjectHideFlags: 0
@@ -3718,7 +3738,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh175622
+  m_Name: pb_Mesh-3268
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
