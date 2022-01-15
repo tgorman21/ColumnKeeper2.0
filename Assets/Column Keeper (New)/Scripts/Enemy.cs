@@ -82,10 +82,13 @@ public class Enemy : MonoBehaviour
 
        
     }
+
+    //Damages Tower
     public void TowerDamage(GameObject tower)
     {
         tower.GetComponent<TowerHealth>().DealDamage(damage);
     }
+
     public void DealDamage(float damage)
     {
 
@@ -97,10 +100,12 @@ public class Enemy : MonoBehaviour
             
         }
     }
+
     public void Hit(Arrow arrow)
     {
         arrow.GetComponent<FireArrow>().FireDamage(this);
     }
+
     public void FireDamage(float impactDamage, float decayDMG)
     {
 
@@ -127,12 +132,14 @@ public class Enemy : MonoBehaviour
 
         StartCoroutine(IceArrowSpeed());
     }
+
     IEnumerator IceArrowSpeed()
     {
         //////Set speed back to initial
         yield return new WaitForSeconds(10);
         agent.speed = initialSpeed;
     }
+
     public void HypnoArrow()
     {
         GetComponent<EnemyAI>().currentState = EnemyAI.BehaviorState.Hypno;
