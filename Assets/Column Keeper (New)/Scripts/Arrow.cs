@@ -186,10 +186,33 @@ public class Arrow : XRGrabInteractable
                         }
 
                         break;
+                    
                     default:
                         Debug.Log("Not an Arrow");
                         break;
 
+                }       
+            }
+
+            //If a heal arrow hits the tower it heals it
+            else if (hit.collider.CompareTag("Tower"))
+            {
+                switch (arrow.typeOfArrow)
+                {
+                    case ArrowType.TypeOfArrow.Heal:
+                        HealArrow heal = GetComponent<HealArrow>();
+                        if (heal != null)
+                        {
+                            if (hit.collider.GetComponent<TowerHealth>() != null)
+                            {
+                                heal.HealTower(hit.collider.gameObject);
+                            }
+                        }
+
+                        break;
+                    default:
+                        Debug.Log("Not an Arrow");
+                        break;
                 }
             }
         }
