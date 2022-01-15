@@ -6,6 +6,7 @@ public class TowerHealth : MonoBehaviour
 {
     [SerializeField] private float health;
     private float baseHealth;
+    [SerializeField] RectTransform towerHP;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,18 +20,31 @@ public class TowerHealth : MonoBehaviour
         {
             //GameOver
         }
+       
     }
 
     //Deals Damage to Tower
     public void DealDamage(float damage)
     {
         health -= damage;
+        if (health >= 0)
+        {
+
+            towerHP.localScale = new Vector3(health / 100, 1, 1);
+
+        }
     }
 
     //Upgrades Tower
     public void UpgradeHealth(float health)
     {
         this.health = health;
+        if (health >= 0)
+        {
+
+            towerHP.localScale = new Vector3(health / 100, 1, 1);
+
+        }
     }
 
     //Heals Tower
@@ -49,6 +63,12 @@ public class TowerHealth : MonoBehaviour
         else if(totalHealth > baseHealth)
         {
             health = baseHealth;
+        }
+        if (health >= 0)
+        {
+
+            towerHP.localScale = new Vector3(health / 100, 1, 1);
+
         }
     }
 }

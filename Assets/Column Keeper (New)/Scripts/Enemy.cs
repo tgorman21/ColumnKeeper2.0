@@ -149,5 +149,13 @@ public class Enemy : MonoBehaviour
     {
 
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("tower"))
+        {
+            TowerDamage(collision.gameObject);
+            Destroy(gameObject);
+        }
+    }
 }
 

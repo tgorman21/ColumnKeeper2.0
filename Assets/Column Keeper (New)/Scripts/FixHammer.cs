@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class FixHammer : MonoBehaviour
 {
-    public Rigidbody rb;
+    Rigidbody rb;
     public float ct = 0;
-    public GameObject swingText;
-    public AudioSource hammerHit;
+    //public GameObject swingText;
+    //public AudioSource hammerHit;
     [SerializeField] private float healAmount;
     // Start is called before the first frame update
     void Start()
@@ -27,18 +27,18 @@ public class FixHammer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("tower") && rb.velocity.magnitude >= 7 && ct > 3)
         {
-            hammerHit.Play();
+            //hammerHit.Play();
             other.GetComponent<TowerHealth>().HealTower(healAmount);
             Debug.Log("Tower Repaired");
             ct = 0;
         }
         if (rb.velocity.magnitude <= 7 && rb.velocity.magnitude >= 1 && ct > 3)
         {
-            swingText.SetActive(true);
+            //swingText.SetActive(true);
         }
         else
         {
-            swingText.SetActive(false);
+            //swingText.SetActive(false);
         }
     }
 }
