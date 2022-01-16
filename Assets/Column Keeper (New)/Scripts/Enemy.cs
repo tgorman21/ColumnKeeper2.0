@@ -58,10 +58,7 @@ public class Enemy : MonoBehaviour
             if (t < 2.5f)
             {
                 agent.speed = initialSpeed;
-                //if (rb.isKinematic == false)
-                //{
-                //    rb.isKinematic = true;
-                //}
+                
                
             }
             else if (t < 5.1f)

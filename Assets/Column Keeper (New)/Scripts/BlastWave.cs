@@ -64,7 +64,7 @@ public class BlastWave : MonoBehaviour
                 Rigidbody rb = col.GetComponent<Rigidbody>();
                 if (!rb)
                     continue;
-                rb.isKinematic = false;
+                //rb.isKinematic = false;
                 col.GetComponent<NavMeshAgent>().speed = 0;
                 Vector3 direction = (col.transform.position - transform.position).normalized;
                 rb.AddForce(direction * force, ForceMode.Impulse);
