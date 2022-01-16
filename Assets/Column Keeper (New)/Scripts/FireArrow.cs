@@ -44,7 +44,7 @@ public class FireArrow : MonoBehaviour
     }
 
     
-    public void Explode(Vector3 rot, Vector3 pos)
+    public void Explode(Vector3 rot)
     {
         
         bw.transform.eulerAngles =  Vector3.right * 90;
