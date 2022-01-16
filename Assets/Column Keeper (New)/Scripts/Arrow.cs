@@ -126,6 +126,7 @@ public class Arrow : XRGrabInteractable
         // Check if there was a hit
         if (Physics.Linecast(lastPosition, tip.position, out RaycastHit hit, layerMask))
         {
+            Debug.Log("Hit: " + hit.transform.gameObject.name);
             ArrowType arrow = GetComponent<ArrowType>();
             TogglePhysics(false);
             ChildArrow(hit);
