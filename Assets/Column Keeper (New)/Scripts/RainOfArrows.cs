@@ -30,7 +30,7 @@ public class RainOfArrows : MonoBehaviour
     public void Rain()
     {
         RainArrows = true;
-        Debug.Log("Rain");
+        //Debug.Log("Rain");
        
     }
     private void SpawnArrow()

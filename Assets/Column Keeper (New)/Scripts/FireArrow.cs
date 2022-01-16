@@ -51,6 +51,6 @@ public class FireArrow : MonoBehaviour
         StartCoroutine(bw.Blast());
         ps.Play();
         
-        Debug.Log("Hit");
+        //Debug.Log("Hit");
     }
 }
