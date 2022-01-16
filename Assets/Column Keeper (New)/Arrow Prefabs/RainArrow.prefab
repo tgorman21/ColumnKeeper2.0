@@ -328,7 +328,7 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_ForceGravityOnDetach: 1
   m_RetainTransformParent: 0
-  speed: 1500
+  speed: 2000
   tip: {fileID: 8386148805111352677}
   layerMask:
     serializedVersion: 2
@@ -379,6 +379,7 @@ MonoBehaviour:
   arrow: {fileID: 8542102953145869890, guid: 5c51937e899ec9443a1757aefe9d49cb, type: 3}
   spawnAmount: 25
   yPos: 50
+  RainArrows: 0
 --- !u!114 &3536795957971821178
 MonoBehaviour:
   m_ObjectHideFlags: 0

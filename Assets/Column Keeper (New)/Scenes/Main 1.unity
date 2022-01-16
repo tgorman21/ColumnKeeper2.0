@@ -640,7 +640,7 @@ GameObject:
   - component: {fileID: 404850686}
   m_Layer: 0
   m_Name: Terrain_(-229.8, -21.9, -71.3)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -716,7 +716,7 @@ GameObject:
   - component: {fileID: 468112537}
   m_Layer: 0
   m_Name: Terrain_(-229.8, -21.9, -221.3)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -902,7 +902,7 @@ GameObject:
   - component: {fileID: 560232145}
   m_Layer: 0
   m_Name: Terrain_(70.2, -21.9, -71.3)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1138,7 +1138,7 @@ GameObject:
   - component: {fileID: 841530304}
   m_Layer: 0
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1215,7 +1215,7 @@ GameObject:
   - component: {fileID: 914742632}
   m_Layer: 0
   m_Name: Terrain_(70.2, -21.9, 78.7)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1291,7 +1291,7 @@ GameObject:
   - component: {fileID: 935585463}
   m_Layer: 0
   m_Name: Terrain_(-79.8, -21.9, -221.3)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1367,7 +1367,7 @@ GameObject:
   - component: {fileID: 994969707}
   m_Layer: 0
   m_Name: Terrain_(70.2, -21.9, -221.3)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1473,7 +1473,7 @@ GameObject:
   - component: {fileID: 1020523432}
   m_Layer: 0
   m_Name: Terrain_(-79.8, -21.9, 78.7)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3469,7 +3469,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 1500
+  far clip plane: 1000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -19312,7 +19312,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh87834
+  m_Name: pb_Mesh281538
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19482,7 +19482,7 @@ GameObject:
   - component: {fileID: 1642552610}
   m_Layer: 0
   m_Name: Terrain_(-229.8, -21.9, 78.7)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

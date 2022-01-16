@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Column Keeper (New)/Scenes/Main 1.unity
+    guid: 9bb2bb2bb7479453993879d10c004b08
+  - enabled: 1
     path: Assets/Column Keeper (New)/Scenes/Main.unity
     guid: 0bdc2251efd355d45add28195d99d336
   m_configObjects:
