@@ -378,6 +378,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impactDamage: 10
   decayDamage: 0.16
+  explosionObj: {fileID: 5451889159098065240, guid: 980378d1035bf470bbd085d0f8074cbf,
+    type: 3}
 --- !u!114 &8858610100002344599
 MonoBehaviour:
   m_ObjectHideFlags: 0
