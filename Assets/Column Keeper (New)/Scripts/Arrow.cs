@@ -144,7 +144,7 @@ public class Arrow : XRGrabInteractable
                         FireArrow fa = GetComponent<FireArrow>();
                         if (fa != null)
                         {
-                            fa.Explode(hit.collider.transform.eulerAngles,hit.collider.transform.position);
+                            fa.Explode(hit.collider.transform.eulerAngles);
                         }
 
                         break;
