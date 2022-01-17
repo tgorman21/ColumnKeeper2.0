@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour
         if (decay)
         {
             t += Time.deltaTime;
-            if (t < 2.5f)
+            if (t > 2.5f)
             {
                 agent.speed = initialSpeed;
                 
