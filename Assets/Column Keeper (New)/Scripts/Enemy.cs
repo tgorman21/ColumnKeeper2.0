@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     float decayDamage; //DOT 
     bool impact; //initial hit damage
     public float initialSpeed; //Initial speed
-
+    public int lane = 0;
     // Start is called before the first frame update
     void Start()
     {

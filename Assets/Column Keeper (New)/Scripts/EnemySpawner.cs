@@ -40,6 +40,17 @@ public class EnemySpawner : MonoBehaviour
     {
         t = 0;
         GameObject enemy = Instantiate(enemies[enemyIndex], spawnPoints[pointIndex].position, Quaternion.identity);
+        switch(pointIndex){
+            case 0:
+                enemy.GetComponent<Enemy>().lane = pointIndex + 1;
+                break;
+            case 1:
+                enemy.GetComponent<Enemy>().lane = pointIndex + 1;
+                break;
+            case 2:
+                enemy.GetComponent<Enemy>().lane = pointIndex + 1;
+                break;
+        }
         //set destination position
         enemy.GetComponent<EnemyAI>().towerPos = towerPos[pointIndex];
     }
