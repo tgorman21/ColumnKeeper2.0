@@ -11,6 +11,7 @@ public class PullMeasurer : XRBaseInteractable
     public Transform start = null;
     public Transform end = null;
 
+    
     private float pullAmount = 0.0f;
     public float PullAmount => pullAmount;
 

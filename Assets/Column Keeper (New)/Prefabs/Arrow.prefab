@@ -327,7 +327,7 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_ForceGravityOnDetach: 1
   m_RetainTransformParent: 0
-  speed: 1500
+  speed: 2000
   tip: {fileID: 8386148805111352677}
   layerMask:
     serializedVersion: 2

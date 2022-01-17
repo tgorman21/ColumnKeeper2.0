@@ -81,6 +81,7 @@ public class Arrow : XRGrabInteractable
         // Apply force to the arrow
         float power = pullMeasurer.PullAmount;
         Vector3 force = transform.forward * (power * speed);
+        Debug.Log(power + "|" + speed);
         rigidbody.AddForce(force);
     }
     public void Rain(float forceArrow)
@@ -98,7 +99,7 @@ public class Arrow : XRGrabInteractable
         if (launched)
         {
           
-                // Check for collision as often as possible
+                // Check for collision as often as possible 
                 if (updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
                 {
                     if (CheckForCollision())
@@ -126,9 +127,10 @@ public class Arrow : XRGrabInteractable
         // Check if there was a hit
         if (Physics.Linecast(lastPosition, tip.position, out RaycastHit hit, layerMask))
         {
+            TogglePhysics(false);
             Debug.Log("Hit: " + hit.transform.gameObject.name);
             ArrowType arrow = GetComponent<ArrowType>();
-            TogglePhysics(false);
+            //TogglePhysics(false);
             //ChildArrow(hit);
             CheckForHittable(hit);
             if (hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("ground"))
