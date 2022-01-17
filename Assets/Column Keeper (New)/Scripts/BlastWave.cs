@@ -42,21 +42,6 @@ public class BlastWave : MonoBehaviour
     {
         Collider[] hittingObjects = Physics.OverlapSphere(transform.position, currentRadius);
         
-
-       
-        //for (int i = 0; i < hittingObjects.Length; i++)
-        //{
-            
-        //        Rigidbody rb = hittingObjects[i].GetComponent<Rigidbody>();
-        //        if (!rb)
-        //            continue;
-        //        rb.isKinematic = false;
-        //        hittingObjects[i].GetComponent<NavMeshAgent>().enabled = false;
-        //        Vector3 direction = (hittingObjects[i].transform.position - transform.position).normalized;
-        //        rb.AddForce(direction * force, ForceMode.Impulse);
-        //        hittingObjects[i].GetComponent<Enemy>().FireDamage(fireArrow.impactDamage, fireArrow.decayDamage);
-            
-        //}
         foreach (Collider col in hittingObjects)
         {
             if (col.gameObject.CompareTag("Enemy"))
