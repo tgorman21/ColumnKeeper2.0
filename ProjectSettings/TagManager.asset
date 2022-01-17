@@ -8,6 +8,7 @@ TagManager:
   - ground
   - tower
   - Enemy
+  - Tower
   layers:
   - Default
   - TransparentFX

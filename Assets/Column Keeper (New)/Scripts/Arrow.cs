@@ -64,7 +64,7 @@ public class Arrow : XRGrabInteractable
         }
     }
 
-    private void SetLaunch(bool value)
+    public void SetLaunch(bool value)
     {
         collider.isTrigger = value;
         launched = value;
