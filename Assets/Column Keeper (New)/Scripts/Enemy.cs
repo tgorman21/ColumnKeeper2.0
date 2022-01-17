@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     public string enemyName; //specific enemy
-    [SerializeField]private float health; // health points
+    public float health; // health points
     [SerializeField] private float damage; // damage
     Rigidbody rb; //rigidbody
     NavMeshAgent agent; //movement
@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
         //Sets initial speed to start speed
         initialSpeed = agent.speed;
     }
-
+   
     // Update is called once per frame
     void Update()
     {

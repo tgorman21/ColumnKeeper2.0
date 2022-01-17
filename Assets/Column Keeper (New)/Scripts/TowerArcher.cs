@@ -85,6 +85,7 @@ public class TowerArcher : MonoBehaviour
         int closestEnemy = -1;
         for (int i = 1; i < enemies.Count; i++)
         {
+            t = 0;
             float distance = Vector3.Distance(transform.position, enemies[i].transform.position);
             if (distance < dist)
             {
@@ -107,7 +108,11 @@ public class TowerArcher : MonoBehaviour
                             arrow.GetComponent<Arrow>().launched = true;
                             arrow.GetComponent<Arrow>().speed = arrowSpeed;
                             arrow.GetComponent<Arrow>().Rain(arrowForce);
-
+                            enemies.Remove(hit.collider.gameObject);
+                            if (arrow.GetComponent<ArrowType>().damage - hit.collider.GetComponent<Enemy>().health <= 0)
+                            {
+                                enemies.Remove(hit.collider.gameObject);
+                            }
                             Debug.DrawRay(transform.position, transform.forward * 1000, Color.red);
                             //Debug.Log(testObj.transform.position);
                         }
@@ -120,14 +125,17 @@ public class TowerArcher : MonoBehaviour
                 }
 
             }
-
-
-            Debug.Log("Distance between: " + enemies[i].gameObject.name + " and " + this.gameObject.name + " = " + distance);
-            Debug.Log(enemies[closestEnemy].gameObject.name + " Is the closest");
         }
+            
+
+
+            //Debug.Log("Distance between: " + enemies[i].gameObject.name + " and " + this.gameObject.name + " = " + distance);
+            //Debug.Log(enemies[closestEnemy].gameObject.name + " Is the closest");
+        
+
 
         //Attack enemy
-        Debug.Log(enemies.Count);
-        t = 0;
+        //Debug.Log(enemies.Count);
+       
     }
 }
