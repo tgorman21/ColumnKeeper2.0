@@ -226,11 +226,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Enemy
-  health: 100
+  health: 50
   damage: 5
   healthBar: {fileID: 4464611373139375536}
   function: 0
   initialSpeed: 0
+  lane: 0
 --- !u!136 &2253166375974484114
 CapsuleCollider:
   m_ObjectHideFlags: 0
