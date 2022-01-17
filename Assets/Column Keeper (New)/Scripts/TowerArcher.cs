@@ -9,9 +9,10 @@ public class TowerArcher : MonoBehaviour
     [SerializeField] GameObject arrowObj;
     float t = 0;
     [SerializeField] float minimumTime;
+    [SerializeField] float maxTime;
     [SerializeField] float arrowSpeed;
     [SerializeField] float arrowForce;
-    [SerializeField] float maxTime;
+    
     public float arrowDamage;
     float fireRate;
     List<GameObject> lane1 = new List<GameObject>();
