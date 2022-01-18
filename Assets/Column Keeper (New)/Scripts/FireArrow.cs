@@ -42,8 +42,7 @@ public class FireArrow : MonoBehaviour
         }
         //Destroy(this.gameObject);
     }
-
-    
+  
     public void Explode(Vector3 rot, Vector3 pos)
     {
         //explosionPos.transform.position = new Vector3(pos.x, pos.y, pos.z);

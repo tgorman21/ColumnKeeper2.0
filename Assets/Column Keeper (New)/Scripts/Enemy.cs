@@ -46,9 +46,9 @@ public class Enemy : MonoBehaviour
         {
             ScoreText.score += 1;
             Destroy(gameObject);
-        }
-        
+        }       
     }
+
     private void FixedUpdate()
     {
         //////Timer decay
@@ -58,8 +58,8 @@ public class Enemy : MonoBehaviour
             if (t > 2.5f)
             {
                 agent.speed = initialSpeed;
-                
-               
+
+
             }
             else if (t < 5.1f)
             {
@@ -71,13 +71,9 @@ public class Enemy : MonoBehaviour
                 decay = false;
                 t = 0;
                 impact = true; ////// Trigger impact damage once
-                
+
             }
-
-
         }
-
-       
     }
 
     //Damages Tower
@@ -88,13 +84,11 @@ public class Enemy : MonoBehaviour
 
     public void DealDamage(float damage)
     {
-
         //////Deal Damage
         if (health >= 0)
         {
             health = health - damage;
             healthBar.localScale = new Vector3(health / 100, 1, 1);
-            
         }
     }
 
@@ -114,12 +108,10 @@ public class Enemy : MonoBehaviour
         {
             DealDamage(impactDamage);
             impact = false;
-        }
-        
+        }        
         decay = true;
         
-        function = false; ////// Testing Bool
-       
+        function = false; ////// Testing Bool       
     }
 
     public void IceArrow(float speedDamp)

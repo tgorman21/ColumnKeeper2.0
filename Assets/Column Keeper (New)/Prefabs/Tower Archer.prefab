@@ -47,8 +47,8 @@ MonoBehaviour:
   aimTransform: {fileID: 6757213140394276929}
   arrowObj: {fileID: 8542102953145869890, guid: 5c51937e899ec9443a1757aefe9d49cb,
     type: 3}
-  minimumTime: 1
-  maxTime: 2
+  minimumTime: 2
+  maxTime: 16
   arrowSpeed: 2000
   arrowForce: 1
   arrowDamage: 25
@@ -113,7 +113,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 0d1eb12b354ca3c4d82fbf68e59d1de3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -143,7 +143,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 6757213140314955651}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1

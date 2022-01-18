@@ -12,7 +12,7 @@ public class TowerArcher : MonoBehaviour
     [SerializeField] float maxTime;
     [SerializeField] float arrowSpeed;
     [SerializeField] float arrowForce;
-    
+
     public float arrowDamage;
     float fireRate;
     List<GameObject> lane1 = new List<GameObject>();
@@ -23,7 +23,7 @@ public class TowerArcher : MonoBehaviour
 
     public Lane lane;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +33,6 @@ public class TowerArcher : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         if (enemies != null)
         {
@@ -67,8 +66,6 @@ public class TowerArcher : MonoBehaviour
             {
                 i = 0;
             }
-         
-
             t += Time.deltaTime;
             if (t > fireRate)
             {
@@ -85,11 +82,10 @@ public class TowerArcher : MonoBehaviour
                         ShootArrow(lane3);
                         break;
                 }
-
-              
             }
         }
     }
+
     void ShootArrow(List<GameObject> enemies)
     {
         Debug.Log(enemies.Count);
@@ -98,22 +94,22 @@ public class TowerArcher : MonoBehaviour
         int closestEnemy = -1;
         for (int i = 1; i < enemies.Count; i++)
         {
-            if(enemies[i] == null)
+            if (enemies[i] == null)
             {
                 enemies.Remove(enemies[i]);
                 closestEnemy -= 1;
             }
-            else if(enemies[i] != null)
+            else if (enemies[i] != null)
             {
-
-            
-            t = 0;
-            float distance = Vector3.Distance(transform.position, enemies[i].transform.position);
+                t = 0;
+                float distance = Vector3.Distance(transform.position, enemies[i].transform.position);
+                //Add min distance to shoot
+                // Rotation clamp?
                 if (distance < dist)
                 {
                     dist = distance;
                     closestEnemy = Random.Range(0, enemies.Count);
-                    if(enemies[closestEnemy] != null)
+                    if (enemies[closestEnemy] != null)
                         transform.LookAt(enemies[closestEnemy].transform);
                     else
                         closestEnemy = Random.Range(0, enemies.Count);
@@ -126,17 +122,11 @@ public class TowerArcher : MonoBehaviour
                             {
                                 hit.collider.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
                                 GameObject arrow = Instantiate(arrowObj, aimTransform);
-                                //arrow.transform.position = aimTransform.transform.position;
-                                //arrow.transform.rotation = Quaternion.Euler(aimTransform.forward);
-                                //arrow.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-                                //arrow.transform.rotation = Quaternion.Euler(Vector3.zero);
-                                
                                 arrow.GetComponent<ArrowType>().damage = arrowDamage;
                                 arrow.GetComponent<Arrow>().speed = arrowSpeed;
                                 arrow.GetComponent<Arrow>().launched = true;
-                                
                                 arrow.GetComponent<Arrow>().Rain(arrowForce);
-                                
+
                                 //Debug.DrawRay(transform.position, transform.forward * 1000, Color.red);
                                 //Debug.Log(testObj.transform.position);
                             }
@@ -150,16 +140,7 @@ public class TowerArcher : MonoBehaviour
                 }
             }
         }
-            
-
-
-            //Debug.Log("Distance between: " + enemies[i].gameObject.name + " and " + this.gameObject.name + " = " + distance);
-            //Debug.Log(enemies[closestEnemy].gameObject.name + " Is the closest");
-        
-
-
-        //Attack enemy
-        //Debug.Log(enemies.Count);
-       
+        //Debug.Log("Distance between: " + enemies[i].gameObject.name + " and " + this.gameObject.name + " = " + distance);
+        //Debug.Log(enemies[closestEnemy].gameObject.name + " Is the closest");
     }
 }

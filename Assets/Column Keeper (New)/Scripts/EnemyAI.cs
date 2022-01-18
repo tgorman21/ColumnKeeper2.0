@@ -20,7 +20,6 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         agent = GetComponent<NavMeshAgent>();
         //towerPos = GameObject.FindGameObjectWithTag("tower").GetComponent<Transform>();
 
@@ -34,7 +33,6 @@ public class EnemyAI : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         //Debug.Log(i);
         switch (currentState)
         {
@@ -51,17 +49,12 @@ public class EnemyAI : MonoBehaviour
                 Debug.Log("Switch error");
                 break;
         }
-
     }
     void SeekTower()
     {
         //Vector3 differenceVector = towerPos.transform.position - transform.position;
-
         agent.destination = towerPos.transform.position;
-
         //Debug.Log(towerPos.transform.position);
-
-
     }
     public void HypnoEnemy()
     {
@@ -85,11 +78,6 @@ public class EnemyAI : MonoBehaviour
     }
     void Stop()
     {
-
         agent.destination = transform.position;
-
-
     }
-    
-    
 }

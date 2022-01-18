@@ -4,9 +4,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Arrow : XRGrabInteractable
 {
-    
-    
-    [Header("Settings")]
+   [Header("Settings")]
     public float speed = 2000.0f;
     
     [Header("Hit")]
@@ -194,7 +192,6 @@ public class Arrow : XRGrabInteractable
                     default:
                         Debug.Log("Not an Arrow");
                         break;
-
                 }       
             }
 
