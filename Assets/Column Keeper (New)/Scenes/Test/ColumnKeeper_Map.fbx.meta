@@ -12,8 +12,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Terrain_Dirt
+    second: {fileID: 2100000, guid: 88873cc65fe21774799d47c270d65bcc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Terrain_Grass
     second: {fileID: 2100000, guid: 8ef0c4dd58b750a4c8144dfd9fd412c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Terrain_Path
+    second: {fileID: 2100000, guid: 271251897ea1c3c4fbdf5010ba9b0340, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Terrain_Stone
+    second: {fileID: 2100000, guid: 7de87f3a9f2fe6341b163566d5b3c79c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -23,7 +38,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Tower_Stone
-    second: {fileID: 2100000, guid: 1901b92ee1f97234983635af26b5f13c, type: 2}
+    second: {fileID: 2100000, guid: 8cec7c3a6319e96439d590fede0568a4, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -101,7 +116,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 3.5
+    globalScale: 0.035
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
