@@ -3,42 +3,7 @@ guid: e773a8cebfc0990468e28577065e2064
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Nature_Mat_01
-    second: {fileID: 2100000, guid: 4badc8d5bec5ae34c829a9eeff834379, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Terrain_Dirt
-    second: {fileID: 2100000, guid: 88873cc65fe21774799d47c270d65bcc, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Terrain_Grass
-    second: {fileID: 2100000, guid: 8ef0c4dd58b750a4c8144dfd9fd412c9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Terrain_Path
-    second: {fileID: 2100000, guid: 271251897ea1c3c4fbdf5010ba9b0340, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Terrain_Stone
-    second: {fileID: 2100000, guid: 7de87f3a9f2fe6341b163566d5b3c79c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tower_Black
-    second: {fileID: 2100000, guid: 24bc02aa10c1760498e869acabb057de, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tower_Stone
-    second: {fileID: 2100000, guid: 8cec7c3a6319e96439d590fede0568a4, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
