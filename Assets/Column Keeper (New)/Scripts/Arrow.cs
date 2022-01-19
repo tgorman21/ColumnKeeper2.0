@@ -128,7 +128,7 @@ public class Arrow : XRGrabInteractable
             TogglePhysics(false);
             Debug.Log("Hit: " + hit.transform.gameObject.name);
             ArrowType arrow = GetComponent<ArrowType>();
-            //TogglePhysics(false);
+            TogglePhysics(false);
             ChildArrow(hit);
             CheckForHittable(hit);
             if (hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("ground"))
