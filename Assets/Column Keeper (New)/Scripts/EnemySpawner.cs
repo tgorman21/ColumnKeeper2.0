@@ -54,18 +54,19 @@ public class EnemySpawner : MonoBehaviour
             case 1:
                 enemy.GetComponent<Enemy>().lane = pointIndex + 1;
                 enemy.GetComponent<EnemyAI>().checkpointPos = checkpointsLane2;
-                enemy.GetComponent<EnemyAI>().checkpointIndex = Random.Range(0, checkpointsLane1.Length);
+                enemy.GetComponent<EnemyAI>().checkpointIndex = Random.Range(0, checkpointsLane2.Length);
                 break;
             case 2:
                 enemy.GetComponent<Enemy>().lane = pointIndex + 1;
                 enemy.GetComponent<EnemyAI>().checkpointPos = checkpointsLane3;
-                enemy.GetComponent<EnemyAI>().checkpointIndex = Random.Range(0, checkpointsLane1.Length);
+                enemy.GetComponent<EnemyAI>().checkpointIndex = Random.Range(0, checkpointsLane3.Length);
                 break;
         }
 
         //set destination position
-        enemy.GetComponent<EnemyAI>().currentState = EnemyAI.BehaviorState.Checkpoints;
         enemy.GetComponent<EnemyAI>().towerPos = towerPos[pointIndex];
+
+        enemy.GetComponent<EnemyAI>().currentState = EnemyAI.BehaviorState.Checkpoints;
 
 
     }
