@@ -13,7 +13,7 @@ public class EnemyAI : MonoBehaviour
     public int checkpointIndex;
     float minDistance = 10;
     float safeDistance = 10;
-
+    
     public enum BehaviorState { SeekTower, Stop, Hypno, Checkpoints };
 
     public BehaviorState currentState;
@@ -90,15 +90,14 @@ public class EnemyAI : MonoBehaviour
         Vector3 differenceVector = checkpointPos[checkpointIndex].transform.position - transform.position;
         //agent.destination = checkpointPos[0].transform.position;
         //if(differenceVector.magnitude)
-        Debug.Log(differenceVector.magnitude);
-        if(differenceVector.magnitude > 0)
-        {
-            agent.SetDestination(checkpointPos[checkpointIndex].transform.position);
+        //Debug.Log(differenceVector.magnitude);
 
-        }
-        else
+        agent.SetDestination(checkpointPos[checkpointIndex].transform.position);
+        if(differenceVector.magnitude < 1)
         {
             currentState = BehaviorState.SeekTower;
         }
+
+
     }
 }
