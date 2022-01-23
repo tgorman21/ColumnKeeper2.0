@@ -7,20 +7,21 @@ public class EnemyAI : MonoBehaviour
 {
 
     public Transform towerPos;
+    public Transform[] checkpointPos;
     NavMeshAgent agent;
     public float detectionDistance;
-
 
     float minDistance = 10;
     float safeDistance = 10;
 
-    public enum BehaviorState { SeekTower, Stop, Hypno };
+    public enum BehaviorState { SeekTower, Stop, Hypno, Checkpoints };
 
     public BehaviorState currentState;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+
         //towerPos = GameObject.FindGameObjectWithTag("tower").GetComponent<Transform>();
 
     }
@@ -44,6 +45,9 @@ public class EnemyAI : MonoBehaviour
                 break;
             case BehaviorState.Hypno:
                 HypnoEnemy();
+                break;
+            case BehaviorState.Checkpoints:
+                SeekCheckpoint();
                 break;
             default:
                 Debug.Log("Switch error");
@@ -79,5 +83,11 @@ public class EnemyAI : MonoBehaviour
     void Stop()
     {
         agent.destination = transform.position;
+    }
+
+    void SeekCheckpoint()
+    {
+        agent.destination = checkpointPos[0].transform.position;
+        agent.SetDestination(checkpointPos[0].transform.position);
     }
 }

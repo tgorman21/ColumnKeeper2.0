@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] GameObject[] enemies;
     [SerializeField] Transform[] spawnPoints;
     [SerializeField] Transform[] towerPos;
+    [SerializeField] Transform[] checkpoints;
     int enemyIndex;
     int pointIndex;
     float t = 0;
@@ -52,6 +53,9 @@ public class EnemySpawner : MonoBehaviour
                 break;
         }
         //set destination position
-        enemy.GetComponent<EnemyAI>().towerPos = towerPos[pointIndex];
+        //enemy.GetComponent<EnemyAI>().towerPos = towerPos[pointIndex];
+        enemy.GetComponent<EnemyAI>().checkpointPos = checkpoints;
     }
+
+   
 }
