@@ -10,7 +10,7 @@ public class EnemyAI : MonoBehaviour
     public Transform[] checkpointPos;
     NavMeshAgent agent;
     public float detectionDistance;
-
+    public int checkpointIndex;
     float minDistance = 10;
     float safeDistance = 10;
 
@@ -87,7 +87,18 @@ public class EnemyAI : MonoBehaviour
 
     void SeekCheckpoint()
     {
-        agent.destination = checkpointPos[0].transform.position;
-        agent.SetDestination(checkpointPos[0].transform.position);
+        Vector3 differenceVector = checkpointPos[checkpointIndex].transform.position - transform.position;
+        //agent.destination = checkpointPos[0].transform.position;
+        //if(differenceVector.magnitude)
+        Debug.Log(differenceVector.magnitude);
+        if(differenceVector.magnitude > 0)
+        {
+            agent.SetDestination(checkpointPos[checkpointIndex].transform.position);
+
+        }
+        else
+        {
+            currentState = BehaviorState.SeekTower;
+        }
     }
 }

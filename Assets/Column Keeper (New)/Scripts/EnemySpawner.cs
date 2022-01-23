@@ -7,11 +7,14 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] GameObject[] enemies;
     [SerializeField] Transform[] spawnPoints;
     [SerializeField] Transform[] towerPos;
-    [SerializeField] Transform[] checkpoints;
+    [SerializeField] Transform[] checkpointsLane1;
+    [SerializeField] Transform[] checkpointsLane2;
+    [SerializeField] Transform[] checkpointsLane3;
     int enemyIndex;
     int pointIndex;
     float t = 0;
     public float spawnRate = 5f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +36,7 @@ public class EnemySpawner : MonoBehaviour
     {
         enemyIndex = Random.Range(0, enemies.Length);
         pointIndex = Random.Range(0, spawnPoints.Length);
+        
 
         Spawn();
     }
@@ -44,18 +48,27 @@ public class EnemySpawner : MonoBehaviour
         switch(pointIndex){
             case 0:
                 enemy.GetComponent<Enemy>().lane = pointIndex + 1;
+                enemy.GetComponent<EnemyAI>().checkpointPos = checkpointsLane1;
+                enemy.GetComponent<EnemyAI>().checkpointIndex = Random.Range(0, checkpointsLane1.Length);
                 break;
             case 1:
                 enemy.GetComponent<Enemy>().lane = pointIndex + 1;
+                enemy.GetComponent<EnemyAI>().checkpointPos = checkpointsLane2;
+                enemy.GetComponent<EnemyAI>().checkpointIndex = Random.Range(0, checkpointsLane1.Length);
                 break;
             case 2:
                 enemy.GetComponent<Enemy>().lane = pointIndex + 1;
+                enemy.GetComponent<EnemyAI>().checkpointPos = checkpointsLane3;
+                enemy.GetComponent<EnemyAI>().checkpointIndex = Random.Range(0, checkpointsLane1.Length);
                 break;
         }
+
         //set destination position
-        //enemy.GetComponent<EnemyAI>().towerPos = towerPos[pointIndex];
-        enemy.GetComponent<EnemyAI>().checkpointPos = checkpoints;
+        enemy.GetComponent<EnemyAI>().currentState = EnemyAI.BehaviorState.Checkpoints;
+        enemy.GetComponent<EnemyAI>().towerPos = towerPos[pointIndex];
+
+
     }
 
-   
+
 }
