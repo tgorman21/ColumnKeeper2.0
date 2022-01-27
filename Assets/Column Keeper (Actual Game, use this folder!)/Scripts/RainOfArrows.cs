@@ -5,6 +5,7 @@ using UnityEngine;
 public class RainOfArrows : MonoBehaviour
 {
     [SerializeField] private GameObject arrow;
+    [SerializeField] GameObject Flare;
     [SerializeField] private int spawnAmount;
     [SerializeField] private float yPos;
 
@@ -29,12 +30,14 @@ public class RainOfArrows : MonoBehaviour
 
     public void Rain()
     {
+
         RainArrows = true;
         //Debug.Log("Rain");
        
     }
     private void SpawnArrow()
     {
+        Flare.SetActive(true);
         float x = Random.Range(-4f, 4f);
         float z = Random.Range(-4f, 4f);
         Vector3 pos = new Vector3(transform.position.x + x, transform.position.y + yPos, transform.position.z + z);

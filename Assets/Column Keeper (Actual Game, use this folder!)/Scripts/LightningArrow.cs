@@ -19,7 +19,7 @@ public class LightningArrow : MonoBehaviour
     }
     IEnumerator Strike()
     {
-        yield return new WaitForSeconds(1.25f);
+        yield return new WaitForSeconds(10.5f);
         cloud.SetActive(false);
     }
 }
