@@ -6,7 +6,16 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    public string enemyName; //////specific enemy
+    //public string enemyName; //////specific enemy
+
+
+    Animator anim;
+    public enum EnemyName { Goblin,Orc, Troll, Skeleton, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria };
+    public EnemyName enemyName;
+
+    public enum AnimationType { Walk, Idle };
+    public AnimationType animationType;
+
     public float health; ////// health points
     [SerializeField] private float damage; ////// damage
     Rigidbody rb; //////rigidbody
@@ -23,6 +32,8 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        anim = gameObject.GetComponent<Animator>();
+
         agent = GetComponent<NavMeshAgent>();
         decay = false;
         impact = true;
@@ -30,10 +41,62 @@ public class Enemy : MonoBehaviour
         //////Sets initial speed to start speed
         initialSpeed = agent.speed;
     }
-   
+   public void TypeofAnimation()
+    {
+        switch (animationType)
+        {
+            case AnimationType.Walk:
+                anim.Play("walk");
+                break;
+            case AnimationType.Idle:
+                anim.Play("idle");
+                break;
+
+        }
+    }
     // Update is called once per frame
     void Update()
     {
+        switch (enemyName)
+        {
+            case EnemyName.Goblin:
+                TypeofAnimation();
+                break;
+            case EnemyName.Orc:
+                TypeofAnimation();
+                break;
+            case EnemyName.Troll:
+                TypeofAnimation();
+                break;
+            case EnemyName.Skeleton:
+                TypeofAnimation();
+                break;
+            case EnemyName.Lich:
+                TypeofAnimation();
+                break;
+            case EnemyName.Witch:
+                TypeofAnimation();
+                break;
+            case EnemyName.Vampire:
+                TypeofAnimation();
+                break;
+
+            case EnemyName.Derzin:
+                TypeofAnimation();
+                break;
+            case EnemyName.Ingrar:
+                TypeofAnimation();
+                break;
+            case EnemyName.Zarzog:
+                TypeofAnimation();
+                break;
+            case EnemyName.Xenoria:
+                TypeofAnimation();
+                break;
+
+            default: Debug.Log("Not an enemy");
+                break;
+        }
         //Testing
         //if (function)
         //{
