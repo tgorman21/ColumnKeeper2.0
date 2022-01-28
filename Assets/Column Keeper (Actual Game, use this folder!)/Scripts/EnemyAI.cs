@@ -9,6 +9,7 @@ public class EnemyAI : MonoBehaviour
     public Transform towerPos;
     public Transform[] checkpointPos;
     NavMeshAgent agent;
+    public Animator Anim;
     public float detectionDistance;
     public int checkpointIndex;
     float minDistance = 10;
@@ -21,7 +22,7 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-
+        Anim = gameObject.GetComponent<Animator>();
         //towerPos = GameObject.FindGameObjectWithTag("tower").GetComponent<Transform>();
 
     }
@@ -58,6 +59,7 @@ public class EnemyAI : MonoBehaviour
     {
         //Vector3 differenceVector = towerPos.transform.position - transform.position;
         agent.destination = towerPos.transform.position;
+        Anim.Play("Goblin Walk");
         //Debug.Log(towerPos.transform.position);
     }
     public void HypnoEnemy()
