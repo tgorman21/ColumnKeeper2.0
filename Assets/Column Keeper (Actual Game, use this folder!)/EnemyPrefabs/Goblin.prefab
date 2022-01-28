@@ -280,7 +280,7 @@ Transform:
   m_GameObject: {fileID: 1431606891512239181}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 417.03067, y: 13.365854, z: -67.21388}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 441352773114917451}
   - {fileID: 6108451756267056739}
@@ -356,7 +356,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c9f8e517882046a99cf40f5d67d2b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: Goblin
+  enemyName: 0
+  animationType: 0
   health: 50
   damage: 5
   healthBar: {fileID: 0}
@@ -377,7 +378,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerPos: {fileID: 0}
   checkpointPos: []
-  Anim: {fileID: 7332993462274615968}
   detectionDistance: 0
   checkpointIndex: 0
   currentState: 0
@@ -717,6 +717,7 @@ GameObject:
   - component: {fileID: 441352773114917451}
   - component: {fileID: 3231807858090513421}
   - component: {fileID: 3722054897905140088}
+  - component: {fileID: 6660797514620639057}
   m_Layer: 0
   m_Name: Icosphere.008
   m_TagString: Untagged
@@ -854,6 +855,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!64 &6660797514620639057
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2966601499093191289}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &3013491914613587031
 GameObject:
   m_ObjectHideFlags: 0
