@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
         switch (animationType)
         {
             case AnimationType.Walk:
-                anim.Play("walk");
+                anim.Play("Walk");
                 break;
             case AnimationType.Idle:
                 anim.Play("idle");
