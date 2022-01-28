@@ -120,7 +120,7 @@ public class TowerArcher : MonoBehaviour
                         {
                             if (hit.collider.gameObject.CompareTag("Enemy"))
                             {
-                                hit.collider.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+                                //hit.collider.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
                                 GameObject arrow = Instantiate(arrowObj, aimTransform);
                                 arrow.GetComponent<ArrowType>().damage = arrowDamage;
                                 arrow.GetComponent<Arrow>().speed = arrowSpeed;
