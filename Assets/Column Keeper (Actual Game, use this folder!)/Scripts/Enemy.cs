@@ -10,10 +10,10 @@ public class Enemy : MonoBehaviour
 
 
     Animator anim;
-    public enum EnemyName { Goblin,Orc, Troll, Skeleton, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria };
+    public enum EnemyName { Goblin,Orc, Troll, Skeleton, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria }; //Names of enemies and bosses
     public EnemyName enemyName;
 
-    public enum AnimationType { Walk, Idle };
+    public enum AnimationType { Walk, Idle }; // Type of Animation
     public AnimationType animationType;
 
     public float health; ////// health points
@@ -41,6 +41,8 @@ public class Enemy : MonoBehaviour
         //////Sets initial speed to start speed
         initialSpeed = agent.speed;
     }
+
+    //Changes different Types of Animations
    public void TypeofAnimation()
     {
         switch (animationType)
@@ -57,6 +59,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Enemy Controller for animations
         switch (enemyName)
         {
             case EnemyName.Goblin:
