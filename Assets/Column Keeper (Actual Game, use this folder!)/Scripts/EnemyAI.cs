@@ -74,8 +74,8 @@ public class EnemyAI : MonoBehaviour
                 dist = distance;
                 closestEnemy = i;
             }
-            Debug.Log("Distance between: " + enemies[i].gameObject.name + " and " + this.gameObject.name + " = " + distance);
-            Debug.Log(enemies[closestEnemy].gameObject.name + " Is the closest");
+            //Debug.Log("Distance between: " + enemies[i].gameObject.name + " and " + this.gameObject.name + " = " + distance);
+            //Debug.Log(enemies[closestEnemy].gameObject.name + " Is the closest");
         }
         agent.destination = enemies[closestEnemy].transform.position;
         //////Attack enemy
