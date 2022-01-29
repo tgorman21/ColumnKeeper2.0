@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
-
+using TMPro;
 public class Enemy : MonoBehaviour
 {
     //public string enemyName; //////specific enemy
@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     public enum EnemyName { Goblin,Orc, Troll, Skeleton, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria }; //Names of enemies and bosses
     public EnemyName enemyName;
 
-    public enum AnimationType { Walk, Idle }; // Type of Animation
+    public enum AnimationType { Walk, Attack }; // Type of Animation
     public AnimationType animationType;
 
     public float health; ////// health points
@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
     Rigidbody rb; //////rigidbody
     NavMeshAgent agent; //////movement
     public RectTransform healthBar; //////bar for health
+    public TextMeshProUGUI enemyNameText;
     float t = 0; //////timer
     public bool function; /////testing function
     bool decay; ///// DOT bool
@@ -37,7 +38,7 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         decay = false;
         impact = true;
-
+        enemyNameText.SetText(enemyName.ToString());
         //////Sets initial speed to start speed
         initialSpeed = agent.speed;
     }
@@ -50,8 +51,10 @@ public class Enemy : MonoBehaviour
             case AnimationType.Walk:
                 anim.Play("Walk");
                 break;
-            case AnimationType.Idle:
-                anim.Play("idle");
+            case AnimationType.Attack:
+                anim.Play("Attack");
+                
+                //GetComponent<EnemyAI>().currentState = EnemyAI.BehaviorState.Stop;
                 break;
 
         }
