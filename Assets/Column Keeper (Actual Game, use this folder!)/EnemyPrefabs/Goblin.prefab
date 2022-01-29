@@ -362,7 +362,7 @@ MonoBehaviour:
   animationType: 0
   health: 50
   damage: 5
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 1161524363944459028}
   function: 0
   initialSpeed: 0.5
   lane: 0

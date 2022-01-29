@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4700523273602308481}
   m_Layer: 0
   m_Name: Tower Archer
-  m_TagString: Untagged
+  m_TagString: TowerArcher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,6 +51,7 @@ MonoBehaviour:
   maxTime: 16
   arrowSpeed: 2000
   arrowForce: 1
+  distToShoot: 100
   arrowDamage: 25
   lane: 1
 --- !u!1 &6757213140314955651

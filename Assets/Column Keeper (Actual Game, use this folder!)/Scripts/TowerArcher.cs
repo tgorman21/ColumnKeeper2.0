@@ -12,15 +12,15 @@ public class TowerArcher : MonoBehaviour
     [SerializeField] float maxTime;
     [SerializeField] float arrowSpeed;
     [SerializeField] float arrowForce;
-
+    [SerializeField] float distToShoot = 100;
     public float arrowDamage;
     float fireRate;
-    List<GameObject> lane1 = new List<GameObject>();
-    List<GameObject> lane2 = new List<GameObject>();
-    List<GameObject> lane3 = new List<GameObject>();
+    public List<GameObject> lane1 = new List<GameObject>();
+    public List<GameObject> lane2 = new List<GameObject>();
+    public List<GameObject> lane3 = new List<GameObject>();
     int i = 0;
     public enum Lane { Lane1, Lane2, Lane3 };
-
+    [SerializeField]List<GameObject> enemies;
     public Lane lane;
 
 
@@ -29,32 +29,35 @@ public class TowerArcher : MonoBehaviour
     {
         fireRate = Random.Range(minimumTime, maxTime);
     }
-
+    public void EnemySpawned(GameObject enemy)
+    {
+        //enemies.Add(enemy);
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        /*
         if (enemies != null)
         {
-            if (i < enemies.Length)
+            if (i < enemies.Count)
             {
 
                 switch (enemies[i].gameObject.GetComponent<Enemy>().lane)
                 {
                     case 1:
-                        if (enemies[i] == null)
+                        if (enemies[i] != null)
                             lane1.Remove(enemies[i]);
                         else
                             lane1.Add(enemies[i]);
                         break;
                     case 2:
-                        if (enemies[i] == null)
+                        if (enemies[i] != null)
                             lane2.Remove(enemies[i]);
                         else
                             lane2.Add(enemies[i]);
                         break;
                     case 3:
-                        if (enemies[i] == null)
+                        if (enemies[i] != null)
                             lane3.Remove(enemies[i]);
                         else
                             lane3.Add(enemies[i]);
@@ -66,6 +69,11 @@ public class TowerArcher : MonoBehaviour
             {
                 i = 0;
             }
+        */
+        if (lane1 != null || lane2 != null || lane3 != null)
+        {
+
+
             t += Time.deltaTime;
             if (t > fireRate)
             {
@@ -86,20 +94,21 @@ public class TowerArcher : MonoBehaviour
         }
     }
 
+
     void ShootArrow(List<GameObject> enemies)
     {
-        Debug.Log(enemies.Count);
+
         fireRate = Random.Range(minimumTime, maxTime);
-        float dist = float.MaxValue;
+        float dist = distToShoot;
         int closestEnemy = -1;
         for (int i = 1; i < enemies.Count; i++)
         {
-            if (enemies[i] == null)
-            {
-                enemies.Remove(enemies[i]);
-                closestEnemy -= 1;
-            }
-            else if (enemies[i] != null)
+            //if (enemies[i] == null)
+            //{
+            //    enemies.Remove(enemies[i]);
+            //    closestEnemy -= 1;
+            //}
+            if (enemies[i] != null)
             {
                 t = 0;
                 float distance = Vector3.Distance(transform.position, enemies[i].transform.position);
@@ -127,7 +136,7 @@ public class TowerArcher : MonoBehaviour
                                 arrow.GetComponent<Arrow>().launched = true;
                                 arrow.GetComponent<Arrow>().Rain(arrowForce);
 
-                                //Debug.DrawRay(transform.position, transform.forward * 1000, Color.red);
+                                Debug.DrawRay(transform.position, transform.forward * 1000, Color.red);
                                 //Debug.Log(testObj.transform.position);
                             }
                             else
@@ -140,6 +149,7 @@ public class TowerArcher : MonoBehaviour
                 }
             }
         }
+    
         //Debug.Log("Distance between: " + enemies[i].gameObject.name + " and " + this.gameObject.name + " = " + distance);
         //Debug.Log(enemies[closestEnemy].gameObject.name + " Is the closest");
     }
