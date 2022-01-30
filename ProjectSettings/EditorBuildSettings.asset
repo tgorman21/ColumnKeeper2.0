@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Column Keeper (Actual Game, use this folder!)/Scenes/Main Actual.unity
+    path: Assets/Column Keeper (Actual Game, use this folder!)/Scenes/MainScene.unity
     guid: 9bb2bb2bb7479453993879d10c004b08
   - enabled: 1
     path: Assets/Column Keeper (Actual Game, use this folder!)/Scenes/Main.unity

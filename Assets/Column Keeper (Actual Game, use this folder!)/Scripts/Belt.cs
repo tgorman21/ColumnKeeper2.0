@@ -10,14 +10,12 @@ public class Belt : MonoBehaviour
     float xPos;
     float zPos;
 
-    // Start is called before the first frame update
     void Start()
     {
         mainCam.GetComponent<Transform>();
         belt.GetComponent<Transform>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         YRot = mainCam.transform.rotation.eulerAngles.y;
