@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
     NavMeshAgent agent; //////movement
     public RectTransform healthBar; //////bar for health
     public TextMeshProUGUI enemyNameText;
+    float initialHealth;
     float t = 0; //////timer
     public bool function; /////testing function
     bool decay; ///// DOT bool
@@ -34,7 +35,7 @@ public class Enemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         anim = gameObject.GetComponent<Animator>();
-
+        initialHealth = health;
         agent = GetComponent<NavMeshAgent>();
         decay = false;
         impact = true;
@@ -157,7 +158,7 @@ public class Enemy : MonoBehaviour
         if (health >= 0)
         {
             health = health - damage;
-            healthBar.localScale = new Vector3(health / 100, 1, 1);
+            healthBar.localScale = new Vector3(health / initialHealth, 1, 1);
         }
     }
 
