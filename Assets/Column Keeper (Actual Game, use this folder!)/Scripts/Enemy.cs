@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     Animator anim;
     public enum EnemyName { Goblin,Orc, Troll, Skeleton, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria }; //Names of enemies and bosses
     public EnemyName enemyName;
-
+    public Transform centerMass;
     public enum AnimationType { Walk, Attack }; // Type of Animation
     public AnimationType animationType;
 

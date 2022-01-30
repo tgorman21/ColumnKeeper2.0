@@ -118,12 +118,13 @@ public class TowerArcher : MonoBehaviour
                 {
                     dist = distance;
                     closestEnemy = Random.Range(0, enemies.Count);
+                    Transform centerMass = enemies[closestEnemy].GetComponent<Enemy>().centerMass;
                     //Transform enemyPos;
                     //enemyPos.position = new Vector3(enemies[closestEnemy].transform.position.x, enemies[closestEnemy].transform.position.y + 0.25f, enemies[closestEnemy].transform.position.y);
                     //enemyPos.rotation = enemies[closestEnemy].transform.rotation;
                     if (enemies[closestEnemy] != null)
                     {
-                        transform.LookAt(enemies[closestEnemy].transform);
+                        transform.LookAt(centerMass);
                     }
                     else
                         closestEnemy = Random.Range(0, enemies.Count);
