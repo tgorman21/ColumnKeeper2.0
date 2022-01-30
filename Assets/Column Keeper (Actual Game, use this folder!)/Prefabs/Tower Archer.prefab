@@ -49,10 +49,14 @@ MonoBehaviour:
     type: 3}
   minimumTime: 2
   maxTime: 16
-  arrowSpeed: 2000
-  arrowForce: 1
-  distToShoot: 100
+  arrowSpeed: 2250
+  arrowForce: 2
+  distToShoot: 120
   arrowDamage: 25
+  lane1: []
+  lane2: []
+  lane3: []
+  enemies: []
   lane: 1
 --- !u!1 &6757213140314955651
 GameObject:
