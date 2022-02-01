@@ -14,7 +14,7 @@ public class EnemyAI : MonoBehaviour
     float minDistance = 10;
     float safeDistance = 10;
     
-    public enum BehaviorState { SeekTower, Stop, Hypno, Checkpoints };
+    public enum BehaviorState { SeekTower, Stop, Hypno, Checkpoints, Attack };
 
     public BehaviorState currentState;
     // Start is called before the first frame update
@@ -48,6 +48,9 @@ public class EnemyAI : MonoBehaviour
             case BehaviorState.Checkpoints:
                 SeekCheckpoint();
                 break;
+            case BehaviorState.Attack:
+                Attack();
+                break;
             default:
                 Debug.Log("Switch error");
                 break;
@@ -55,10 +58,19 @@ public class EnemyAI : MonoBehaviour
 
 
     }
+    void Attack()
+    {
+        GetComponent<Enemy>().animationType = Enemy.AnimationType.Attack;
+    }
     void SeekTower()
     {
-        //Vector3 differenceVector = towerPos.transform.position - transform.position;
+        Vector3 differenceVector = towerPos.transform.position - transform.position;
+       
         agent.destination = towerPos.transform.position;
+        if (differenceVector.magnitude < 4)//Value changes distance to hit tower
+        {
+            currentState = BehaviorState.Attack;
+        }
         //Debug.Log(towerPos.transform.position);
     }
     public void HypnoEnemy()

@@ -8,14 +8,13 @@ public class Enemy : MonoBehaviour
 {
     //public string enemyName; //////specific enemy
 
-
     Animator anim;
     public enum EnemyName { Goblin,Orc, Troll, Skeleton, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria }; //Names of enemies and bosses
     public EnemyName enemyName;
     public Transform centerMass;
     public enum AnimationType { Walk, Attack }; // Type of Animation
     public AnimationType animationType;
-
+    TowerArcher towerArcher;
     public float health; ////// health points
     [SerializeField] private float damage; ////// damage
     Rigidbody rb; //////rigidbody
@@ -33,6 +32,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        towerArcher = GameObject.FindGameObjectWithTag("TowerArcher").GetComponent<TowerArcher>();
         rb = GetComponent<Rigidbody>();
         anim = gameObject.GetComponent<Animator>();
         initialHealth = health;
@@ -51,9 +51,14 @@ public class Enemy : MonoBehaviour
         {
             case AnimationType.Walk:
                 anim.Play("Walk");
+               
                 break;
             case AnimationType.Attack:
                 anim.Play("Attack");
+                if (GetComponentInChildren<EnemyAttack>().attackCollider != null)
+                {
+                    GetComponentInChildren<EnemyAttack>().attackCollider.enabled = true;
+                }
                 
                 //GetComponent<EnemyAI>().currentState = EnemyAI.BehaviorState.Stop;
                 break;
@@ -114,9 +119,12 @@ public class Enemy : MonoBehaviour
         ////// Death Condition 
         if (health <= 0)
         {
+            //towerArcher.RemoveEnemy(gameObject);
             ScoreText.score += 1;
             Destroy(gameObject);
-        }       
+
+
+        }
     }
 
     private void FixedUpdate()

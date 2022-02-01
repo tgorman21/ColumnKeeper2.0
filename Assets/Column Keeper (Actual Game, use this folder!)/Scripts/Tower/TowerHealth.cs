@@ -29,7 +29,7 @@ public class TowerHealth : MonoBehaviour
         health -= damage;
         if (health >= 0)
         {
-            towerHP.localScale = new Vector3(health / 100, 1, 1);
+            towerHP.localScale = new Vector3(health / baseHealth, 1, 1);
         }
     }
 

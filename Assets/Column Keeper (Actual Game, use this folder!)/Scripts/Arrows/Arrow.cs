@@ -135,12 +135,7 @@ public class Arrow : XRGrabInteractable
             {
                 switch (arrow.typeOfArrow)
                 {
-                    case ArrowType.TypeOfArrow.Regular:
-                        if(hit.collider.GetComponent<Enemy>() != null)
-                        {
-                            hit.collider.GetComponent<Enemy>().DealDamage(arrow.damage);
-                        }
-                        break;
+                    
                     case ArrowType.TypeOfArrow.Fire:
                         FireArrow fa = GetComponent<FireArrow>();
                         if (fa != null)
@@ -188,7 +183,12 @@ public class Arrow : XRGrabInteractable
                         }
 
                         break;
-                    
+                    case ArrowType.TypeOfArrow.Regular:
+                        if (hit.collider.GetComponent<Enemy>() != null)
+                        {
+                            hit.collider.GetComponent<Enemy>().DealDamage(arrow.damage);
+                        }
+                        break;
                     default:
                         Debug.Log("Not an Arrow");
                         break;

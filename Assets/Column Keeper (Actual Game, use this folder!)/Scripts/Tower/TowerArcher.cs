@@ -70,6 +70,7 @@ public class TowerArcher : MonoBehaviour
                 i = 0;
             }
         */
+        
         if (lane1 != null || lane2 != null || lane3 != null)
         {
 
@@ -94,21 +95,21 @@ public class TowerArcher : MonoBehaviour
         }
     }
 
-
+    
     void ShootArrow(List<GameObject> enemies)
     {
 
         fireRate = Random.Range(minimumTime, maxTime);
         float dist = distToShoot;
         int closestEnemy = -1;
-        for (int i = 1; i < enemies.Count; i++)
+        for (int i = 0; i < enemies.Count; i++)
         {
-            //if (enemies[i] == null)
-            //{
-            //    enemies.Remove(enemies[i]);
-            //    closestEnemy -= 1;
-            //}
-            if (enemies[i] != null)
+            if (enemies[i] == null)
+            {
+                enemies.Remove(enemies[i]);
+                closestEnemy -= 1;
+            }
+            else if (enemies[i] != null)
             {
                 t = 0;
                 float distance = Vector3.Distance(transform.position, enemies[i].transform.position);
