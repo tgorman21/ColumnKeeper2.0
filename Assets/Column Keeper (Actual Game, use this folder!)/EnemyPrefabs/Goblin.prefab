@@ -157,10 +157,10 @@ Rigidbody:
   m_Drag: 40
   m_AngularDrag: 40
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 3
 --- !u!114 &7223382704426853669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1093,6 +1093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82e7e59c0acc24cfea81d1c1853bb262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackCollider: {fileID: 0}
 --- !u!1 &3095007196212484290
 GameObject:
   m_ObjectHideFlags: 0
