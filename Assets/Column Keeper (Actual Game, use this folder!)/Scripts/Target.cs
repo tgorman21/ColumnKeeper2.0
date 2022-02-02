@@ -7,8 +7,8 @@ public class Target : MonoBehaviour, IArrowHittable
 
     public void Hit(Arrow arrow)
     {
-        ApplyMaterial();
-        ApplyForce(arrow.transform.forward);
+        //ApplyMaterial();
+        //ApplyForce(arrow.transform.forward);
     }
 
     private void ApplyMaterial()
@@ -16,10 +16,11 @@ public class Target : MonoBehaviour, IArrowHittable
         MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.material = otherMaterial;
     }
-
+    /*
     private void ApplyForce(Vector3 direction)
     {
         Rigidbody rigidbody = GetComponent<Rigidbody>();
         rigidbody.AddForce(direction * forceAmount);
     }
+    */
 }
