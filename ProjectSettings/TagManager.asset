@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Hand
   - ground
-  - tower
   - Enemy
   - Tower
   - TowerArcher

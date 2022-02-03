@@ -6,67 +6,60 @@ using UnityEngine.UI;
 using TMPro;
 public class Enemy : MonoBehaviour
 {
-    //public string enemyName; //////specific enemy
-
-    Animator anim;
-    public enum EnemyName { Goblin,Orc, Troll, Skeleton, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria }; //Names of enemies and bosses
-    public EnemyName enemyName;
-    public Transform centerMass;
+    public enum EnemyName { Goblin, Orc, Troll, Skeleton, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria }; //Names of enemies and bosses
     public enum AnimationType { Walk, Attack }; // Type of Animation
-    public AnimationType animationType;
-    TowerArcher towerArcher;
+
+    [Header("Enemy Info")]
+    public EnemyName enemyName;
     public float health; ////// health points
     [SerializeField] private float damage; ////// damage
-    Rigidbody rb; //////rigidbody
-    NavMeshAgent agent; //////movement
+    public int lane = 0;
+    public Transform centerMass;
+
+    [Header("UI References")]
     public RectTransform healthBar; //////bar for health
     public TextMeshProUGUI enemyNameText;
-    float initialHealth;
-    float t = 0; //////timer
+
+    [Header("Dev Tools")]
     public bool function; /////testing function
-    bool decay; ///// DOT bool
-    float decayDamage; //////DOT 
-    bool impact; //////initial hit damage
-    public float initialSpeed; //////Initial speed
-    public int lane = 0;
-    // Start is called before the first frame update
+
+    [HideInInspector] public AnimationType animationType;
+
+    private TowerArcher towerArcher;
+    
+    private Animator anim;
+    private NavMeshAgent agent; //////movement
+    private Rigidbody rb; //////rigidbody
+    
+    private float initialHealth; //////Initial health
+    private float initialSpeed; //////Initial speed
+
+    private bool impact; //////initial hit damage
+    private bool decay; ///// DOT bool
+    private float decayDamage; //////DOT 
+
+    private float t = 0; //////timer
+
+    //public string enemyName; //////specific enemy
+
     void Start()
     {
         towerArcher = GameObject.FindGameObjectWithTag("TowerArcher").GetComponent<TowerArcher>();
-        rb = GetComponent<Rigidbody>();
-        anim = gameObject.GetComponent<Animator>();
-        initialHealth = health;
+       
+        anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-        decay = false;
+        rb = GetComponent<Rigidbody>();
+
+        initialHealth = health;
+        initialSpeed = agent.speed; //////Sets initial speed to start speed
+
         impact = true;
+        decay = false;
+        
         enemyNameText.SetText(enemyName.ToString());
-        //////Sets initial speed to start speed
-        initialSpeed = agent.speed;
     }
-
-    //Changes different Types of Animations
-   public void TypeofAnimation()
-    {
-        switch (animationType)
-        {
-            case AnimationType.Walk:
-                anim.Play("Walk");
-               
-                break;
-            case AnimationType.Attack:
-                anim.Play("Attack");
-                if (GetComponentInChildren<EnemyAttack>().attackCollider != null)
-                {
-                    GetComponentInChildren<EnemyAttack>().attackCollider.enabled = true;
-                }
-                
-                //GetComponent<EnemyAI>().currentState = EnemyAI.BehaviorState.Stop;
-                break;
-
-        }
-    }
-    // Update is called once per frame
-    void Update()
+    
+    private void Update()
     {
         //Enemy Controller for animations
         switch (enemyName)
@@ -92,7 +85,6 @@ public class Enemy : MonoBehaviour
             case EnemyName.Vampire:
                 TypeofAnimation();
                 break;
-
             case EnemyName.Derzin:
                 TypeofAnimation();
                 break;
@@ -124,6 +116,31 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
 
 
+        }
+    }
+
+    //Changes different Types of Animations
+    public void TypeofAnimation()
+    {
+        switch (animationType)
+        {
+            case AnimationType.Walk:
+                if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime % 1 != 0) return; //check if animation is done playing before playing again
+
+                anim.Play("Walk");
+                break;
+
+            case AnimationType.Attack:
+                if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime % 1 != 0) return; //check if animation is done playing before playing again
+
+                anim.Play("Attack");
+                if (GetComponentInChildren<EnemyAttack>().attackCollider != null)
+                {
+                    GetComponentInChildren<EnemyAttack>().attackCollider.enabled = true;
+                }
+
+                //GetComponent<EnemyAI>().currentState = EnemyAI.BehaviorState.Stop;
+                break;
         }
     }
 
@@ -177,7 +194,6 @@ public class Enemy : MonoBehaviour
 
     public void FireDamage(float impactDamage, float decayDMG)
     {
-
         decayDamage = decayDMG;
         //Debug.Log("Fire Damage");
 
@@ -215,14 +231,6 @@ public class Enemy : MonoBehaviour
     public void HealingArrow()
     {
 
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("tower"))
-        {
-            TowerDamage(collision.gameObject);
-            Destroy(gameObject);
-        }
     }
 }
 
