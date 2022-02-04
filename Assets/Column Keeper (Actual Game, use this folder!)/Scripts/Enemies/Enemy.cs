@@ -8,8 +8,8 @@ public class Enemy : MonoBehaviour
 {
     GameObject towerObj;
     public enum EnemyName { Goblin, Orc, Troll, Skeleton, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria }; //Names of enemies and bosses
-    public enum AnimationType { Walk, Attack }; // Type of Animation
-
+    public enum AnimationType { Walk, Attack,Die }; // Type of Animation
+    EnemyAI enemyAI;
     [Header("Enemy Info")]
     public EnemyName enemyName;
     public float health; ////// health points
@@ -20,7 +20,6 @@ public class Enemy : MonoBehaviour
     [Header("UI References")]
     public RectTransform healthBar; //////bar for health
     public TextMeshProUGUI enemyNameText;
-
     [Header("Dev Tools")]
     public bool function; /////testing function
 
@@ -41,12 +40,17 @@ public class Enemy : MonoBehaviour
 
     private float t = 0; //////timer
 
+    float deathTime;
+    float walkTime;
+    float attackTime;
+    float powerUpTime;
     //public string enemyName; //////specific enemy
 
     void Start()
     {
+        enemyAI = GetComponent<EnemyAI>();
         towerArcher = GameObject.FindGameObjectWithTag("TowerArcher").GetComponent<TowerArcher>();
-        towerObj = GameObject.FindGameObjectWithTag("Tower"); 
+        towerObj = GameObject.FindGameObjectWithTag("Tower");
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
@@ -56,8 +60,28 @@ public class Enemy : MonoBehaviour
 
         impact = true;
         decay = false;
-        
+
         enemyNameText.SetText(enemyName.ToString());
+
+
+        //Animation Times
+        AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;
+        foreach (AnimationClip clip in clips)
+        {
+            switch (clip.name)
+            {
+                case "Attack":
+                    attackTime = clip.length;
+                    break;
+                case "Walk":
+                    walkTime = clip.length;
+                    break;
+                case "Death":
+                    deathTime = clip.length;
+                    break;
+               
+            }
+        }
     }
     
     private void Update()
@@ -113,13 +137,24 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             //towerArcher.RemoveEnemy(gameObject);
-            ScoreText.score += 1;
-            Destroy(gameObject);
+            animationType = AnimationType.Die;
 
 
         }
     }
-   
+   void Die()
+    {
+        enemyAI.currentState = EnemyAI.BehaviorState.Stop;
+        anim.Play("Death");
+        StartCoroutine(DeathAnimation());
+        
+    }
+    IEnumerator DeathAnimation()
+    {
+        yield return new WaitForSeconds(deathTime);
+        ScoreText.score += 1;
+        Destroy(gameObject);
+    }
     //Changes different Types of Animations
     public void TypeofAnimation()
     {
@@ -134,6 +169,11 @@ public class Enemy : MonoBehaviour
             case AnimationType.Attack:
 
                 anim.Play("Attack");
+                break;
+            case AnimationType.Die:
+                Die();
+                break;
+            default: Debug.Log("Not an Animation");
                 break;
         }
     }

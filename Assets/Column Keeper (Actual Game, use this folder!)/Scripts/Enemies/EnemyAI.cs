@@ -97,6 +97,7 @@ public class EnemyAI : MonoBehaviour
     }
     void Stop()
     {
+        agent.isStopped = true;
         agent.destination = transform.position;
     }
 
