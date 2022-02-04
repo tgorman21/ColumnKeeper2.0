@@ -111,7 +111,7 @@ public class TowerArcher : MonoBehaviour
     void CheckEnemy(List<GameObject> enemies)
     {
         //closestEnemy = -1;
-        Debug.Log(enemies.Count);
+        //Debug.Log(enemies.Count);
         for (int i = 0; i < enemies.Count; i++)
         {
             if (enemies[i] == null)
