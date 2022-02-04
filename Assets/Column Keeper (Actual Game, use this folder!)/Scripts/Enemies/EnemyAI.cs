@@ -61,6 +61,7 @@ public class EnemyAI : MonoBehaviour
     void Attack()
     {
         GetComponent<Enemy>().animationType = Enemy.AnimationType.Attack;
+        agent.destination = transform.position;
     }
     void SeekTower()
     {

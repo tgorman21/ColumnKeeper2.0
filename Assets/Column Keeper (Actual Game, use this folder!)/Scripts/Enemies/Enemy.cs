@@ -132,15 +132,8 @@ public class Enemy : MonoBehaviour
                 break;
 
             case AnimationType.Attack:
-                //if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime % 1 != 0) return; //check if animation is done playing before playing again
 
                 anim.Play("Attack");
-                if (GetComponentInChildren<EnemyAttack>().attackCollider != null)
-                {
-                    GetComponentInChildren<EnemyAttack>().attackCollider.enabled = true;
-                }
-
-                //GetComponent<EnemyAI>().currentState = EnemyAI.BehaviorState.Stop;
                 break;
         }
     }
