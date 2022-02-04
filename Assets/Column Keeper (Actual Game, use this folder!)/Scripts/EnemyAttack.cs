@@ -21,7 +21,7 @@ public class EnemyAttack : MonoBehaviour
         if (other.CompareTag("Tower"))
         {
             //enemy.TowerDamage(other.gameObject);
-            attackCollider.enabled = false;
+            //attackCollider.enabled = false;
         }
     }
 }

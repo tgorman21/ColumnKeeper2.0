@@ -61,6 +61,7 @@ public class EnemyAI : MonoBehaviour
     void Attack()
     {
         GetComponent<Enemy>().animationType = Enemy.AnimationType.Attack;
+        agent.isStopped = true;
         agent.destination = transform.position;
     }
     void SeekTower()
@@ -107,7 +108,7 @@ public class EnemyAI : MonoBehaviour
         //Debug.Log(differenceVector.magnitude);
 
         agent.SetDestination(checkpointPos[checkpointIndex].transform.position);
-        if(differenceVector.magnitude < 2)
+        if(differenceVector.magnitude < 3)
         {
             currentState = BehaviorState.SeekTower;
         }
