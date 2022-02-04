@@ -8,7 +8,7 @@ ModelImporter:
     second: Sword And Shield Walk (4)
   - first:
       74: -4162706645946004949
-    second: Walk
+    second: WalkOld
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -28,7 +28,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 0
+    importConstraints: 1
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -38,7 +38,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Walk
+      name: WalkOld
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0

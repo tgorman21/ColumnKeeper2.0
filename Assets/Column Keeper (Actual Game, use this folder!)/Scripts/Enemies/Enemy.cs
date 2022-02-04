@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 public class Enemy : MonoBehaviour
 {
+    GameObject towerObj;
     public enum EnemyName { Goblin, Orc, Troll, Skeleton, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria }; //Names of enemies and bosses
     public enum AnimationType { Walk, Attack }; // Type of Animation
 
@@ -23,7 +24,7 @@ public class Enemy : MonoBehaviour
     [Header("Dev Tools")]
     public bool function; /////testing function
 
-    [HideInInspector] public AnimationType animationType;
+    public AnimationType animationType;
 
     private TowerArcher towerArcher;
     
@@ -45,7 +46,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         towerArcher = GameObject.FindGameObjectWithTag("TowerArcher").GetComponent<TowerArcher>();
-       
+        towerObj = GameObject.FindGameObjectWithTag("Tower"); 
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
@@ -118,20 +119,20 @@ public class Enemy : MonoBehaviour
 
         }
     }
-
+   
     //Changes different Types of Animations
     public void TypeofAnimation()
     {
         switch (animationType)
         {
             case AnimationType.Walk:
-                if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime % 1 != 0) return; //check if animation is done playing before playing again
+                //if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime % 1 != 0) return; //check if animation is done playing before playing again
 
                 anim.Play("Walk");
                 break;
 
             case AnimationType.Attack:
-                if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime % 1 != 0) return; //check if animation is done playing before playing again
+                //if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime % 1 != 0) return; //check if animation is done playing before playing again
 
                 anim.Play("Attack");
                 if (GetComponentInChildren<EnemyAttack>().attackCollider != null)
@@ -172,9 +173,9 @@ public class Enemy : MonoBehaviour
     }
 
     //////Damages Tower
-    public void TowerDamage(GameObject tower)
+    public void TowerDamage()
     {
-        tower.GetComponent<TowerHealth>().DealDamage(damage);
+        towerObj.GetComponent<TowerHealth>().DealDamage(damage);
     }
 
     public void DealDamage(float damage)

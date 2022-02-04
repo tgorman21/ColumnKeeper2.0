@@ -20,13 +20,14 @@ public class TowerArcher : MonoBehaviour
     public List<GameObject> lane3 = new List<GameObject>();
     int i = 0;
     public enum Lane { Lane1, Lane2, Lane3 };
-    [SerializeField]List<GameObject> enemies;
+    [SerializeField] List<GameObject> enemies;
     public Lane lane;
-
+    int closestEnemy;
 
     // Start is called before the first frame update
     void Start()
     {
+        closestEnemy = -1;
         fireRate = Random.Range(minimumTime, maxTime);
     }
     public void EnemySpawned(GameObject enemy)
@@ -70,11 +71,23 @@ public class TowerArcher : MonoBehaviour
                 i = 0;
             }
         */
+        switch (lane)
+        {
+            case Lane.Lane1:
+                CheckEnemy(lane1);
+                break;
+            case Lane.Lane2:
+                CheckEnemy(lane2);
+                break;
+            case Lane.Lane3:
+                CheckEnemy(lane3);
+                break;
+        }
         
         if (lane1 != null || lane2 != null || lane3 != null)
         {
 
-
+           
             t += Time.deltaTime;
             if (t > fireRate)
             {
@@ -95,19 +108,33 @@ public class TowerArcher : MonoBehaviour
         }
     }
 
-    
-    void ShootArrow(List<GameObject> enemies)
+    void CheckEnemy(List<GameObject> enemies)
     {
-
-        fireRate = Random.Range(minimumTime, maxTime);
-        float dist = distToShoot;
-        int closestEnemy = -1;
+        //closestEnemy = -1;
+        Debug.Log(enemies.Count);
         for (int i = 0; i < enemies.Count; i++)
         {
             if (enemies[i] == null)
             {
                 enemies.Remove(enemies[i]);
-                closestEnemy -= 1;
+                //closestEnemy -= 1;
+            }
+        }
+
+
+    }
+    void ShootArrow(List<GameObject> enemies)
+    {
+
+        fireRate = Random.Range(minimumTime, maxTime);
+        float dist = distToShoot;
+        //closestEnemy = -1;
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            if (enemies[i] == null)
+            {
+                enemies.Remove(enemies[i]);
+                //closestEnemy -= 1;
             }
             else if (enemies[i] != null)
             {
@@ -118,7 +145,15 @@ public class TowerArcher : MonoBehaviour
                 if (distance < dist)
                 {
                     dist = distance;
-                    closestEnemy = Random.Range(0, enemies.Count);
+                    
+                    do
+                    {
+
+                        closestEnemy = Random.Range(0, enemies.Count);
+
+
+
+                    } while (enemies[closestEnemy] == null);
                     Transform centerMass = enemies[closestEnemy].GetComponent<Enemy>().centerMass;
                     //Transform enemyPos;
                     //enemyPos.position = new Vector3(enemies[closestEnemy].transform.position.x, enemies[closestEnemy].transform.position.y + 0.25f, enemies[closestEnemy].transform.position.y);
@@ -156,7 +191,7 @@ public class TowerArcher : MonoBehaviour
                 }
             }
         }
-    
+
         //Debug.Log("Distance between: " + enemies[i].gameObject.name + " and " + this.gameObject.name + " = " + distance);
         //Debug.Log(enemies[closestEnemy].gameObject.name + " Is the closest");
     }

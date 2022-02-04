@@ -13,7 +13,6 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] GameObject[] Towers;
     [SerializeField] GameObject[] lane1Enemies;
     [SerializeField] GameObject[] lane2Enemies;
-
     [SerializeField] GameObject[] lane3Enemies;
 
     int enemyIndex;
@@ -89,6 +88,7 @@ public class EnemySpawner : MonoBehaviour
                     if(Towers[i].GetComponent<TowerArcher>().lane == TowerArcher.Lane.Lane1)
                     {
                         Towers[i].GetComponent<TowerArcher>().lane1.Add(enemy);
+                        Debug.Log("Helloing");
                     }
                 }
                 break;

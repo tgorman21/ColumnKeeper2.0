@@ -20,7 +20,7 @@ public class EnemyAttack : MonoBehaviour
     {
         if (other.CompareTag("Tower"))
         {
-            enemy.TowerDamage(other.gameObject);
+            //enemy.TowerDamage(other.gameObject);
             attackCollider.enabled = false;
         }
     }
