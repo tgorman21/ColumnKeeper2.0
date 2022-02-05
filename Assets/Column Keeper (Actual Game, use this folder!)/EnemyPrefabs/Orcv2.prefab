@@ -938,7 +938,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 05751ff9676be5c4c988ef40398516cf, type: 3}
   m_Controller: {fileID: 9100000, guid: 456b25582e079824ba762c5e2c8c1ebc, type: 2}
-  m_CullingMode: 1
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -997,15 +997,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: 1
-  centerMass: {fileID: 4790883095660965491}
-  animationType: 0
   health: 100
   damage: 5
+  lane: 0
+  centerMass: {fileID: 4790883095660965491}
   healthBar: {fileID: 7721987136460741231}
   enemyNameText: {fileID: 5252765535199966290}
   function: 0
-  initialSpeed: 0.3
-  lane: 0
+  animationType: 0
 --- !u!114 &7281359725585764293
 MonoBehaviour:
   m_ObjectHideFlags: 0
