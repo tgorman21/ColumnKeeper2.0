@@ -846,67 +846,6 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.00000006181802, y: 0.00000008939066, z: 0.0023808419, w: 0.99999714}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0.0000010685682, y: 0.000000076346396, z: -0.000017462298, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 1.6666666
-        value: {x: 0.0000000049395634, y: 0.00000011301572, z: 0.0023809823, w: 0.99999714}
-        inSlope: {x: -0.0000000074311224, y: 0.00000003605436, z: 0.017493451, w: -0.000071525574}
-        outSlope: {x: -0.000000006775533, y: 0.000000035983916, z: 0.01812121, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 2.3666666
-        value: {x: -0.000000023874268, y: 0.00000012134821, z: 0.29602724, w: 0.9551795}
-        inSlope: {x: 0.00000034601914, y: 0.00000004037913, z: 0.6207399, w: -0.19218242}
-        outSlope: {x: 0.0000003460471, y: 0.000000039971244, z: 0.6209176, w: -0.19257712}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 2.9166667
-        value: {x: -0.000000083228976, y: 0.00000010093699, z: 0.59013504, w: 0.80730456}
-        inSlope: {x: -0.000000086647425, y: -0.000000083844014, z: 0.3861296, w: -0.28209242}
-        outSlope: {x: -0.00000008654414, y: -0.00000008415672, z: 0.3860952, w: -0.28224003}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 3.3333333
-        value: {x: -0.0000001385197, y: 0.00000007652322, z: 0.70022434, w: 0.7139229}
-        inSlope: {x: 0.00000015589882, y: 0.00000006018015, z: 0.001430512, w: -0.0012874608}
-        outSlope: {x: 0.00000015608636, y: 0.00000006019719, z: 0.0010728837, w: -0.0010728837}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 4.1666665
-        value: {x: -0.0000001385197, y: 0.00000007652322, z: 0.70022434, w: 0.7139229}
-        inSlope: {x: 0.00000015601815, y: 0.00000006016308, z: 0.0010728837, w: -0.0010013581}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Storybook_armature/master/edge_Lroll/edge_roll/DEF_edge/thickness/DEF_pages_top.R
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
         value: {x: 0.00000004700154, y: -0.000000007434041, z: -0.0023810256, w: 0.99999714}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
         outSlope: {x: 0.00000087204484, y: 0.00000001546896, z: 0.000017601997, w: 0}
@@ -927,16 +866,16 @@ AnimationClip:
         time: 2.3666666
         value: {x: -0.000000065651264, y: -0.000000050147044, z: -0.29602718, w: 0.9551795}
         inSlope: {x: -0.000009915011, y: 0.0000046626024, z: -0.6207399, w: -0.19218242}
-        outSlope: {x: -0.000009921382, y: 0.0000046544474, z: -0.6209176, w: -0.19257712}
+        outSlope: {x: -0.000009924966, y: 0.000004656327, z: -0.62123394, w: -0.19265752}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
       - serializedVersion: 3
-        time: 2.9166667
+        time: 2.8833334
         value: {x: 0.00000016986961, y: -0.00000022453348, z: -0.59013516, w: 0.80730444}
-        inSlope: {x: 0.00000005128825, y: 0.00000013133409, z: -0.38602123, w: -0.2822008}
-        outSlope: {x: 0.00000003649349, y: 0.00000013451432, z: -0.3860952, w: -0.28224003}
+        inSlope: {x: 0.000000051324083, y: 0.00000013361866, z: -0.3860072, w: -0.2821798}
+        outSlope: {x: 0.000000036569283, y: 0.00000013446632, z: -0.3861058, w: -0.28226122}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
@@ -944,7 +883,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 3.3333333
         value: {x: 0.000000053260088, y: -0.0000001645592, z: -0.7040148, w: 0.7101853}
-        inSlope: {x: -0.00000038932924, y: -0.0000001703598, z: -0.001430512, w: -0.0015735632}
+        inSlope: {x: -0.00000038906967, y: -0.00000017030928, z: -0.0013245483, w: -0.0014570031}
         outSlope: {x: -0.0000003879521, y: -0.00000017042795, z: -0.0010728837, w: -0.0010728837}
         tangentMode: 0
         weightedMode: 0
@@ -963,6 +902,67 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     path: Storybook_armature/master/edge_Lroll/edge_roll/DEF_edge/thickness/DEF_pages_top.L
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.00000006181802, y: 0.00000008939066, z: 0.0023808419, w: 0.99999714}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0.0000010685682, y: 0.000000076346396, z: -0.000017462298, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.6666666
+        value: {x: 0.0000000049395634, y: 0.00000011301572, z: 0.0023809823, w: 0.99999714}
+        inSlope: {x: -0.0000000074311224, y: 0.00000003605436, z: 0.017493451, w: -0.000071525574}
+        outSlope: {x: -0.000000006775533, y: 0.000000035983916, z: 0.01812121, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666666
+        value: {x: -0.000000023874268, y: 0.00000012134821, z: 0.29602724, w: 0.9551795}
+        inSlope: {x: 0.00000034601914, y: 0.00000004037913, z: 0.6207399, w: -0.19218242}
+        outSlope: {x: 0.00000034616252, y: 0.000000039964572, z: 0.62129164, w: -0.19265752}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.8833334
+        value: {x: -0.000000083228976, y: 0.00000010093699, z: 0.59013504, w: 0.80730456}
+        inSlope: {x: -0.00000008655782, y: -0.000000083752326, z: 0.38612255, w: -0.2821798}
+        outSlope: {x: -0.000000086512564, y: -0.00000008417567, z: 0.38597336, w: -0.28226122}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 3.3333333
+        value: {x: -0.0000001385197, y: 0.00000007652322, z: 0.70022434, w: 0.7139229}
+        inSlope: {x: 0.00000015590894, y: 0.00000006014352, z: 0.0013245483, w: -0.0011920934}
+        outSlope: {x: 0.00000015608636, y: 0.00000006019719, z: 0.0010728837, w: -0.0010728837}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 4.1666665
+        value: {x: -0.0000001385197, y: 0.00000007652322, z: 0.70022434, w: 0.7139229}
+        inSlope: {x: 0.00000015601815, y: 0.00000006016308, z: 0.0010728837, w: -0.0010013581}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Storybook_armature/master/edge_Lroll/edge_roll/DEF_edge/thickness/DEF_pages_top.R
   m_CompressedRotationCurves: []
   m_EulerCurves: []
   m_PositionCurves:
@@ -3216,7 +3216,54 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     path: Storybook_armature/master/edge_Rroll/cover.L/pages.L 1/target.L
-  m_FloatCurves: []
+  m_FloatCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 10
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 4.1666665
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: EmissionModule.rateOverTime.scalar
+    path: InteractionParticles
+    classID: 198
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: 
+    classID: 65
+    script: {fileID: 0}
   m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
@@ -3338,14 +3385,14 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 3465240774
+      path: 881089957
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 881089957
+      path: 3465240774
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -3356,6 +3403,20 @@ AnimationClip:
       attribute: 3
       script: {fileID: 0}
       typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1078835531
+      attribute: 2883525743
+      script: {fileID: 0}
+      typeID: 198
+      customType: 27
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 0
+      attribute: 3305885265
+      script: {fileID: 0}
+      typeID: 65
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
@@ -14558,262 +14619,6 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.00000006181802
-        inSlope: 0
-        outSlope: 0.0000010685682
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.6666666
-        value: 0.0000000049395634
-        inSlope: -0.0000000074311224
-        outSlope: -0.000000006775533
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.3666666
-        value: -0.000000023874268
-        inSlope: 0.00000034601914
-        outSlope: 0.0000003460471
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.9166667
-        value: -0.000000083228976
-        inSlope: -0.000000086647425
-        outSlope: -0.00000008654414
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 3.3333333
-        value: -0.0000001385197
-        inSlope: 0.00000015589882
-        outSlope: 0.00000015608636
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 4.1666665
-        value: -0.0000001385197
-        inSlope: 0.00000015601815
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Storybook_armature/master/edge_Lroll/edge_roll/DEF_edge/thickness/DEF_pages_top.R
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.00000008939066
-        inSlope: 0
-        outSlope: 0.000000076346396
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.6666666
-        value: 0.00000011301572
-        inSlope: 0.00000003605436
-        outSlope: 0.000000035983916
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.3666666
-        value: 0.00000012134821
-        inSlope: 0.00000004037913
-        outSlope: 0.000000039971244
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.9166667
-        value: 0.00000010093699
-        inSlope: -0.000000083844014
-        outSlope: -0.00000008415672
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 3.3333333
-        value: 0.00000007652322
-        inSlope: 0.00000006018015
-        outSlope: 0.00000006019719
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 4.1666665
-        value: 0.00000007652322
-        inSlope: 0.00000006016308
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Storybook_armature/master/edge_Lroll/edge_roll/DEF_edge/thickness/DEF_pages_top.R
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.0023808419
-        inSlope: 0
-        outSlope: -0.000017462298
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.6666666
-        value: 0.0023809823
-        inSlope: 0.017493451
-        outSlope: 0.01812121
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.3666666
-        value: 0.29602724
-        inSlope: 0.6207399
-        outSlope: 0.6209176
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.9166667
-        value: 0.59013504
-        inSlope: 0.3861296
-        outSlope: 0.3860952
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 3.3333333
-        value: 0.70022434
-        inSlope: 0.001430512
-        outSlope: 0.0010728837
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 4.1666665
-        value: 0.70022434
-        inSlope: 0.0010728837
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Storybook_armature/master/edge_Lroll/edge_roll/DEF_edge/thickness/DEF_pages_top.R
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.99999714
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.6666666
-        value: 0.99999714
-        inSlope: -0.000071525574
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.3666666
-        value: 0.9551795
-        inSlope: -0.19218242
-        outSlope: -0.19257712
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.9166667
-        value: 0.80730456
-        inSlope: -0.28209242
-        outSlope: -0.28224003
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 3.3333333
-        value: 0.7139229
-        inSlope: -0.0012874608
-        outSlope: -0.0010728837
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 4.1666665
-        value: 0.7139229
-        inSlope: -0.0010013581
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Storybook_armature/master/edge_Lroll/edge_roll/DEF_edge/thickness/DEF_pages_top.R
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
         value: 0.00000004700154
         inSlope: 0
         outSlope: 0.00000087204484
@@ -14834,16 +14639,16 @@ AnimationClip:
         time: 2.3666666
         value: -0.000000065651264
         inSlope: -0.000009915011
-        outSlope: -0.000009921382
+        outSlope: -0.000009924966
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.9166667
+        time: 2.8833334
         value: 0.00000016986961
-        inSlope: 0.00000005128825
-        outSlope: 0.00000003649349
+        inSlope: 0.000000051324083
+        outSlope: 0.000000036569283
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -14851,7 +14656,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 3.3333333
         value: 0.000000053260088
-        inSlope: -0.00000038932924
+        inSlope: -0.00000038906967
         outSlope: -0.0000003879521
         tangentMode: 0
         weightedMode: 0
@@ -14898,16 +14703,16 @@ AnimationClip:
         time: 2.3666666
         value: -0.000000050147044
         inSlope: 0.0000046626024
-        outSlope: 0.0000046544474
+        outSlope: 0.000004656327
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.9166667
+        time: 2.8833334
         value: -0.00000022453348
-        inSlope: 0.00000013133409
-        outSlope: 0.00000013451432
+        inSlope: 0.00000013361866
+        outSlope: 0.00000013446632
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -14915,7 +14720,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 3.3333333
         value: -0.0000001645592
-        inSlope: -0.0000001703598
+        inSlope: -0.00000017030928
         outSlope: -0.00000017042795
         tangentMode: 0
         weightedMode: 0
@@ -14962,16 +14767,16 @@ AnimationClip:
         time: 2.3666666
         value: -0.29602718
         inSlope: -0.6207399
-        outSlope: -0.6209176
+        outSlope: -0.62123394
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.9166667
+        time: 2.8833334
         value: -0.59013516
-        inSlope: -0.38602123
-        outSlope: -0.3860952
+        inSlope: -0.3860072
+        outSlope: -0.3861058
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -14979,7 +14784,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 3.3333333
         value: -0.7040148
-        inSlope: -0.001430512
+        inSlope: -0.0013245483
         outSlope: -0.0010728837
         tangentMode: 0
         weightedMode: 0
@@ -15026,16 +14831,16 @@ AnimationClip:
         time: 2.3666666
         value: 0.9551795
         inSlope: -0.19218242
-        outSlope: -0.19257712
+        outSlope: -0.19265752
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.9166667
+        time: 2.8833334
         value: 0.80730444
-        inSlope: -0.2822008
-        outSlope: -0.28224003
+        inSlope: -0.2821798
+        outSlope: -0.28226122
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -15043,7 +14848,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 3.3333333
         value: 0.7101853
-        inSlope: -0.0015735632
+        inSlope: -0.0014570031
         outSlope: -0.0010728837
         tangentMode: 0
         weightedMode: 0
@@ -15064,6 +14869,309 @@ AnimationClip:
     attribute: m_LocalRotation.w
     path: Storybook_armature/master/edge_Lroll/edge_roll/DEF_edge/thickness/DEF_pages_top.L
     classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.00000006181802
+        inSlope: 0
+        outSlope: 0.0000010685682
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.6666666
+        value: 0.0000000049395634
+        inSlope: -0.0000000074311224
+        outSlope: -0.000000006775533
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.3666666
+        value: -0.000000023874268
+        inSlope: 0.00000034601914
+        outSlope: 0.00000034616252
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.8833334
+        value: -0.000000083228976
+        inSlope: -0.00000008655782
+        outSlope: -0.000000086512564
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3.3333333
+        value: -0.0000001385197
+        inSlope: 0.00000015590894
+        outSlope: 0.00000015608636
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 4.1666665
+        value: -0.0000001385197
+        inSlope: 0.00000015601815
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Storybook_armature/master/edge_Lroll/edge_roll/DEF_edge/thickness/DEF_pages_top.R
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.00000008939066
+        inSlope: 0
+        outSlope: 0.000000076346396
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.6666666
+        value: 0.00000011301572
+        inSlope: 0.00000003605436
+        outSlope: 0.000000035983916
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.3666666
+        value: 0.00000012134821
+        inSlope: 0.00000004037913
+        outSlope: 0.000000039964572
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.8833334
+        value: 0.00000010093699
+        inSlope: -0.000000083752326
+        outSlope: -0.00000008417567
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3.3333333
+        value: 0.00000007652322
+        inSlope: 0.00000006014352
+        outSlope: 0.00000006019719
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 4.1666665
+        value: 0.00000007652322
+        inSlope: 0.00000006016308
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Storybook_armature/master/edge_Lroll/edge_roll/DEF_edge/thickness/DEF_pages_top.R
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.0023808419
+        inSlope: 0
+        outSlope: -0.000017462298
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.6666666
+        value: 0.0023809823
+        inSlope: 0.017493451
+        outSlope: 0.01812121
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.3666666
+        value: 0.29602724
+        inSlope: 0.6207399
+        outSlope: 0.62129164
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.8833334
+        value: 0.59013504
+        inSlope: 0.38612255
+        outSlope: 0.38597336
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3.3333333
+        value: 0.70022434
+        inSlope: 0.0013245483
+        outSlope: 0.0010728837
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 4.1666665
+        value: 0.70022434
+        inSlope: 0.0010728837
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Storybook_armature/master/edge_Lroll/edge_roll/DEF_edge/thickness/DEF_pages_top.R
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.99999714
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.6666666
+        value: 0.99999714
+        inSlope: -0.000071525574
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.3666666
+        value: 0.9551795
+        inSlope: -0.19218242
+        outSlope: -0.19265752
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.8833334
+        value: 0.80730456
+        inSlope: -0.2821798
+        outSlope: -0.28226122
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3.3333333
+        value: 0.7139229
+        inSlope: -0.0011920934
+        outSlope: -0.0010728837
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 4.1666665
+        value: 0.7139229
+        inSlope: -0.0010013581
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Storybook_armature/master/edge_Lroll/edge_roll/DEF_edge/thickness/DEF_pages_top.R
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 10
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 4.1666665
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: EmissionModule.rateOverTime.scalar
+    path: InteractionParticles
+    classID: 198
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: 
+    classID: 65
     script: {fileID: 0}
   m_EulerEditorCurves:
   - curve:
@@ -17143,7 +17251,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.9166667
+        time: 2.8833334
         value: 0.000000530718
         inSlope: -0.000002939361
         outSlope: -0.000002939361
@@ -17207,7 +17315,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.9166667
+        time: 2.8833334
         value: -0.000032259
         inSlope: 0.000009644788
         outSlope: 0.000009644788
@@ -17271,7 +17379,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.9166667
+        time: 2.8833334
         value: -72.33319
         inSlope: -54.783825
         outSlope: -54.783825
@@ -17335,7 +17443,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.9166667
+        time: 2.8833334
         value: -0.000014525347
         inSlope: -0.00000406214
         outSlope: -0.00000406214
@@ -17399,7 +17507,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.9166667
+        time: 2.8833334
         value: 0.000003709392
         inSlope: -0.000020544321
         outSlope: -0.000020544321
@@ -17463,7 +17571,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.9166667
+        time: 2.8833334
         value: 72.333176
         inSlope: 54.783993
         outSlope: 54.783993
