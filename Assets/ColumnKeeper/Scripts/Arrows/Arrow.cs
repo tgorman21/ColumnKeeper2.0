@@ -188,6 +188,14 @@ public class Arrow : XRGrabInteractable
                         {
                             hit.collider.GetComponent<Enemy>().DealDamage(arrow.damage);
                         }
+                        else if(hit.collider.GetComponentInParent<Enemy>() != null)
+                        {
+                            hit.collider.GetComponentInParent<Enemy>().DealDamage(arrow.damage);
+                        }
+                        else if (hit.collider.GetComponentInChildren<Enemy>() != null)
+                        {
+                            hit.collider.GetComponentInChildren<Enemy>().DealDamage(arrow.damage);
+                        }
                         break;
                     default:
                         Debug.Log("Not an Arrow");

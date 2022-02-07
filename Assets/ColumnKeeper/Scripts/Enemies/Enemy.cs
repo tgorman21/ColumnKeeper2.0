@@ -218,6 +218,7 @@ public class Enemy : MonoBehaviour
         {
             health = health - damage;
             healthBar.localScale = new Vector3(health / initialHealth, 1, 1);
+            Debug.Log(enemyName + "Health: " + health);
         }
     }
 
