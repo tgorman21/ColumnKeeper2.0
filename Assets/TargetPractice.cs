@@ -1,15 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TargetPractice : MonoBehaviour
 {
     Rigidbody[] targetPieces;
     [SerializeField]float health;
     [SerializeField] bool test = false;
+    [SerializeField] TextMeshProUGUI damageText;
     // Start is called before the first frame update
     void Start()
     {
+        damageText.enabled = false;
         targetPieces = GetComponentsInChildren<Rigidbody>();
     }
 
@@ -26,6 +29,9 @@ public class TargetPractice : MonoBehaviour
     {
         test = false;
         health -= damage;
+        damageText.enabled = true;
+        damageText.SetText(damage.ToString("-##"));
+        StartCoroutine(HideText());
         if(health <= 0)
         {
             foreach (Rigidbody piece in targetPieces)
@@ -34,5 +40,10 @@ public class TargetPractice : MonoBehaviour
             }
         }
         
+    }
+    IEnumerator HideText()
+    {
+        yield return new WaitForSeconds(2);
+        damageText.enabled = false;
     }
 }
