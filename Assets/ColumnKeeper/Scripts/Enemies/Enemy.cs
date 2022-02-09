@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 {
     GameObject towerObj;
     public enum EnemyName { Goblin, Orc, Troll, Skeleton, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria }; //Names of enemies and bosses
-    public enum AnimationType { Walk, Attack, Die }; // Type of Animation
+    public enum AnimationType { Walk, Attack, Die, powerUp }; // Type of Animation
     EnemyAI enemyAI;
     [Header("Enemy Info")]
     public EnemyName enemyName;
@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour
         decay = false;
 
         enemyNameText.SetText(enemyName.ToString());
-
+        
 
         //Animation Times
         AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;
@@ -83,9 +83,16 @@ public class Enemy : MonoBehaviour
                 case "Death":
                     deathTime = clip.length;
                     break;
-
+                default:
+                    if(clip.name == "powerUp")
+                    {
+                        powerUpTime = clip.length;
+                    }
+                    break;
             }
         }
+        if (enemyName == EnemyName.Orc)
+            animationType = AnimationType.powerUp;
     }
 
     private void Update()
@@ -94,37 +101,37 @@ public class Enemy : MonoBehaviour
         switch (enemyName)
         {
             case EnemyName.Goblin:
-                TypeofAnimation();
+                TypeofAnimation(false);
                 break;
             case EnemyName.Orc:
-                TypeofAnimation();
+                TypeofAnimation(true);
                 break;
             case EnemyName.Troll:
-                TypeofAnimation();
+                TypeofAnimation(false);
                 break;
             case EnemyName.Skeleton:
-                TypeofAnimation();
+                TypeofAnimation(false);
                 break;
             case EnemyName.Lich:
-                TypeofAnimation();
+                TypeofAnimation(false);
                 break;
             case EnemyName.Witch:
-                TypeofAnimation();
+                TypeofAnimation(false);
                 break;
             case EnemyName.Vampire:
-                TypeofAnimation();
+                TypeofAnimation(false);
                 break;
             case EnemyName.Derzin:
-                TypeofAnimation();
+                TypeofAnimation(false);
                 break;
             case EnemyName.Ingrar:
-                TypeofAnimation();
+                TypeofAnimation(false);
                 break;
             case EnemyName.Zarzog:
-                TypeofAnimation();
+                TypeofAnimation(false);
                 break;
             case EnemyName.Xenoria:
-                TypeofAnimation();
+                TypeofAnimation(false);
                 break;
 
             default: Debug.Log("Not an enemy");
@@ -159,27 +166,69 @@ public class Enemy : MonoBehaviour
         ScoreText.score += score;
         if(score > 0)
             Destroy(gameObject);
+
+        if (agent.isStopped)
+        {
+            agent.isStopped = false;
+            animationType = AnimationType.Walk;
+        }
     }
     //Changes different Types of Animations
-    public void TypeofAnimation()
+    public void TypeofAnimation(bool powerUp)
     {
-        switch (animationType)
+        switch (powerUp)
         {
-            case AnimationType.Walk:
-                //if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime % 1 != 0) return; //check if animation is done playing before playing again
+            case true:
+                switch (animationType)
+                {
+                    case AnimationType.Walk:
 
-                anim.Play("Walk");
-                break;
+                        anim.Play("Walk");
+                        break;
 
-            case AnimationType.Attack:
-                Attack();
+                    case AnimationType.Attack:
+                        Attack();
+                        break;
+                    case AnimationType.Die:
+                        Die();
+                        break;
+                    case AnimationType.powerUp:
+                        PowerUp();
+                        break;
+                    default:
+                        Debug.Log("Not an Animation");
+                        break;
+                }
                 break;
-            case AnimationType.Die:
-                Die();
-                break;
-            default: Debug.Log("Not an Animation");
+            case false:
+                switch (animationType)
+                {
+                    case AnimationType.Walk:
+                        //if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime % 1 != 0) return; //check if animation is done playing before playing again
+
+                        anim.Play("Walk");
+                        break;
+
+                    case AnimationType.Attack:
+                        Attack();
+                        break;
+                    case AnimationType.Die:
+                        Die();
+                        break;
+                    default:
+                        Debug.Log("Not an Animation");
+                        break;
+                }
                 break;
         }
+
+        
+    }
+    void PowerUp()
+    {
+        anim.Play("powerUp");
+        agent.isStopped = true;
+        StartCoroutine(AnimationTimer(attackTime, 0));
     }
     void Attack()
     {
@@ -284,6 +333,20 @@ public class Enemy : MonoBehaviour
     public void HealingArrow()
     {
 
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            if(other.GetComponent<Enemy>().enemyName == EnemyName.Skeleton || other.GetComponent<Enemy>().enemyName == EnemyName.Goblin)
+            {
+                float newDamage = other.GetComponent<Enemy>().damage * 0.2f;
+                newDamage += other.GetComponent<Enemy>().damage;
+                other.GetComponent<Enemy>().damage = newDamage;
+            }
+                
+            
+        }
     }
 }
 
