@@ -1165,6 +1165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   test: 0
+  damageText: {fileID: 5470217454778285309}
 --- !u!1 &5222870181269798514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,3 +1732,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   test: 0
+  damageText: {fileID: 0}
