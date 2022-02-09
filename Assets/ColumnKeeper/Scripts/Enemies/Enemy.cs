@@ -8,12 +8,12 @@ public class Enemy : MonoBehaviour
 {
     GameObject towerObj;
     public enum EnemyName { Goblin, Orc, Troll, Skeleton, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria }; //Names of enemies and bosses
-    public enum AnimationType { Walk, Attack,Die }; // Type of Animation
+    public enum AnimationType { Walk, Attack, Die }; // Type of Animation
     EnemyAI enemyAI;
     [Header("Enemy Info")]
     public EnemyName enemyName;
     public float health; ////// health points
-    [SerializeField] private float damage; ////// damage
+    [SerializeField] public float damage; ////// damage
     public float publicDamage;
     public int lane = 0;
     public Transform centerMass;
@@ -29,11 +29,11 @@ public class Enemy : MonoBehaviour
     public AnimationType animationType;
 
     private TowerArcher towerArcher;
-    
+
     private Animator anim;
     private NavMeshAgent agent; //////movement
     private Rigidbody rb; //////rigidbody
-    
+
     private float initialHealth; //////Initial health
     private float initialSpeed; //////Initial speed
 
@@ -83,11 +83,11 @@ public class Enemy : MonoBehaviour
                 case "Death":
                     deathTime = clip.length;
                     break;
-               
+
             }
         }
     }
-    
+
     private void Update()
     {
         //Enemy Controller for animations
@@ -146,18 +146,19 @@ public class Enemy : MonoBehaviour
 
         }
     }
-   void Die()
+    void Die()
     {
         enemyAI.currentState = EnemyAI.BehaviorState.Stop;
         anim.Play("Death");
-        StartCoroutine(DeathAnimation());
-        
+        StartCoroutine(AnimationTimer(deathTime, 1));
+
     }
-    IEnumerator DeathAnimation()
+    IEnumerator AnimationTimer(float time, int score)
     {
-        yield return new WaitForSeconds(deathTime);
-        ScoreText.score += 1;
-        Destroy(gameObject);
+        yield return new WaitForSeconds(time);
+        ScoreText.score += score;
+        if(score > 0)
+            Destroy(gameObject);
     }
     //Changes different Types of Animations
     public void TypeofAnimation()
@@ -171,8 +172,7 @@ public class Enemy : MonoBehaviour
                 break;
 
             case AnimationType.Attack:
-
-                anim.Play("Attack");
+                Attack();
                 break;
             case AnimationType.Die:
                 Die();
@@ -180,6 +180,11 @@ public class Enemy : MonoBehaviour
             default: Debug.Log("Not an Animation");
                 break;
         }
+    }
+    void Attack()
+    {
+        anim.Play("Attack");
+        StartCoroutine(AnimationTimer(attackTime, 0));
     }
 
     private void FixedUpdate()

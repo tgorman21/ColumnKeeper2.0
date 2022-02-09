@@ -18,10 +18,9 @@ public class EnemyAttack : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Tower"))
+        if (other.CompareTag("Enemy"))
         {
-            //enemy.TowerDamage(other.gameObject);
-            //attackCollider.enabled = false;
+            other.GetComponent<Enemy>().DealDamage(GetComponentInParent<Enemy>().damage);
         }
     }
 }

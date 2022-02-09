@@ -61,17 +61,20 @@ public class EnemyAI : MonoBehaviour
     void Attack()
     {
         GetComponent<Enemy>().animationType = Enemy.AnimationType.Attack;
-        agent.isStopped = true;
-        agent.destination = transform.position;
+        //agent.isStopped = true;
+        //agent.destination = transform.position;
+
     }
     void SeekTower()
     {
         Vector3 differenceVector = towerPos.transform.position - transform.position;
-       
+        GetComponent<Enemy>().animationType = Enemy.AnimationType.Walk;
+
         agent.destination = towerPos.transform.position;
         if (differenceVector.magnitude < 4)//Value changes distance to hit tower
         {
             currentState = BehaviorState.Attack;
+            
         }
         //Debug.Log(towerPos.transform.position);
     }
@@ -91,7 +94,12 @@ public class EnemyAI : MonoBehaviour
             //Debug.Log("Distance between: " + enemies[i].gameObject.name + " and " + this.gameObject.name + " = " + distance);
             //Debug.Log(enemies[closestEnemy].gameObject.name + " Is the closest");
         }
+        Vector3 differenceVector = enemies[closestEnemy].transform.position - transform.position;
         agent.destination = enemies[closestEnemy].transform.position;
+        if(differenceVector.magnitude < 1)
+        {
+            currentState = BehaviorState.Attack;
+        }
         //////Attack enemy
         Debug.Log(enemies.Length);
     }
@@ -113,6 +121,7 @@ public class EnemyAI : MonoBehaviour
         {
             currentState = BehaviorState.SeekTower;
         }
+        GetComponent<Enemy>().animationType = Enemy.AnimationType.Walk;
 
 
     }
