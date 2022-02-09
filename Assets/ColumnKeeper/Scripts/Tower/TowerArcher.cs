@@ -20,13 +20,15 @@ public class TowerArcher : MonoBehaviour
     public List<GameObject> lane3 = new List<GameObject>();
     int i = 0;
     public enum Lane { Lane1, Lane2, Lane3 };
-    [SerializeField] List<GameObject> enemies;
+    //[SerializeField] List<GameObject> enemies;
     public Lane lane;
     int closestEnemy;
 
+    EnemySpawner enemySpawner;
     // Start is called before the first frame update
     void Start()
     {
+        enemySpawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<EnemySpawner>();
         closestEnemy = -1;
         fireRate = Random.Range(minimumTime, maxTime);
     }
@@ -37,40 +39,13 @@ public class TowerArcher : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        /*
-        if (enemies != null)
+        //Checks if enemies in spawner are all destroyed
+        if(enemySpawner.enemyCheck != null)
         {
-            if (i < enemies.Count)
-            {
-
-                switch (enemies[i].gameObject.GetComponent<Enemy>().lane)
-                {
-                    case 1:
-                        if (enemies[i] != null)
-                            lane1.Remove(enemies[i]);
-                        else
-                            lane1.Add(enemies[i]);
-                        break;
-                    case 2:
-                        if (enemies[i] != null)
-                            lane2.Remove(enemies[i]);
-                        else
-                            lane2.Add(enemies[i]);
-                        break;
-                    case 3:
-                        if (enemies[i] != null)
-                            lane3.Remove(enemies[i]);
-                        else
-                            lane3.Add(enemies[i]);
-                        break;
-                }
-                i++;
-            }
-            else
-            {
-                i = 0;
-            }
-        */
+            CheckEnemy(enemySpawner.enemyCheck);
+        }
+        
+       
         switch (lane)
         {
             case Lane.Lane1:

@@ -11,68 +11,155 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] Transform[] checkpointsLane2;
     [SerializeField] Transform[] checkpointsLane3;
     [SerializeField] GameObject[] Towers;
-    
+    [SerializeField] bool waves; //Determines if true it will use Wave system and if false it will use endless mode
+    [HideInInspector]public List<GameObject> enemyCheck = new List<GameObject>(); //List to manage if enemies are destroyed
+    int enemyIndex; //Enemy index in enmies array
+    int pointIndex; //Point of wave lane
+    float t = 0; //Timer to spawn enemies
+    float enemiesSpawned;
+    public float spawnRate = 5f; //Rate of spawn
+    public float amountOfEnemiesSpawned = 15; //Amount of enemies to spawn in a wave before it switches
 
-    int enemyIndex;
-    int pointIndex;
-    float t = 0;
-    public float spawnRate = 5f;
     ////// Start is called before the first frame update
     void Start()
     {
+        
+        enemiesSpawned = 0;
         Towers = GameObject.FindGameObjectsWithTag("TowerArcher");
-        Randomize();
-        
-        
+        switch (waves)
+        {
+            case true:
+                enemyIndex = 0;
+                pointIndex = 0;
+                Randomize("PointIndex");
+                break;
+            case false:
+                // Spawn rate
+                Randomize("Both");
+                break;
+        }
+
+
     }
 
     ////// Update is called once per frame
     void Update()
     {
+        switch (waves)
+        {
+            case true:
+                WaveSystem();
+                break;
+            case false:
+                // Spawn rate
+                Endless();
+                break;
+        }
         
-        // Spawn rate
+    }
+    //Function for endless mode
+    public void Endless()
+    {
         if (t > spawnRate)
         {
-            Randomize();
+            Randomize("Both");
         }
         t += Time.deltaTime;
     }
-    //////Randomize a number from 0-Array Length
-    public void Randomize()
-    {
-        enemyIndex = Random.Range(0, enemies.Length);
-        pointIndex = Random.Range(0, spawnPoints.Length);
-        
 
-        Spawn();
-    }
-    /*
-    void ChooseTower(GameObject enemy)
+    //Funtion for Wave move
+    public void WaveSystem()
     {
-        for (int i = 0; i < Towers.Length; i++)
+        //Debug.Log("Enemies Spawned "+enemiesSpawned);
+        //Debug.Log("Enemies Count " + enemyCheck.Count);
+        //Debug.Log("Enemy Index " + enemyIndex);
+
+        if (enemiesSpawned < amountOfEnemiesSpawned)
         {
-            switch (Towers[i].GetComponent<TowerArcher>().lane)
+            switch (enemies.Length > 0)
             {
-                case TowerArcher.Lane.Lane1:
-                    Towers[i].GetComponent<TowerArcher>().lane1.Add(enemy);
+                case false:
+
+                    if (t > spawnRate)
+                    {
+                        Randomize("PointIndex");
+                    }
+                    t += Time.deltaTime;
+
                     break;
-                case TowerArcher.Lane.Lane2:
-                    Towers[i].GetComponent<TowerArcher>().lane2.Add(enemy);
+                case true:
+                    if (t > spawnRate)
+                    {
+                        if (enemyCheck.Count > 0)
+                        {
+                            Randomize("PointIndex");
+                        }
+                    }
+
+                    t += Time.deltaTime;
                     break;
-                case TowerArcher.Lane.Lane3:
-                    Towers[i].GetComponent<TowerArcher>().lane3.Add(enemy);
-                    break;
+
             }
         }
+        //Spawner Chooses next enemy (If all enemies are destroyed before Set amount to spawn it will spawn next wave)
+         if(enemyCheck.Count == 0)
+        {
+            
+            enemiesSpawned = 0;
+            t = 0;
+            ChooseNextEnemy();
+        }
 
+}
+    //Checks to Spawn next enemy
+    public void ChooseNextEnemy()
+    {
+        enemyIndex++;
+        if (enemyIndex < enemies.Length)
+        {
+            
+            Randomize("PointIndex");
+        }
+        else if (enemyIndex > enemies.Length)
+        {
+            enemyIndex = 0;
+            Randomize("PointIndex");
+        }
     }
-    */
+    //////Randomize a number from 0-Array Length
+    public void Randomize(string whatToRandomize)
+    {
+        switch(whatToRandomize)
+        {
+            case "EnemyIndex":
+                enemyIndex = Random.Range(0, enemies.Length);
+                break;
+            case "PointIndex":
+                pointIndex = Random.Range(0, spawnPoints.Length);
+                break;
+            case "Both":
+                enemyIndex = Random.Range(0, enemies.Length);
+                pointIndex = Random.Range(0, spawnPoints.Length);
+                break;
+            default:
+                Debug.Log("Not an Option");
+                break;
+
+        }
+       
+        
+
+        Spawn(enemyIndex, pointIndex);
+    }
+   
     //////Spawn Enemies
-    public void Spawn()
+    public void Spawn(int enemyIndex, int pointIndex)
     {
         t = 0;
+        enemiesSpawned++;
         string enemyName;
         GameObject enemy = Instantiate(enemies[enemyIndex], spawnPoints[pointIndex].position, Quaternion.identity);
+        enemyCheck.Add(enemy);
         switch(pointIndex){
             case 0:
                 enemy.GetComponent<Enemy>().lane = pointIndex + 1;
