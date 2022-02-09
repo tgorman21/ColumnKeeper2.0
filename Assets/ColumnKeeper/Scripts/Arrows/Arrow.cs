@@ -197,6 +197,12 @@ public class Arrow : XRGrabInteractable
                             hit.collider.GetComponentInChildren<Enemy>().DealDamage(arrow.damage);
                         }
                         break;
+                    case ArrowType.TypeOfArrow.Target:
+                        if(hit.collider.GetComponent<TargetPractice>() != null)
+                        {
+                            hit.collider.GetComponent<TargetPractice>().CollapseTarget();
+                        }
+                        break;
                     default:
                         Debug.Log("Not an Arrow");
                         break;

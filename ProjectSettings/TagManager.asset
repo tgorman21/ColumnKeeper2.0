@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Tower
   - TowerArcher
+  - Target
   layers:
   - Default
   - TransparentFX

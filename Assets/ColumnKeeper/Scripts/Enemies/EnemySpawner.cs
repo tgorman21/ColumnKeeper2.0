@@ -17,7 +17,6 @@ public class EnemySpawner : MonoBehaviour
     int pointIndex;
     float t = 0;
     public float spawnRate = 5f;
-    
     ////// Start is called before the first frame update
     void Start()
     {
@@ -25,12 +24,12 @@ public class EnemySpawner : MonoBehaviour
         Randomize();
         
         
-        
     }
 
     ////// Update is called once per frame
     void Update()
     {
+        
         // Spawn rate
         if (t > spawnRate)
         {

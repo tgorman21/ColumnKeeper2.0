@@ -5,7 +5,7 @@ using UnityEngine;
 public class ArrowType : MonoBehaviour
 {
    
-    public enum TypeOfArrow { Regular, Fire, Ice, Hypno, Lightning, Rain, Heal };
+    public enum TypeOfArrow { Regular, Fire, Ice, Hypno, Lightning, Rain, Heal, Target };
 
     public TypeOfArrow typeOfArrow;
     public float damage;
