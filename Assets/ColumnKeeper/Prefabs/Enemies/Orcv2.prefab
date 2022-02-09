@@ -999,10 +999,13 @@ MonoBehaviour:
   enemyName: 1
   health: 100
   damage: 5
+  publicDamage: 0
   lane: 0
   centerMass: {fileID: 4790883095660965491}
   healthBar: {fileID: 7721987136460741231}
   enemyNameText: {fileID: 5252765535199966290}
+  damageText: {fileID: 1468030880290296560, guid: 191a290286d541e458d3f65e202780f0,
+    type: 3}
   function: 0
   animationType: 0
 --- !u!114 &7281359725585764293

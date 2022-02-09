@@ -14,12 +14,14 @@ public class Enemy : MonoBehaviour
     public EnemyName enemyName;
     public float health; ////// health points
     [SerializeField] private float damage; ////// damage
+    public float publicDamage;
     public int lane = 0;
     public Transform centerMass;
 
     [Header("UI References")]
     public RectTransform healthBar; //////bar for health
     public TextMeshProUGUI enemyNameText;
+    public GameObject damageText;
     [Header("Dev Tools")]
     public bool function; /////testing function
 
@@ -57,7 +59,7 @@ public class Enemy : MonoBehaviour
 
         initialHealth = health;
         initialSpeed = agent.speed; //////Sets initial speed to start speed
-
+        publicDamage = damage;
         impact = true;
         decay = false;
 
@@ -218,6 +220,8 @@ public class Enemy : MonoBehaviour
         {
             health = health - damage;
             healthBar.localScale = new Vector3(health / initialHealth, 1, 1);
+            HpSplash indicator = Instantiate(damageText, transform.position, Quaternion.identity).GetComponent<HpSplash>();
+            indicator.SetDamageText(damage);
             Debug.Log(enemyName + "Health: " + health);
         }
     }
