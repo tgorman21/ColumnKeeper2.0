@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
     [Header("UI References")]
     public RectTransform healthBar; //////bar for health
     public TextMeshProUGUI enemyNameText;
+    public TextMeshProUGUI damageTakenText; //Text for damage taken
     public GameObject damageText;
     [Header("Dev Tools")]
     public bool function; /////testing function
@@ -218,14 +219,21 @@ public class Enemy : MonoBehaviour
         //////Deal Damage
         if (health >= 0)
         {
+            damageTakenText.enabled = true;
             health = health - damage;
             healthBar.localScale = new Vector3(health / initialHealth, 1, 1);
-            HpSplash indicator = Instantiate(damageText, transform.position, Quaternion.identity).GetComponent<HpSplash>();
-            indicator.SetDamageText(damage);
+            //HpSplash indicator = Instantiate(damageText, transform.position, Quaternion.identity).GetComponent<HpSplash>();
+            //indicator.SetDamageText(damage);
+            damageTakenText.SetText(damage.ToString("-##"));
+            StartCoroutine(HideText());
             Debug.Log(enemyName + "Health: " + health);
         }
     }
-
+    IEnumerator HideText()
+    {
+        yield return new WaitForSeconds(2);
+        damageTakenText.enabled = false;
+    }
     public void Hit(Arrow arrow)
     {
         arrow.GetComponent<FireArrow>().FireDamage(this);
