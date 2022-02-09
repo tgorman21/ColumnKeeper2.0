@@ -51,6 +51,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        damageTakenText.enabled = false;
         enemyAI = GetComponent<EnemyAI>();
         towerArcher = GameObject.FindGameObjectWithTag("TowerArcher").GetComponent<TowerArcher>();
         towerObj = GameObject.FindGameObjectWithTag("Tower");
