@@ -1908,7 +1908,8 @@ GameObject:
   - component: {fileID: 8905181695502463983}
   - component: {fileID: 490480236106025433}
   - component: {fileID: 6193012739824743712}
-  m_Layer: 0
+  - component: {fileID: 2749682647883343617}
+  m_Layer: 11
   m_Name: Quiver_Model 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1984,3 +1985,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2749682647883343617
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5606654203384218108}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: 06b8ae89fd174b24abe0e7098942fcd5, type: 3}
