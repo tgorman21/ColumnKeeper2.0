@@ -6,6 +6,7 @@ public class TargetPractice : MonoBehaviour
 {
     Rigidbody[] targetPieces;
     [SerializeField]float health;
+    [SerializeField] bool test = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,12 +16,16 @@ public class TargetPractice : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (test)
+        {
+            CollapseTarget(100);
+        }
     }
 
-    public void CollapseTarget()
+    public void CollapseTarget(float damage)
     {
-        health -= 50;
+        test = false;
+        health -= damage;
         if(health <= 0)
         {
             foreach (Rigidbody piece in targetPieces)

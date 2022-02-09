@@ -59,6 +59,7 @@ public class Arrow : XRGrabInteractable
             SetLaunch(true);
             UpdateLastPosition();
             ApplyForce(notch.PullMeasurer);
+            
         }
     }
 
@@ -200,7 +201,7 @@ public class Arrow : XRGrabInteractable
                     case ArrowType.TypeOfArrow.Target:
                         if(hit.collider.GetComponent<TargetPractice>() != null)
                         {
-                            hit.collider.GetComponent<TargetPractice>().CollapseTarget();
+                            hit.collider.GetComponent<TargetPractice>().CollapseTarget(arrow.damage);
                         }
                         break;
                     default:
