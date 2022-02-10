@@ -101,37 +101,37 @@ public class Enemy : MonoBehaviour
         switch (enemyName)
         {
             case EnemyName.Goblin:
-                TypeofAnimation(false);
+                TypeofAnimation();
                 break;
             case EnemyName.Orc:
-                TypeofAnimation(true);
+                TypeofAnimation();
                 break;
             case EnemyName.Troll:
-                TypeofAnimation(false);
+                TypeofAnimation();
                 break;
             case EnemyName.Skeleton:
-                TypeofAnimation(false);
+                TypeofAnimation();
                 break;
             case EnemyName.Lich:
-                TypeofAnimation(false);
+                TypeofAnimation();
                 break;
             case EnemyName.Witch:
-                TypeofAnimation(false);
+                TypeofAnimation();
                 break;
             case EnemyName.Vampire:
-                TypeofAnimation(false);
+                TypeofAnimation();
                 break;
             case EnemyName.Derzin:
-                TypeofAnimation(false);
+                TypeofAnimation();
                 break;
             case EnemyName.Ingrar:
-                TypeofAnimation(false);
+                TypeofAnimation();
                 break;
             case EnemyName.Zarzog:
-                TypeofAnimation(false);
+                TypeofAnimation();
                 break;
             case EnemyName.Xenoria:
-                TypeofAnimation(false);
+                TypeofAnimation();
                 break;
 
             default: Debug.Log("Not an enemy");
@@ -174,33 +174,9 @@ public class Enemy : MonoBehaviour
         }
     }
     //Changes different Types of Animations
-    public void TypeofAnimation(bool powerUp)
+    public void TypeofAnimation()
     {
-        switch (powerUp)
-        {
-            case true:
-                switch (animationType)
-                {
-                    case AnimationType.Walk:
-
-                        anim.Play("Walk");
-                        break;
-
-                    case AnimationType.Attack:
-                        Attack();
-                        break;
-                    case AnimationType.Die:
-                        Die();
-                        break;
-                    case AnimationType.powerUp:
-                        PowerUp();
-                        break;
-                    default:
-                        Debug.Log("Not an Animation");
-                        break;
-                }
-                break;
-            case false:
+        
                 switch (animationType)
                 {
                     case AnimationType.Walk:
@@ -215,15 +191,18 @@ public class Enemy : MonoBehaviour
                     case AnimationType.Die:
                         Die();
                         break;
+                        case AnimationType.PowerUp:
+                        PowerUp();
+                        break;
                     default:
                         Debug.Log("Not an Animation");
                         break;
                 }
-                break;
+                
         }
 
         
-    }
+    
     void PowerUp()
     {
         anim.Play("powerUp");
