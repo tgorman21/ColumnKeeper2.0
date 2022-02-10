@@ -15,6 +15,7 @@ public class TargetPractice : MonoBehaviour
     void Start()
     {
         targetCounter = GameObject.FindGameObjectWithTag("TargetCounter").GetComponent<TargetCounter>();
+        
         hit = false;
         damageText.enabled = false;
         targetPieces = GetComponentsInChildren<Rigidbody>();
