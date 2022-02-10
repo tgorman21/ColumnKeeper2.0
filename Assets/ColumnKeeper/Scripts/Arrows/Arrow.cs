@@ -67,6 +67,8 @@ public class Arrow : XRGrabInteractable
     {
         collider.isTrigger = value;
         launched = value;
+        ArrowType arrow = GetComponent<ArrowType>();
+        arrow.trail.enabled = true;
     }
 
     private void UpdateLastPosition()

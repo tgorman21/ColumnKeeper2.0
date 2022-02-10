@@ -9,4 +9,10 @@ public class ArrowType : MonoBehaviour
 
     public TypeOfArrow typeOfArrow;
     public float damage;
+    public TrailRenderer trail;
+    private void Start()
+    {
+        trail = GetComponent<TrailRenderer>();
+        trail.enabled = false;
+    }
 }
