@@ -32,7 +32,7 @@ public class TargetPractice : MonoBehaviour
     {
         if (test)
         {
-            CollapseTarget(100);
+            CollapseTarget(50);
         }
     }
 
@@ -40,7 +40,7 @@ public class TargetPractice : MonoBehaviour
     {
         Debug.Log("Hit " + gameObject.name);
         //GetComponent<Collider>().enabled = false;
-        targetCounter.TargetHit();
+        
         if (!hit)
             hit = true;
         test = false;
@@ -50,6 +50,7 @@ public class TargetPractice : MonoBehaviour
         StartCoroutine(HideText());
         if(health <= 0)
         {
+            targetCounter.TargetHit();
             foreach (Rigidbody piece in targetPieces)
             {
                 piece.isKinematic = false;

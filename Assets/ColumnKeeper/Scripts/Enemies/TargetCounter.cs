@@ -15,7 +15,7 @@ public class TargetCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        targetHitText.SetText(targetsHit.ToString("Targets hit: ##"));
+        targetHitText.SetText(targetsHit.ToString("Targets hit: ## / 9"));
         
     }
     public void TargetHit()
