@@ -7,6 +7,7 @@ public class TargetCounter : MonoBehaviour
 {
     public int targetsHit = 0;
     [SerializeField] public TextMeshProUGUI targetHitText;
+    [SerializeField] private BoxCollider storybookCollider;
     public bool allTargetsHit = false;
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class TargetCounter : MonoBehaviour
         if(targetsHit >= 9)
         {
             allTargetsHit = true;
+            storybookCollider.enabled = true;
         }
         
     }

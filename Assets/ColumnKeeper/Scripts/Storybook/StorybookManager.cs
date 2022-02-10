@@ -86,6 +86,7 @@ public class StorybookManager : MonoBehaviour
         if (collision.gameObject.CompareTag("Hand"))
         {
             anim.SetTrigger("open/close");
+            GetComponent<BoxCollider>().enabled = false;
         }
     }
 }
