@@ -32,7 +32,7 @@ public class TargetPractice : MonoBehaviour
     public void CollapseTarget(float damage)
     {
         Debug.Log("Hit " + gameObject.name);
-        GetComponent<Collider>().enabled = false;
+        //GetComponent<Collider>().enabled = false;
         targetCounter.TargetHit();
         if (!hit)
             hit = true;
