@@ -199,6 +199,7 @@ public class Arrow : XRGrabInteractable
                         }
                         break;
                     case ArrowType.TypeOfArrow.Target:
+                        Debug.Log(hit.collider.GetComponentInParent<GameObject>().name);
                         if(hit.collider.GetComponentInParent<TargetPractice>() != null)
                         {
                             hit.collider.GetComponentInParent<TargetPractice>().CollapseTarget(arrow.damage);
