@@ -1,0 +1,10 @@
+"More Goblins are coming, dear Hero!"
+"Oh my, it looks like they are being led by an Orc."
+"The stories say that Orcs are natural leaders among monsters, boosting their power and morale."
+"I wonder what is causing them to work together; Orcs supposedly despise Goblins."
+"Please take care of them, but do be careful. I want to dissect them to discover where they came from."
+#
+"I've made a fantastic discovery!"
+"I found strange crystals in their bodies; I wonder what they are?"
+"They radiate like they are powered by something."
+"I need to study them more; this is wonderful!"
