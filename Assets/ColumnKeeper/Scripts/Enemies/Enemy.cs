@@ -191,7 +191,7 @@ public class Enemy : MonoBehaviour
                     case AnimationType.Die:
                         Die();
                         break;
-                        case AnimationType.PowerUp:
+                        case AnimationType.powerUp:
                         PowerUp();
                         break;
                     default:
