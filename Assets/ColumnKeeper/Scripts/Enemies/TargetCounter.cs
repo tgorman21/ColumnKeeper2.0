@@ -7,6 +7,7 @@ public class TargetCounter : MonoBehaviour
 {
     public int targetsHit = 0;
     [SerializeField] public TextMeshProUGUI targetHitText;
+    public bool allTargetsHit = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,10 @@ public class TargetCounter : MonoBehaviour
     void Update()
     {
         targetHitText.SetText(targetsHit.ToString("Targets hit: ## / 9"));
+        if(targetsHit >= 9)
+        {
+            allTargetsHit = true;
+        }
         
     }
     public void TargetHit()
