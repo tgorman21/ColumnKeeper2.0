@@ -12,7 +12,7 @@ public class ArrowType : MonoBehaviour
     public TrailRenderer trail;
     private void Start()
     {
-        trail = GetComponent<TrailRenderer>();
+        trail = GetComponentInChildren<TrailRenderer>();
         trail.enabled = false;
     }
 }
