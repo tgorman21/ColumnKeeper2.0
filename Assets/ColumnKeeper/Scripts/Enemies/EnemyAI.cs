@@ -68,7 +68,7 @@ public class EnemyAI : MonoBehaviour
     void SeekTower()
     {
         Vector3 differenceVector = towerPos.transform.position - transform.position;
-        GetComponent<Enemy>().animationType = Enemy.AnimationType.Walk;
+        //GetComponent<Enemy>().animationType = Enemy.AnimationType.Walk;
 
         agent.destination = towerPos.transform.position;
         if (differenceVector.magnitude < 4)//Value changes distance to hit tower
@@ -122,7 +122,7 @@ public class EnemyAI : MonoBehaviour
             currentState = BehaviorState.SeekTower;
         }
         if (GetComponent<Enemy>().animationType != Enemy.AnimationType.powerUp)
-            GetComponent<Enemy>().animationType = Enemy.AnimationType.Walk;
+            //GetComponent<Enemy>().animationType = Enemy.AnimationType.Walk;
 
 
     }
