@@ -132,7 +132,7 @@ public class Arrow : XRGrabInteractable
             TogglePhysics(false);
             ChildArrow(hit);
             CheckForHittable(hit);
-            if (hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("ground"))
+            if (hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("ground") || hit.collider.CompareTag("Target"))
             {
                 switch (arrow.typeOfArrow)
                 {
