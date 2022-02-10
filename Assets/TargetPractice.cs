@@ -16,19 +16,14 @@ public class TargetPractice : MonoBehaviour
     void Start()
     {
         targetCounter = GameObject.FindGameObjectWithTag("TargetCounter").GetComponent<TargetCounter>();
-        
+
         hit = false;
         damageText.enabled = false;
-        piecesObj = GetComponentsInChildren<GameObject>();
-        for(int i =0; i < piecesObj.Length; i++)
-        {
-            
-            if (piecesObj[i].GetComponent<ArrowType>() == null)
-            {
-                targetPieces = GetComponentsInChildren<Rigidbody>();
-            }
-                
-        }
+
+        targetPieces = GetComponentsInChildren<Rigidbody>();
+
+
+
     }
         
 
