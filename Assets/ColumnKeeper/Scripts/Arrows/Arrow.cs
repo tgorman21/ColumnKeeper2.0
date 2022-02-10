@@ -199,7 +199,7 @@ public class Arrow : XRGrabInteractable
                         }
                         break;
                     case ArrowType.TypeOfArrow.Target:
-                        Debug.Log("Target Arrow hit: "+hit.collider.GetComponentInParent<GameObject>().name);
+                        //Debug.Log("Target Arrow hit: "+hit.collider.GetComponentInParent<GameObject>().name);
                         
                         if(hit.collider.GetComponentInParent<TargetPractice>() != null)
                         {
