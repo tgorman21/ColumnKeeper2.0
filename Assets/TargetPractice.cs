@@ -10,6 +10,7 @@ public class TargetPractice : MonoBehaviour
     [SerializeField] bool test = false;
     [SerializeField] TextMeshProUGUI damageText;
     TargetCounter targetCounter;
+    GameObject[] piecesObj;
     public bool hit;
     // Start is called before the first frame update
     void Start()
@@ -18,8 +19,18 @@ public class TargetPractice : MonoBehaviour
         
         hit = false;
         damageText.enabled = false;
-        targetPieces = GetComponentsInChildren<Rigidbody>();
+        piecesObj = GetComponentsInChildren<GameObject>();
+        for(int i =0; i < piecesObj.Length; i++)
+        {
+            
+            if (piecesObj[i].GetComponent<ArrowType>() == null)
+            {
+                targetPieces = GetComponentsInChildren<Rigidbody>();
+            }
+                
+        }
     }
+        
 
     // Update is called once per frame
     void Update()
