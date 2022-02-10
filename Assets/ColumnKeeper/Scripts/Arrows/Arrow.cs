@@ -29,8 +29,7 @@ public class Arrow : XRGrabInteractable
         ////// Do this first, so we get the right physics values
         if (args.interactor is XRDirectInteractor)
             Clear();
-        ArrowType arrow = GetComponent<ArrowType>();
-        arrow.trail.enabled = true;
+        
         ////// Make sure to do this
         base.OnSelectEntering(args);
     }
@@ -60,7 +59,9 @@ public class Arrow : XRGrabInteractable
             SetLaunch(true);
             UpdateLastPosition();
             ApplyForce(notch.PullMeasurer);
-            
+            ArrowType arrow = GetComponent<ArrowType>();
+            arrow.trail.enabled = true;
+
         }
     }
 
