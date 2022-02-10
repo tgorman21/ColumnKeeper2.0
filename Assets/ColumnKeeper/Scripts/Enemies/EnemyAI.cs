@@ -121,7 +121,7 @@ public class EnemyAI : MonoBehaviour
         {
             currentState = BehaviorState.SeekTower;
         }
-        if (GetComponent<Enemy>().animationType != Enemy.AnimationType.powerUp)
+        //if (GetComponent<Enemy>().animationType != Enemy.AnimationType.powerUp)
             //GetComponent<Enemy>().animationType = Enemy.AnimationType.Walk;
 
 
