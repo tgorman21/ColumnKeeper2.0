@@ -1,8 +1,0 @@
-"Welcome to Trewel Towers, dear hero!"
-"During the Great War, these towers were built as a last bastion of defense to guard the capital."
-"After the previous hero, now known as King Harrison, defeated our enemies and ascended to the throne, these Towers became the center of knowledge to study the arcane arts here in Reinhart."
-"I currently have one student, Princess Maple, but she has secluded herself to her studies in her room."
-"How about you spend the day getting adjusted?"
-"I know! You can practice your skills on the targets below! Have at it!"
-#
-"Magnificent! While I'm sure that being stationed here isn't as exciting as serving beside His Majesty, I do hope that you find some ways to enjoy yourself."
