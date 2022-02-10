@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 1023987757119352945}
   - component: {fileID: 382222901026011437}
   - component: {fileID: 5382929366861086563}
-  - component: {fileID: 8801512066226989644}
+  - component: {fileID: 6260384052557565065}
   m_Layer: 0
   m_Name: Piece 3
-  m_TagString: Target
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &8801512066226989644
+--- !u!64 &6260384052557565065
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,10 +279,10 @@ GameObject:
   - component: {fileID: 7786126952410810323}
   - component: {fileID: 5762418089893445849}
   - component: {fileID: 5746950148869881085}
-  - component: {fileID: 1761385506089774372}
+  - component: {fileID: 4205539391836660935}
   m_Layer: 0
   m_Name: Piece 2
-  m_TagString: Target
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -364,7 +364,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &1761385506089774372
+--- !u!64 &4205539391836660935
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -390,10 +390,10 @@ GameObject:
   - component: {fileID: 4110134888676690831}
   - component: {fileID: 1578910180849977119}
   - component: {fileID: 4476252983835242894}
-  - component: {fileID: 90937142261928026}
+  - component: {fileID: 2873912578976308608}
   m_Layer: 0
   m_Name: Piece 7
-  m_TagString: Target
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -475,7 +475,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &90937142261928026
+--- !u!64 &2873912578976308608
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -501,10 +501,10 @@ GameObject:
   - component: {fileID: 4519177508851913462}
   - component: {fileID: 455626632210760454}
   - component: {fileID: 5680818046133284604}
-  - component: {fileID: 6858208269915230857}
+  - component: {fileID: 1799269709925485305}
   m_Layer: 0
   m_Name: Piece 6
-  m_TagString: Target
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -586,7 +586,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &6858208269915230857
+--- !u!64 &1799269709925485305
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -612,10 +612,10 @@ GameObject:
   - component: {fileID: 8063170146809829566}
   - component: {fileID: 3915081736470990165}
   - component: {fileID: 517654596423911038}
-  - component: {fileID: 9138897631705267570}
+  - component: {fileID: 7297525199157851922}
   m_Layer: 0
   m_Name: Piece 1
-  m_TagString: Target
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -697,7 +697,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &9138897631705267570
+--- !u!64 &7297525199157851922
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1162,10 +1162,10 @@ GameObject:
   - component: {fileID: 519356463226071393}
   - component: {fileID: 5862927036225193115}
   - component: {fileID: 2192519833494337747}
-  - component: {fileID: 7561999018068491335}
+  - component: {fileID: 5447120807648704843}
   m_Layer: 0
   m_Name: Piece 8
-  m_TagString: Target
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1247,7 +1247,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7561999018068491335
+--- !u!64 &5447120807648704843
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1372,10 +1372,10 @@ GameObject:
   - component: {fileID: 2433919029478210184}
   - component: {fileID: 3741289224676426259}
   - component: {fileID: 9179717548651958524}
-  - component: {fileID: 1491860562643239288}
+  - component: {fileID: 2929392885753520768}
   m_Layer: 0
   m_Name: Piece 4
-  m_TagString: Target
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1457,7 +1457,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &1491860562643239288
+--- !u!64 &2929392885753520768
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1483,10 +1483,10 @@ GameObject:
   - component: {fileID: 6823565282929328631}
   - component: {fileID: 4363643297419577327}
   - component: {fileID: 252920189818586214}
-  - component: {fileID: 6499285041122040847}
+  - component: {fileID: 5082676833117771130}
   m_Layer: 0
   m_Name: Piece 5
-  m_TagString: Target
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1568,7 +1568,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &6499285041122040847
+--- !u!64 &5082676833117771130
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1593,9 +1593,9 @@ GameObject:
   - component: {fileID: 8460372090825537179}
   - component: {fileID: 4811704785156176190}
   - component: {fileID: 7287505120551964148}
-  - component: {fileID: 9088993281671998503}
   - component: {fileID: 9088993281671998502}
   - component: {fileID: 7198090334290107820}
+  - component: {fileID: 7719200977886951248}
   m_Layer: 0
   m_Name: Target Body
   m_TagString: Target
@@ -1672,20 +1672,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &9088993281671998503
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9088993281671998497}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2403435677658566425, guid: 3af1157b7eac3944eb5df5c9228f0f2c, type: 3}
 --- !u!54 &9088993281671998502
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1717,3 +1703,17 @@ MonoBehaviour:
   health: 100
   test: 0
   damageText: {fileID: 5470217454778285309}
+  hit: 0
+--- !u!135 &7719200977886951248
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9088993281671998497}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.01
+  m_Center: {x: 0, y: 0, z: 0}

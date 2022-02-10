@@ -11,6 +11,7 @@ TagManager:
   - TowerArcher
   - Target
   - Spawner
+  - TargetCounter
   layers:
   - Default
   - TransparentFX

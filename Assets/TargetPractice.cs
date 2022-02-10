@@ -9,9 +9,13 @@ public class TargetPractice : MonoBehaviour
     [SerializeField]float health;
     [SerializeField] bool test = false;
     [SerializeField] TextMeshProUGUI damageText;
+    TargetCounter targetCounter;
+    public bool hit;
     // Start is called before the first frame update
     void Start()
     {
+        targetCounter = GameObject.FindGameObjectWithTag("TargetCounter").GetComponent<TargetCounter>();
+        hit = false;
         damageText.enabled = false;
         targetPieces = GetComponentsInChildren<Rigidbody>();
     }
@@ -27,6 +31,10 @@ public class TargetPractice : MonoBehaviour
 
     public void CollapseTarget(float damage)
     {
+        GetComponent<Collider>().enabled = false;
+        targetCounter.TargetHit();
+        if (!hit)
+            hit = true;
         test = false;
         health -= damage;
         damageText.enabled = true;
