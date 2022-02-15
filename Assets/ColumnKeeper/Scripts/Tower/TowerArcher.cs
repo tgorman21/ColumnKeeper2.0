@@ -48,43 +48,47 @@ public class TowerArcher : MonoBehaviour
         {
             CheckEnemy(enemySpawner.enemyCheck);
         }
-        
-       
-        switch (lane)
-        {
-            case Lane.Lane1:
-                CheckEnemy(lane1);
-                break;
-            case Lane.Lane2:
-                CheckEnemy(lane2);
-                break;
-            case Lane.Lane3:
-                CheckEnemy(lane3);
-                break;
-        }
-        
-        if (lane1 != null || lane2 != null || lane3 != null)
-        {
 
-           
-            t += Time.deltaTime;
-            if (t > fireRate)
+        //Uncomment if Archers dont shoot enemies on wave levels
+        //if (!enemySpawner.waves)
+        //{
+            switch (lane)
+            {
+                case Lane.Lane1:
+                    CheckEnemy(lane1);
+                    break;
+                case Lane.Lane2:
+                    CheckEnemy(lane2);
+                    break;
+                case Lane.Lane3:
+                    CheckEnemy(lane3);
+                    break;
+            }
+
+            if (lane1 != null || lane2 != null || lane3 != null)
             {
 
-                switch (lane)
+
+                t += Time.deltaTime;
+                if (t > fireRate)
                 {
-                    case Lane.Lane1:
-                        ShootArrow(lane1);
-                        break;
-                    case Lane.Lane2:
-                        ShootArrow(lane2);
-                        break;
-                    case Lane.Lane3:
-                        ShootArrow(lane3);
-                        break;
+
+                    switch (lane)
+                    {
+                        case Lane.Lane1:
+                            ShootArrow(lane1);
+                            break;
+                        case Lane.Lane2:
+                            ShootArrow(lane2);
+                            break;
+                        case Lane.Lane3:
+                            ShootArrow(lane3);
+                            break;
+                    }
                 }
             }
-        }
+        //}
+        
     }
 
     void CheckEnemy(List<GameObject> enemies)
