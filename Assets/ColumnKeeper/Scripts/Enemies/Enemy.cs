@@ -148,6 +148,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             //towerArcher.RemoveEnemy(gameObject);
+            enemyAI.currentState = EnemyAI.BehaviorState.Stop;
             animationType = AnimationType.Die;
 
 
@@ -164,14 +165,17 @@ public class Enemy : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         ScoreText.score += score;
-        if(score > 0)
+        if (score > 0)
             Destroy(gameObject);
-
-        if (agent.isStopped)
+        else if (score < 1)
         {
-            agent.isStopped = false;
-            animationType = AnimationType.Walk;
+            if (agent.isStopped)
+            {
+                agent.isStopped = false;
+                animationType = AnimationType.Walk;
+            }
         }
+        
     }
     //Changes different Types of Animations
     public void TypeofAnimation()

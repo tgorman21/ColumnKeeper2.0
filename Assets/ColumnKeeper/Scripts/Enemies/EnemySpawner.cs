@@ -25,7 +25,13 @@ public class EnemySpawner : MonoBehaviour
     {
         
         enemiesSpawned = 0;
-        Towers = GameObject.FindGameObjectsWithTag("TowerArcher");
+        //Checks if there are towers
+        if(GameObject.FindGameObjectsWithTag("TowerArcher") != null)
+        {
+            //If there are towers set it to the gameobject Towers
+            Towers = GameObject.FindGameObjectsWithTag("TowerArcher");
+        }
+        
         switch (waves)
         {
             case true:

@@ -28,7 +28,11 @@ public class TowerArcher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemySpawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<EnemySpawner>();
+        if(GameObject.FindGameObjectWithTag("Spawner").GetComponent<EnemySpawner>() != null)
+        {
+            enemySpawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<EnemySpawner>();
+        }
+        
         closestEnemy = -1;
         fireRate = Random.Range(minimumTime, maxTime);
     }

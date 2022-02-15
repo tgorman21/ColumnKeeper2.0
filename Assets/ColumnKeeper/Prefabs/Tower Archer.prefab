@@ -56,8 +56,7 @@ MonoBehaviour:
   lane1: []
   lane2: []
   lane3: []
-  enemies: []
-  lane: 1
+  lane: 0
 --- !u!1 &6757213140314955651
 GameObject:
   m_ObjectHideFlags: 0
