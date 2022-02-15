@@ -50,8 +50,8 @@ public class TowerArcher : MonoBehaviour
         }
 
         //Uncomment if Archers dont shoot enemies on wave levels
-        //if (!enemySpawner.waves)
-        //{
+        if (enemySpawner.archersShoot)
+        {
             switch (lane)
             {
                 case Lane.Lane1:
@@ -87,8 +87,8 @@ public class TowerArcher : MonoBehaviour
                     }
                 }
             }
-        //}
-        
+        }
+
     }
 
     void CheckEnemy(List<GameObject> enemies)
