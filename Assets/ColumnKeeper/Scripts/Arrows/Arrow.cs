@@ -157,14 +157,11 @@ public class Arrow : XRGrabInteractable
                         }
 
                         break;
-                    case ArrowType.TypeOfArrow.Hypno:
-                        HypnoArrow hypno = GetComponent<HypnoArrow>();
-                        if (hypno != null)
+                    case ArrowType.TypeOfArrow.MeteorShower:
+                        MeteorShower shower = GetComponent<MeteorShower>();
+                        if (shower != null)
                         {
-                            if (hit.collider.GetComponent<EnemyAI>() != null)
-                            {
-                                hit.collider.GetComponent<Enemy>().HypnoArrow();
-                            }
+                            shower.Shower(arrow.damage, transform.position);
 
                         }
                         break;

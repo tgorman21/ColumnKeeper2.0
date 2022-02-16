@@ -8,9 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ColumnKeeper/Scenes/MainScene.unity
     guid: 9bb2bb2bb7479453993879d10c004b08
-  - enabled: 1
-    path: Assets/Column Keeper (Actual Game, use this folder!)/Scenes/Main.unity
-    guid: 0bdc2251efd355d45add28195d99d336
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 18648647e01061f41a76c99a233de8b1,
       type: 2}

@@ -48,21 +48,21 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 1
+      - m_Value: 3
         m_Name: TrailSize
         m_Overridden: 1
-      - m_Value: 0.4
+      - m_Value: 0.6
         m_Name: TrailLifetime
         m_Overridden: 1
       - m_Value: 5
         m_Name: Rate
         m_Overridden: 1
-      - m_Value: 20
+      - m_Value: 30
         m_Name: Radius
         m_Overridden: 1
       - m_Value: 3
         m_Name: MeteorLifetime
-        m_Overridden: 0
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -138,6 +138,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3670687090961675193}
+  - component: {fileID: 409514944233356178}
+  - component: {fileID: 8724374949614877427}
   m_Layer: 0
   m_Name: vfx_MeteorRain_v1 1
   m_TagString: Untagged
@@ -153,10 +155,35 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3670687090961675190}
   m_LocalRotation: {x: -0.18368007, y: -0, z: -0, w: 0.98298603}
-  m_LocalPosition: {x: 0, y: 0.06747657, z: 0.36110926}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7511698712180580111}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -21.168001, y: 0, z: 0}
+--- !u!135 &409514944233356178
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3670687090961675190}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 35
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8724374949614877427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3670687090961675190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b64c86e7994407097ac5b37b27b76c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
