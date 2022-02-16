@@ -18,8 +18,9 @@ public class MeteorShower : MonoBehaviour
     }
     public void Shower(float damage, Vector3 pos)
     {
-        GetComponentInChildren<MeteorDamage>().damage = damage;
+        
         GameObject shower = Instantiate(meteorShower);
+        shower.GetComponent<MeteorDamage>().damage = damage;
         shower.transform.position = new Vector3(pos.x, pos.y, pos.z);
     }
 }
