@@ -23,6 +23,7 @@ public class MeteorShower : MonoBehaviour
         shower.GetComponent<MeteorDamage>().damage = damage;
         
         StartCoroutine(DestroyVisuals(shower));
+        
         shower.transform.position = new Vector3(pos.x, pos.y, pos.z);
     }
     IEnumerator DestroyVisuals(GameObject visualEffect)

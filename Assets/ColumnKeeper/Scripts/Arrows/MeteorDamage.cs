@@ -8,10 +8,12 @@ public class MeteorDamage : MonoBehaviour
     [Tooltip("This Reads from Meteor Shower Doesn't need to be declared")]
     public float damage;
     bool collided;
+    GameObject enemy;
     float t;
     // Start is called before the first frame update
     void Start()
     {
+        collided = false;
         t = 0;
     }
 
@@ -21,6 +23,12 @@ public class MeteorDamage : MonoBehaviour
         if (collided)
         {
             t += Time.deltaTime;
+            if (t > 1)
+            {
+                enemy.gameObject.GetComponent<Enemy>().DealDamage(1);
+                t = 0;
+
+            }
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -30,22 +38,17 @@ public class MeteorDamage : MonoBehaviour
             if (other.gameObject.GetComponent<Enemy>() != null)
             {
                 //////Damp Speed For Enemy
-                DamageOverTime(other.gameObject);
+                collided = true;
                 other.gameObject.GetComponent<Enemy>().DealDamage(damage);
-
+                enemy = other.gameObject;
             }
         }
     }
-    
-    public void DamageOverTime(GameObject enemy)
+
+    private void OnTriggerExit(Collider other)
     {
-        collided = true;
-        if(t > 1)
-        {
-            enemy.gameObject.GetComponent<Enemy>().DealDamage(1);
-            t = 0;
-        }
+        collided = false;
+        t = 0;
     }
-    
-    
+
 }
