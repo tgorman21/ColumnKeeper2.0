@@ -31,4 +31,24 @@ public class MeteorDamage : MonoBehaviour
             }
         }
     }
+    /*
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            if (other.gameObject.GetComponent<Enemy>() != null)
+            {
+                //////Damp Speed For Enemy
+
+                StartCoroutine(DamageWhileInCollider(other.gameObject));
+
+            }
+        }
+    }
+    */
+    IEnumerator DamageWhileInCollider(GameObject enemy)
+    {
+        yield return new WaitForSeconds(2);
+        enemy.gameObject.GetComponent<Enemy>().DealDamage(1);
+    }
 }
