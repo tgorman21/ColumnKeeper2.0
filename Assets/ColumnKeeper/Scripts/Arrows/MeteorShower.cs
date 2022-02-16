@@ -24,7 +24,7 @@ public class MeteorShower : MonoBehaviour
         
         StartCoroutine(DestroyVisuals(shower));
         
-        shower.transform.position = new Vector3(pos.x, pos.y + 5, pos.z);
+        shower.transform.position = new Vector3(pos.x, pos.y, pos.z);
     }
     IEnumerator DestroyVisuals(GameObject visualEffect)
     {
