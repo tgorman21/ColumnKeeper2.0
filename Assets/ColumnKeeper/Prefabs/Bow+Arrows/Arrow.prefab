@@ -421,11 +421,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trail
       objectReference: {fileID: 0}
-    - target: {fileID: 4160339708636613443, guid: e31843cb558d55a448bb63b326e3cc34,
-        type: 3}
-      propertyPath: m_Time
-      value: 0.01
-      objectReference: {fileID: 0}
     - target: {fileID: 7912830386346451116, guid: e31843cb558d55a448bb63b326e3cc34,
         type: 3}
       propertyPath: m_RootOrder
