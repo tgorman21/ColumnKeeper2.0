@@ -5,7 +5,7 @@ using TMPro;
 
 public class TargetPractice : MonoBehaviour
 {
-    public bool hit;
+    public bool hit = false;
 
     [SerializeField] private float health;
     [SerializeField] private bool test = false;
@@ -18,10 +18,6 @@ public class TargetPractice : MonoBehaviour
     void Start()
     {
         targetCounter = GameObject.FindGameObjectWithTag("TargetCounter").GetComponent<TargetCounter>();
-
-        hit = false;
-        damageText.enabled = false;
-
         targetPieces = GetComponentsInChildren<Rigidbody>();
     }
         

@@ -81,7 +81,7 @@ public class StorybookManager : MonoBehaviour
             if (!preDialogComplete)
             {
                 preDialogComplete = true;
-                foreach (GameObject child in targets) //turn on all target scripts at the end of pre dialog
+                foreach (Transform child in targets) //turn on all target scripts at the end of pre dialog
                 {
                     child.GetComponent<TargetPractice>().enabled = true;
                 }
