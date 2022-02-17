@@ -15,7 +15,7 @@ public class StorybookManager : MonoBehaviour
     [SerializeField] private GameObject leftPage;
     [SerializeField] private GameObject rightPage;
     [SerializeField] private TMP_Text dialogText;
-    [SerializeField] private TargetCounter tc;
+    [SerializeField] private Transform targets;
 
     private Animator anim;
     private bool preDialogComplete = false;
@@ -76,9 +76,18 @@ public class StorybookManager : MonoBehaviour
         }
         else
         {
-            preDialogComplete = true;
-            lineNum = 1; //HOT FIX: I just made this equal to 1 instead of 0 to skip the first entry of the end dialog (due to it being an empty string when read from text file)
             anim.SetTrigger("open/close");
+
+            if (!preDialogComplete)
+            {
+                preDialogComplete = true;
+                foreach (GameObject child in targets) //turn on all target scripts at the end of pre dialog
+                {
+                    child.GetComponent<TargetPractice>().enabled = true;
+                }
+
+                lineNum = 1; //HOT FIX: I just made this equal to 1 instead of 0 to skip the first entry of the end dialog (due to it being an empty string when read from text file)
+            }
         }
     }
 

@@ -5,17 +5,16 @@ using TMPro;
 
 public class TargetCounter : MonoBehaviour
 {
-    public int targetsHit = 0;
-    [SerializeField] public TextMeshProUGUI targetHitText;
     [SerializeField] private BoxCollider storybookCollider;
-    public bool allTargetsHit = false;
+    [SerializeField] public TextMeshProUGUI targetHitText;
+    public int targetsHit = 0;
 
     private void Update()
     {
         targetHitText.SetText(targetsHit.ToString("Targets hit: ## / 9"));
+
         if(targetsHit >= 9)
         {
-            allTargetsHit = true;
             storybookCollider.enabled = true;
         } 
     }

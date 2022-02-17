@@ -5,14 +5,16 @@ using TMPro;
 
 public class TargetPractice : MonoBehaviour
 {
-    Rigidbody[] targetPieces;
-    [SerializeField]float health;
-    [SerializeField] bool test = false;
-    [SerializeField] TextMeshProUGUI damageText;
+    public bool hit;
+
+    [SerializeField] private float health;
+    [SerializeField] private bool test = false;
+    [SerializeField] private TextMeshProUGUI damageText;
+
     TargetCounter targetCounter;
     GameObject[] piecesObj;
-    public bool hit;
-    // Start is called before the first frame update
+    private Rigidbody[] targetPieces;
+
     void Start()
     {
         targetCounter = GameObject.FindGameObjectWithTag("TargetCounter").GetComponent<TargetCounter>();
@@ -21,14 +23,9 @@ public class TargetPractice : MonoBehaviour
         damageText.enabled = false;
 
         targetPieces = GetComponentsInChildren<Rigidbody>();
-
-
-
     }
         
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (test)
         {
