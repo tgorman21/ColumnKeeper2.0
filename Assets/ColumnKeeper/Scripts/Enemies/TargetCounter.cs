@@ -9,24 +9,16 @@ public class TargetCounter : MonoBehaviour
     [SerializeField] public TextMeshProUGUI targetHitText;
     [SerializeField] private BoxCollider storybookCollider;
     public bool allTargetsHit = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         targetHitText.SetText(targetsHit.ToString("Targets hit: ## / 9"));
         if(targetsHit >= 9)
         {
             allTargetsHit = true;
             storybookCollider.enabled = true;
-        }
-        
+        } 
     }
-    public void TargetHit()
-    {
-        targetsHit++;
-    }
+
+    public void TargetHit() => targetsHit++;
 }

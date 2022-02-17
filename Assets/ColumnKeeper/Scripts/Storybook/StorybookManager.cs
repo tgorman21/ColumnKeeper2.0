@@ -15,6 +15,7 @@ public class StorybookManager : MonoBehaviour
     [SerializeField] private GameObject leftPage;
     [SerializeField] private GameObject rightPage;
     [SerializeField] private TMP_Text dialogText;
+    [SerializeField] private TargetCounter tc;
 
     private Animator anim;
     private bool preDialogComplete = false;
