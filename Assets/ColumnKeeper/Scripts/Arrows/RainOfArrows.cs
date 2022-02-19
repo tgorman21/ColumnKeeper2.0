@@ -11,7 +11,12 @@ public class RainOfArrows : MonoBehaviour
 
     [SerializeField] private bool RainArrows;
     private float t = 0;
-
+    float spawnRate = 3;
+    private void Start()
+    {
+       
+        PlayerPrefs.SetFloat("RainSpawnRate", spawnRate);
+    }
     private void Update()
     {
         if (!RainArrows) return; //////don't do anything below unless raining arrows
@@ -21,7 +26,7 @@ public class RainOfArrows : MonoBehaviour
 
         //Debug.Log(t);
 
-        if (t > 3) //////once done raining, reset variables
+        if (t > PlayerPrefs.GetFloat("RainSpawnRate")) //////once done raining, reset variables
         {
             RainArrows = false;
             t = 0;

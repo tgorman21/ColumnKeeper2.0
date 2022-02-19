@@ -5,10 +5,14 @@ using UnityEngine.VFX;
 public class MeteorShower : MonoBehaviour
 {
     [SerializeField] GameObject meteorShower;
+
+    float meteorTime = 10;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        
+        PlayerPrefs.SetFloat("MeteorTime", meteorTime);
     }
 
     // Update is called once per frame
@@ -28,7 +32,7 @@ public class MeteorShower : MonoBehaviour
     }
     IEnumerator DestroyVisuals(GameObject visualEffect)
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(PlayerPrefs.GetFloat("MeteorTime"));
         Destroy(visualEffect);
     }
     IEnumerator ActivateCollider(GameObject collider)

@@ -153,7 +153,7 @@ public class Arrow : XRGrabInteractable
                         IceArrow ia = GetComponent<IceArrow>();
                         if (ia != null)
                         {
-                            ia.IceEffect(arrow.damage);
+                            ia.IceEffect(PlayerPrefs.GetFloat(arrow.typeOfArrow+"ArrowDamage"));
                         }
 
                         break;
@@ -161,7 +161,7 @@ public class Arrow : XRGrabInteractable
                         MeteorShower shower = GetComponent<MeteorShower>();
                         if (shower != null)
                         {
-                            shower.Shower(arrow.damage, transform.position);
+                            shower.Shower(PlayerPrefs.GetFloat(arrow.typeOfArrow + "ArrowDamage"), transform.position);
 
                         }
                         break;
@@ -170,7 +170,7 @@ public class Arrow : XRGrabInteractable
                         if (lightning != null)
                         {
                             
-                            lightning.LightningStrike(arrow.damage);
+                            lightning.LightningStrike(PlayerPrefs.GetFloat(arrow.typeOfArrow + "ArrowDamage"));
                         }
 
                         break;
@@ -179,7 +179,7 @@ public class Arrow : XRGrabInteractable
                         if (rain != null)
                         {
                             if(hit.collider.GetComponent<Enemy>() != null)
-                                hit.collider.GetComponent<Enemy>().DealDamage(arrow.damage);
+                                hit.collider.GetComponent<Enemy>().DealDamage(PlayerPrefs.GetFloat(arrow.typeOfArrow + "ArrowDamage"));
                             rain.Rain();
                         }
 
@@ -187,15 +187,15 @@ public class Arrow : XRGrabInteractable
                     case ArrowType.TypeOfArrow.Regular:
                         if (hit.collider.GetComponent<Enemy>() != null)
                         {
-                            hit.collider.GetComponent<Enemy>().DealDamage(arrow.damage);
+                            hit.collider.GetComponent<Enemy>().DealDamage(PlayerPrefs.GetFloat(arrow.typeOfArrow + "ArrowDamage"));
                         }
                         else if(hit.collider.GetComponentInParent<Enemy>() != null)
                         {
-                            hit.collider.GetComponentInParent<Enemy>().DealDamage(arrow.damage);
+                            hit.collider.GetComponentInParent<Enemy>().DealDamage(PlayerPrefs.GetFloat(arrow.typeOfArrow + "ArrowDamage"));
                         }
                         else if (hit.collider.GetComponentInChildren<Enemy>() != null)
                         {
-                            hit.collider.GetComponentInChildren<Enemy>().DealDamage(arrow.damage);
+                            hit.collider.GetComponentInChildren<Enemy>().DealDamage(PlayerPrefs.GetFloat(arrow.typeOfArrow + "ArrowDamage"));
                         }
                         break;
                     case ArrowType.TypeOfArrow.Target:
@@ -203,7 +203,7 @@ public class Arrow : XRGrabInteractable
                         
                         if(hit.collider.GetComponentInParent<TargetPractice>() != null && hit.collider.GetComponentInParent<TargetPractice>().enabled)
                         {
-                            hit.collider.GetComponentInParent<TargetPractice>().CollapseTarget(arrow.damage);
+                            hit.collider.GetComponentInParent<TargetPractice>().CollapseTarget(PlayerPrefs.GetFloat(arrow.typeOfArrow + "ArrowDamage"));
                         }
                         break;
                     default:

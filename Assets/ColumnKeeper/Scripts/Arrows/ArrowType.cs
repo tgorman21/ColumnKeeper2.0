@@ -18,5 +18,25 @@ public class ArrowType : MonoBehaviour
             trail = GetComponentInChildren<TrailRenderer>();
             trail.enabled = false;
         }
+
+        //Sets name of Float for damage arrows
+        switch (typeOfArrow)
+        {
+            case TypeOfArrow.Fire:
+                PlayerPrefs.SetFloat(typeOfArrow + "ArrowDamage", damage);
+                break;
+            case TypeOfArrow.Ice:
+                PlayerPrefs.SetFloat(typeOfArrow + "ArrowDamage", damage);
+                break;
+            case TypeOfArrow.MeteorShower:
+                PlayerPrefs.SetFloat(typeOfArrow + "ArrowDamage", damage);
+                break;
+            case TypeOfArrow.Lightning:
+                PlayerPrefs.SetFloat(typeOfArrow + "ArrowDamage", damage);
+                break;
+            case TypeOfArrow.Rain:
+                PlayerPrefs.SetFloat(typeOfArrow + "ArrowDamage", damage);
+                break;
+            }
     }
 }

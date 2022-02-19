@@ -14,8 +14,16 @@ public class FireArrow : MonoBehaviour
     // Start is called before the first frame update
      void Start()
     {
+        PlayerPrefs.SetFloat("ImpactDamage", impactDamage);
+        PlayerPrefs.SetFloat("DecayDamage", decayDamage);
+
         ps = transform.GetChild(2).GetComponent<ParticleSystem>();
         bw = transform.GetChild(2).GetChild(2).GetComponent<BlastWave>();
+        foreach(GameObject explosionSize in explosionPos.GetComponentsInChildren<GameObject>())
+        {
+            PlayerPrefs.SetFloat("FireSize", explosionSize.transform.localScale.x);
+            explosionSize.transform.localScale = new Vector3(PlayerPrefs.GetFloat("FireSize"), PlayerPrefs.GetFloat("FireSize"), PlayerPrefs.GetFloat("FireSize"));
+        }
     }
 
     // Update is called once per frame
@@ -35,10 +43,10 @@ public class FireArrow : MonoBehaviour
     */
     public void FireDamage(Enemy enemy)
     {
-        enemy.DealDamage(impactDamage);
+        enemy.DealDamage(PlayerPrefs.GetFloat("ImpactDamage"));
         for(int i = 0; i < 5; i++)
         {
-            enemy.DealDamage(decayDamage);
+            enemy.DealDamage(PlayerPrefs.GetFloat("DecayDamage"));
         }
         //Destroy(this.gameObject);
     }

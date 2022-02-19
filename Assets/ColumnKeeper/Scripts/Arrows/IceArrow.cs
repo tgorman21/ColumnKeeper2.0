@@ -18,7 +18,12 @@ public class IceArrow : MonoBehaviour
     void Start()
     {
         rise = false;
+        PlayerPrefs.SetFloat("IceSizeX", iceEffect.transform.localScale.x);
+        PlayerPrefs.SetFloat("IceSizeY", iceEffect.transform.localScale.y);
+        PlayerPrefs.SetFloat("IceSizeZ", iceEffect.transform.localScale.z);
 
+        iceCollider.transform.localScale = new Vector3(PlayerPrefs.GetFloat("IceSizeX"), PlayerPrefs.GetFloat("IceSizeZ"), PlayerPrefs.GetFloat("IceSizeY"));
+        
     }
 
     // Update is called once per frame
