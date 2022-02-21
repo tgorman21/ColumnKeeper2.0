@@ -7,8 +7,27 @@ public class ArrowStoreManager : MonoBehaviour
     public enum TypeOfArrow { Regular, Fire, Ice, MeteorShower, Lightning, Rain, Heal, Target };
 
     [HideInInspector]public TypeOfArrow typeOfArrow;
-   
-   
+
+    public GameObject[] menus;
+    private void Start()
+    {
+        /* Uncomment when scene switch is added 1 = true, 0 = false
+        if (PlayerPrefs.GetInt("UnlockStore") == 1)
+        {
+            foreach (GameObject menu in menus)
+            {
+                menu.SetActive(true);
+            }
+        }
+        else
+        {
+            foreach(GameObject menu in menus)
+            {
+                menu.SetActive(false);
+            }
+        }
+        */
+    }
     public void SetFireArrowUpgrade()
     {
         //Damage
