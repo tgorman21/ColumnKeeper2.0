@@ -14,12 +14,12 @@ public class Currency : MonoBehaviour
     {
         PlayerPrefs.GetFloat("Gold");
     }
-    public void AddDiamond(float diamond)
+    public void AddDiamond(float gems)
     {
-        PlayerPrefs.SetFloat("Diamond", diamond);
+        PlayerPrefs.SetFloat("Gems", gems);
     }
-    public void GetDiamond(float diamond)
+    public void GetDiamond(float gems)
     {
-        PlayerPrefs.GetFloat("Diamond");
+        PlayerPrefs.GetFloat("Gems");
     }
 }
