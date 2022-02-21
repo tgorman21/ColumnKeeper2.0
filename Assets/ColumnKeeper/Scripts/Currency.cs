@@ -10,9 +10,16 @@ public class Currency : MonoBehaviour
     {
         PlayerPrefs.SetFloat("Gold", gold);
     }
-
+    public void GetGold()
+    {
+        PlayerPrefs.GetFloat("Gold");
+    }
     public void AddDiamond(float diamond)
     {
         PlayerPrefs.SetFloat("Diamond", diamond);
+    }
+    public void GetDiamond(float diamond)
+    {
+        PlayerPrefs.GetFloat("Diamond");
     }
 }

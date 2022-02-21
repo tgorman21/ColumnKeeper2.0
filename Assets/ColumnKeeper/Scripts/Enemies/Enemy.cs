@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     public float health; ////// health points
     [SerializeField] public float damage; ////// damage
     public float publicDamage;
+    public float goldDrop;
     public int lane = 0;
     public Transform centerMass;
 
@@ -42,7 +43,6 @@ public class Enemy : MonoBehaviour
     private float decayDamage; //////DOT 
 
     private float t = 0; //////timer
-
     float deathTime;
     float walkTime;
     float attackTime;
@@ -164,9 +164,15 @@ public class Enemy : MonoBehaviour
     IEnumerator AnimationTimer(float time, int score)
     {
         yield return new WaitForSeconds(time);
-        ScoreText.score += score;
+
         if (score > 0)
+        {
+            ScoreText.score += score;
+            float gold = PlayerPrefs.GetFloat("Gold");
+            gold += goldDrop;
+            PlayerPrefs.SetFloat("Gold", gold);
             Destroy(gameObject);
+        }
         else if (score < 1)
         {
             if (agent.isStopped)
