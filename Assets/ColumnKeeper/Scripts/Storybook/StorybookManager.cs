@@ -41,10 +41,6 @@ public class StorybookManager : MonoBehaviour
 
     public void StartDialog()
     {
-        poof.Play();
-        leftPage.SetActive(true);
-        rightPage.SetActive(true);
-
         if (!preDialogComplete)
         {
             StartCoroutine(ProgressDialog(preDialog));
@@ -88,15 +84,6 @@ public class StorybookManager : MonoBehaviour
 
                 lineNum = 1; //HOT FIX: I just made this equal to 1 instead of 0 to skip the first entry of the end dialog (due to it being an empty string when read from text file)
             }
-        }
-    }
-
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (collision.gameObject.CompareTag("Hand"))
-        {
-            anim.SetTrigger("open/close");
-            GetComponent<BoxCollider>().enabled = false;
         }
     }
 }

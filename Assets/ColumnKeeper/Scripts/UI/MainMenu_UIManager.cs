@@ -5,14 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu_UIManager : MonoBehaviour
 {
-    public void StartLevel1()
+    private Animator anim;
+
+    private void Start() => anim = GetComponent<Animator>();
+
+    public void StoryMode() => anim.SetTrigger("storymode");
+    public void EndlessMode() => anim.SetTrigger("endless");
+
+    public void Act1() => anim.SetTrigger("act1");
+    public void Act2() => anim.SetTrigger("act2");
+    public void Act3() => anim.SetTrigger("act3");
+
+    public void Poof() => transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+
+    public void LevelSelect(int levelNum)
     {
-        Debug.Log("Load Level 1");
+        anim.SetTrigger("predialog");
+
+        //setup storybook script here with correct .txt file based on given levelNum int
     }
 
-    public void StartEndlessMode()
-    {
-        Debug.Log("Load EndlessMode");
-    }
 
 }
