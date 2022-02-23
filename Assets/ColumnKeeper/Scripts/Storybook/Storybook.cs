@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR.Interaction.Toolkit;
 using TMPro;
 
 public class Storybook : MonoBehaviour
@@ -12,6 +13,8 @@ public class Storybook : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private TMP_Text dialogText;
+    [SerializeField] private Transform XRRig;
+    [SerializeField] private ContinuousMoveProviderBase playerMovement;
 
     private static bool playPostDialog = false;
     private static string[] preDialog;
@@ -28,11 +31,19 @@ public class Storybook : MonoBehaviour
         
         if (playPostDialog) //when scene starts, check if player is returning from level to trigger post dialog 
         {
-            lineNum = 1; //HOT FIX: I just made this equal to 1 instead of 0 to skip the first entry of the end dialog (due to it being an empty string when read from text file)
-
             //freeze movement of player
-            //set player position to in front of book
-            //trigger post dialog animation 
+            TogglePlayerMovement(); 
+
+            //move XRRig to be in front of and facing the storybook
+            Vector3 pos = new Vector3(3.5f, 0.6f, -0.65f);
+            Vector3 rot = new Vector3(0, 100, 0);
+            XRRig.position = pos;
+            XRRig.rotation = Quaternion.Euler(rot);
+
+            //trigger post dialog animation
+            anim.SetTrigger("postdialog");
+
+            lineNum = 1; //HOT FIX: I just made this equal to 1 instead of 0 to skip the first entry of the end dialog (due to it being an empty string when read from text file)
         }
     }
 
@@ -50,7 +61,7 @@ public class Storybook : MonoBehaviour
         anim.SetTrigger("predialog");
 
         string fileName = "Stage_" + _levelNum.ToString();
-        var sr = new StreamReader(Application.dataPath + "/ColumnKeeper/Scripts/Storybook/Dialog/" + fileName);
+        var sr = new StreamReader(Application.dataPath + "/ColumnKeeper/Scripts/Storybook/Dialog/" + fileName + ".txt");
         var fileContents = sr.ReadToEnd();
         sr.Close();
 
@@ -64,6 +75,7 @@ public class Storybook : MonoBehaviour
         lineNum = 0;
 
         //freeze movement of player for remainder of time in scene
+        TogglePlayerMovement();
     }
 
     public void PreDialog() => StartCoroutine(ProgressDialog(preDialog));
@@ -89,12 +101,16 @@ public class Storybook : MonoBehaviour
         }
         else //end of postdialog
         {
-            //unfreeze player
+            TogglePlayerMovement(); //unfreeze player
+
             //trigger animation to reset book back to level select mode
+
         }
 
         playPostDialog = !playPostDialog;
     }
 
     public void LaunchLevel() => SceneManager.LoadScene(levelNum);
+
+    private void TogglePlayerMovement() => playerMovement.enabled = !playerMovement.enabled;
 }
