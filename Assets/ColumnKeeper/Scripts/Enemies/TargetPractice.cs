@@ -49,7 +49,6 @@ public class TargetPractice : MonoBehaviour
                 piece.isKinematic = false;
             }
         }
-        
     }
     IEnumerator HideText()
     {

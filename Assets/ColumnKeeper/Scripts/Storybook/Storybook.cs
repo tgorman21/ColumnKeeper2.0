@@ -74,8 +74,7 @@ public class Storybook : MonoBehaviour
         levelNum = _levelNum;
         lineNum = 0;
 
-        //freeze movement of player for remainder of time in scene
-        TogglePlayerMovement();
+        TogglePlayerMovement(); //freeze movement of player for remainder of time in scene
     }
 
     public void PreDialog() => StartCoroutine(ProgressDialog(preDialog));
@@ -103,10 +102,8 @@ public class Storybook : MonoBehaviour
         {
             TogglePlayerMovement(); //unfreeze player
 
-            //trigger animation to reset book back to level select mode
-
+            anim.SetTrigger("enddialog"); //trigger animation to reset book back to level select mode
         }
-
         playPostDialog = !playPostDialog;
     }
 

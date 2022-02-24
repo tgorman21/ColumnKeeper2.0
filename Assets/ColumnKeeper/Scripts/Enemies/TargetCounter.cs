@@ -5,8 +5,9 @@ using TMPro;
 
 public class TargetCounter : MonoBehaviour
 {
-    [SerializeField] private BoxCollider storybookCollider;
+    [SerializeField] private Animator anim;
     [SerializeField] public TextMeshProUGUI targetHitText;
+
     public int targetsHit = 0;
 
     private void Update()
@@ -15,8 +16,11 @@ public class TargetCounter : MonoBehaviour
 
         if(targetsHit >= 9)
         {
-            storybookCollider.enabled = true;
-        } 
+            //This is where end of level occurs
+            //For now, just triggering a screen fade into the main menu
+
+            anim.SetTrigger("fadeOut");
+        }
     }
 
     public void TargetHit() => targetsHit++;
