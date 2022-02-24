@@ -200,7 +200,13 @@ public class Arrow : XRGrabInteractable
                         break;
                     case ArrowType.TypeOfArrow.Target:
                         //Debug.Log("Target Arrow hit: "+hit.collider.GetComponentInParent<GameObject>().name);
-                        
+
+                        ImpactEffect ie = GetComponent<ImpactEffect>();
+                        if(ie != null)
+                        {
+                            ie.TriggerEffect(hit.point, hit.collider.transform.rotation);
+                        }
+
                         if(hit.collider.GetComponentInParent<TargetPractice>() != null && hit.collider.GetComponentInParent<TargetPractice>().enabled)
                         {
                             hit.collider.GetComponentInParent<TargetPractice>().CollapseTarget(PlayerPrefs.GetFloat(arrow.typeOfArrow + "ArrowDamage"));

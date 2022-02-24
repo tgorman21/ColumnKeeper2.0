@@ -4957,6 +4957,7 @@ GameObject:
   - component: {fileID: 3544760493190169588}
   - component: {fileID: 961699093}
   - component: {fileID: 3536795957971821178}
+  - component: {fileID: 1875249375817085983}
   m_Layer: 2
   m_Name: TargetArrow
   m_TagString: Untagged
@@ -5134,6 +5135,20 @@ MonoBehaviour:
   typeOfArrow: 7
   damage: 50
   trail: {fileID: 0}
+--- !u!114 &1875249375817085983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8542102953145869890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 060c9be9bdfcda74d87332a26c7c867e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impactParticles: {fileID: 8939151640445851756, guid: 8ea6908d18cffbc418bbc07cbaee7eee,
+    type: 3}
 --- !u!1 &8589002692731022628
 GameObject:
   m_ObjectHideFlags: 0
