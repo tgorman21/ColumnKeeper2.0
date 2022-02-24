@@ -10,6 +10,7 @@ public class ArrowType : MonoBehaviour
     public TypeOfArrow typeOfArrow;
     public float damage;
     public TrailRenderer trail;
+
     private void Start()
     {
 
@@ -37,6 +38,12 @@ public class ArrowType : MonoBehaviour
             case TypeOfArrow.Rain:
                 PlayerPrefs.SetFloat(typeOfArrow + "ArrowDamage", damage);
                 break;
-            }
+            case TypeOfArrow.Regular:
+                PlayerPrefs.SetFloat(typeOfArrow + "ArrowDamage", damage);
+                break;
+            case TypeOfArrow.Target:
+                PlayerPrefs.SetFloat(typeOfArrow + "ArrowDamage", damage);
+                break;
+        }
     }
 }

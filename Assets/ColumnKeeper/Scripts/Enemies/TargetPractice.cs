@@ -32,11 +32,10 @@ public class TargetPractice : MonoBehaviour
     public void CollapseTarget(float damage)
     {
         Debug.Log("Hit " + gameObject.name);
-        //GetComponent<Collider>().enabled = false;
-        
-        if (!hit)
-            hit = true;
-        test = false;
+        Debug.Log(damage);
+
+        if (!hit) { hit = true; }
+
         health -= damage;
         damageText.enabled = true;
         damageText.SetText(damage.ToString("-##"));
