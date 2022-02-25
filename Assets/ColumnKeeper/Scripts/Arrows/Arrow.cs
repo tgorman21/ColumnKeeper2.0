@@ -209,7 +209,7 @@ public class Arrow : XRGrabInteractable
 
                         if(hit.collider.GetComponentInParent<TargetPractice>() != null && hit.collider.GetComponentInParent<TargetPractice>().enabled)
                         {
-                            hit.collider.GetComponentInParent<TargetPractice>().CollapseTarget(PlayerPrefs.GetFloat(arrow.typeOfArrow + "ArrowDamage"));
+                            hit.collider.GetComponentInParent<TargetPractice>().CollapseTarget(PlayerPrefs.GetFloat(arrow.typeOfArrow + "ArrowDamage"), hit.point);
                         }
                         break;
                     default:

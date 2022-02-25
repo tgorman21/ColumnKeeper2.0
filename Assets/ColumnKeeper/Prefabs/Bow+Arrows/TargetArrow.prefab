@@ -5133,7 +5133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeOfArrow: 7
-  damage: 50
+  damage: 25
   trail: {fileID: 0}
 --- !u!114 &1875249375817085983
 MonoBehaviour:

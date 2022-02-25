@@ -5,53 +5,49 @@ using TMPro;
 
 public class TargetPractice : MonoBehaviour
 {
-    public bool hit = false;
-
+    [Header("Target Info")]
     [SerializeField] private float health;
-    [SerializeField] private bool test = false;
-    [SerializeField] private TextMeshProUGUI damageText;
+    [SerializeField] private bool hit = false;
 
-    TargetCounter targetCounter;
-    GameObject[] piecesObj;
+    [Header("Dev Tools")]
+    [SerializeField] private bool collapseTest;
+
+    [Header("References")]
+    [SerializeField] private GameObject PopupDamage;
+    
+    private TargetCounter targetCounter;
     private Rigidbody[] targetPieces;
 
-    void Start()
+    private void Start()
     {
         targetCounter = GameObject.FindGameObjectWithTag("TargetCounter").GetComponent<TargetCounter>();
         targetPieces = GetComponentsInChildren<Rigidbody>();
     }
-        
+
     private void Update()
     {
-        if (test)
-        {
-            CollapseTarget(50);
-        }
+        if (collapseTest) CollapseTarget(50, transform.position);
     }
 
-    public void CollapseTarget(float damage)
+    public void CollapseTarget(float damage, Vector3 hitPos)
     {
-        Debug.Log("Hit " + gameObject.name);
-        Debug.Log(damage);
+        //---Dev Tools---
+        //Debug.Log("Hit " + gameObject.name);
+        //Debug.Log(damage);
 
         if (!hit) { hit = true; }
-
         health -= damage;
-        damageText.enabled = true;
-        damageText.SetText(damage.ToString("-##"));
-        StartCoroutine(HideText());
-        if(health <= 0)
-        {
-            targetCounter.TargetHit();
-            foreach (Rigidbody piece in targetPieces)
-            {
-                piece.isKinematic = false;
-            }
-        }
-    }
-    IEnumerator HideText()
-    {
-        yield return new WaitForSeconds(2);
-        damageText.enabled = false;
+
+        GameObject damagePopup = Instantiate(PopupDamage, hitPos, Quaternion.identity);
+        damagePopup.transform.GetComponentInChildren<TMP_Text>().SetText(damage.ToString("-##"));
+
+        Vector3 randomForce = (Vector3.up * 10f) + (transform.forward * 2f) + (transform.up * Random.Range(-3f, 3f));
+        damagePopup.GetComponent<Rigidbody>().velocity = randomForce;
+
+        if (health > 0) return;
+
+        //target destroyed
+        targetCounter.TargetHit();
+        foreach (Rigidbody piece in targetPieces) { piece.isKinematic = false; }
     }
 }
