@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit;
 using TMPro;
 
@@ -36,9 +35,7 @@ public class Storybook : MonoBehaviour
 
             //move XRRig to be in front of and facing the storybook
             Vector3 pos = new Vector3(3.5f, 0.6f, -0.65f);
-            Vector3 rot = new Vector3(0, 100, 0);
             XRRig.position = pos;
-            XRRig.rotation = Quaternion.Euler(rot);
 
             //trigger post dialog animation
             anim.SetTrigger("postdialog");
@@ -96,7 +93,8 @@ public class Storybook : MonoBehaviour
     {
         if (!playPostDialog) //end of predialog
         {
-            anim.SetTrigger("startLevel");
+            string sceneName = "Stage_" + levelNum.ToString();
+            CustomSceneManager.instance.GoToScene(sceneName);
         }
         else //end of postdialog
         {
@@ -106,8 +104,6 @@ public class Storybook : MonoBehaviour
         }
         playPostDialog = !playPostDialog;
     }
-
-    public void LaunchLevel() => SceneManager.LoadScene(levelNum);
 
     private void TogglePlayerMovement() => playerMovement.enabled = !playerMovement.enabled;
 }

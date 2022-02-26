@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ColumnKeeper/Scenes/Levels/Stage_1/Stage_1.unity
     guid: acc517440766c7b4299e166077d65848
+  - enabled: 1
+    path: Assets/ColumnKeeper/Scenes/LoadingScene/LoadingScene.unity
+    guid: 0d1f502cf4b04dd4e9f8725a81d31749
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 18648647e01061f41a76c99a233de8b1,
       type: 2}

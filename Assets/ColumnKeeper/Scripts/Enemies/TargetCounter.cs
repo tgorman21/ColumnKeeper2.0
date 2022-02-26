@@ -5,7 +5,6 @@ using TMPro;
 
 public class TargetCounter : MonoBehaviour
 {
-    [SerializeField] private Animator anim;
     [SerializeField] public TextMeshProUGUI targetHitText;
 
     public int targetsHit = 0;
@@ -19,7 +18,7 @@ public class TargetCounter : MonoBehaviour
             //This is where end of level occurs
             //For now, just triggering a screen fade into the main menu
 
-            anim.SetTrigger("fadeOut");
+            CustomSceneManager.instance.GoToScene("MainMenu");
         }
     }
 
