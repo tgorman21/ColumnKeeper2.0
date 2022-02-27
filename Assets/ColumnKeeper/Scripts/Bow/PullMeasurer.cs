@@ -15,6 +15,9 @@ public class PullMeasurer : XRBaseInteractable
     private float pullAmount = 0.0f;
     public float PullAmount => pullAmount;
 
+    public AudioSource bowPull;
+    public AudioSource bowRelease;
+
     private XRBaseInteractor pullingInteractor = null;
 
     protected override void OnSelectEntered(SelectEnterEventArgs args)
@@ -23,6 +26,7 @@ public class PullMeasurer : XRBaseInteractable
 
         ////// Set interactor for measurement
         pullingInteractor = args.interactor;
+        bowPull.Play();
     }
 
     protected override void OnSelectExited(SelectExitEventArgs args)
@@ -34,6 +38,7 @@ public class PullMeasurer : XRBaseInteractable
 
         ////// Reset everything
         SetPullValues(start.position, 0.0f);
+        bowRelease.Play();
     }
 
     public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
