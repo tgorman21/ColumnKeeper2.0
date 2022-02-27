@@ -38,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
             case true:
                 enemyIndex = 0;
                 pointIndex = 0;
-                Randomize("PointIndex");
+                Randomize("Both");
                 break;
             case false:
                 // Spawn rate
@@ -89,7 +89,7 @@ public class EnemySpawner : MonoBehaviour
 
                     if (t > spawnRate)
                     {
-                        Randomize("PointIndex");
+                        Randomize("Both");
                     }
                     t += Time.deltaTime;
 
@@ -99,7 +99,7 @@ public class EnemySpawner : MonoBehaviour
                     {
                         if (enemyCheck.Count > 0)
                         {
-                            Randomize("PointIndex");
+                            Randomize("Both");
                         }
                     }
 
@@ -125,12 +125,12 @@ public class EnemySpawner : MonoBehaviour
         if (enemyIndex < enemies.Length)
         {
             
-            Randomize("PointIndex");
+            Randomize("Both");
         }
         else if (enemyIndex > enemies.Length)
         {
             enemyIndex = 0;
-            Randomize("PointIndex");
+            Randomize("Both");
         }
     }
     //////Randomize a number from 0-Array Length
@@ -165,6 +165,7 @@ public class EnemySpawner : MonoBehaviour
         t = 0;
         enemiesSpawned++;
         string enemyName;
+        
         GameObject enemy = Instantiate(enemies[enemyIndex], spawnPoints[pointIndex].position, Quaternion.identity);
         enemyCheck.Add(enemy);
         switch(pointIndex){
@@ -213,6 +214,9 @@ public class EnemySpawner : MonoBehaviour
         }
         enemyName = enemy.GetComponent<Enemy>().enemyName +" (Lane: " + enemy.GetComponent<Enemy>().lane.ToString() + ")";
         enemy.name = enemyName;
+        float spawned = PlayerPrefs.GetFloat(enemy.GetComponent<Enemy>().enemyName + "Spawned");
+        spawned++;
+        PlayerPrefs.SetFloat(enemy.GetComponent<Enemy>().enemyName + "Spawned", spawned);
         //////set destination position
         enemy.GetComponent<EnemyAI>().towerPos = towerPos[pointIndex];
         //foreach(GameObject tower in Towers)

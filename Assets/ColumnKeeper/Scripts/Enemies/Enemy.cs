@@ -51,10 +51,21 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+       
         damageTakenText.enabled = false;
         enemyAI = GetComponent<EnemyAI>();
-        towerArcher = GameObject.FindGameObjectWithTag("TowerArcher").GetComponent<TowerArcher>();
-        towerObj = GameObject.FindGameObjectWithTag("Tower");
+        foreach(GameObject tower in GameObject.FindGameObjectsWithTag("TowerArcher"))
+        {
+            if (tower.GetComponent<TowerArcher>() != null)
+            {
+                towerArcher = GameObject.FindGameObjectWithTag("TowerArcher").GetComponent<TowerArcher>();
+            }
+        }
+        
+        if (GameObject.FindGameObjectWithTag("Tower") != null)
+        {
+            towerObj = GameObject.FindGameObjectWithTag("Tower");
+        }
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
@@ -168,6 +179,9 @@ public class Enemy : MonoBehaviour
         if (score > 0)
         {
             ScoreText.score += score;
+            float currentDestroyed = PlayerPrefs.GetFloat(enemyName + "WantedPoster");
+            currentDestroyed++;
+            PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
             float gold = PlayerPrefs.GetFloat("Gold");
             gold += goldDrop;
             PlayerPrefs.SetFloat("Gold", gold);
