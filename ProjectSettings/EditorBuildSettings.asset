@@ -9,11 +9,35 @@ EditorBuildSettings:
     path: Assets/ColumnKeeper/Scenes/MainMenu/MainMenu.unity
     guid: e2fee11378c7b4f4aaac2106051ae344
   - enabled: 1
-    path: Assets/ColumnKeeper/Scenes/Levels/Stage_1/Stage_1.unity
+    path: Assets/ColumnKeeper/Scenes/Levels/Act 1/Stage_1/Stage_1.unity
     guid: acc517440766c7b4299e166077d65848
   - enabled: 1
     path: Assets/ColumnKeeper/Scenes/LoadingScene/LoadingScene.unity
     guid: 0d1f502cf4b04dd4e9f8725a81d31749
+  - enabled: 1
+    path: Assets/ColumnKeeper/Scenes/Levels/Act 1/Stage_2/Stage_2.unity
+    guid: a673573d54eca034293adf774d38f351
+  - enabled: 1
+    path: Assets/ColumnKeeper/Scenes/Levels/Act 1/Stage_3/Stage_3.unity
+    guid: 7020a04660fa5f04b92fe5ea69ed3c9a
+  - enabled: 1
+    path: Assets/ColumnKeeper/Scenes/Levels/Act 1/Stage_4/Stage_4.unity
+    guid: cece6b9c20bc2f745acf46e4ee909446
+  - enabled: 1
+    path: Assets/ColumnKeeper/Scenes/Levels/Act 1/Stage_5/Stage_5.unity
+    guid: ce132305bb7d3be46bbe8766207add32
+  - enabled: 1
+    path: Assets/ColumnKeeper/Scenes/Levels/Act 1/Stage_6/Stage_6.unity
+    guid: ad8192da89489884fbe5c822d899e2e9
+  - enabled: 1
+    path: Assets/ColumnKeeper/Scenes/Levels/Act 1/Stage_7/Stage_7.unity
+    guid: b2c3c329a7aef64429b5e651953a4d36
+  - enabled: 1
+    path: Assets/ColumnKeeper/Scenes/Levels/Act 1/Stage_8/Stage_8.unity
+    guid: f3c22b37d0dc53f4d8e6a9a4d93878c5
+  - enabled: 1
+    path: Assets/ColumnKeeper/Scenes/Levels/Act 1/Stage_9/Stage_9.unity
+    guid: ee4ab04ba3f7d49499534a0ffd3c3bea
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 18648647e01061f41a76c99a233de8b1,
       type: 2}

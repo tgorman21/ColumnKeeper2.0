@@ -11,7 +11,7 @@ public class TargetCounter : MonoBehaviour
 
     private void Update()
     {
-        targetHitText.SetText(targetsHit.ToString("Targets hit: ## / 9"));
+        targetHitText.SetText(targetsHit.ToString("## / 9"));
 
         if(targetsHit >= 9)
         {
