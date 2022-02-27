@@ -4,6 +4,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class PullMeasurer : XRBaseInteractable
 {
+    public AudioSource bowPull;
+    public AudioSource bowRelease;
     // Hidden in Inspector, would need to be serializable, and added to custom editor
     public class PullEvent : UnityEvent<Vector3, float> { }
     public PullEvent Pulled = new PullEvent();
@@ -15,8 +17,7 @@ public class PullMeasurer : XRBaseInteractable
     private float pullAmount = 0.0f;
     public float PullAmount => pullAmount;
 
-    public AudioSource bowPull;
-    public AudioSource bowRelease;
+   
 
     private XRBaseInteractor pullingInteractor = null;
 
