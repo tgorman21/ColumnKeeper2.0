@@ -1,0 +1,19 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class UpdateLevelButton : MonoBehaviour
+{
+    private void OnEnable()
+    {
+        string levelName = gameObject.name;
+        levelName.Remove(0, 5); //remove "Level" from button name
+        levelName.Replace("_icon", ""); //remove "_icon" from button name
+        int levelNum = int.Parse(levelName); //use string to find level #
+
+        //check if this level is unlocked yet to determine if button is interactable or not
+        if(Storybook.highestUnlockedLevel < levelNum) { GetComponent<Button>().interactable = false; }
+        else { GetComponent<Button>().interactable = true; }
+    }
+}

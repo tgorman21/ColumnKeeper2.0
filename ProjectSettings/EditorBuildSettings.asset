@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/ColumnKeeper/Scenes/MainMenu/MainMenu.unity
     guid: e2fee11378c7b4f4aaac2106051ae344
   - enabled: 1
-    path: Assets/ColumnKeeper/Scenes/Levels/Act 1/Stage_1/Stage_1.unity
-    guid: acc517440766c7b4299e166077d65848
-  - enabled: 1
     path: Assets/ColumnKeeper/Scenes/LoadingScene/LoadingScene.unity
     guid: 0d1f502cf4b04dd4e9f8725a81d31749
+  - enabled: 1
+    path: Assets/ColumnKeeper/Scenes/Levels/Act 1/Stage_1/Stage_1.unity
+    guid: acc517440766c7b4299e166077d65848
   - enabled: 1
     path: Assets/ColumnKeeper/Scenes/Levels/Act 1/Stage_2/Stage_2.unity
     guid: a673573d54eca034293adf774d38f351

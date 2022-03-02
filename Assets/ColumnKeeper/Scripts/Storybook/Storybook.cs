@@ -15,11 +15,12 @@ public class Storybook : MonoBehaviour
     [SerializeField] private Transform XRRig;
     [SerializeField] private ContinuousMoveProviderBase playerMovement;
 
+    public static int highestUnlockedLevel = 1;
     private static bool playPostDialog = false;
     private static string[] preDialog;
     private static string[] postDialog;
 
-    private int levelNum;
+    private static int levelNum;
     private int lineNum;
 
     private Animator anim;
@@ -33,12 +34,15 @@ public class Storybook : MonoBehaviour
             //freeze movement of player
             TogglePlayerMovement(); 
 
-            //move XRRig to be in front of and facing the storybook
+            //move XRRig to be in front of the storybook
             Vector3 pos = new Vector3(3.5f, 0.6f, -0.65f);
             XRRig.position = pos;
 
             //trigger post dialog animation
             anim.SetTrigger("postdialog");
+
+            //unlock next level if player just completed highest unlocked level
+            if(levelNum == highestUnlockedLevel) { highestUnlockedLevel++; }
 
             lineNum = 1; //HOT FIX: I just made this equal to 1 instead of 0 to skip the first entry of the end dialog (due to it being an empty string when read from text file)
         }
