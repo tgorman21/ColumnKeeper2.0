@@ -9,15 +9,17 @@ public class TargetCounter : MonoBehaviour
 
     public int targetsHit = 0;
 
+    private bool switchingScene = false;
+
     private void Update()
     {
         targetHitText.SetText(targetsHit.ToString("## / 9"));
 
-        if(targetsHit >= 9)
+        if(targetsHit >= 9 && !switchingScene)
         {
             //This is where end of level occurs
             //For now, just triggering a screen fade into the main menu
-
+            switchingScene = true;
             CustomSceneManager.instance.GoToScene("MainMenu");
         }
     }

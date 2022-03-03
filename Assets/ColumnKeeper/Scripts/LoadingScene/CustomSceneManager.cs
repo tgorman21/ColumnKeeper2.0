@@ -34,9 +34,17 @@ public class CustomSceneManager : MonoBehaviour
         //Launch loading scene
         SceneManager.LoadScene("LoadingScene");
 
+        Debug.Log("!!! made it past load scene !!!");
+
         yield return new WaitForSeconds(3); //<--manually waits in load scene for 3 seconds before starting to load the next scene
 
-        screenFade = GameObject.Find("ScreenFade").GetComponent<ScreenFade>(); //fix screen fade reference by finding it in loading scene
+
+        while(screenFade == null)
+        {
+            Debug.Log("[Searching for screen fade...]");
+            screenFade = GameObject.Find("ScreenFade").GetComponent<ScreenFade>(); //fix screen fade reference by finding it in loading scene
+            yield return null;
+        }
 
         //Load new scene asynchronously
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);

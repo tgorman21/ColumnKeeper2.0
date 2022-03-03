@@ -62,11 +62,21 @@ public class Storybook : MonoBehaviour
         anim.SetTrigger("predialog");
 
         string fileName = "Stage_" + _levelNum.ToString();
-        var sr = new StreamReader(Application.dataPath + "/ColumnKeeper/Scripts/Storybook/Dialog/" + fileName + ".txt");
-        var fileContents = sr.ReadToEnd();
-        sr.Close();
 
-        string[] PreAndPost = fileContents.Split("#"[0]);
+        
+        var file = Resources.Load<TextAsset>("Dialog/" + fileName); //load script from text file into text asset
+        var script = file.text;
+        
+        //
+        //OLD APPLICATION.DATA PATH CODE
+        //this will need to be updated in the future because Unity themselves recommends avoiding Resources.Load()
+        //Switch to Application.streamingAssetsPath in the future
+        //
+        //var sr = new StreamReader(Application.dataPath + "/ColumnKeeper/Scripts/Storybook/Dialog/" + fileName + ".txt");
+        //var fileContents = sr.ReadToEnd();
+        //sr.Close();
+
+        string[] PreAndPost = script.Split("#"[0]);
 
         char[] newLine = { '\n' };
         preDialog = PreAndPost[0].Split(newLine, System.StringSplitOptions.RemoveEmptyEntries);

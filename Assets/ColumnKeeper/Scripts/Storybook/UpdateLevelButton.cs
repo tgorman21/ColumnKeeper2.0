@@ -9,7 +9,7 @@ public class UpdateLevelButton : MonoBehaviour
     {
         string levelName = gameObject.name;
         levelName.Remove(0, 5); //remove "Level" from button name
-        levelName.Replace("_icon", ""); //remove "_icon" from button name
+        levelName.Substring(0, levelName.LastIndexOf("_icon")); //remove "_icon" from button name
         int levelNum = int.Parse(levelName); //use string to find level #
 
         //check if this level is unlocked yet to determine if button is interactable or not
