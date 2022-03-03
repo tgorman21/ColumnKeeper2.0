@@ -15,12 +15,14 @@ public class UpdateLevelButton : MonoBehaviour
         levelName.Substring(0, levelName.LastIndexOf("_icon")); //remove "_icon" from button name
         int levelNum = int.Parse(levelName); //use string to find level #
         */
+
+
+
         //check if this level is unlocked yet to determine if button is interactable or not
-        
-        
+        /*
         if(Storybook.highestUnlockedLevel < levelNum) { GetComponent<Button>().interactable = false; }
         else { GetComponent<Button>().interactable = true; }
-
+        */
 
         //DEV KEY
         //Turn on all buttons for testing
