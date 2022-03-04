@@ -49,3 +49,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Humphry
+    uniqueID: 1948064561
+    locked: 0
+  - name: Princess
+    uniqueID: 2681115447
+    locked: 0

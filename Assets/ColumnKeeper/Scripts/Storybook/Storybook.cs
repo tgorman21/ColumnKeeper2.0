@@ -93,11 +93,17 @@ public class Storybook : MonoBehaviour
 
     private IEnumerator ProgressDialog(string[] dialog)
     {
-        string currentLine = dialog[lineNum];
-        dialogText.text = currentLine;
+        string[] currentLine = dialog[lineNum].Split(":"[0]);
+        string character = currentLine[0];
+        string[] scriptAndDuration = currentLine[1].Split("-"[0]);
+        string script = scriptAndDuration[0];
+        int duration = int.Parse(scriptAndDuration[1]);
+
+        DisplayCharacter(character, duration);
+        dialogText.text = script;
         lineNum++;
 
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(duration);
 
         if (lineNum < dialog.Length) { StartCoroutine(ProgressDialog(dialog)); } //progress to next line
         else { EndDialog(); }
@@ -120,4 +126,22 @@ public class Storybook : MonoBehaviour
     }
 
     private void TogglePlayerMovement() => playerMovement.enabled = !playerMovement.enabled;
+
+    private void DisplayCharacter(string character, int duration)
+    {
+        //Switch statement for each character name that could exist in a text file
+        switch (character)
+        {
+            case "Humphry":
+
+                break;
+            case "PrincessMaple":
+
+                break;
+            default:
+                Debug.Log("!!! Character name read from text file is not a valid character name !!!");
+                break;
+        }
+
+    }
 }
