@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] enemies;
+    [SerializeField] Transform[] lookAtObj;
     [SerializeField] Transform[] spawnPoints;
     [SerializeField] Transform[] towerPos;
     [SerializeField] Transform[] checkpointsLane1;
@@ -167,6 +168,10 @@ public class EnemySpawner : MonoBehaviour
         string enemyName;
         
         GameObject enemy = Instantiate(enemies[enemyIndex], spawnPoints[pointIndex].position, Quaternion.identity);
+        if(lookAtObj != null)
+        {
+            enemy.transform.LookAt(lookAtObj[pointIndex]);
+        }
         enemyCheck.Add(enemy);
         switch(pointIndex){
             case 0:

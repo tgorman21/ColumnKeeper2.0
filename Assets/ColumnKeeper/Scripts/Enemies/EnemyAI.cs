@@ -33,29 +33,31 @@ public class EnemyAI : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Debug.Log(i);
-        switch (currentState)
+        if (agent.enabled)
         {
-            case BehaviorState.SeekTower:
-                SeekTower();
-                break;
-            case BehaviorState.Stop:
-                Stop();
-                break;
-            case BehaviorState.Hypno:
-                HypnoEnemy();
-                break;
-            case BehaviorState.Checkpoints:
-                SeekCheckpoint();
-                break;
-            case BehaviorState.Attack:
-                Attack();
-                break;
-            default:
-                Debug.Log("Switch error");
-                break;
+            //Debug.Log(i);
+            switch (currentState)
+            {
+                case BehaviorState.SeekTower:
+                    SeekTower();
+                    break;
+                case BehaviorState.Stop:
+                    Stop();
+                    break;
+                case BehaviorState.Hypno:
+                    HypnoEnemy();
+                    break;
+                case BehaviorState.Checkpoints:
+                    SeekCheckpoint();
+                    break;
+                case BehaviorState.Attack:
+                    Attack();
+                    break;
+                default:
+                    Debug.Log("Switch error");
+                    break;
+            }
         }
-
 
     }
     void Attack()
@@ -71,6 +73,7 @@ public class EnemyAI : MonoBehaviour
         //GetComponent<Enemy>().animationType = Enemy.AnimationType.Walk;
 
         agent.destination = towerPos.transform.position;
+        transform.LookAt(towerPos);
         if (differenceVector.magnitude < 4)//Value changes distance to hit tower
         {
             currentState = BehaviorState.Attack;
@@ -115,12 +118,13 @@ public class EnemyAI : MonoBehaviour
         //agent.destination = checkpointPos[0].transform.position;
         //if(differenceVector.magnitude)
         //Debug.Log(differenceVector.magnitude);
-
+        //transform.LookAt(checkpointPos[checkpointIndex]);
         agent.SetDestination(checkpointPos[checkpointIndex].transform.position);
-        if(differenceVector.magnitude < 3)
-        {
-            currentState = BehaviorState.SeekTower;
-        }
+        
+        //if (differenceVector.magnitude < 3)
+        //{
+        //    currentState = BehaviorState.SeekTower;
+        //}
         //if (GetComponent<Enemy>().animationType != Enemy.AnimationType.powerUp)
             //GetComponent<Enemy>().animationType = Enemy.AnimationType.Walk;
 

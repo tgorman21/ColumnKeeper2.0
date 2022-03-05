@@ -7,7 +7,7 @@ using TMPro;
 public class Enemy : MonoBehaviour
 {
     GameObject towerObj;
-    public enum EnemyName { Goblin, Orc, Troll, Skeleton, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria }; //Names of enemies and bosses
+    public enum EnemyName { Goblin, Orc, Troll, Skeleton, Mushroom, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria }; //Names of enemies and bosses
     public enum AnimationType { Walk, Attack, Die, powerUp }; // Type of Animation
     EnemyAI enemyAI;
     [Header("Enemy Info")]
@@ -99,6 +99,7 @@ public class Enemy : MonoBehaviour
                     {
                         powerUpTime = clip.length;
                     }
+
                     break;
             }
         }
@@ -144,7 +145,8 @@ public class Enemy : MonoBehaviour
             case EnemyName.Xenoria:
                 TypeofAnimation();
                 break;
-
+            case EnemyName.Mushroom:
+                break;
             default: Debug.Log("Not an enemy");
                 break;
         }
@@ -200,28 +202,29 @@ public class Enemy : MonoBehaviour
     //Changes different Types of Animations
     public void TypeofAnimation()
     {
-        
-                switch (animationType)
-                {
-                    case AnimationType.Walk:
-                        //if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime % 1 != 0) return; //check if animation is done playing before playing again
 
-                        anim.Play("Walk");
-                        break;
+        switch (animationType)
+        {
+            case AnimationType.Walk:
+                //if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime % 1 != 0) return; //check if animation is done playing before playing again
 
-                    case AnimationType.Attack:
-                        Attack();
-                        break;
-                    case AnimationType.Die:
-                        Die();
-                        break;
-                        case AnimationType.powerUp:
-                        PowerUp();
-                        break;
-                    default:
-                        Debug.Log("Not an Animation");
-                        break;
-                }
+                anim.Play("Walk");
+                break;
+
+            case AnimationType.Attack:
+                Attack();
+                break;
+            case AnimationType.Die:
+                Die();
+                break;
+            case AnimationType.powerUp:
+                PowerUp();
+                break;
+
+            default:
+                Debug.Log("Not an Animation");
+                break;
+        }
                 
         }
 
