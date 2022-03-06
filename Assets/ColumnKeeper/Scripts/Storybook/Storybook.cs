@@ -7,9 +7,6 @@ using TMPro;
 
 public class Storybook : MonoBehaviour
 {
-    [Header("Storybook Settings")]
-    [SerializeField] private float waitTime;
-
     [Header("References")]
     [SerializeField] private TMP_Text dialogText;
     [SerializeField] private Transform XRRig;
@@ -24,10 +21,12 @@ public class Storybook : MonoBehaviour
     private int lineNum;
 
     private Animator anim;
+    private AudioSource audioSource;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         
         if (playPostDialog) //when scene starts, check if player is returning from level to trigger post dialog 
         {
@@ -63,15 +62,19 @@ public class Storybook : MonoBehaviour
 
         string fileName = "Stage_" + _levelNum.ToString();
 
-        
-        var file = Resources.Load<TextAsset>("Dialog/" + fileName); //load script from text file into text asset
+        //load script from text file into text asset
+        var file = Resources.Load<TextAsset>("Dialog/" + fileName); 
         var script = file.text;
+
+        //load and play audio clip for selected level
+        var audio = Resources.Load<AudioClip>("StorybookAudio/" + fileName);
+        audioSource.clip = audio;
+        audioSource.Play();
         
-        //
-        //OLD APPLICATION.DATA PATH CODE
+        // ===OLD APPLICATION.DATA PATH CODE===
         //this will need to be updated in the future because Unity themselves recommends avoiding Resources.Load()
         //Switch to Application.streamingAssetsPath in the future
-        //
+        
         //var sr = new StreamReader(Application.dataPath + "/ColumnKeeper/Scripts/Storybook/Dialog/" + fileName + ".txt");
         //var fileContents = sr.ReadToEnd();
         //sr.Close();
