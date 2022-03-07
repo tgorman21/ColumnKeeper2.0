@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeOfArrow: 0
-  damage: 1
+  damage: 50
   trail: {fileID: 0}
 --- !u!1 &8589002692731022628
 GameObject:

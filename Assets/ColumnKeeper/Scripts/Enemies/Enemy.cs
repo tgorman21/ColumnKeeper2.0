@@ -148,6 +148,7 @@ public class Enemy : MonoBehaviour
                 TypeofAnimation();
                 break;
             case EnemyName.Mushroom:
+                TypeofAnimation();
                 break;
             default: Debug.Log("Not an enemy");
                 break;
