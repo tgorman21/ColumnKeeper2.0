@@ -22,8 +22,10 @@ public class Enemy : MonoBehaviour
     [Header("UI References")]
     public RectTransform healthBar; //////bar for health
     public TextMeshProUGUI enemyNameText;
-    public TextMeshProUGUI damageTakenText; //Text for damage taken
-    public GameObject damageText;
+
+    [SerializeField] private GameObject popupDamage; //prefab for damage popup effect
+    [SerializeField] private Transform popupPos; //position for damage popup to spawn
+
     [Header("Dev Tools")]
     public bool function; /////testing function
 
@@ -52,7 +54,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
        
-        damageTakenText.enabled = false;
+        
         enemyAI = GetComponent<EnemyAI>();
         foreach(GameObject tower in GameObject.FindGameObjectsWithTag("TowerArcher"))
         {
@@ -226,7 +228,7 @@ public class Enemy : MonoBehaviour
                 break;
         }
                 
-        }
+    }
 
         
     
@@ -280,12 +282,18 @@ public class Enemy : MonoBehaviour
         //////Deal Damage
         if (health >= 0)
         {
-            damageTakenText.enabled = true;
+            
             health = health - damage;
             healthBar.localScale = new Vector3(health / initialHealth, 1, 1);
             //HpSplash indicator = Instantiate(damageText, transform.position, Quaternion.identity).GetComponent<HpSplash>();
             //indicator.SetDamageText(damage);
-            damageTakenText.SetText(damage.ToString("-##"));
+
+            GameObject damagePopup = Instantiate(popupDamage, popupPos.position, Quaternion.identity);
+            damagePopup.transform.GetComponentInChildren<TMP_Text>().SetText(damage.ToString("-##"));
+
+            Vector3 randomForce = (Vector3.up * 10f) + (transform.forward * 2f) + (transform.up * Random.Range(-3f, 3f));
+            damagePopup.GetComponent<Rigidbody>().velocity = randomForce;
+
             StartCoroutine(HideText());
             Debug.Log(enemyName + "Health: " + health);
         }
@@ -293,8 +301,9 @@ public class Enemy : MonoBehaviour
     IEnumerator HideText()
     {
         yield return new WaitForSeconds(2);
-        damageTakenText.enabled = false;
+        //damageTakenText.enabled = false;
     }
+
     public void Hit(Arrow arrow)
     {
         arrow.GetComponent<FireArrow>().FireDamage(this);
