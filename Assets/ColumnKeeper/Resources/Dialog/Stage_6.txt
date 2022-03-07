@@ -1,9 +1,9 @@
-"There's a mix of Goblins and Orcs rushing towards the towers!"
-"Normally I would say this is a disaster, but what I've discovered changes everything!"
-"I've found out they come from a world of magic! Real magic!"
-"I need more specimens to harness this magic; please gather more of these crystals!"
+Humphry:"There's a mix of Goblins and Orcs rushing towards the towers!" -10
+Humphry:"Normally I would say this is a disaster, but what I've discovered changes everything!" -10
+Humphry:"I've found out they come from a world of magic! Real magic!" -10
+Humphry:"I need more specimens to harness this magic; please gather more of these crystals!" -10
 #
-"Hero, come here, quickly! I've...I've done it!"
-"I've found a way to harness the magic!"
-"Just think of the technological advances we could make..."
-"Let me see your bow; I'll imbue it with magic using the crystals!"
+Humphry:"Hero, come here, quickly! I've...I've done it!" -10
+Humphry:"I've found a way to harness the magic!" -10
+Humphry:"Just think of the technological advances we could make..." -10
+Humphry:"Let me see your bow; I'll imbue it with magic using the crystals!" -10

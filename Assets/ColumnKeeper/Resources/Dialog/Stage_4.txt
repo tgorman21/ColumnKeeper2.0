@@ -1,7 +1,7 @@
-"A group of green creatures was spotted observing the tower, and now they are approaching fast!"
-"They look like Goblins from mythology, which is impossible!"
-"Hero, they look to be armed; please fend them off!"
+Humphry:"A group of green creatures was spotted observing the tower, and now they are approaching fast!" -10
+Humphry:"They look like Goblins from mythology, which is impossible!" -10
+Humphry:"Hero, they look to be armed; please fend them off!" -10
 #
-"Those things in the sky must be some sort of portal to another world, and these Goblins must have come through them."
-"I wonder why they all carry gold. Are Goblins wealthy?"
-"If so, then I have a bad feeling about this. Goblins are said to be a savage race; if they are well equipped, this could be beyond a national crisis."
+Humphry:"Those things in the sky must be some sort of portal to another world, and these Goblins must have come through them." -10
+Humphry:"I wonder why they all carry gold. Are Goblins wealthy?" -10
+Humphry:"If so, then I have a bad feeling about this. Goblins are said to be a savage race; if they are well equipped, this could be beyond a national crisis." -10

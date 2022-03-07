@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 339eda6032e7aa04da85c136e9bf871f,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6875,7 +6875,7 @@ Transform:
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 543450652143087788}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &437388900
 Light:
@@ -16649,8 +16649,8 @@ Transform:
   m_LocalPosition: {x: 6.031, y: 1.99, z: -1.041}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children:
-  - {fileID: 437388899}
   - {fileID: 1891909543684106922}
+  - {fileID: 437388899}
   - {fileID: 406448030247282765}
   - {fileID: 7014783475504370467}
   - {fileID: 3510840322090487368}
@@ -27513,11 +27513,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891909543684106923}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0.144, z: 0}
+  m_LocalPosition: {x: 0, y: 0.144, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 543450652143087788}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1891909543684106923
 GameObject:
@@ -40667,6 +40667,7 @@ GameObject:
   - component: {fileID: 4375699216695154997}
   - component: {fileID: 4375699216695154998}
   - component: {fileID: 4375699216695154996}
+  - component: {fileID: 4375699216695155000}
   m_Layer: 0
   m_Name: XRRig
   m_TagString: Player
@@ -40674,6 +40675,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!81 &4375699216695155000
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4375699216695154999}
+  m_Enabled: 1
 --- !u!114 &4375699216854870985
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,10 +1,10 @@
-"More Goblins are coming, dear Hero!"
-"Oh my, it looks like they are being led by an Orc."
-"The stories say that Orcs are natural leaders among monsters, boosting their power and morale."
-"I wonder what is causing them to work together; Orcs supposedly despise Goblins."
-"Please take care of them, but do be careful. I want to dissect them to discover where they came from."
+Humphry:"More Goblins are coming, dear Hero!" -10
+Humphry:"Oh my, it looks like they are being led by an Orc." -10
+Humphry:"The stories say that Orcs are natural leaders among monsters, boosting their power and morale." -10
+Humphry:"I wonder what is causing them to work together; Orcs supposedly despise Goblins." -10
+Humphry:"Please take care of them, but do be careful. I want to dissect them to discover where they came from." -10
 #
-"I've made a fantastic discovery!"
-"I found strange crystals in their bodies; I wonder what they are?"
-"They radiate like they are powered by something."
-"I need to study them more; this is wonderful!"
+Humphry:"I've made a fantastic discovery!" -10
+Humphry:"I found strange crystals in their bodies; I wonder what they are?" -10
+Humphry:"They radiate like they are powered by something." -10
+Humphry:"I need to study them more; this is wonderful!" -10
