@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 339eda6032e7aa04da85c136e9bf871f,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -41210,6 +41210,7 @@ GameObject:
   - component: {fileID: 4375699217677961612}
   - component: {fileID: 4375699217677961613}
   - component: {fileID: 4375699217677961614}
+  - component: {fileID: 4375699217677961617}
   m_Layer: 0
   m_Name: LocomotionSystem
   m_TagString: Untagged
@@ -41217,6 +41218,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4375699217677961617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4375699217677961616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97c6982fbe4b4bd3b31777093bd4334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprintSpeed: 4
+  moveProvider: {fileID: 4375699217677961613}
 --- !u!4 &4381293213703766309
 Transform:
   m_ObjectHideFlags: 0

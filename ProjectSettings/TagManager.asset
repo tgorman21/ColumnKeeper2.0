@@ -12,6 +12,8 @@ TagManager:
   - Target
   - Spawner
   - TargetCounter
+  - WantedBoard
+  - LevelCompletion
   layers:
   - Default
   - TransparentFX
