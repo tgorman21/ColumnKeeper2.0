@@ -30,15 +30,15 @@ public class Storybook : MonoBehaviour
         
         if (playPostDialog) //when scene starts, check if player is returning from level to trigger post dialog 
         {
+            //trigger post dialog animation
+            anim.SetTrigger("postdialog");
+
             //freeze movement of player
             TogglePlayerMovement(); 
 
             //move XRRig to be in front of the storybook
             Vector3 pos = new Vector3(3.5f, 0.6f, -0.65f);
             XRRig.position = pos;
-
-            //trigger post dialog animation
-            anim.SetTrigger("postdialog");
 
             //unlock next level if player just completed highest unlocked level
             if(levelNum == highestUnlockedLevel) { highestUnlockedLevel++; }
@@ -96,6 +96,8 @@ public class Storybook : MonoBehaviour
 
     private IEnumerator ProgressDialog(string[] dialog)
     {
+        if (!dialog[lineNum].Contains(":")) lineNum++; //TEST FIX: This should skip the first blank entry in the post dialog
+
         string[] currentLine = dialog[lineNum].Split(":"[0]);
         string character = currentLine[0];
         string[] scriptAndDuration = currentLine[1].Split("-"[0]);
