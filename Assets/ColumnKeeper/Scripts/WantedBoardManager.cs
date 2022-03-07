@@ -6,7 +6,7 @@ using TMPro;
 
 public class WantedBoardManager : MonoBehaviour
 {
-    public enum EnemyName { Goblin, Orc, Troll, Skeleton, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria }; //Names of enemies and bosses
+    public enum EnemyName { Goblin, Orc, Troll, Skeleton, Mushroom, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria }; //Names of enemies and bosses
     public EnemyName enemyName;
     [SerializeField]TextMeshProUGUI text;
     
@@ -34,6 +34,11 @@ public class WantedBoardManager : MonoBehaviour
 
                 break;
             case EnemyName.Skeleton:
+                PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
+                PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
+
+                break;
+            case EnemyName.Mushroom:
                 PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
                 PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
 
