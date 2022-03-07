@@ -737,7 +737,6 @@ GameObject:
   - component: {fileID: 6931198284772211748}
   - component: {fileID: 1151736361897626333}
   - component: {fileID: 7186082401509644888}
-  - component: {fileID: 8189522561343861443}
   m_Layer: 0
   m_Name: Jumping Mushroom
   m_TagString: Enemy
@@ -879,20 +878,6 @@ MonoBehaviour:
   popupPos: {fileID: 3316956622122527352}
   function: 0
   animationType: 0
---- !u!114 &8189522561343861443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8014637533873899669}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c181f3bfbe3024e479746abb946f90fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpForce: 4
-  grounded: 1
 --- !u!1 &8922777442744036111
 GameObject:
   m_ObjectHideFlags: 0

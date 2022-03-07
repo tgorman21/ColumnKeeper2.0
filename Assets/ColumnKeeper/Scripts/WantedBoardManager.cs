@@ -9,12 +9,10 @@ public class WantedBoardManager : MonoBehaviour
     public enum EnemyName { Goblin, Orc, Troll, Skeleton, Mushroom, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria }; //Names of enemies and bosses
     public EnemyName enemyName;
     [SerializeField]TextMeshProUGUI text;
-    
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         float currentDestroyed = 0;
-        
+
         switch (enemyName)
         {
 
@@ -84,6 +82,11 @@ public class WantedBoardManager : MonoBehaviour
                 break;
         }
     }
+    // Start is called before the first frame update
+    void Start()
+    {
+       
+    }
 
     // Update is called once per frame
     void Update()
@@ -103,6 +106,10 @@ public class WantedBoardManager : MonoBehaviour
 
                 break;
             case EnemyName.Skeleton:
+                text.SetText(PlayerPrefs.GetFloat(enemyName + "WantedPoster").ToString() + " / " + PlayerPrefs.GetFloat(enemyName + "Spawned").ToString());
+
+                break;
+            case EnemyName.Mushroom:
                 text.SetText(PlayerPrefs.GetFloat(enemyName + "WantedPoster").ToString() + " / " + PlayerPrefs.GetFloat(enemyName + "Spawned").ToString());
 
                 break;
