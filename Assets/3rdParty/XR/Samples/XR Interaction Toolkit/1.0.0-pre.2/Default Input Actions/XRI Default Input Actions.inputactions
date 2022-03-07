@@ -140,6 +140,14 @@
                     "interactions": ""
                 },
                 {
+                    "name": "Sprint",
+                    "type": "Button",
+                    "id": "51aac6c6-aefe-4f3c-8b56-944ae633fea5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Rotate Anchor",
                     "type": "Value",
                     "id": "21b75b25-12ad-410f-b4f8-a7745b7aca27",
@@ -456,6 +464,17 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Trigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8cfe58a1-9d99-4320-b49f-74f7645355c2",
+                    "path": "<XRController>{LeftHand}/thumbstickClicked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Continuous Move",
+                    "action": "Sprint",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
