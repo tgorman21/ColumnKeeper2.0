@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 {
     GameObject towerObj;
     public enum EnemyName { Goblin, Orc, Troll, Skeleton, Mushroom, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria }; //Names of enemies and bosses
-    public enum AnimationType { Walk, Attack, Die, powerUp }; // Type of Animation
+    public enum AnimationType { Walk, Attack, Die, powerUp, Throw, Idle }; // Type of Animation
     EnemyAI enemyAI;
     [Header("Enemy Info")]
     public EnemyName enemyName;
@@ -49,6 +49,8 @@ public class Enemy : MonoBehaviour
     float walkTime;
     float attackTime;
     float powerUpTime;
+    float throwTime;
+    float idleTime;
     //public string enemyName; //////specific enemy
 
     void Start()
@@ -73,11 +75,12 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         initialHealth = health;
-        initialSpeed = agent.speed; //////Sets initial speed to start speed
+        if(agent!= null)
+            initialSpeed = agent.speed; //////Sets initial speed to start speed
         publicDamage = damage;
         impact = true;
         decay = false;
-
+        if(enemyNameText != null)
         enemyNameText.SetText(enemyName.ToString());
         
 
@@ -101,7 +104,14 @@ public class Enemy : MonoBehaviour
                     {
                         powerUpTime = clip.length;
                     }
-
+                    if (clip.name == "Throw")
+                    {
+                        throwTime = clip.length;
+                    }
+                    if (clip.name == "Idle")
+                    {
+                        idleTime = clip.length;
+                    }
                     break;
             }
         }
@@ -223,7 +233,12 @@ public class Enemy : MonoBehaviour
             case AnimationType.powerUp:
                 PowerUp();
                 break;
-
+            case AnimationType.Throw:
+                Throw();
+                break;
+            case AnimationType.Idle:
+                Idle();
+                break;
             default:
                 Debug.Log("Not an Animation");
                 break;
@@ -231,8 +246,14 @@ public class Enemy : MonoBehaviour
                 
     }
 
-        
-    
+    void Idle()
+    {
+        anim.Play("Idle");
+    }
+    void Throw()
+    {
+        anim.Play("Throw");
+    }
     void PowerUp()
     {
         anim.Play("powerUp");
