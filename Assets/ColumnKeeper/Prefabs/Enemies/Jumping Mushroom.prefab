@@ -865,7 +865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: 4
-  health: 25
+  health: 50
   damage: 0
   publicDamage: 0
   goldDrop: 0
