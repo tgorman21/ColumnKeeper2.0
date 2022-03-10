@@ -206,7 +206,7 @@ public class Arrow : XRGrabInteractable
                     case ArrowType.TypeOfArrow.Target:
                         //Debug.Log("Target Arrow hit: "+hit.collider.GetComponentInParent<GameObject>().name);
 
-                        ImpactEffect ie = GetComponent<ImpactEffect>();
+                       
                         if(ie != null)
                         {
                             ie.TriggerEffect(hit.point, hit.collider.transform.rotation);
