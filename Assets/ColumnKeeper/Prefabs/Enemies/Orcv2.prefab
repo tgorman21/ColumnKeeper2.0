@@ -901,7 +901,6 @@ GameObject:
   - component: {fileID: 7281359725585764293}
   - component: {fileID: 6534621420162502742}
   - component: {fileID: 6010335984131042233}
-  - component: {fileID: 2364839275365736443}
   m_Layer: 0
   m_Name: Orcv2
   m_TagString: Enemy
@@ -1057,19 +1056,6 @@ CapsuleCollider:
   m_Height: 7.4199533
   m_Direction: 1
   m_Center: {x: 0.021760702, y: 3.2099767, z: 0}
---- !u!135 &2364839275365736443
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2460642245554956154}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 10.54
-  m_Center: {x: 0, y: 4.57, z: 0}
 --- !u!1 &2770761578257618411
 GameObject:
   m_ObjectHideFlags: 0
