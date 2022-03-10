@@ -137,6 +137,11 @@ public class Arrow : XRGrabInteractable
             CheckForHittable(hit);
             if (hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("ground") || hit.collider.CompareTag("Target"))
             {
+                ImpactEffect ie = GetComponent<ImpactEffect>();
+                if (ie != null)
+                {
+                    ie.TriggerEffect(hit.point, hit.collider.transform.rotation);
+                }
                 switch (arrow.typeOfArrow)
                 {
                     
