@@ -6,7 +6,7 @@ PrincessMaple:"Could you search from the top of the tower and use your archery s
 PrincessMaple:"I can collect the materials after. Five should be plenty, thank you!"-10
 #
 Humphry:"Off she goes to experiment again; Gods know what she is up to in there; thank you for indulging the princess, Hero."-10
-Humphry:"Your skills with a bow are top-notch; I can see why His Majesty named you his successor as..."-10
+Humphry:"Your skills with a bow are top notch; I can see why His Majesty named you his successor as..."-10
 Humphry:"...BOOM!!!"-10
 Humphry:"What was that?! Are we under attack?"-10
 Humphry:"Hero, hurry to the top of the tower; I'll go check on Princess Maple!"-10

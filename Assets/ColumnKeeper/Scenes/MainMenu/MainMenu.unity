@@ -5815,8 +5815,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   m_ValidColorGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
+    key0: {r: 1, g: 0.8469602, b: 0, a: 1}
+    key1: {r: 1, g: 0.44063836, b: 0, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -5844,8 +5844,8 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   m_InvalidColorGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 0, b: 0, a: 1}
-    key1: {r: 1, g: 0, b: 0, a: 1}
+    key0: {r: 0.5, g: 0.42352945, b: 0, a: 1}
+    key1: {r: 0.49056602, g: 0.21546431, b: 0, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -5934,8 +5934,8 @@ LineRenderer:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.9823303
-        value: 0
+        time: 1
+        value: 0.9594269
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -55157,7 +55157,6 @@ GameObject:
   - component: {fileID: 7772312447489820373}
   - component: {fileID: 6862559238655699626}
   - component: {fileID: 6862559238655699629}
-  - component: {fileID: 6862559238655699628}
   - component: {fileID: 6862559238655699627}
   m_Layer: 0
   m_Name: chest.btm.1
@@ -55196,20 +55195,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.002, z: 0}
   m_TimeToStationary: 0.5
---- !u!64 &6862559238655699628
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6862559238655699625}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 5306865104262150744, guid: 9ca1cbb34d1a1184f95c00129c7b3722, type: 3}
 --- !u!54 &6862559238655699629
 Rigidbody:
   m_ObjectHideFlags: 0
