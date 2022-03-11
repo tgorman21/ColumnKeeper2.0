@@ -74,10 +74,10 @@ GameObject:
   - component: {fileID: 6137419701098905813}
   - component: {fileID: 2749236165699681309}
   - component: {fileID: 4291169328983357527}
-  - component: {fileID: 7223382704426853669}
-  - component: {fileID: 4800441267351706305}
-  - component: {fileID: 2405445721937926525}
   - component: {fileID: 1243369983204564512}
+  - component: {fileID: 4800441267351706305}
+  - component: {fileID: 7223382704426853669}
+  - component: {fileID: 2405445721937926525}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Enemy
@@ -162,6 +162,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
+--- !u!136 &1243369983204564512
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614603684674895893}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.16
+  m_Height: 5.29
+  m_Direction: 1
+  m_Center: {x: 0, y: 2.48, z: 0}
+--- !u!114 &4800441267351706305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614603684674895893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0503f08ebc07242a2b6cdec3b4b106f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerPos: {fileID: 0}
+  checkpointPos: []
+  detectionDistance: 0
+  checkpointIndex: 0
+  currentState: 0
 --- !u!114 &7223382704426853669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,23 +219,6 @@ MonoBehaviour:
   popupPos: {fileID: 150807022901589216}
   function: 0
   animationType: 0
---- !u!114 &4800441267351706305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 614603684674895893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0503f08ebc07242a2b6cdec3b4b106f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerPos: {fileID: 0}
-  checkpointPos: []
-  detectionDistance: 0
-  checkpointIndex: 0
-  currentState: 0
 --- !u!64 &2405445721937926525
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -219,20 +233,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!136 &1243369983204564512
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 614603684674895893}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1.16
-  m_Height: 5.29
-  m_Direction: 1
-  m_Center: {x: 0, y: 2.48, z: 0}
 --- !u!1 &731982150269965361
 GameObject:
   m_ObjectHideFlags: 0

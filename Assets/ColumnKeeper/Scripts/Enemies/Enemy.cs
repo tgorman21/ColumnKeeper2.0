@@ -7,14 +7,14 @@ using TMPro;
 public class Enemy : MonoBehaviour
 {
     GameObject towerObj;
-    public enum EnemyName { Goblin, Orc, Troll, Skeleton, Mushroom, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria }; //Names of enemies and bosses
+    public enum EnemyName { Goblin, Orc, Troll, Skeleton, Mushroom, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria, ThrowableGoblin,DerzinGoblin }; //Names of enemies and bosses
     public enum AnimationType { Walk, Attack, Die, powerUp, Throw, Idle }; // Type of Animation
     EnemyAI enemyAI;
     [Header("Enemy Info")]
     public EnemyName enemyName;
     public float health; ////// health points
     [SerializeField] public float damage; ////// damage
-    public float publicDamage;
+    [HideInInspector]public float publicDamage; ///Dont touch this
     public float goldDrop;
     public int lane = 0;
     public Transform centerMass;
@@ -180,6 +180,7 @@ public class Enemy : MonoBehaviour
 
         }
     }
+    
     void Die()
     {
         enemyAI.currentState = EnemyAI.BehaviorState.Stop;
@@ -318,8 +319,11 @@ public class Enemy : MonoBehaviour
 
             StartCoroutine(HideText());
             Debug.Log(enemyName + "Health: " + health);
+
         }
     }
+
+     
     IEnumerator HideText()
     {
         yield return new WaitForSeconds(2);
@@ -383,6 +387,21 @@ public class Enemy : MonoBehaviour
             }
                 
             
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (enemyName == EnemyName.ThrowableGoblin)
+        {
+            if (collision.gameObject.CompareTag("Tower"))
+            {
+                TowerDamage();
+                
+
+               
+                Debug.Log("Hit");
+                Destroy(gameObject);
+            }
         }
     }
 }

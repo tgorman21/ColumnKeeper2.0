@@ -9,15 +9,22 @@ public class DerzinAttack : MonoBehaviour
     [SerializeField] GameObject goblinHand;
     [SerializeField] GameObject goblinThrow;
     [SerializeField] Transform derzinHand;
+    Enemy enemy;
     [SerializeField] float throwForce;
     Vector3 force;
     GameObject towerPos;
     float distanceFromTower;
+    private float damage;
     // Start is called before the first frame update
     void Start()
     {
         if (GameObject.FindGameObjectWithTag("TowerPos") != null)
             towerPos = GameObject.FindGameObjectWithTag("TowerPos");
+        if(GetComponent<Enemy>() != null)
+        {
+            enemy = GetComponent<Enemy>();
+            damage = enemy.damage;
+        }
     }
 
     // Update is called once per frame
@@ -31,7 +38,7 @@ public class DerzinAttack : MonoBehaviour
             {
                 distanceFromTower = hit.distance;
                
-                //Debug.Log(distanceFromTower);
+                Debug.Log(distanceFromTower);
             }
            
         }
@@ -52,7 +59,17 @@ public class DerzinAttack : MonoBehaviour
         goblin.GetComponent<EnemyAI>().enabled = false;
         goblin.GetComponent<NavMeshAgent>().enabled = false;
         goblin.GetComponent<Rigidbody>().isKinematic = false;
+        goblin.GetComponent<Enemy>().enemyName = Enemy.EnemyName.ThrowableGoblin;
+        goblin.GetComponent<Enemy>().damage = damage;
+        goblin.GetComponent<MeshCollider>().enabled = false;
         goblin.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Discrete;
+        Collider[] colliders = goblin.GetComponentsInChildren<Collider>();
+        foreach (Collider col in colliders)
+        {
+            if(col.gameObject.transform.parent != null)
+            col.enabled = false;
+        }
+        
         goblin.GetComponent<Rigidbody>().drag = 0.1f;
         goblin.GetComponent<Rigidbody>().angularDrag = 1;
         goblin.GetComponent<Rigidbody>().mass = 2.5f;
