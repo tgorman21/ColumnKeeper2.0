@@ -22838,7 +22838,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1586
+  m_Name: pb_Mesh-5430
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -25531,6 +25531,31 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 6091a203127a2e849887c77f82ec2cdb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7090c926cb9b7fc47802cf77edb4b863, type: 3}
+--- !u!1 &1870762554 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4993646448631436012, guid: 7090c926cb9b7fc47802cf77edb4b863,
+    type: 3}
+  m_PrefabInstance: {fileID: 1870762553}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1870762555
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870762554}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 59525eebefe081f4a8fe56318ff84fd2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1872145552
 GameObject:
   m_ObjectHideFlags: 0
