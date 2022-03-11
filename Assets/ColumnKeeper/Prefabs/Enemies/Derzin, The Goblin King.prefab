@@ -40510,6 +40510,7 @@ GameObject:
   - component: {fileID: 6410413425571254921}
   - component: {fileID: 4763342673628935075}
   - component: {fileID: 8230962352539956478}
+  - component: {fileID: 7660624376589746243}
   m_Layer: 0
   m_Name: Carrier
   m_TagString: Enemy
@@ -40581,6 +40582,25 @@ CapsuleCollider:
   m_Height: 5.29
   m_Direction: 1
   m_Center: {x: 0, y: 2.48, z: 0}
+--- !u!95 &7660624376589746243
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7781257002922732235}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 59525eebefe081f4a8fe56318ff84fd2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7797620754668601734
 GameObject:
   m_ObjectHideFlags: 0
