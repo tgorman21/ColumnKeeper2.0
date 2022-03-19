@@ -7,7 +7,7 @@ using TMPro;
 public class Enemy : MonoBehaviour
 {
     GameObject towerObj;
-    public enum EnemyName { Goblin, Orc, Troll, Skeleton, Mushroom, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria, ThrowableGoblin,DerzinGoblin }; //Names of enemies and bosses
+    public enum EnemyName { Goblin, Orc, Troll, Skeleton, Mushroom, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria, ThrowableGoblin,DerzinGoblin, Carrier }; //Names of enemies and bosses
     public enum AnimationType { Walk, Attack, Die, powerUp, Throw, Idle }; // Type of Animation
     EnemyAI enemyAI;
     [Header("Enemy Info")]
@@ -36,6 +36,7 @@ public class Enemy : MonoBehaviour
     private Animator anim;
     private NavMeshAgent agent; //////movement
     private Rigidbody rb; //////rigidbody
+    private GameObject boss;
 
     private float initialHealth; //////Initial health
     private float initialSpeed; //////Initial speed
@@ -127,6 +128,9 @@ public class Enemy : MonoBehaviour
             case EnemyName.Goblin:
                 TypeofAnimation();
                 break;
+            case EnemyName.Carrier:
+                TypeofAnimation();
+                break;
             case EnemyName.Orc:
                 TypeofAnimation();
                 break;
@@ -184,8 +188,15 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         enemyAI.currentState = EnemyAI.BehaviorState.Stop;
-        anim.Play("Death");
+        anim.Play("Death");        
+        if (enemyName == EnemyName.Carrier)
+        {
+           boss = GameObject.Find("Derzin, The Goblin King");
+            boss.GetComponent<NavMeshAgent>().speed -= 0.09375f;
+            Debug.Log(boss.GetComponent<NavMeshAgent>().speed);
+        }
         StartCoroutine(AnimationTimer(deathTime, 1));
+
 
     }
     IEnumerator AnimationTimer(float time, int score)
