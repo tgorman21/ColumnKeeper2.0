@@ -191,7 +191,7 @@ public class Enemy : MonoBehaviour
         anim.Play("Death");        
         if (enemyName == EnemyName.Carrier)
         {
-           boss = GameObject.Find("Derzin, The Goblin King");
+           boss = GameObject.Find("Derzin");
             boss.GetComponent<NavMeshAgent>().speed -= 0.09375f;
             Debug.Log(boss.GetComponent<NavMeshAgent>().speed);
         }
