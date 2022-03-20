@@ -300,7 +300,8 @@ public class Enemy : MonoBehaviour
                 decay = false;
                 t = 0;
                 impact = true; ////// Trigger impact damage once
-
+                Debug.Log(t);
+                Debug.Log(decay);
             }
         }
     }
