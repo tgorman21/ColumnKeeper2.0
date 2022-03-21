@@ -19,7 +19,18 @@ public class CheckPointCollider : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            other.GetComponent<EnemyAI>().currentState = EnemyAI.BehaviorState.SeekTower;
+            if (other.GetComponent<Enemy>() != null)
+            {
+                if (other.GetComponent<Enemy>().enemyName != Enemy.EnemyName.Carrier)
+                {
+                    if (other.GetComponent<Enemy>().enemyName == Enemy.EnemyName.Derzin)
+                    {
+                        other.GetComponent<DerzinAttack>().activated = true;
+                        other.GetComponent<Enemy>().animationType = Enemy.AnimationType.Throw;
+                    }
+                    other.GetComponent<EnemyAI>().currentState = EnemyAI.BehaviorState.SeekTower;
+                }
+            }
         }
     }
 }

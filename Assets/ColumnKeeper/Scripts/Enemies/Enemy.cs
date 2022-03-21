@@ -414,6 +414,10 @@ public class Enemy : MonoBehaviour
                 Debug.Log("Hit");
                 Destroy(gameObject);
             }
+            else if (collision.gameObject.CompareTag("ground"))
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

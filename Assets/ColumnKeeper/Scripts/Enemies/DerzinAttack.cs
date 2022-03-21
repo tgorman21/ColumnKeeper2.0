@@ -15,6 +15,8 @@ public class DerzinAttack : MonoBehaviour
     GameObject towerPos;
     float distanceFromTower;
     private float damage;
+    [HideInInspector] public bool activated;
+    float t;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,15 @@ public class DerzinAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (activated)
+        {
+            t += Time.deltaTime;
+            if(t > 20)
+            {
+                GetComponent<Enemy>().animationType = Enemy.AnimationType.Throw;
+                t = 0;
+            }
+        }
         derzinHand.transform.LookAt(towerPos.transform.position);
         RaycastHit hit;
         if (Physics.Raycast(derzinHand.transform.position, derzinHand.transform.forward, out hit))
@@ -37,7 +48,10 @@ public class DerzinAttack : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("TowerPos"))
             {
                 distanceFromTower = hit.distance;
-               
+                if(distanceFromTower < 15)
+                {
+                    hit.collider.gameObject.GetComponentInParent<TowerHealth>().DealDamage(1000);
+                }
                 Debug.Log(distanceFromTower);
             }
            
@@ -81,13 +95,14 @@ public class DerzinAttack : MonoBehaviour
         displacement = distanceFromTower - goblinHand.transform.position.magnitude * Time.deltaTime * Time.deltaTime;
         a = (2 * displacement) / (Time.deltaTime * Time.deltaTime);
         float work = 0;
+        goblin.GetComponent<Rigidbody>().mass = (goblin.GetComponent<Rigidbody>().mass * Mathf.Sqrt(displacement)) / 9.8f;
+
         work = goblin.GetComponent<Rigidbody>().mass * a * displacement;
 
         force = work/displacement * Time.deltaTime;
-        goblin.GetComponent<Rigidbody>().mass = (goblin.GetComponent<Rigidbody>().mass * Mathf.Sqrt(displacement))/9.8f;
         //Throw
-        goblin.GetComponent<Rigidbody>().AddForce(transform.forward * force);
-        
+        goblin.GetComponent<Rigidbody>().AddForce(transform.forward * force * 2);
+        GetComponent<Enemy>().animationType = Enemy.AnimationType.Idle;
     }
-
+    
 }

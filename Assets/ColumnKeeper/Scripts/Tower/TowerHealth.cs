@@ -19,6 +19,10 @@ public class TowerHealth : MonoBehaviour
         if(health <= 0)
         {
             //GameOver
+            if(CustomSceneManager.instance != null)
+            {
+                CustomSceneManager.instance.GoToScene("MainMenu");
+            }
         }
        
     }
