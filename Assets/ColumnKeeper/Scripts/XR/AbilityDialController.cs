@@ -8,11 +8,14 @@ public class AbilityDialController : MonoBehaviour
 {
     [Header("Arrow Selections")]
     [SerializeField] private GameObject[] arrowPrefabs;
+    [SerializeField] private bool[] lockedStatus;
 
-    [Header("Settings")]
-    [SerializeField] private float snapSelectionRange;
+    [Header("Dial Settings")]
+    [SerializeField] private int numSegments;
+    [SerializeField] private float snapRange;
 
     [Header("XR References")]
+    [SerializeField] private CustomInteractionManager interaction;
     [SerializeField] private XRDirectInteractor directInteractorR;
     [SerializeField] private ActionBasedSnapTurnProvider snapTurn;
 
@@ -26,7 +29,7 @@ public class AbilityDialController : MonoBehaviour
     private bool showingDial = false;
     private GameObject heldArrow;
 
-    private int currentSelection = 0;
+    private int currentSelection = -1;
 
     private void Awake()
     {
@@ -49,6 +52,8 @@ public class AbilityDialController : MonoBehaviour
     {
         showingDial = false;
         dialCanvas.GetChild(0).gameObject.SetActive(false); //turn off ability dial
+
+        if (currentSelection > 0 && currentSelection < arrowPrefabs.Length) SwapArrow(currentSelection); //if currently selecting an unlocked arrow type, swap current arrow with that type
 
         snapTurn.enabled = true; //enable snap turn while not using dial selection
     }
@@ -102,6 +107,53 @@ public class AbilityDialController : MonoBehaviour
         rot *= Mathf.Rad2Deg; //convert rotation from radians to degrees
         rot -= 90f; //reduce rotation by 90 so that 0 degrees is at Vector2(0, 1)
 
-        selector.localRotation = Quaternion.Euler(new Vector3(0, 0, rot));
+        SnapToType(rot);
+    }
+
+    private void SnapToType(float _rot)
+    {
+        int selection = -1; //when not selecting something, selection index is -1
+        
+        selector.localRotation = Quaternion.Euler(new Vector3(0, 0, _rot)); //set initial selector rotation to rot
+
+        float rot = _rot;
+        if (rot > 0) rot -= 360; //make rot range from 0 to -360 in clockwise direction
+
+        float offset = Mathf.Abs(rot) % (360 / numSegments); //offset from a possible selection (between 0 and 44)
+        if (offset > 22.5f) offset -= 22.5f; //fix offset so it isn't just measuring distance to closest LOWER selection but also closest HIGHER selection
+        if (offset > snapRange) //check if rot is within snap range, if not then return
+        {
+            currentSelection = -1;
+            return; 
+        }
+
+        selection = Mathf.RoundToInt(Mathf.Abs(rot) / (360 / numSegments)); //index value of selection from 0 to 7
+        if (selection == 8) selection = 0; //fix index value of 8 to instead be 0 (when rot is between 337.5 and 359, should round up to 0 instead of 360)
+        if (lockedStatus[selection]) //check if this selection is locked, if so then return
+        {
+            currentSelection = -1;
+            return;
+        }
+
+        currentSelection = selection; //set this as current selection
+        selector.localRotation = Quaternion.Euler(new Vector3(0, 0, selection * -(360 / numSegments))); //snap to selection
+
+        Debug.Log(currentSelection);
+    }
+
+    private void SwapArrow(int index)
+    {
+        //Debug.Log(index);
+
+        Destroy(heldArrow); //destroy previous arrow
+        interaction.ForceDeselect(directInteractorR); //force drop previous arrow (if it still somehow exists)
+
+        GameObject newArrow = Instantiate(arrowPrefabs[index]); //instantiate selected arrow type
+        interaction.ForceSelect(directInteractorR, newArrow.GetComponent<Arrow>()); //force grab new arrow
+        heldArrow = newArrow; //set new arrow as held arrow
+
+        currentSelection = -1; //reset current selection after new arrow is spawned
+
+        //ADD ARROW COOLDOWN HERE
     }
 }
