@@ -624,6 +624,14 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""DialSelect"",
+                    ""type"": ""Value"",
+                    ""id"": ""4d61fc11-d731-4b38-a388-8ddef9522ca7"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -912,6 +920,17 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
                     ""action"": ""AbilityDial"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""83980a0a-ffb6-4c52-9e97-2d657cc87036"",
+                    ""path"": ""<XRController>{RightHand}/primary2DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Generic XR Controller"",
+                    ""action"": ""DialSelect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1017,6 +1036,7 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
         m_XRIRightHand_Grip = m_XRIRightHand.FindAction("Grip", throwIfNotFound: true);
         m_XRIRightHand_Trigger = m_XRIRightHand.FindAction("Trigger", throwIfNotFound: true);
         m_XRIRightHand_AbilityDial = m_XRIRightHand.FindAction("AbilityDial", throwIfNotFound: true);
+        m_XRIRightHand_DialSelect = m_XRIRightHand.FindAction("DialSelect", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1276,6 +1296,7 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_XRIRightHand_Grip;
     private readonly InputAction m_XRIRightHand_Trigger;
     private readonly InputAction m_XRIRightHand_AbilityDial;
+    private readonly InputAction m_XRIRightHand_DialSelect;
     public struct XRIRightHandActions
     {
         private @XRIDefaultInputActions m_Wrapper;
@@ -1296,6 +1317,7 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
         public InputAction @Grip => m_Wrapper.m_XRIRightHand_Grip;
         public InputAction @Trigger => m_Wrapper.m_XRIRightHand_Trigger;
         public InputAction @AbilityDial => m_Wrapper.m_XRIRightHand_AbilityDial;
+        public InputAction @DialSelect => m_Wrapper.m_XRIRightHand_DialSelect;
         public InputActionMap Get() { return m_Wrapper.m_XRIRightHand; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1353,6 +1375,9 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
                 @AbilityDial.started -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnAbilityDial;
                 @AbilityDial.performed -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnAbilityDial;
                 @AbilityDial.canceled -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnAbilityDial;
+                @DialSelect.started -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnDialSelect;
+                @DialSelect.performed -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnDialSelect;
+                @DialSelect.canceled -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnDialSelect;
             }
             m_Wrapper.m_XRIRightHandActionsCallbackInterface = instance;
             if (instance != null)
@@ -1405,6 +1430,9 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
                 @AbilityDial.started += instance.OnAbilityDial;
                 @AbilityDial.performed += instance.OnAbilityDial;
                 @AbilityDial.canceled += instance.OnAbilityDial;
+                @DialSelect.started += instance.OnDialSelect;
+                @DialSelect.performed += instance.OnDialSelect;
+                @DialSelect.canceled += instance.OnDialSelect;
             }
         }
     }
@@ -1478,5 +1506,6 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
         void OnGrip(InputAction.CallbackContext context);
         void OnTrigger(InputAction.CallbackContext context);
         void OnAbilityDial(InputAction.CallbackContext context);
+        void OnDialSelect(InputAction.CallbackContext context);
     }
 }

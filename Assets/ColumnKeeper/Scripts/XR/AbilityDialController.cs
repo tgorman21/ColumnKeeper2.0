@@ -9,6 +9,9 @@ public class AbilityDialController : MonoBehaviour
     [Header("Arrow Selections")]
     [SerializeField] private GameObject[] arrowPrefabs;
 
+    [Header("Settings")]
+    [SerializeField] private float snapSelectionRange;
+
     [Header("XR References")]
     [SerializeField] private XRDirectInteractor directInteractorR;
     [SerializeField] private ActionBasedSnapTurnProvider snapTurn;
@@ -93,7 +96,8 @@ public class AbilityDialController : MonoBehaviour
 
     private void ShowingDial()
     {
-        Vector2 dir = inputs.XRIRightHand.Turn.ReadValue<Vector2>(); //get joystick value from -1 to 1 on x and y axis
+        Vector2 dir = inputs.XRIRightHand.DialSelect.ReadValue<Vector2>(); //get joystick value from -1 to 1 on x and y axis
+
         float rot = Mathf.Atan2(dir.y, dir.x); //convert Vector2 to rotation around origin (in radians)
         rot *= Mathf.Rad2Deg; //convert rotation from radians to degrees
         rot -= 90f; //reduce rotation by 90 so that 0 degrees is at Vector2(0, 1)
