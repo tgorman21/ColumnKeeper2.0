@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 4389694643528679261}
   m_Layer: 2
   m_Name: Lightning Arrow
-  m_TagString: Untagged
+  m_TagString: Arrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -394,6 +394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeOfArrow: 4
   damage: 50
+  trail: {fileID: 0}
 --- !u!1 &8589002692731022628
 GameObject:
   m_ObjectHideFlags: 0

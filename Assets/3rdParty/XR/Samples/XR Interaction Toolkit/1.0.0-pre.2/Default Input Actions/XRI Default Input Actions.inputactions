@@ -603,6 +603,14 @@
                     "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "AbilityDial",
+                    "type": "Button",
+                    "id": "0efd098b-a5de-402f-aef0-1cf766c8ad62",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -878,6 +886,17 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Trigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "07a2f511-d0bf-4d81-8a27-6172629a89bb",
+                    "path": "<XRController>{RightHand}/thumbstickClicked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Continuous Move",
+                    "action": "AbilityDial",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

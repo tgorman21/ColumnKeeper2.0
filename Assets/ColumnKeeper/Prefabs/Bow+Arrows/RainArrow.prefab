@@ -4960,7 +4960,7 @@ GameObject:
   - component: {fileID: 3536795957971821178}
   m_Layer: 2
   m_Name: RainArrow
-  m_TagString: Untagged
+  m_TagString: Arrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5151,6 +5151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeOfArrow: 5
   damage: 25
+  trail: {fileID: 0}
 --- !u!1 &8589002692731022628
 GameObject:
   m_ObjectHideFlags: 0

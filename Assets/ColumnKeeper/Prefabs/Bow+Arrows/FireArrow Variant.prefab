@@ -127,5 +127,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireArrow Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8542102953145869890, guid: 6038bb5f346a14967a8ab7ab8b0facdc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Arrow
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6038bb5f346a14967a8ab7ab8b0facdc, type: 3}

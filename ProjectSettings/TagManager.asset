@@ -15,6 +15,7 @@ TagManager:
   - WantedBoard
   - LevelCompletion
   - TowerPos
+  - Arrow
   layers:
   - Default
   - TransparentFX
