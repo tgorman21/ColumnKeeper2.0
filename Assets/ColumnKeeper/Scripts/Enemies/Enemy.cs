@@ -7,7 +7,7 @@ using TMPro;
 public class Enemy : MonoBehaviour
 {
     GameObject towerObj;
-    public enum EnemyName { Goblin, Orc, Troll, Skeleton, Mushroom, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria, ThrowableGoblin,DerzinGoblin, Carrier }; //Names of enemies and bosses
+    public enum EnemyName { Goblin, Orc, Troll, Skeleton, Mushroom, Lich, Witch, Vampire, Derzin, Ingrar, Zarzog, Xenoria, ThrowableGoblin,DerzinGoblin, Carrier,Rock }; //Names of enemies and bosses
     public enum AnimationType { Walk, Attack, Die, powerUp, Throw, Idle }; // Type of Animation
     EnemyAI enemyAI;
     [Header("Enemy Info")]
@@ -83,41 +83,44 @@ public class Enemy : MonoBehaviour
         decay = false;
         if(enemyNameText != null)
         enemyNameText.SetText(enemyName.ToString());
-        
+
 
         //Animation Times
-        AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;
-        foreach (AnimationClip clip in clips)
+        if (GetComponent<Animator>() != null)
         {
-            switch (clip.name)
+            AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;
+            foreach (AnimationClip clip in clips)
             {
-                case "Attack":
-                    attackTime = clip.length;
-                    break;
-                case "Walk":
-                    walkTime = clip.length;
-                    break;
-                case "Death":
-                    deathTime = clip.length;
-                    break;
-                default:
-                    if(clip.name == "powerUp")
-                    {
-                        powerUpTime = clip.length;
-                    }
-                    if (clip.name == "Throw")
-                    {
-                        throwTime = clip.length;
-                    }
-                    if (clip.name == "Idle")
-                    {
-                        idleTime = clip.length;
-                    }
-                    break;
+                switch (clip.name)
+                {
+                    case "Attack":
+                        attackTime = clip.length;
+                        break;
+                    case "Walk":
+                        walkTime = clip.length;
+                        break;
+                    case "Death":
+                        deathTime = clip.length;
+                        break;
+                    default:
+                        if (clip.name == "powerUp")
+                        {
+                            powerUpTime = clip.length;
+                        }
+                        if (clip.name == "Throw")
+                        {
+                            throwTime = clip.length;
+                        }
+                        if (clip.name == "Idle")
+                        {
+                            idleTime = clip.length;
+                        }
+                        break;
+                }
             }
+            if (enemyName == EnemyName.Orc)
+                animationType = AnimationType.powerUp;
         }
-        if (enemyName == EnemyName.Orc)
-            animationType = AnimationType.powerUp;
     }
 
     private void Update()
@@ -174,14 +177,17 @@ public class Enemy : MonoBehaviour
 
         //}
 
-        ////// Death Condition 
-        if (health <= 0)
+        ////// Death Condition
+        if (enemyName != EnemyName.Rock)
         {
-            //towerArcher.RemoveEnemy(gameObject);
-            enemyAI.currentState = EnemyAI.BehaviorState.Stop;
-            animationType = AnimationType.Die;
-
-
+            if (health <= 0)
+            {
+                //towerArcher.RemoveEnemy(gameObject);
+                if(GetComponent<EnemyAI>() != null)
+                    enemyAI.currentState = EnemyAI.BehaviorState.Stop;
+                if(GetComponent<Animator>() != null)
+                    animationType = AnimationType.Die;
+            }
         }
     }
     
@@ -403,7 +409,7 @@ public class Enemy : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (enemyName == EnemyName.ThrowableGoblin)
+        if (enemyName == EnemyName.ThrowableGoblin || enemyName == EnemyName.Rock)
         {
             if (collision.gameObject.CompareTag("Tower"))
             {

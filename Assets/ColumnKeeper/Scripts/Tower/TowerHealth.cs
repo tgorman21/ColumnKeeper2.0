@@ -36,6 +36,11 @@ public class TowerHealth : MonoBehaviour
             if(towerHP!= null)
             towerHP.localScale = new Vector3(health / baseHealth, 1, 1);
         }
+        if (health < 0)
+        {
+            towerHP.localScale = new Vector3(0, 1, 1);
+        }
+
     }
 
     //Upgrades Tower

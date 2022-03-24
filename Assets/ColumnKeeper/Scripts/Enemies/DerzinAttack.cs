@@ -10,7 +10,7 @@ public class DerzinAttack : MonoBehaviour
     [SerializeField] GameObject goblinThrow;
     [SerializeField] Transform derzinHand;
     Enemy enemy;
-    [SerializeField] float throwForce;
+    [HideInInspector] float throwForce;
     Vector3 force;
     GameObject towerPos;
     float distanceFromTower;
@@ -48,42 +48,67 @@ public class DerzinAttack : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("TowerPos"))
             {
                 distanceFromTower = hit.distance;
-                if(distanceFromTower < 15)
+                if (GetComponent<Enemy>().enemyName == Enemy.EnemyName.Derzin)
                 {
-                    hit.collider.gameObject.GetComponentInParent<TowerHealth>().DealDamage(1000);
+                    if (distanceFromTower < 15)
+                    {
+                        hit.collider.gameObject.GetComponentInParent<TowerHealth>().DealDamage(1000);
+                    }
                 }
-                Debug.Log(distanceFromTower);
+                
+                if(GetComponent<Enemy>().enemyName == Enemy.EnemyName.Troll)
+                {
+                    if(distanceFromTower < 37)
+                    {
+                        GetComponent<EnemyAI>().currentState = EnemyAI.BehaviorState.Stop;
+                    }
+                }
+                //Debug.Log(distanceFromTower);
             }
            
         }
     }
     public void GoblinManager()
     {
-        goblinObj.SetActive(!goblinObj.activeSelf);
-        goblinHand.SetActive(!goblinObj.activeSelf);
+        if (goblinObj != null)
+        {
+            goblinObj.SetActive(!goblinObj.activeSelf);
+        }
+        if (goblinHand != null)
+        {
+            goblinHand.SetActive(!goblinHand.activeSelf);
+        }
+       
     }
 
     public void Throw()
     {
-        goblinHand.SetActive(false);
+        if(goblinHand != null)
+            goblinHand.SetActive(false);
         GameObject goblin = Instantiate(goblinThrow);
         goblin.transform.position = derzinHand.transform.position;
         goblin.transform.rotation = derzinHand.transform.rotation;
-        //Enemy Reference 
-        goblin.GetComponent<EnemyAI>().enabled = false;
-        goblin.GetComponent<NavMeshAgent>().enabled = false;
+        //Enemy Reference
+        if(goblin.GetComponent<EnemyAI>() != null)
+            goblin.GetComponent<EnemyAI>().enabled = false;
+        if(goblin.GetComponent<NavMeshAgent>() != null)
+            goblin.GetComponent<NavMeshAgent>().enabled = false;
         goblin.GetComponent<Rigidbody>().isKinematic = false;
-        goblin.GetComponent<Enemy>().enemyName = Enemy.EnemyName.ThrowableGoblin;
+        if(goblin.GetComponent<Enemy>().enemyName != Enemy.EnemyName.Rock)
+            goblin.GetComponent<Enemy>().enemyName = Enemy.EnemyName.ThrowableGoblin;
         goblin.GetComponent<Enemy>().damage = damage;
-        goblin.GetComponent<MeshCollider>().enabled = false;
-        goblin.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Discrete;
-        Collider[] colliders = goblin.GetComponentsInChildren<Collider>();
-        foreach (Collider col in colliders)
+        if (goblin.GetComponent<Enemy>().enemyName != Enemy.EnemyName.Rock)
         {
-            if(col.gameObject.transform.parent != null)
-            col.enabled = false;
+            goblin.GetComponent<MeshCollider>().enabled = false;
+            Collider[] colliders = goblin.GetComponentsInChildren<Collider>();
+            foreach (Collider col in colliders)
+            {
+                if (col.gameObject.transform.parent != null)
+                    col.enabled = false;
+            }
         }
-        
+        goblin.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Discrete;
+
         goblin.GetComponent<Rigidbody>().drag = 0.1f;
         goblin.GetComponent<Rigidbody>().angularDrag = 1;
         goblin.GetComponent<Rigidbody>().mass = 2.5f;
@@ -99,10 +124,13 @@ public class DerzinAttack : MonoBehaviour
 
         work = goblin.GetComponent<Rigidbody>().mass * a * displacement;
 
-        force = work/displacement * Time.deltaTime;
+        force = work/displacement;
         //Throw
-        goblin.GetComponent<Rigidbody>().AddForce(transform.forward * force * 2);
-        GetComponent<Enemy>().animationType = Enemy.AnimationType.Idle;
+        goblin.GetComponent<Rigidbody>().AddForce(transform.forward * force * 2 * Time.deltaTime);
+        if(goblin.GetComponent<Enemy>().enemyName != Enemy.EnemyName.Rock)
+            GetComponent<Enemy>().animationType = Enemy.AnimationType.Idle;
+        if (goblin.GetComponent<Enemy>().enemyName == Enemy.EnemyName.Rock)
+            GetComponent<Enemy>().animationType = Enemy.AnimationType.Walk;
     }
     
 }
