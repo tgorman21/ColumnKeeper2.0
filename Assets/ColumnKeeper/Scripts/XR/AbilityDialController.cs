@@ -52,9 +52,7 @@ public class AbilityDialController : MonoBehaviour
     {
         showingDial = false;
         dialCanvas.GetChild(0).gameObject.SetActive(false); //turn off ability dial
-
-        if (currentSelection > 0 && currentSelection < arrowPrefabs.Length) SwapArrow(currentSelection); //if currently selecting an unlocked arrow type, swap current arrow with that type
-
+        if (currentSelection >= 0 && currentSelection < arrowPrefabs.Length) SwapArrow(currentSelection); //if currently selecting an unlocked arrow type, swap current arrow with that type
         snapTurn.enabled = true; //enable snap turn while not using dial selection
     }
 

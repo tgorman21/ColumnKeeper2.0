@@ -913,7 +913,7 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""07a2f511-d0bf-4d81-8a27-6172629a89bb"",
-                    ""path"": ""<XRController>{RightHand}/thumbstickClicked"",
+                    ""path"": ""<XRController>{RightHand}/triggerPressed"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Continuous Move"",
