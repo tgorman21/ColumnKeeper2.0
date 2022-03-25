@@ -329,7 +329,7 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_ForceGravityOnDetach: 1
   m_RetainTransformParent: 0
-  speed: 2000
+  speed: 4000
   tip: {fileID: 8386148805111352677}
   layerMask:
     serializedVersion: 2
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeOfArrow: 4
-  damage: 50
+  damage: 70
   trail: {fileID: 0}
 --- !u!1 &8589002692731022628
 GameObject:
