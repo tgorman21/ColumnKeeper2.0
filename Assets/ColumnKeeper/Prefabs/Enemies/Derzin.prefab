@@ -1323,7 +1323,7 @@ Animator:
   m_GameObject: {fileID: 1036900905754514050}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: ba2955b285ce5484a822b4abc64089db, type: 3}
-  m_Controller: {fileID: 9100000, guid: 990beafeb8267d24c9c15f5c22d140be, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1393,6 +1393,7 @@ MonoBehaviour:
     type: 3}
   derzinHand: {fileID: 7876986937645072019}
   activated: 0
+  cooldown: 30
 --- !u!64 &3507764395953032688
 MeshCollider:
   m_ObjectHideFlags: 0

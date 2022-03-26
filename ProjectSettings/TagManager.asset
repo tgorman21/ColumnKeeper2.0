@@ -16,6 +16,7 @@ TagManager:
   - LevelCompletion
   - TowerPos
   - Arrow
+  - GroundBomb
   layers:
   - Default
   - TransparentFX

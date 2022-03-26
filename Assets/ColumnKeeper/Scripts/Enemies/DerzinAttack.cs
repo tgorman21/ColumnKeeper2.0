@@ -16,6 +16,7 @@ public class DerzinAttack : MonoBehaviour
     float distanceFromTower;
     private float damage;
     [HideInInspector] public bool activated;
+    [SerializeField] float cooldown;
     float t;
     // Start is called before the first frame update
     void Start()
@@ -35,7 +36,7 @@ public class DerzinAttack : MonoBehaviour
         if (activated)
         {
             t += Time.deltaTime;
-            if(t > 20)
+            if(t > cooldown)
             {
                 GetComponent<Enemy>().animationType = Enemy.AnimationType.Throw;
                 t = 0;
