@@ -17,6 +17,7 @@ TagManager:
   - TowerPos
   - Arrow
   - GroundBomb
+  - PlayerPos
   layers:
   - Default
   - TransparentFX

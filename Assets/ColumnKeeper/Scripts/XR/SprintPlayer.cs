@@ -4,15 +4,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 namespace UnityEngine.XR.Interaction.Toolkit
 {
-
-
     public class SprintPlayer : MonoBehaviour
     {
         XRIDefaultInputActions inputs;
         public float sprintSpeed;
         float defaultSpeed;
         [SerializeField]ActionBasedContinuousMoveProvider moveProvider;
-
+        
         private void Awake()
         {
             inputs = new XRIDefaultInputActions();
