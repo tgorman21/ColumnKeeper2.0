@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-namespace UnityEngine.XR.Interaction.Toolkit
-{
+
     public class DerzinAttack : MonoBehaviour
     {
         [SerializeField] GameObject goblinObj;
@@ -140,4 +139,3 @@ namespace UnityEngine.XR.Interaction.Toolkit
         }
 
     }
-}

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-namespace UnityEngine.XR.Interaction.Toolkit
-{
+using UnityEngine.XR.Interaction.Toolkit;
+
     public class SprintPlayer : MonoBehaviour
     {
         XRIDefaultInputActions inputs;
@@ -41,4 +41,3 @@ namespace UnityEngine.XR.Interaction.Toolkit
 
         }
     }
-}

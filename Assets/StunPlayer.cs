@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
-namespace UnityEngine.XR.Interaction.Toolkit
-{
+using UnityEngine.XR.Interaction.Toolkit;
+
     
     public class StunPlayer : MonoBehaviour
     {
@@ -42,4 +42,3 @@ namespace UnityEngine.XR.Interaction.Toolkit
             sprintPlayer.enabled = true;
         }
     }
-}
