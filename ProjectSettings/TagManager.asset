@@ -18,6 +18,7 @@ TagManager:
   - Arrow
   - GroundBomb
   - PlayerPos
+  - Bow
   layers:
   - Default
   - TransparentFX
