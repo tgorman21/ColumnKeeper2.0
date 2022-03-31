@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [Header("Place Holder For Portal Beam")]
+    [Tooltip ("Don't Know if it's a Particle System Just a place holder for now")]
+    [SerializeField] ParticleSystem[] portalBeams;
+
+    [Header ("Enemy and Spawner Transforms")]
     [SerializeField] GameObject[] enemies;
     [SerializeField] Transform[] lookAtObj;
     [SerializeField] Transform[] spawnPoints;
@@ -175,6 +180,10 @@ public class EnemySpawner : MonoBehaviour
         enemyCheck.Add(enemy);
         switch(pointIndex){
             case 0:
+                if (portalBeams != null)
+                {
+                    portalBeams[pointIndex].Play();
+                }
                 enemy.GetComponent<Enemy>().lane = pointIndex + 1;
                 enemy.GetComponent<EnemyAI>().checkpointPos = checkpointsLane1;
                 enemy.GetComponent<EnemyAI>().checkpointIndex = Random.Range(0, checkpointsLane1.Length);
@@ -190,6 +199,10 @@ public class EnemySpawner : MonoBehaviour
                 }
                 break;
             case 1:
+                if (portalBeams != null)
+                {
+                    portalBeams[pointIndex].Play();
+                }
                 enemy.GetComponent<Enemy>().lane = pointIndex + 1;
                 enemy.GetComponent<EnemyAI>().checkpointPos = checkpointsLane2;
                 enemy.GetComponent<EnemyAI>().checkpointIndex = Random.Range(0, checkpointsLane2.Length);
@@ -204,6 +217,10 @@ public class EnemySpawner : MonoBehaviour
 
                 break;
             case 2:
+                if(portalBeams != null)
+                {
+                    portalBeams[pointIndex].Play();
+                }
                 enemy.GetComponent<Enemy>().lane = pointIndex + 1;
                 enemy.GetComponent<EnemyAI>().checkpointPos = checkpointsLane3;
                 enemy.GetComponent<EnemyAI>().checkpointIndex = Random.Range(0, checkpointsLane3.Length);
