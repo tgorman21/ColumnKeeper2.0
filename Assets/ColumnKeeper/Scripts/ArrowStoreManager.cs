@@ -4,14 +4,70 @@ using UnityEngine;
 
 public class ArrowStoreManager : MonoBehaviour
 {
-    public enum TypeOfArrow { Regular, Fire, Ice, MeteorShower, Lightning, Rain, Heal, Target };
-
-    [HideInInspector]public TypeOfArrow typeOfArrow;
-
+   
+    [SerializeField] GameObject[] arrows;
+    [SerializeField] Currency currency;
     public GameObject[] menus;
+
+    
+    public float fireArrowCost, lightningArrowCost, rainArrowCost, iceArrowCost, meteorArrowCost, healingArrowCost;
+    [Header ("Cost Multiplier After Purchase")]
+    public float upgradeMultiplier;
+    
     private void Start()
     {
        
+       foreach(GameObject arrow in arrows)
+        {
+            ArrowType arrowType = arrow.GetComponent<ArrowType>();
+
+            switch (arrowType.typeOfArrow)
+            {
+                case ArrowType.TypeOfArrow.Fire:
+                    
+                    Debug.Log(arrow.GetComponent<ArrowType>().typeOfArrow + "ArrowDamage");
+                    FireArrow fireArrow = arrow.GetComponent<FireArrow>();
+                    PlayerPrefs.SetFloat(arrowType.ToString() + "ArrowDamage", arrowType.damage);
+                    PlayerPrefs.SetFloat("ImpactDamage", arrowType.damage);
+                    PlayerPrefs.SetFloat("DecayDamage", arrowType.damage * 0.016f);
+                    PlayerPrefs.SetFloat("FireSize", fireArrow.fireSize);
+                    Debug.Log("Damage: " + PlayerPrefs.GetFloat(arrowType + "ArrowDamage".ToString()));
+                    Debug.Log("Impact Damage: " + PlayerPrefs.GetFloat("ImpactDamage"));
+                    Debug.Log("Decay Damage: " + PlayerPrefs.GetFloat("DecayDamage"));
+                    Debug.Log("Fire Size: " + PlayerPrefs.GetFloat("FireSize"));
+                    break;
+                case ArrowType.TypeOfArrow.Ice:
+                    IceArrow iceArrow = arrow.GetComponent<IceArrow>();
+                    PlayerPrefs.SetFloat(arrowType + "ArrowDamage", arrowType.damage);
+                    PlayerPrefs.SetFloat("IceSizeX", iceArrow.IceSizeX);
+                    PlayerPrefs.SetFloat("IceSizeY", iceArrow.IceSizeY);
+                    PlayerPrefs.SetFloat("IceSizeZ", iceArrow.IceSizeZ);
+
+                    break;
+                case ArrowType.TypeOfArrow.MeteorShower:
+                    MeteorShower meteorShower = arrow.GetComponent<MeteorShower>();
+                    PlayerPrefs.SetFloat(arrowType + "ArrowDamage", arrowType.damage);
+                    PlayerPrefs.SetFloat("MeteorTime", meteorShower.meteorTime);
+                    break;
+                case ArrowType.TypeOfArrow.Lightning:
+                    PlayerPrefs.SetFloat(arrowType + "ArrowDamage", arrowType.damage);
+                    LightningArrow lightningArrow = arrow.GetComponent<LightningArrow>();
+                    PlayerPrefs.SetFloat("LightningSize", lightningArrow.lightningSize);
+                    break;
+                case ArrowType.TypeOfArrow.Heal:
+                    HealArrow healArrow = arrow.GetComponent<HealArrow>();
+                    PlayerPrefs.SetFloat("HealAmount", healArrow.healAmount);
+                    break;
+                case ArrowType.TypeOfArrow.Rain:
+                    RainOfArrows rainOfArrows = arrow.GetComponent<RainOfArrows>();
+
+                    PlayerPrefs.SetFloat(arrowType + "ArrowDamage", arrowType.damage);
+                    PlayerPrefs.SetFloat("RainSpawnRate", rainOfArrows.spawnRate);
+                    break;
+                default: Debug.Log("Not an arrow");
+                    break;
+            }
+        }
 
         /* Uncomment when scene switch is added 1 = true, 0 = false
         if (PlayerPrefs.GetInt("UnlockStore") == 1)
@@ -30,132 +86,223 @@ public class ArrowStoreManager : MonoBehaviour
         }
         */
     }
-    public void SetFireArrowUpgrade(float cost)
+    public void SetFireArrowUpgrade()
     {
-        if (PlayerPrefs.GetFloat("Gold") >= cost)
+        if (currency.GetGold() >= fireArrowCost)
         {
             //Damage
-            typeOfArrow = TypeOfArrow.Fire;
-            float damage = PlayerPrefs.GetFloat(typeOfArrow + "ArrowDamage");
-            damage += damage * 0.04f; //Change This To Change upgrade variable ratio
-            PlayerPrefs.SetFloat(typeOfArrow + "ArrowDamage", damage);
 
-            PlayerPrefs.SetFloat("ImpactDamage", damage);
-            PlayerPrefs.SetFloat("DecayDamage", damage * 0.016f);
+            foreach (GameObject arrow in arrows)
+            {
+                ArrowType arrowType = arrow.GetComponent<ArrowType>();
 
-            //Size
-            float size = PlayerPrefs.GetFloat("FireSize");
-            size += size * 0.27f; //Change This To Change upgrade variable ratio
-            PlayerPrefs.SetFloat("FireSize", size);
-            Debug.Log("Impact Damage: " + PlayerPrefs.GetFloat("ImpactDamage"));
-            Debug.Log("Decay Damage: " + PlayerPrefs.GetFloat("DecayDamage"));
-            Debug.Log("Fire Size: " + PlayerPrefs.GetFloat("FireSize"));
-            //Change if it uses Diamonds/Gems
-            float currentGold = PlayerPrefs.GetFloat("Gold");
-            currentGold -= cost;
-            PlayerPrefs.SetFloat("Gold", currentGold);
+                switch (arrowType.typeOfArrow)
+                {
+                    case ArrowType.TypeOfArrow.Fire:
+                        float damage = PlayerPrefs.GetFloat(arrowType + "ArrowDamage");
+                        Debug.Log(arrowType + "ArrowDamage");
+                        Debug.Log("Damage 1: " + PlayerPrefs.GetFloat(arrowType + "ArrowDamage"));
+                        damage += damage * 0.04f; //Change This To Change upgrade variable ratio
+                        PlayerPrefs.SetFloat(arrowType + "ArrowDamage", damage);
+                        Debug.Log("Damage 2: " + damage);
+                        PlayerPrefs.SetFloat("ImpactDamage", damage);
+                        PlayerPrefs.SetFloat("DecayDamage", damage * 0.016f);
+
+                        //Size
+                        float size = PlayerPrefs.GetFloat("FireSize");
+                        size += size * 0.27f; //Change This To Change upgrade variable ratio
+                        PlayerPrefs.SetFloat("FireSize", size);
+
+                        Debug.Log("Impact Damage: " + PlayerPrefs.GetFloat("ImpactDamage"));
+                        Debug.Log("Decay Damage: " + PlayerPrefs.GetFloat("DecayDamage"));
+                        Debug.Log("Fire Size: " + PlayerPrefs.GetFloat("FireSize"));
+                        //Change if it uses Diamonds/Gems
+                        fireArrowCost += fireArrowCost * upgradeMultiplier;
+                        currency.SubtractGold(fireArrowCost);
+                        break;
+
+                    default:
+                        Debug.Log("Not an arrow");
+                        break;
+                }
+            }
+
+
         }
     }
-    public void SetLightningArrowUpgrade(float cost)
+    public void SetLightningArrowUpgrade()
     {
-        if (PlayerPrefs.GetFloat("Gold") >= cost)
+        if (currency.GetGold() >= lightningArrowCost)
         {
-            //Damage
-            typeOfArrow = TypeOfArrow.Lightning;
-            float damage = PlayerPrefs.GetFloat(typeOfArrow + "ArrowDamage");
-            damage += damage * 0.04f; //Change This To Change upgrade variable ratio
-            PlayerPrefs.SetFloat(typeOfArrow + "ArrowDamage", damage);
+            foreach (GameObject arrow in arrows)
+            {
+                ArrowType arrowType = arrow.GetComponent<ArrowType>();
 
-            //Size
-            float size = PlayerPrefs.GetFloat("LightningSize");
-            size += size * 0.27f; //Change This To Change upgrade variable ratio
-            PlayerPrefs.SetFloat("LightningSize", size);
+                switch (arrowType.typeOfArrow)
+                {
 
-            //Change if it uses Diamonds/Gems
-            float currentGold = PlayerPrefs.GetFloat("Gold");
-            currentGold -= cost;
-            PlayerPrefs.SetFloat("Gold", currentGold);
+                    case ArrowType.TypeOfArrow.Ice:
+                        //Damage
+                        float damage = PlayerPrefs.GetFloat(arrowType + "ArrowDamage");
+                        damage += damage * 0.04f; //Change This To Change upgrade variable ratio
+                        PlayerPrefs.SetFloat(arrowType + "ArrowDamage", damage);
+
+                        //Size
+                        float size = PlayerPrefs.GetFloat("LightningSize");
+                        size += size * 0.27f; //Change This To Change upgrade variable ratio
+                        PlayerPrefs.SetFloat("LightningSize", size);
+                        lightningArrowCost += lightningArrowCost * upgradeMultiplier;
+                        //Change if it uses Diamonds/Gems
+                        currency.SubtractGold(lightningArrowCost);
+                        break;
+
+                    default:
+                        Debug.Log("Not an arrow");
+                        break;
+                }
+            }
+
+
         }
     }
 
-    public void SetRainArrowUpgrade(float cost)
+    public void SetRainArrowUpgrade()
     {
-        if (PlayerPrefs.GetFloat("Gold") >= cost)
+        if (currency.GetGold() >= rainArrowCost)
         {
+            foreach (GameObject arrow in arrows)
+            {
+                ArrowType arrowType = arrow.GetComponent<ArrowType>();
+
+                switch (arrowType.typeOfArrow)
+                {
+                  
+                    case ArrowType.TypeOfArrow.Rain:
+                        float damage = PlayerPrefs.GetFloat(arrowType + "ArrowDamage");
+                        damage += damage * 0.04f;
+                        PlayerPrefs.SetFloat(arrowType + "ArrowDamage", damage);
+                        float spawnRate = PlayerPrefs.GetFloat("RainSpawnRate");
+                        spawnRate += 1; //Change This To Change upgrade variable ratio
+                        PlayerPrefs.SetFloat("RainSpawnRate", spawnRate);
+                        rainArrowCost += rainArrowCost * upgradeMultiplier;
+                        //Change if it uses Diamonds/Gems
+                        currency.SubtractGold(rainArrowCost);
+                        break;
+                    default:
+                        Debug.Log("Not an arrow");
+                        break;
+                }
+            }
             //Spawn Rate (Amount of Arrows)
-            typeOfArrow = TypeOfArrow.Rain;
-            float spawnRate = PlayerPrefs.GetFloat("RainSpawnRate");
-            spawnRate += 1; //Change This To Change upgrade variable ratio
-            PlayerPrefs.SetFloat("RainSpawnRate", spawnRate);
-
-            //Change if it uses Diamonds/Gems
-            float currentGold = PlayerPrefs.GetFloat("Gold");
-            currentGold -= cost;
-            PlayerPrefs.SetFloat("Gold", currentGold);
+            
         }
     }
 
-    public void SetIceArrowUpgrade(float cost)
+    public void SetIceArrowUpgrade()
     {
-        if (PlayerPrefs.GetFloat("Gold") >= cost)
+        if (currency.GetGold() >= iceArrowCost)
         {
             //Damage
-            typeOfArrow = TypeOfArrow.Ice;
-            float damage = PlayerPrefs.GetFloat(typeOfArrow + "ArrowDamage");
-            damage += damage * 0.04f; //Change This To Change upgrade variable ratio
-            PlayerPrefs.SetFloat(typeOfArrow + "ArrowDamage", damage);
+            foreach (GameObject arrow in arrows)
+            {
+                ArrowType arrowType = arrow.GetComponent<ArrowType>();
 
-            //Size
-            float size = PlayerPrefs.GetFloat("IceSizeX");
-            size += size * 0.27f; //Change This To Change upgrade variable ratio
-            PlayerPrefs.SetFloat("IceSizeX", size);
-            PlayerPrefs.SetFloat("IceSizeY", size);
-            PlayerPrefs.SetFloat("IceSizeZ", size);
+                switch (arrowType.typeOfArrow)
+                {
 
-            //Change if it uses Diamonds/Gems
-            float currentGold = PlayerPrefs.GetFloat("Gold");
-            currentGold -= cost;
-            PlayerPrefs.SetFloat("Gold", currentGold);
+                    case ArrowType.TypeOfArrow.Ice:
+                        float damage = PlayerPrefs.GetFloat(arrowType + "ArrowDamage");
+                        damage += damage * 0.04f; //Change This To Change upgrade variable ratio
+                        PlayerPrefs.SetFloat(arrowType + "ArrowDamage", damage);
+
+                        //Size
+                        float size = PlayerPrefs.GetFloat("IceSizeX");
+                        size += size * 0.27f; //Change This To Change upgrade variable ratio
+                        PlayerPrefs.SetFloat("IceSizeX", size);
+                        PlayerPrefs.SetFloat("IceSizeY", size);
+                        PlayerPrefs.SetFloat("IceSizeZ", size);
+
+                        //Change if it uses Diamonds/Gems
+                        iceArrowCost += iceArrowCost * upgradeMultiplier;
+
+                        currency.SubtractGold(iceArrowCost);
+                        break;
+                    default:
+                        Debug.Log("Not an arrow");
+                        break;
+                }
+            }
+          
+            
+            
         }
     }
-    public void SetMeteorArrowUpgrade(float cost)
+    public void SetMeteorArrowUpgrade()
     {
-        if (PlayerPrefs.GetFloat("Gold") >= cost)
+        if (currency.GetGold() >= meteorArrowCost)
         {
             //Damage
-            typeOfArrow = TypeOfArrow.MeteorShower;
-            float damage = PlayerPrefs.GetFloat(typeOfArrow + "ArrowDamage");
-            damage += damage * 0.04f; //Change This To Change upgrade variable ratio
-            PlayerPrefs.SetFloat(typeOfArrow + "ArrowDamage", damage);
+            foreach (GameObject arrow in arrows)
+            {
+                ArrowType arrowType = arrow.GetComponent<ArrowType>();
 
-            //Size
-            float meteorTime = PlayerPrefs.GetFloat("MeteorTime");
-            meteorTime += 1; //Change This To Change upgrade variable ratio
+                switch (arrowType.typeOfArrow)
+                {
 
-            PlayerPrefs.SetFloat("MeteorTime", meteorTime);
+                    case ArrowType.TypeOfArrow.MeteorShower:
+                        float damage = PlayerPrefs.GetFloat(arrowType + "ArrowDamage");
+                        damage += damage * 0.04f; //Change This To Change upgrade variable ratio
+                        PlayerPrefs.SetFloat(arrowType + "ArrowDamage", damage);
 
-            //Change if it uses Diamonds/Gems
-            float currentGold = PlayerPrefs.GetFloat("Gold");
-            currentGold -= cost;
-            PlayerPrefs.SetFloat("Gold", currentGold);
+                        //Size
+                        float meteorTime = PlayerPrefs.GetFloat("MeteorTime");
+                        meteorTime += 1; //Change This To Change upgrade variable ratio
+
+                        PlayerPrefs.SetFloat("MeteorTime", meteorTime);
+                        meteorArrowCost += meteorArrowCost * upgradeMultiplier;
+
+                        //Change if it uses Diamonds/Gems
+
+                        currency.SubtractGold(meteorArrowCost);
+                        break;
+                    default:
+                        Debug.Log("Not an arrow");
+                        break;
+                }
+            }
+            
         }
     }
 
-    public void SetHealingArrowUpgrade(float cost)
+    public void SetHealingArrowUpgrade()
     {
-        if (PlayerPrefs.GetFloat("Gold") >= cost)
+        if (currency.GetGold() >= healingArrowCost)
         {
             //Heal
-            typeOfArrow = TypeOfArrow.Heal;
-            float healAmount = PlayerPrefs.GetFloat("HealAmount");
-            healAmount += 1; //Change This To Change upgrade variable ratio
+            foreach (GameObject arrow in arrows)
+            {
+                ArrowType arrowType = arrow.GetComponent<ArrowType>();
 
-            PlayerPrefs.SetFloat("HealAmount", healAmount);
+                switch (arrowType.typeOfArrow)
+                {
 
-            //Change if it uses Diamonds/Gems
-            float currentGold = PlayerPrefs.GetFloat("Gold");
-            currentGold -= cost;
-            PlayerPrefs.SetFloat("Gold", currentGold);
+                    case ArrowType.TypeOfArrow.Heal:
+                        float healAmount = PlayerPrefs.GetFloat("HealAmount");
+                        healAmount += 1; //Change This To Change upgrade variable ratio
+
+                        PlayerPrefs.SetFloat("HealAmount", healAmount);
+                        healingArrowCost += healingArrowCost * upgradeMultiplier;
+
+                        //Change if it uses Diamonds/Gems
+
+                        currency.SubtractGold(healingArrowCost);
+                        break;
+                    default:
+                        Debug.Log("Not an arrow");
+                        break;
+                }
+            }
+            
         }
 
     }

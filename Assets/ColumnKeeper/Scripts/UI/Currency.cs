@@ -10,6 +10,13 @@ public class Currency : MonoBehaviour
         currentGold += gold;
         PlayerPrefs.SetFloat("Gold", currentGold);
     }
+    public void SubtractGold(float gold)
+    {
+        float currentGold = PlayerPrefs.GetFloat("Gold");
+        currentGold -= gold;
+        PlayerPrefs.SetFloat("Gold", currentGold);
+    }
+
     public float GetGold()
     {
         return PlayerPrefs.GetFloat("Gold");
@@ -18,6 +25,12 @@ public class Currency : MonoBehaviour
     {
         float currentGems = PlayerPrefs.GetFloat("Gems");
         currentGems += gems;
+        PlayerPrefs.SetFloat("Gems", currentGems);
+    }
+    public void SubtractDiamond(float gems)
+    {
+        float currentGems = PlayerPrefs.GetFloat("Gems");
+        currentGems -= gems;
         PlayerPrefs.SetFloat("Gems", currentGems);
     }
     public float GetDiamond()

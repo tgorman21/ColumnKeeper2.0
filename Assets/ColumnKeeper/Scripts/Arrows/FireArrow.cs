@@ -6,6 +6,7 @@ public class FireArrow : MonoBehaviour
 {
     public float impactDamage;
     public float decayDamage;
+    [HideInInspector]public float fireSize;
 
     //[SerializeField]private GameObject explosionObj;
     private ParticleSystem ps;
@@ -22,6 +23,7 @@ public class FireArrow : MonoBehaviour
         foreach(GameObject explosionSize in explosionPos.GetComponentsInChildren<GameObject>())
         {
             PlayerPrefs.SetFloat("FireSize", explosionSize.transform.localScale.x);
+            fireSize = PlayerPrefs.GetFloat("FireSize");
             explosionSize.transform.localScale = new Vector3(PlayerPrefs.GetFloat("FireSize"), PlayerPrefs.GetFloat("FireSize"), PlayerPrefs.GetFloat("FireSize"));
         }
     }

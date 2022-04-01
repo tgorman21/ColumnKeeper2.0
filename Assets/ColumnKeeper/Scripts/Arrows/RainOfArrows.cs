@@ -11,7 +11,7 @@ public class RainOfArrows : MonoBehaviour
 
     [SerializeField] private bool RainArrows;
     private float t = 0;
-    float spawnRate = 3;
+    public float spawnRate = 3;
     private void Start()
     {
        

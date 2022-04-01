@@ -8,7 +8,8 @@ public class StoreManager : MonoBehaviour
     Currency currency;
     [SerializeField] TextMeshProUGUI goldText;
     [SerializeField] TextMeshProUGUI diamondText;
-    [Header("Dev Tools (Don't Need For Script to Work")]
+    [SerializeField] TextMeshProUGUI fireArrow, iceArrow, meteorArrow, lightningArrow, healArrow;
+    [Header("Dev Tools (Don't Need For Script to Work)")]
     [SerializeField] bool addGold;
     [SerializeField] bool addDiamond;
     [SerializeField] bool resetCurrency;
@@ -18,11 +19,17 @@ public class StoreManager : MonoBehaviour
     void Start()
     {
         currency = GetComponent<Currency>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        fireArrow.SetText(arrowStore.fireArrowCost.ToString("Upgrade Cost: ##.##"));
+        iceArrow.SetText(arrowStore.iceArrowCost.ToString("Upgrade Cost: ##.##"));
+        meteorArrow.SetText(arrowStore.meteorArrowCost.ToString("Upgrade Cost: ##.##"));
+        lightningArrow.SetText(arrowStore.lightningArrowCost.ToString("Upgrade Cost: ##.##"));
+        healArrow.SetText(arrowStore.healingArrowCost.ToString("Upgrade Cost: ##.##"));
         //Test
         if (addGold)
         {
@@ -43,7 +50,7 @@ public class StoreManager : MonoBehaviour
         if (upgradeFire)
         {
             upgradeFire = false;
-            arrowStore.SetFireArrowUpgrade(2);
+            arrowStore.SetFireArrowUpgrade();
         }
 
         //Actual Script

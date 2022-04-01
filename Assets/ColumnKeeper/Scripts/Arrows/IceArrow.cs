@@ -12,8 +12,9 @@ public class IceArrow : MonoBehaviour
     public float DampSpeed; //Damp enemy speed
     public float damageIce; //Ice Arrow Impact Damage
     public bool rise; //Test Function
-
-
+    [HideInInspector] public float IceSizeX;
+    [HideInInspector] public float IceSizeY;
+    [HideInInspector] public float IceSizeZ;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +22,11 @@ public class IceArrow : MonoBehaviour
         PlayerPrefs.SetFloat("IceSizeX", iceEffect.transform.localScale.x);
         PlayerPrefs.SetFloat("IceSizeY", iceEffect.transform.localScale.y);
         PlayerPrefs.SetFloat("IceSizeZ", iceEffect.transform.localScale.z);
+        IceSizeX = PlayerPrefs.GetFloat("IceSizeX");
+        IceSizeY = PlayerPrefs.GetFloat("IceSizeY");
+        IceSizeZ = PlayerPrefs.GetFloat("IceSizeZ");
 
-        iceCollider.transform.localScale = new Vector3(PlayerPrefs.GetFloat("IceSizeX"), PlayerPrefs.GetFloat("IceSizeZ"), PlayerPrefs.GetFloat("IceSizeY"));
+        iceCollider.transform.localScale = new Vector3(IceSizeX, IceSizeZ, IceSizeY);
         
     }
 

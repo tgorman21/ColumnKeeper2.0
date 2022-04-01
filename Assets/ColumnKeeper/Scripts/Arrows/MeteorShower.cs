@@ -6,7 +6,7 @@ public class MeteorShower : MonoBehaviour
 {
     [SerializeField] GameObject meteorShower;
 
-    float meteorTime = 10;
+    public float meteorTime = 10;
 
     // Start is called before the first frame update
     void Start()

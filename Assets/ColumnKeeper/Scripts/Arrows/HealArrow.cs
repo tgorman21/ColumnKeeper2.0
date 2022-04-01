@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealArrow : MonoBehaviour
 {
-    [SerializeField] private float healAmount;
+    [SerializeField] public float healAmount;
     // Start is called before the first frame update
     void Start()
     {
