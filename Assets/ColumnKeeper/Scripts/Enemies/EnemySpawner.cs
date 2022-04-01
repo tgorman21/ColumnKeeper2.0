@@ -173,7 +173,9 @@ public class EnemySpawner : MonoBehaviour
         string enemyName;
         
         GameObject enemy = Instantiate(enemies[enemyIndex], spawnPoints[pointIndex].position, Quaternion.identity);
-        if(lookAtObj != null)
+        //////set destination position
+        enemy.GetComponent<EnemyAI>().towerPos = towerPos[pointIndex];
+        if (lookAtObj != null)
         {
             enemy.transform.LookAt(lookAtObj[pointIndex]);
         }
@@ -182,7 +184,7 @@ public class EnemySpawner : MonoBehaviour
             case 0:
                 if (portalBeams != null)
                 {
-                    portalBeams[pointIndex].Play();
+                    //portalBeams[pointIndex].Play();
                 }
                 enemy.GetComponent<Enemy>().lane = pointIndex + 1;
                 enemy.GetComponent<EnemyAI>().checkpointPos = checkpointsLane1;
@@ -201,7 +203,7 @@ public class EnemySpawner : MonoBehaviour
             case 1:
                 if (portalBeams != null)
                 {
-                    portalBeams[pointIndex].Play();
+                    //portalBeams[pointIndex].Play();
                 }
                 enemy.GetComponent<Enemy>().lane = pointIndex + 1;
                 enemy.GetComponent<EnemyAI>().checkpointPos = checkpointsLane2;
@@ -219,7 +221,7 @@ public class EnemySpawner : MonoBehaviour
             case 2:
                 if(portalBeams != null)
                 {
-                    portalBeams[pointIndex].Play();
+                    //portalBeams[pointIndex].Play();
                 }
                 enemy.GetComponent<Enemy>().lane = pointIndex + 1;
                 enemy.GetComponent<EnemyAI>().checkpointPos = checkpointsLane3;
@@ -239,8 +241,7 @@ public class EnemySpawner : MonoBehaviour
         float spawned = PlayerPrefs.GetFloat(enemy.GetComponent<Enemy>().enemyName + "Spawned");
         spawned++;
         PlayerPrefs.SetFloat(enemy.GetComponent<Enemy>().enemyName + "Spawned", spawned);
-        //////set destination position
-        enemy.GetComponent<EnemyAI>().towerPos = towerPos[pointIndex];
+        
         //foreach(GameObject tower in Towers)
         //{
         //    tower.GetComponent<TowerArcher>().EnemySpawned(enemy);
