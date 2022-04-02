@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ArrowStoreManager : MonoBehaviour
-{
-   
-    [SerializeField] GameObject[] arrows;
-    [SerializeField] Currency currency;
-    public GameObject[] menus;
+{   
+    [SerializeField] private GameObject[] menus;
+
+    [SerializeField] private GameObject[] arrows;
+    [SerializeField] private Currency currency;
+    
 
     
     public float fireArrowCost, lightningArrowCost, rainArrowCost, iceArrowCost, meteorArrowCost, healingArrowCost;

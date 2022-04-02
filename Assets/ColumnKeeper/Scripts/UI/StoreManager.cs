@@ -5,42 +5,43 @@ using TMPro;
 
 public class StoreManager : MonoBehaviour
 {
-    Currency currency;
-    [SerializeField] TextMeshProUGUI goldText;
-    [SerializeField] TextMeshProUGUI diamondText;
-    [SerializeField] TextMeshProUGUI fireArrow, iceArrow, meteorArrow, lightningArrow, healArrow;
-    [Header("Dev Tools (Don't Need For Script to Work)")]
-    [SerializeField] bool addGold;
-    [SerializeField] bool addDiamond;
-    [SerializeField] bool resetCurrency;
-    [SerializeField] bool upgradeFire;
-    [SerializeField] ArrowStoreManager arrowStore;
-    // Start is called before the first frame update
-    void Start()
-    {
-        currency = GetComponent<Currency>();
-        
-    }
+    [Header("UI References")]
+    [SerializeField] private TextMeshProUGUI goldText;
+    [SerializeField] private TextMeshProUGUI diamondText;
+    [SerializeField] private TextMeshProUGUI fireArrow, iceArrow, meteorArrow, lightningArrow, healArrow;
+    [SerializeField] private ArrowStoreManager arrowStore;
 
-    // Update is called once per frame
-    void Update()
+    [Header("Dev Tools (Don't Need For Script to Work)")]
+    [SerializeField] private bool addGold;
+    [SerializeField] private bool addDiamond;
+    [SerializeField] private bool resetCurrency;
+    [SerializeField] private bool upgradeFire;
+
+    private Currency currency;
+
+    private void Start() => currency = GetComponent<Currency>();
+
+    private void Update()
     {
         fireArrow.SetText(arrowStore.fireArrowCost.ToString("Upgrade Cost: ##.##"));
         iceArrow.SetText(arrowStore.iceArrowCost.ToString("Upgrade Cost: ##.##"));
         meteorArrow.SetText(arrowStore.meteorArrowCost.ToString("Upgrade Cost: ##.##"));
         lightningArrow.SetText(arrowStore.lightningArrowCost.ToString("Upgrade Cost: ##.##"));
         healArrow.SetText(arrowStore.healingArrowCost.ToString("Upgrade Cost: ##.##"));
+        
         //Test
         if (addGold)
         {
             addGold = false;
             currency.AddGold(1);
         }
+
         if (addDiamond)
         {
             addDiamond = false;
             currency.AddDiamond(1);
         }
+
         if (resetCurrency)
         {
             resetCurrency = false;
@@ -62,6 +63,7 @@ public class StoreManager : MonoBehaviour
         {
             goldText.SetText(currency.GetGold().ToString("Gold: ##"));
         }
+
         if (currency.GetDiamond() == 0)
         {
             diamondText.SetText("Diamond: 0");
