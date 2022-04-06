@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private GameObject popupDamage; //prefab for damage popup effect
     [SerializeField] private Transform popupPos; //position for damage popup to spawn
+    [SerializeField] private GameObject goldPopup; //Gold drop prefab
 
     [Header("Dev Tools")]
     public bool function; /////testing function
@@ -52,6 +53,7 @@ public class Enemy : MonoBehaviour
     float powerUpTime;
     float throwTime;
     float idleTime;
+    bool spawned = false; //Check if gold drop spawned
     //public string enemyName; //////specific enemy
 
     void Start()
@@ -201,12 +203,28 @@ public class Enemy : MonoBehaviour
             boss.GetComponent<NavMeshAgent>().speed -= 0.09375f;
             Debug.Log(boss.GetComponent<NavMeshAgent>().speed);
         }
+        
         StartCoroutine(AnimationTimer(deathTime, 1));
 
 
     }
     IEnumerator AnimationTimer(float time, int score)
     {
+        // Spawns gold drop 
+        if (score > 0)
+        {
+            if (goldPopup != null)
+            {
+                if (!spawned)
+                {
+                    spawned = true;
+                    GameObject goldObj = Instantiate(goldPopup, popupPos.position, Quaternion.identity);
+                    goldObj.GetComponentInChildren<TextMeshProUGUI>().SetText(goldDrop.ToString("+##"));
+                }
+
+            }
+        }
+        
         yield return new WaitForSeconds(time);
 
         if (score > 0)
@@ -218,6 +236,7 @@ public class Enemy : MonoBehaviour
             float gold = PlayerPrefs.GetFloat("Gold");
             gold += goldDrop;
             PlayerPrefs.SetFloat("Gold", gold);
+            
             Destroy(gameObject);
         }
         else if (score < 1)
@@ -266,7 +285,8 @@ public class Enemy : MonoBehaviour
 
     void Idle()
     {
-        anim.Play("Idle");
+        if(idleTime != 0)
+            anim.Play("Idle");
     }
     void Throw()
     {

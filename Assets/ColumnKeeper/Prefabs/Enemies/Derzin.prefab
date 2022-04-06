@@ -1357,6 +1357,8 @@ MonoBehaviour:
   popupDamage: {fileID: 2396669018445261282, guid: 778d72303bea39c47a212604c28c6bfa,
     type: 3}
   popupPos: {fileID: 7864897733073665938}
+  goldPopup: {fileID: 2396669018445261282, guid: 81e60f1a798b01c41ac1db196538a811,
+    type: 3}
   function: 0
   animationType: 5
 --- !u!114 &3635446607997285332
@@ -13060,6 +13062,7 @@ MonoBehaviour:
   popupDamage: {fileID: 2396669018445261282, guid: 778d72303bea39c47a212604c28c6bfa,
     type: 3}
   popupPos: {fileID: 8601771856428236962}
+  goldPopup: {fileID: 0}
   function: 0
   animationType: 0
 --- !u!1 &4993646447700498946
@@ -14307,6 +14310,7 @@ MonoBehaviour:
   popupDamage: {fileID: 2396669018445261282, guid: 778d72303bea39c47a212604c28c6bfa,
     type: 3}
   popupPos: {fileID: 5652199708464844657}
+  goldPopup: {fileID: 0}
   function: 0
   animationType: 0
 --- !u!114 &6131678565862498158
@@ -17180,6 +17184,7 @@ MonoBehaviour:
   popupDamage: {fileID: 2396669018445261282, guid: 778d72303bea39c47a212604c28c6bfa,
     type: 3}
   popupPos: {fileID: 7040103637775691916}
+  goldPopup: {fileID: 0}
   function: 0
   animationType: 0
 --- !u!1 &4993646448204377526
@@ -18875,6 +18880,7 @@ MonoBehaviour:
   popupDamage: {fileID: 2396669018445261282, guid: 778d72303bea39c47a212604c28c6bfa,
     type: 3}
   popupPos: {fileID: 8641620289022467204}
+  goldPopup: {fileID: 0}
   function: 0
   animationType: 0
 --- !u!1 &4993646448352892880
@@ -21678,6 +21684,7 @@ MonoBehaviour:
   popupDamage: {fileID: 2396669018445261282, guid: 778d72303bea39c47a212604c28c6bfa,
     type: 3}
   popupPos: {fileID: 593688187793977605}
+  goldPopup: {fileID: 0}
   function: 0
   animationType: 0
 --- !u!114 &4128096217762946106
@@ -22390,6 +22397,7 @@ MonoBehaviour:
   popupDamage: {fileID: 2396669018445261282, guid: 778d72303bea39c47a212604c28c6bfa,
     type: 3}
   popupPos: {fileID: 4214956024962308663}
+  goldPopup: {fileID: 0}
   function: 0
   animationType: 0
 --- !u!114 &3366361144771786448
@@ -26598,6 +26606,7 @@ MonoBehaviour:
   popupDamage: {fileID: 2396669018445261282, guid: 778d72303bea39c47a212604c28c6bfa,
     type: 3}
   popupPos: {fileID: 8272216690183954177}
+  goldPopup: {fileID: 0}
   function: 0
   animationType: 0
 --- !u!114 &4442233969043418364
@@ -39577,6 +39586,7 @@ MonoBehaviour:
   popupDamage: {fileID: 2396669018445261282, guid: 778d72303bea39c47a212604c28c6bfa,
     type: 3}
   popupPos: {fileID: 3727532913595224959}
+  goldPopup: {fileID: 0}
   function: 0
   animationType: 0
 --- !u!1 &7797620754668601734

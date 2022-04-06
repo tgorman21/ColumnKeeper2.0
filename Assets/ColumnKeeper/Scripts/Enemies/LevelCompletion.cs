@@ -21,15 +21,21 @@ public class LevelCompletion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach(GameObject board in wantedBoards)
+        
+    }
+
+    public bool LevelComplete()
+    {
+        foreach (GameObject board in wantedBoards)
         {
             if (board.GetComponent<WantedBoardManager>().levelComplete && !switchingScene)
             {
                 switchingScene = true;
-                //SwitchScene
-                CustomSceneManager.instance.GoToScene("MainMenu");
+                return true;
             }
+            
         }
+        return false;
     }
     
 }

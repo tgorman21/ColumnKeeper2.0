@@ -7,17 +7,20 @@ using UnityEngine.XR.Interaction.Toolkit;
     
     public class StunPlayer : MonoBehaviour
     {
-        [SerializeField]ActionBasedContinuousMoveProvider moveProvider;
-        [SerializeField] SprintPlayer sprintPlayer;
+        ActionBasedContinuousMoveProvider moveProvider;
+        SprintPlayer sprintPlayer;
         [SerializeField] float stunDuration;
         float initialSpeed;
         [Header("Dev Tool")]
         [SerializeField] bool stun;
-        // Start is called before the first frame update
-        void Start()
-        {
-            initialSpeed = moveProvider.moveSpeed;
-        }
+    // Start is called before the first frame update
+    void Start()
+    {
+        GameObject locomotionSystem = GameObject.FindGameObjectWithTag("LocomotionSystem");
+        moveProvider = locomotionSystem.GetComponent<ActionBasedContinuousMoveProvider>();
+        sprintPlayer = locomotionSystem.GetComponent<SprintPlayer>();
+        initialSpeed = moveProvider.moveSpeed;
+    }
 
         // Update is called once per frame
         void Update()

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,12 +11,15 @@ public class WantedBoardManager : MonoBehaviour
     public EnemyName enemyName;
     public bool levelComplete;
     [SerializeField]TextMeshProUGUI text;
+    TextMeshProUGUI nameText;
     GameObject levelCompletion;
     bool addCompleted;
     GameObject spawner;
-
+    List<GameObject> enemies = null;
+    GameObject[] spawned;
     private void Awake()
     {
+        gameObject.tag = "WantedBoard";
         float currentDestroyed = 0;
 
         switch (enemyName)
@@ -24,37 +28,39 @@ public class WantedBoardManager : MonoBehaviour
             case EnemyName.Goblin:
                 PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
                 PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
+                PlayerPrefs.SetFloat(enemyName + "TotalSpawned", 0);
 
                 break;
             case EnemyName.Orc:
                 PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
                 PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
+                PlayerPrefs.SetFloat(enemyName + "TotalSpawned", 0);
 
                 break;
             case EnemyName.Troll:
                 PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
                 PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
-
+                PlayerPrefs.SetFloat(enemyName + "TotalSpawned", 0);
                 break;
             case EnemyName.Skeleton:
                 PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
                 PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
-
+                PlayerPrefs.SetFloat(enemyName + "TotalSpawned", 0);
                 break;
             case EnemyName.Mushroom:
                 PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
                 PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
-
+                PlayerPrefs.SetFloat(enemyName + "TotalSpawned", 0);
                 break;
             case EnemyName.Lich:
                 PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
                 PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
-
+                PlayerPrefs.SetFloat(enemyName + "TotalSpawned", 0);
                 break;
             case EnemyName.Witch:
                 PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
                 PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
-
+                PlayerPrefs.SetFloat(enemyName + "TotalSpawned", 0);
                 break;
             case EnemyName.Vampire:
                 PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
@@ -64,22 +70,22 @@ public class WantedBoardManager : MonoBehaviour
             case EnemyName.Derzin:
                 PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
                 PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
-
+                PlayerPrefs.SetFloat(enemyName + "TotalSpawned", 0);
                 break;
             case EnemyName.Ingrar:
                 PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
                 PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
-
+                PlayerPrefs.SetFloat(enemyName + "TotalSpawned", 0);
                 break;
             case EnemyName.Zarzog:
                 PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
                 PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
-
+                PlayerPrefs.SetFloat(enemyName + "TotalSpawned", 0);
                 break;
             case EnemyName.Xenoria:
                 PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
                 PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
-
+                PlayerPrefs.SetFloat(enemyName + "TotalSpawned", 0);
                 break;
 
             default:
@@ -90,8 +96,10 @@ public class WantedBoardManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
         spawner = GameObject.FindGameObjectWithTag("Spawner");
-
+        nameText = transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();
+        nameText.SetText(enemyName.ToString() + 's');
         addCompleted = false;
         levelComplete = false;
         if (GameObject.FindGameObjectWithTag("LevelCompletion") != null)
@@ -103,103 +111,49 @@ public class WantedBoardManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (spawner.GetComponent<EnemySpawner>().AllEnemiesSpawned())
+        {
+            spawned = GameObject.FindGameObjectsWithTag("Enemy");
+        }
 
         switch (enemyName)
         {
+
             case EnemyName.Goblin:
-                text.SetText(PlayerPrefs.GetFloat(enemyName + "WantedPoster").ToString() + " / " + PlayerPrefs.GetFloat(enemyName + "Spawned").ToString());
-                if(PlayerPrefs.GetFloat(enemyName + "WantedPoster") == spawner.GetComponent<EnemySpawner>().amountOfEnemiesSpawned)
-                {
-                    levelComplete = true;
-                    //levelCompletion.GetComponent<LevelCompletion>().boardsCompleted++;
-                }
+                Manager();
                 break;
             case EnemyName.Orc:
-                text.SetText(PlayerPrefs.GetFloat(enemyName + "WantedPoster").ToString() + " / " + PlayerPrefs.GetFloat(enemyName + "Spawned").ToString());
-                if (PlayerPrefs.GetFloat(enemyName + "WantedPoster") == spawner.GetComponent<EnemySpawner>().amountOfEnemiesSpawned)
-                {
-                    levelComplete = true;
-                    //levelCompletion.GetComponent<LevelCompletion>().boardsCompleted++;
-                }
+                Manager();
                 break;
             case EnemyName.Troll:
-                text.SetText(PlayerPrefs.GetFloat(enemyName + "WantedPoster").ToString() + " / " + PlayerPrefs.GetFloat(enemyName + "Spawned").ToString());
-                if (PlayerPrefs.GetFloat(enemyName + "WantedPoster") == spawner.GetComponent<EnemySpawner>().amountOfEnemiesSpawned)
-                {
-                    levelComplete = true;
-                    //levelCompletion.GetComponent<LevelCompletion>().boardsCompleted++;
-                }
+                Manager();
                 break;
             case EnemyName.Skeleton:
-                text.SetText(PlayerPrefs.GetFloat(enemyName + "WantedPoster").ToString() + " / " + PlayerPrefs.GetFloat(enemyName + "Spawned").ToString());
-                if (PlayerPrefs.GetFloat(enemyName + "WantedPoster") == spawner.GetComponent<EnemySpawner>().amountOfEnemiesSpawned)
-                {
-                    levelComplete = true;
-                    //levelCompletion.GetComponent<LevelCompletion>().boardsCompleted++;
-                }
+                Manager();
                 break;
             case EnemyName.Mushroom:
-                text.SetText(PlayerPrefs.GetFloat(enemyName + "WantedPoster").ToString() + " / " + PlayerPrefs.GetFloat(enemyName + "Spawned").ToString());
-                if (PlayerPrefs.GetFloat(enemyName + "WantedPoster") == spawner.GetComponent<EnemySpawner>().amountOfEnemiesSpawned)
-                {
-                    levelComplete = true;
-                    //levelCompletion.GetComponent<LevelCompletion>().boardsCompleted++;
-                }
+                Manager();
                 break;
             case EnemyName.Lich:
-                text.SetText(PlayerPrefs.GetFloat(enemyName + "WantedPoster").ToString() + " / " + PlayerPrefs.GetFloat(enemyName + "Spawned").ToString());
-                if (PlayerPrefs.GetFloat(enemyName + "WantedPoster") == spawner.GetComponent<EnemySpawner>().amountOfEnemiesSpawned)
-                {
-                    levelComplete = true;
-                    //levelCompletion.GetComponent<LevelCompletion>().boardsCompleted++;
-                }
+                Manager();
                 break;
             case EnemyName.Witch:
-                text.SetText(PlayerPrefs.GetFloat(enemyName + "WantedPoster").ToString() + " / " + PlayerPrefs.GetFloat(enemyName + "Spawned").ToString());
-                if (PlayerPrefs.GetFloat(enemyName + "WantedPoster") == spawner.GetComponent<EnemySpawner>().amountOfEnemiesSpawned)
-                {
-                    levelComplete = true;
-                    //levelCompletion.GetComponent<LevelCompletion>().boardsCompleted++;
-                }
+                Manager();
                 break;
             case EnemyName.Vampire:
-                text.SetText(PlayerPrefs.GetFloat(enemyName + "WantedPoster").ToString() + " / " + PlayerPrefs.GetFloat(enemyName + "Spawned").ToString());
-                if (PlayerPrefs.GetFloat(enemyName + "WantedPoster") == spawner.GetComponent<EnemySpawner>().amountOfEnemiesSpawned)
-                {
-                    levelComplete = true;
-                    //levelCompletion.GetComponent<LevelCompletion>().boardsCompleted++;
-                }
+                Manager();
                 break;
             case EnemyName.Derzin:
-                text.SetText(PlayerPrefs.GetFloat(enemyName + "WantedPoster").ToString() + " / " + PlayerPrefs.GetFloat(enemyName + "Spawned").ToString());
-                if (PlayerPrefs.GetFloat(enemyName + "WantedPoster") == spawner.GetComponent<EnemySpawner>().amountOfEnemiesSpawned)
-                {
-                    levelComplete = true;
-                    //levelCompletion.GetComponent<LevelCompletion>().boardsCompleted++;
-                }
+                Manager();
                 break;
             case EnemyName.Ingrar:
-                text.SetText(PlayerPrefs.GetFloat(enemyName + "WantedPoster").ToString() + " / " + PlayerPrefs.GetFloat(enemyName + "Spawned").ToString());
-                if (PlayerPrefs.GetFloat(enemyName + "WantedPoster") == PlayerPrefs.GetFloat(enemyName + "Spawned"))
-                {
-                    levelComplete = true;
-                }
+                Manager();
                 break;
             case EnemyName.Zarzog:
-                text.SetText(PlayerPrefs.GetFloat(enemyName + "WantedPoster").ToString() + " / " + PlayerPrefs.GetFloat(enemyName + "Spawned").ToString());
-                if (PlayerPrefs.GetFloat(enemyName + "WantedPoster") == spawner.GetComponent<EnemySpawner>().amountOfEnemiesSpawned)
-                {
-                    levelComplete = true;
-                    //levelCompletion.GetComponent<LevelCompletion>().boardsCompleted++;
-                }
+                Manager();
                 break;
             case EnemyName.Xenoria:
-                text.SetText(PlayerPrefs.GetFloat(enemyName + "WantedPoster").ToString() + " / " + PlayerPrefs.GetFloat(enemyName + "Spawned").ToString());
-                if (PlayerPrefs.GetFloat(enemyName + "WantedPoster") == spawner.GetComponent<EnemySpawner>().amountOfEnemiesSpawned)
-                {
-                    levelComplete = true;
-                    //levelCompletion.GetComponent<LevelCompletion>().boardsCompleted++;
-                }
+                Manager();
                 break;
 
             default:
@@ -209,5 +163,20 @@ public class WantedBoardManager : MonoBehaviour
 
 
     }
-    
+    private void Manager()
+    {
+        text.SetText(PlayerPrefs.GetFloat(enemyName + "WantedPoster").ToString() + " / " + PlayerPrefs.GetFloat(enemyName + "Spawned").ToString());
+
+        if (spawner.GetComponent<EnemySpawner>().AllEnemiesSpawned())
+        {
+            
+
+            if (PlayerPrefs.GetFloat(enemyName + "WantedPoster") == PlayerPrefs.GetFloat(enemyName + "Spawned"))
+            {
+                levelComplete = true;
+                //levelCompletion.GetComponent<LevelCompletion>().boardsCompleted++;
+            }
+        }
+    }
+
 }

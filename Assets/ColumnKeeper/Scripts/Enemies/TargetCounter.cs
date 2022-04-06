@@ -6,7 +6,7 @@ using TMPro;
 public class TargetCounter : MonoBehaviour
 {
     [SerializeField] public TextMeshProUGUI targetHitText;
-
+    [SerializeField] TrapDoor trapDoor;
     public int targetsHit = 0;
 
     private bool switchingScene = false;
@@ -14,15 +14,23 @@ public class TargetCounter : MonoBehaviour
     private void Update()
     {
         targetHitText.SetText(targetsHit.ToString("## / 9"));
-
-        if(targetsHit >= 9 && !switchingScene)
+        if (AllTargetsHit())
         {
-            //This is where end of level occurs
-            //For now, just triggering a screen fade into the main menu
-            switchingScene = true;
-            CustomSceneManager.instance.GoToScene("MainMenu");
+            trapDoor.DoorActive(true);
         }
     }
 
     public void TargetHit() => targetsHit++;
+
+    public bool AllTargetsHit() {
+        if (targetsHit >= 9 && !switchingScene) 
+        {
+            switchingScene = true;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

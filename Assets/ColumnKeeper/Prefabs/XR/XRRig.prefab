@@ -1040,7 +1040,7 @@ GameObject:
   - component: {fileID: 3276379774678706157}
   m_Layer: 0
   m_Name: LocomotionSystem
-  m_TagString: Untagged
+  m_TagString: LocomotionSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1276,8 +1276,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34dbf2ad74086489cb3ecc4280f9f1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveProvider: {fileID: 4375699217786542476}
-  sprintPlayer: {fileID: 3276379774678706157}
   stunDuration: 3
   stun: 0
 --- !u!1 &8654178693172522559

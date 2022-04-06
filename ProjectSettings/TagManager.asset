@@ -19,6 +19,7 @@ TagManager:
   - GroundBomb
   - PlayerPos
   - Bow
+  - LocomotionSystem
   layers:
   - Default
   - TransparentFX

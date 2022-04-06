@@ -79,7 +79,13 @@ public class EnemySpawner : MonoBehaviour
         }
         t += Time.deltaTime;
     }
-
+    public bool AllEnemiesSpawned()
+    {
+        if (enemiesSpawned == amountOfEnemiesSpawned)
+            return true;
+        else
+            return false;
+    }
     //Funtion for Wave move
     public void WaveSystem()
     {
