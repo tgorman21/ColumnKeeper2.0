@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class TrapDoor : MonoBehaviour
 {
+    XRIDefaultInputActions inputs;
     [SerializeField] GameObject exitCanvas;
     [Tooltip("Distance from Trap Door to Player to Activate")]
     [SerializeField] float distance;
@@ -12,6 +14,10 @@ public class TrapDoor : MonoBehaviour
     private GameObject player;
     private float distanceFromPlayer;
     Transform cameraTransform;
+    private void Awake()
+    {
+        inputs = new XRIDefaultInputActions();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -30,16 +36,25 @@ public class TrapDoor : MonoBehaviour
         if(distanceFromPlayer < distance)
         {
             DoorActive(true);
+            inputs.XRIRightHand.A.performed += tgb => SwitchScene();
         }
         else
         {
             DoorActive(false);
         }
-        if (levelCompletion != null)
-        if (levelCompletion.LevelComplete())
-        {
-            DoorActive(true);
-        }
+        //if (levelCompletion != null)
+        //if (levelCompletion.LevelComplete())
+        //{
+        //    DoorActive(true);
+        //}
+    }
+    private void OnEnable()
+    {
+        inputs.Enable();
+    }
+    private void OnDisable()
+    {
+        inputs.Disable();
     }
     public void DoorActive(bool state)
     {

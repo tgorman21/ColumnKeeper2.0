@@ -16,7 +16,8 @@ public class TargetCounter : MonoBehaviour
         targetHitText.SetText(targetsHit.ToString("## / 9"));
         if (AllTargetsHit())
         {
-            trapDoor.DoorActive(true);
+            CustomSceneManager.instance.GoToScene("MainMenu");
+
         }
     }
 
