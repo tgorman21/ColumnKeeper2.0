@@ -4,47 +4,58 @@ using UnityEngine;
 
 public class BowPedestal : MonoBehaviour
 {
+    Transform bowOrg;
     [SerializeField] GameObject bow;
+    Transform bowTrasform;
     [SerializeField] Transform socketPos;
     [SerializeField] float rotationSpeed;
-    [Header ("Axis in which it rotates")]
+    [Header("Axis in which it rotates")]
+    Transform playerTransform;
+    float playerDist;
+    float bowDist;
+    [SerializeField] float safeDist;
     [SerializeField] Vector3 axis;
     GameObject bowObj;
     bool rotateBow;
     // Start is called before the first frame update
     void Start()
     {
+        bowOrg = bow.GetComponent<Transform>();
+        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         rotateBow = true;
-        bowObj = Instantiate(bow, socketPos.position, socketPos.rotation, transform.parent = socketPos);
+        bowObj = Instantiate(bow, socketPos.position, Quaternion.identity, transform.parent = socketPos);
+        bowTrasform = GameObject.FindGameObjectWithTag("Bow").GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(rotateBow)
-        socketPos.transform.RotateAround(socketPos.transform.position, axis, rotationSpeed);
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
+       
+        playerDist = Vector3.Distance(playerTransform.position, transform.position);
+        bowDist = Vector3.Distance(bowTrasform.position, transform.position);
+        Debug.Log(bowDist);
+        if (playerDist < safeDist)
         {
             rotateBow = false;
             bowObj.transform.parent = null;
         }
-    }
-
-    
-    private void OnTriggerExit(Collider other)
-    {
-        if(other.CompareTag("Player") && other.CompareTag("Bow"))
+        else
         {
-            rotateBow = false;
-            bowObj.transform.parent = null;
-        }
-        else if (other.CompareTag("Player"))
-        {
-            bowObj.transform.parent = socketPos;
             rotateBow = true;
+            bowObj.transform.parent = socketPos;
         }
+
+        if(bowDist > 0)
+        {
+            rotateBow = false;
+            
+            bowObj.transform.parent = null;
+        }
+
+        if(rotateBow)
+            socketPos.transform.RotateAround(socketPos.transform.position, axis, rotationSpeed);
     }
+    
+    
+    
 }

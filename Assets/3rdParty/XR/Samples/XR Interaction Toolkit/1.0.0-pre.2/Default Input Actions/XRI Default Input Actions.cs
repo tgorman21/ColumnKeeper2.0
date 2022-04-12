@@ -943,7 +943,7 @@ public class @XRIDefaultInputActions : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""51a3e2ae-9f3b-4061-a0c5-63702e753383"",
-                    ""path"": ""<XRController>{RightHand}/primary"",
+                    ""path"": ""<XRController>{RightHand}/secondaryButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
