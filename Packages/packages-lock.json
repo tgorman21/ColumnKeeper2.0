@@ -240,13 +240,6 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.whinarn.unitymeshsimplifier": {
-      "version": "https://github.com/Whinarn/UnityMeshSimplifier.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "3a2c24e5841c63e0c3bc454949d0fa44fb5f86e1"
-    },
     "nuget.mono-cecil": {
       "version": "0.1.6-preview",
       "depth": 1,
