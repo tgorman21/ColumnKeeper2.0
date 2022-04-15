@@ -620,9 +620,9 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 446.34, y: 50.978, z: -2.6349986}
-  - {x: 446.34, y: 50.478, z: -2.6349986}
-  - {x: 446.34, y: 49.928, z: -2.6349967}
+  - {x: 0.035026237, y: 0.77840763, z: 0.14738744}
+  - {x: 0.035026237, y: -0.021592388, z: 0.14738744}
+  - {x: 0.035026237, y: -0.90159243, z: 0.14738744}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.01
@@ -706,7 +706,7 @@ Transform:
   m_GameObject: {fileID: 3305848031468011640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.035026237, y: -0.021592388, z: 0.3123874}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.6, z: 1}
   m_Children:
   - {fileID: 8371847772658621624}
   - {fileID: 133187482185283664}
