@@ -5,6 +5,7 @@ using UnityEngine;
 public class BowPedestal : MonoBehaviour
 {
     Transform bowOrg;
+
     [SerializeField] GameObject bow;
     Transform bowTrasform;
     [SerializeField] Transform socketPos;
@@ -17,8 +18,8 @@ public class BowPedestal : MonoBehaviour
     [SerializeField] Vector3 axis;
     GameObject bowObj;
     bool rotateBow;
-    // Start is called before the first frame update
-    void Start()
+    
+    private void Start()
     {
         bowOrg = bow.GetComponent<Transform>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -27,13 +28,11 @@ public class BowPedestal : MonoBehaviour
         bowTrasform = GameObject.FindGameObjectWithTag("Bow").GetComponent<Transform>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-       
         playerDist = Vector3.Distance(playerTransform.position, transform.position);
         bowDist = Vector3.Distance(bowTrasform.position, transform.position);
-        Debug.Log(bowDist);
+        
         if (playerDist < safeDist)
         {
             rotateBow = false;
