@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Storybook_predialog
+  m_Name: Storybook_dialog
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -24969,7 +24969,7 @@ AnimationClip:
     intParameter: 31
     messageOptions: 0
   - time: 8.166667
-    functionName: PreDialog
+    functionName: TriggerDialog
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
