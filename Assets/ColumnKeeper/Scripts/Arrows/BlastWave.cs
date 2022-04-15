@@ -53,6 +53,7 @@ public class BlastWave : MonoBehaviour
                 col.GetComponent<NavMeshAgent>().speed = 0;
                 Vector3 direction = (col.transform.position - transform.position).normalized;
                 rb.AddForce(direction * force, ForceMode.Impulse);
+                col.GetComponent<Enemy>().impact = true;
                 col.GetComponent<Enemy>().FireDamage(fireArrow.impactDamage, fireArrow.decayDamage);
             }
         }

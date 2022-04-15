@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
     private float initialHealth; //////Initial health
     private float initialSpeed; //////Initial speed
 
-    private bool impact; //////initial hit damage
+    [SerializeField] public bool impact; //////initial hit damage
     private bool decay; ///// DOT bool
     private float decayDamage; //////DOT 
 
@@ -343,7 +343,6 @@ public class Enemy : MonoBehaviour
         //////Deal Damage
         if (health >= 0)
         {
-            
             health = health - damage;
             healthBar.localScale = new Vector3(health / initialHealth, 1, 1);
             //HpSplash indicator = Instantiate(damageText, transform.position, Quaternion.identity).GetComponent<HpSplash>();
