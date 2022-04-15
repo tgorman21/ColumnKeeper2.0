@@ -24,10 +24,10 @@ public class StoreManager : MonoBehaviour
     private void Update()
     {
         fireArrow.SetText(arrowStore.fireArrowCost.ToString("##.##"));
-        iceArrow.SetText(arrowStore.iceArrowCost.ToString("##.##"));
-        meteorArrow.SetText(arrowStore.meteorArrowCost.ToString("##.##"));
-        lightningArrow.SetText(arrowStore.lightningArrowCost.ToString("##.##"));
-        healArrow.SetText(arrowStore.healingArrowCost.ToString("##.##"));
+        //iceArrow.SetText(arrowStore.iceArrowCost.ToString("##.##"));
+        //meteorArrow.SetText(arrowStore.meteorArrowCost.ToString("##.##"));
+        //lightningArrow.SetText(arrowStore.lightningArrowCost.ToString("##.##"));
+        //healArrow.SetText(arrowStore.healingArrowCost.ToString("##.##"));
         
         //Test
         if (addGold)
