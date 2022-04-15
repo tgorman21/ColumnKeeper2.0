@@ -2761,12 +2761,14 @@ MonoBehaviour:
   health: 100
   damage: 5
   publicDamage: 0
+  goldDrop: 10
   lane: 0
   centerMass: {fileID: 5713844724106243459}
   healthBar: {fileID: 5483160556713487260}
   enemyNameText: {fileID: 4134275794716903968}
-  damageTakenText: {fileID: 2634763258448848137}
-  damageText: {fileID: 0}
+  popupDamage: {fileID: 0}
+  popupPos: {fileID: 0}
+  goldPopup: {fileID: 0}
   function: 0
   animationType: 0
 --- !u!114 &3566408256435365491

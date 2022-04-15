@@ -180,7 +180,7 @@ MonoBehaviour:
   health: 25
   damage: 5
   publicDamage: 0
-  goldDrop: 0
+  goldDrop: 15
   lane: 0
   centerMass: {fileID: 4998934690807289936}
   healthBar: {fileID: 2571933075753902474}
@@ -188,6 +188,7 @@ MonoBehaviour:
   popupDamage: {fileID: 2396669018445261282, guid: 778d72303bea39c47a212604c28c6bfa,
     type: 3}
   popupPos: {fileID: 8357397994286339973}
+  goldPopup: {fileID: 0}
   function: 0
   animationType: 0
 --- !u!114 &6805747836076519621

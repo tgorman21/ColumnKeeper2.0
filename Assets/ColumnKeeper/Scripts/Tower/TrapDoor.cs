@@ -14,7 +14,7 @@ public class TrapDoor : MonoBehaviour
     private GameObject player;
     private float distanceFromPlayer;
     Transform cameraTransform;
-    bool switchScene;
+    bool switchScene = true;
 
     private void Awake()
     {
@@ -24,6 +24,7 @@ public class TrapDoor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         player = GameObject.FindGameObjectWithTag("Player");
         cameraTransform = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
         if(exitCanvas != null)
@@ -67,13 +68,13 @@ public class TrapDoor : MonoBehaviour
     //Needs something to trigger (Button, Collider)
     public void SwitchScene()
     {
-        if (switchScene)
-        {
-            switchScene = false;
+        //if (switchScene)
+        //{
+        //    switchScene = false;
             CustomSceneManager.instance.GoToScene("MainMenu");
             inputs.XRIRightHand.A.Disable();
 
-        }
+        //}
 
     }
 }

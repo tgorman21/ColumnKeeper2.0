@@ -178,7 +178,7 @@ MonoBehaviour:
   health: 25
   damage: 5
   publicDamage: 0
-  goldDrop: 0
+  goldDrop: 5
   lane: 0
   centerMass: {fileID: 4998934690807289936}
   healthBar: {fileID: 2571933075753902474}
