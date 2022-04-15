@@ -7,9 +7,11 @@ public class TowerHealth : MonoBehaviour
     [SerializeField] private float health;
     private float baseHealth;
     [SerializeField] RectTransform towerHP;
+    bool switchingScene;
     // Start is called before the first frame update
     void Start()
     {
+        switchingScene = true;
         baseHealth = health;
     }
 
@@ -19,8 +21,9 @@ public class TowerHealth : MonoBehaviour
         if(health <= 0)
         {
             //GameOver
-            if(CustomSceneManager.instance != null)
+            if(switchingScene)
             {
+                switchingScene = false;
                 CustomSceneManager.instance.GoToScene("MainMenu");
             }
         }

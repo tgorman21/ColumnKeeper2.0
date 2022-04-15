@@ -350,7 +350,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
 --- !u!136 &961699093
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -380,6 +380,7 @@ MonoBehaviour:
   LightningCloud: {fileID: 7023088893534770528, guid: 6336ba4bf088d4491a151d395f60f994,
     type: 3}
   yPos: 25
+  lightningSize: 0
 --- !u!114 &4389694643528679261
 MonoBehaviour:
   m_ObjectHideFlags: 0

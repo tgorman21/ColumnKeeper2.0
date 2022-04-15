@@ -21,8 +21,9 @@ public class LevelCompletion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (LevelComplete())
+        if (LevelComplete() && switchingScene)
         {
+            switchingScene = false;
             CustomSceneManager.instance.GoToScene("MainMenu");
         }
     }

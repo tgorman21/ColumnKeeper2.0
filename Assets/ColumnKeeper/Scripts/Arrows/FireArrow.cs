@@ -10,7 +10,7 @@ public class FireArrow : MonoBehaviour
 
     //[SerializeField]private GameObject explosionObj;
     private ParticleSystem ps;
-    [SerializeField] private GameObject explosionPos;
+    [SerializeField] private Transform explosionPos;
     private BlastWave bw;
     // Start is called before the first frame update
      void Start()
@@ -20,11 +20,11 @@ public class FireArrow : MonoBehaviour
 
         ps = transform.GetChild(2).GetComponent<ParticleSystem>();
         bw = transform.GetChild(2).GetChild(2).GetComponent<BlastWave>();
-        foreach(GameObject explosionSize in explosionPos.GetComponentsInChildren<GameObject>())
+        foreach(Transform explosionSize in explosionPos)
         {
             PlayerPrefs.SetFloat("FireSize", explosionSize.transform.localScale.x);
             fireSize = PlayerPrefs.GetFloat("FireSize");
-            explosionSize.transform.localScale = new Vector3(PlayerPrefs.GetFloat("FireSize"), PlayerPrefs.GetFloat("FireSize"), PlayerPrefs.GetFloat("FireSize"));
+            explosionSize.localScale = new Vector3(PlayerPrefs.GetFloat("FireSize"), PlayerPrefs.GetFloat("FireSize"), PlayerPrefs.GetFloat("FireSize"));
         }
     }
 

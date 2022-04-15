@@ -363,7 +363,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
 --- !u!136 &961699093
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -395,6 +395,9 @@ MonoBehaviour:
   DampSpeed: 0.5
   damageIce: 25
   rise: 0
+  IceSizeX: 0
+  IceSizeY: 0
+  IceSizeZ: 0
 --- !u!114 &2136282394778349108
 MonoBehaviour:
   m_ObjectHideFlags: 0

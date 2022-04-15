@@ -37,11 +37,6 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.minScalar
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 3544760493190169588, guid: 6038bb5f346a14967a8ab7ab8b0facdc,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4900314468456478437, guid: 6038bb5f346a14967a8ab7ab8b0facdc,
         type: 3}
       propertyPath: m_LocalPosition.z

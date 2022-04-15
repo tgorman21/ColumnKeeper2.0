@@ -380,7 +380,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impactDamage: 10
   decayDamage: 0.16
-  explosionPos: {fileID: 7795081007633561264}
+  fireSize: 0
+  explosionPos: {fileID: 4900314468456478437}
 --- !u!114 &8858610100002344599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,7 +396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeOfArrow: 1
   damage: 10
-  trail: {fileID: 0}
+  trail: {fileID: 4939746061681017405}
 --- !u!1 &8589002692731022628
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,12 +501,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 980378d1035bf470bbd085d0f8074cbf, type: 3}
---- !u!1 &7795081007633561264 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5451889159098065240, guid: 980378d1035bf470bbd085d0f8074cbf,
-    type: 3}
-  m_PrefabInstance: {fileID: 2847595127347845096}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4900314468456478437 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7171378386306965773, guid: 980378d1035bf470bbd085d0f8074cbf,
@@ -584,6 +579,12 @@ PrefabInstance:
 --- !u!4 &1216529887901641170 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7912830386346451116, guid: e31843cb558d55a448bb63b326e3cc34,
+    type: 3}
+  m_PrefabInstance: {fileID: 9021271024286370174}
+  m_PrefabAsset: {fileID: 0}
+--- !u!96 &4939746061681017405 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 4160339708636613443, guid: e31843cb558d55a448bb63b326e3cc34,
     type: 3}
   m_PrefabInstance: {fileID: 9021271024286370174}
   m_PrefabAsset: {fileID: 0}

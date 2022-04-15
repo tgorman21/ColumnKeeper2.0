@@ -46,9 +46,8 @@ using UnityEngine.AI;
             RaycastHit hit;
             if (Physics.Raycast(derzinHand.transform.position, derzinHand.transform.forward, out hit))
             {
-                if (hit.collider.gameObject.CompareTag("TowerPos"))
-                {
-                    distanceFromTower = hit.distance;
+               
+                    distanceFromTower = Vector3.Distance(towerPos.transform.position, transform.position);
                     if (GetComponent<Enemy>().enemyName == Enemy.EnemyName.Derzin)
                     {
                         if (distanceFromTower < 15)
@@ -71,7 +70,7 @@ using UnityEngine.AI;
                     hit.collider.GetComponent<StunPlayer>().Stun();
                 }
 
-            }
+            
         }
         public void GoblinManager()
         {
