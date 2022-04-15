@@ -1,6 +1,6 @@
 Humphry:"Welcome to Trewel Towers, hero!"-10
-Humphry:" I’ve heard about your exploits during the Great War and I’m honored to have you stationed here."-10
+Humphry:" I've heard about your exploits during the Great War and I'm honored to have you stationed here."-10
 Humphry:"After your Hero predecessor,  King Harrison, defeated our enemies and ascended to the throne, these Towers became the center of knowledge to study the arcane arts here in Reinhart."-10
 Humphry:"I currently have one student, Princess Maple, but she has secluded herself to her studies in her room."-10
 Humphry:"How about you spend the day getting adjusted?"-10
-Humphry:"I know! You can practice your skills on the targets outside! I’ll meet you on the roof."-10
+Humphry:"I know! You can practice your skills on the targets outside! I'll meet you on the roof."-10

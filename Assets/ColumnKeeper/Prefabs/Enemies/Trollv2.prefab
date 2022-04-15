@@ -3130,7 +3130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: 2
-  health: 100
+  health: 200
   damage: 5
   publicDamage: 0
   goldDrop: 20
@@ -3145,6 +3145,7 @@ MonoBehaviour:
     type: 3}
   function: 0
   animationType: 0
+  impact: 0
 --- !u!114 &6890866879895219818
 MonoBehaviour:
   m_ObjectHideFlags: 0
