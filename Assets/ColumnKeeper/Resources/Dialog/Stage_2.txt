@@ -1,12 +1,6 @@
 PrincessMaple:"Hero, over here! I have not seen you since the Palace Gala a year ago!"-10
 PrincessMaple:"You still look rather dashing, if I must say."-10
 PrincessMaple:"I was wondering if you could help me out with a small task; I need to collect some mushrooms."-10
-PrincessMaple:"They can be found from Mushrooms of course."-10
-PrincessMaple:"Could you search from the top of the tower and use your archery skills to subdue some Mushrooms?"-10
+PrincessMaple:"They can be found from jumping Mushrooms of course."-10
+PrincessMaple:"Could you search from the top of the tower and use your archery skills to subdue some jumping Mushrooms?"-10
 PrincessMaple:"I can collect the materials after. Five should be plenty, thank you!"-10
-#
-Humphry:"Off she goes to experiment again; Gods know what she is up to in there; thank you for indulging the princess, Hero."-10
-Humphry:"Your skills with a bow are top notch; I can see why His Majesty named you his successor as..."-10
-Humphry:"...BOOM!!!"-10
-Humphry:"What was that?! Are we under attack?"-10
-Humphry:"Hero, hurry to the top of the tower; I'll go check on Princess Maple!"-10

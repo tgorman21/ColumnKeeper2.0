@@ -9,12 +9,3 @@ Derzin:"We will become powerful enough to rival even Demon Lord Sol'gan, and I D
 Humphry:"The hero won't be swayed by your candied words Derzin!"-10
 Humphry:"We only bow to King Harrison and the three Gods."-10
 Humphry:"Prepare yourself; we will rescue Princess Maple from your grubby green hands!"-10
-#
-Derzin:"Kekeke...you're too late, humans."-10
-Derzin:"You may have beaten me...but I've already given your precious princess to General Zarzog!"-10
-Derzin:"She's probably being probed for information as we speak."-10
-Derzin:"General Zarzog will crush this kingdom and give the Goblins the home they deserve."-10
-Humphry:"We were too late...but we aren't done yet!"-10
-Humphry:"We can still defeat this General Zarzog and bring the princess home!"-10
-Humphry:"We have to muster ourselves, dear hero, I thought this creature was the mastermind, but it must be that Demon Lord Sol'gan."-10
-Humphry:"Let's press on…to save the princess and the kingdom!"-10

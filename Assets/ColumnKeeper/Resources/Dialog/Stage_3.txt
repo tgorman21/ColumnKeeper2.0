@@ -1,9 +1,2 @@
-Humphry:"Hero, look at the sky! Something is descending from those odd fluctuations and scaring the Mushrooms!" -10
-Humphry:"Many of them are starting to stampede towards the towers." -10
-Humphry:"This is extremely odd; in this country, Mushrooms have no natural predators!" -10
-Humphry:"Could Valencia be invading again?" -10
-Humphry:"You have to stop the Mushrooms so they don't reach the capital!" -10
-#
-Humphry:"Thank the Gods we have you here, Hero." -10
-Humphry:"I don't think this phenomenon was caused by Valencia or the Puralix Empire." -10
-Humphry:" Now, if you'll excuse me, I have to find out what those fluctuations are!" -10
+Humphry:""What was that?! Are we under attack? Hero, hurry to the top of the tower; I'll go check on Princess Maple!" -10
+
