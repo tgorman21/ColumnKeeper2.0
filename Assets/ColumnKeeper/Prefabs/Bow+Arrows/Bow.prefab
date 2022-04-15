@@ -528,7 +528,7 @@ Transform:
   m_GameObject: {fileID: 2589571369817754473}
   m_LocalRotation: {x: 0.18469334, y: -0.17116207, z: -0.6579916, w: 0.7096752}
   m_LocalPosition: {x: 365.55267, y: 487.60815, z: -23.906271}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1.4, z: 1}
   m_Children:
   - {fileID: 8808615383044413353}
   - {fileID: 1137606935890080577}
@@ -789,9 +789,9 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 366.56802, y: 487.68503, z: -23.527}
+  - {x: 366.2875, y: 487.66382, z: -23.684034}
   - {x: 365.63287, y: 487.61423, z: -24.050346}
-  - {x: 364.5929, y: 487.53555, z: -24.632486}
+  - {x: 364.9049, y: 487.5596, z: -24.457413}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.01

@@ -118,7 +118,7 @@ public class ArrowStoreManager : MonoBehaviour
                         Debug.Log("Decay Damage: " + PlayerPrefs.GetFloat("DecayDamage"));
                         Debug.Log("Fire Size: " + PlayerPrefs.GetFloat("FireSize"));
                         //Change if it uses Diamonds/Gems
-                        fireArrowCost += fireArrowCost * upgradeMultiplier;
+                        fireArrowCost += Mathf.Floor(fireArrowCost * upgradeMultiplier);
                         currency.SubtractGold(fireArrowCost);
                         break;
 
@@ -152,7 +152,7 @@ public class ArrowStoreManager : MonoBehaviour
                         float size = PlayerPrefs.GetFloat("LightningSize");
                         size += size * 0.27f; //Change This To Change upgrade variable ratio
                         PlayerPrefs.SetFloat("LightningSize", size);
-                        lightningArrowCost += lightningArrowCost * upgradeMultiplier;
+                        lightningArrowCost += Mathf.Floor(lightningArrowCost * upgradeMultiplier);
                         //Change if it uses Diamonds/Gems
                         currency.SubtractGold(lightningArrowCost);
                         break;
@@ -185,7 +185,7 @@ public class ArrowStoreManager : MonoBehaviour
                         float spawnRate = PlayerPrefs.GetFloat("RainSpawnRate");
                         spawnRate += 1; //Change This To Change upgrade variable ratio
                         PlayerPrefs.SetFloat("RainSpawnRate", spawnRate);
-                        rainArrowCost += rainArrowCost * upgradeMultiplier;
+                        rainArrowCost += Mathf.Floor(rainArrowCost * upgradeMultiplier);
                         //Change if it uses Diamonds/Gems
                         currency.SubtractGold(rainArrowCost);
                         break;
@@ -224,7 +224,7 @@ public class ArrowStoreManager : MonoBehaviour
                         PlayerPrefs.SetFloat("IceSizeZ", size);
 
                         //Change if it uses Diamonds/Gems
-                        iceArrowCost += iceArrowCost * upgradeMultiplier;
+                        iceArrowCost += Mathf.Floor(iceArrowCost * upgradeMultiplier);
 
                         currency.SubtractGold(iceArrowCost);
                         break;
@@ -260,7 +260,7 @@ public class ArrowStoreManager : MonoBehaviour
                         meteorTime += 1; //Change This To Change upgrade variable ratio
 
                         PlayerPrefs.SetFloat("MeteorTime", meteorTime);
-                        meteorArrowCost += meteorArrowCost * upgradeMultiplier;
+                        meteorArrowCost += Mathf.Floor(meteorArrowCost * upgradeMultiplier);
 
                         //Change if it uses Diamonds/Gems
 
@@ -292,7 +292,7 @@ public class ArrowStoreManager : MonoBehaviour
                         healAmount += 1; //Change This To Change upgrade variable ratio
 
                         PlayerPrefs.SetFloat("HealAmount", healAmount);
-                        healingArrowCost += healingArrowCost * upgradeMultiplier;
+                        healingArrowCost += Mathf.Floor(healingArrowCost * upgradeMultiplier);
 
                         //Change if it uses Diamonds/Gems
 

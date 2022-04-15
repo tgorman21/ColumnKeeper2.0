@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 339eda6032e7aa04da85c136e9bf871f,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -10242,9 +10242,9 @@ RectTransform:
   m_Father: {fileID: 1259887478}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 310.5, y: -82.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 181, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &739898138
@@ -12058,10 +12058,10 @@ RectTransform:
   m_Father: {fileID: 943399401}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 614.5, y: -82}
-  m_SizeDelta: {x: 363, y: 124}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &940274451
 GameObject:
@@ -12940,9 +12940,9 @@ RectTransform:
   m_Father: {fileID: 1259887478}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 120.5, y: -82.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 181, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1007609908
@@ -15909,9 +15909,9 @@ RectTransform:
   m_Father: {fileID: 1259887478}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 500.5, y: -82.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 181, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1469805699
@@ -15983,10 +15983,10 @@ RectTransform:
   m_Father: {fileID: 943399401}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 236.5, y: -82}
-  m_SizeDelta: {x: 363, y: 124}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1471301640
 GameObject:
@@ -18304,7 +18304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1814210644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18380,7 +18380,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 1948064561
+  m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1814210648
@@ -18432,11 +18432,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldText: {fileID: 329212594}
   diamondText: {fileID: 647259650}
-  fireArrow: {fileID: 1657481565}
-  iceArrow: {fileID: 2145036409}
-  meteorArrow: {fileID: 2004992914}
-  lightningArrow: {fileID: 747491135}
-  healArrow: {fileID: 817194849}
+  fireArrow: {fileID: 1477461405}
+  iceArrow: {fileID: 0}
+  meteorArrow: {fileID: 0}
+  lightningArrow: {fileID: 0}
+  healArrow: {fileID: 0}
   arrowStore: {fileID: 6510208560203042606}
   addGold: 0
   addDiamond: 0

@@ -7,23 +7,26 @@ public class TrapDoor : MonoBehaviour
 {
     XRIDefaultInputActions inputs;
     [SerializeField] GameObject exitCanvas;
+
     [Tooltip("Distance from Trap Door to Player to Activate")]
-    [SerializeField] float distance;
+    [SerializeField] private float distance;
+
     [Header("Don't Need for Level 1")]
     [SerializeField] LevelCompletion levelCompletion;
     private GameObject player;
     private float distanceFromPlayer;
     Transform cameraTransform;
-    bool switchScene = true;
+    private bool switchScene = true;
 
     private void Awake()
     {
         inputs = new XRIDefaultInputActions();
-        inputs.XRIRightHand.A.Enable();
+        inputs.XRIRightHand.A.performed += tgb => SwitchScene();
     }
-    // Start is called before the first frame update
+
     void Start()
     {
+        inputs.XRIRightHand.A.Enable();
 
         player = GameObject.FindGameObjectWithTag("Player");
         cameraTransform = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
@@ -33,14 +36,12 @@ public class TrapDoor : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         distanceFromPlayer = Vector3.Distance(transform.position, player.transform.position);
         if(distanceFromPlayer < distance)
         {
             DoorActive(true);
-            inputs.XRIRightHand.A.performed += tgb => SwitchScene();
         }
         else
         {
@@ -52,14 +53,17 @@ public class TrapDoor : MonoBehaviour
         //    DoorActive(true);
         //}
     }
+
     private void OnEnable()
     {
         inputs.Enable();
     }
+
     private void OnDisable()
     {
         inputs.Disable();
     }
+
     public void DoorActive(bool state)
     {
         exitCanvas.SetActive(state);
@@ -68,13 +72,11 @@ public class TrapDoor : MonoBehaviour
     //Needs something to trigger (Button, Collider)
     public void SwitchScene()
     {
-        //if (switchScene)
-        //{
-        //    switchScene = false;
+        if (distanceFromPlayer < distance)
+        {
             CustomSceneManager.instance.GoToScene("MainMenu");
             inputs.XRIRightHand.A.Disable();
-
-        //}
+        }
 
     }
 }
