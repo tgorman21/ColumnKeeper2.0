@@ -8,13 +8,15 @@ public class TargetPractice : MonoBehaviour
     [Header("Target Info")]
     [SerializeField] private float health;
     [SerializeField] private bool hit = false;
+    public bool doneIntro = false;
 
     [Header("Dev Tools")]
     [SerializeField] private bool collapseTest;
 
     [Header("References")]
     [SerializeField] private GameObject PopupDamage;
-    
+    [SerializeField] private DialogManager dm;
+
     private TargetCounter targetCounter;
     private Rigidbody[] targetPieces;
 
@@ -27,6 +29,11 @@ public class TargetPractice : MonoBehaviour
     private void Update()
     {
         if (collapseTest) CollapseTarget(50, transform.position);
+
+        if(dm.clipNum == 6)
+        {
+            doneIntro = true;
+        }
     }
 
     public void CollapseTarget(float damage, Vector3 hitPos)
@@ -37,6 +44,15 @@ public class TargetPractice : MonoBehaviour
 
         if (!hit) { hit = true; }
         health -= damage;
+
+        if (!doneIntro)
+        {
+            health += damage;
+            if (dm.clipNum == 4)
+            {
+                dm.TriggerInLevelAudio();
+            }
+        }
 
         GameObject damagePopup = Instantiate(PopupDamage, hitPos, Quaternion.identity);
         damagePopup.transform.GetComponentInChildren<TMP_Text>().SetText(damage.ToString("-##"));

@@ -8,14 +8,14 @@ public class LevelCompletion : MonoBehaviour
     int numberOfBoards;
     [HideInInspector]public int boardsCompleted;
     bool switchingScene;
-    // Start is called before the first frame update
+    [SerializeField] private DialogManager dm;
+
     void Start()
     {
         switchingScene = false;
         boardsCompleted = 0;
         wantedBoards = GameObject.FindGameObjectsWithTag("WantedBoard");
         numberOfBoards = wantedBoards.Length;
-        
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class LevelCompletion : MonoBehaviour
         if (LevelComplete() && switchingScene)
         {
             switchingScene = false;
-            CustomSceneManager.instance.GoToScene("MainMenu");
+            dm.TriggerPostLevelAudio();
         }
     }
 

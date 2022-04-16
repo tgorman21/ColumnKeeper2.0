@@ -17,6 +17,10 @@ public class TrapDoor : MonoBehaviour
     private float distanceFromPlayer;
     Transform cameraTransform;
     private bool switchScene = true;
+    public bool playingOutro = false;
+    [SerializeField] private DialogManager dm;
+    public bool idc = false;    
+    
 
     private void Awake()
     {
@@ -39,13 +43,16 @@ public class TrapDoor : MonoBehaviour
     void Update()
     {
         distanceFromPlayer = Vector3.Distance(transform.position, player.transform.position);
-        if(distanceFromPlayer < distance)
+        if (!playingOutro)
         {
-            DoorActive(true);
-        }
-        else
-        {
-            DoorActive(false);
+            if (distanceFromPlayer < distance)
+            {
+                DoorActive(true);
+            }
+            else
+            {
+                DoorActive(false);
+            }
         }
         //if (levelCompletion != null)
         //if (levelCompletion.LevelComplete())
@@ -74,9 +81,23 @@ public class TrapDoor : MonoBehaviour
     {
         if (distanceFromPlayer < distance)
         {
-            CustomSceneManager.instance.GoToScene("MainMenu");
-            inputs.XRIRightHand.A.Disable();
+            if (idc)
+            {
+                if (dm.clipNum == 5)
+                {
+                    dm.clipNum++;
+                }
+                else
+                {
+                    CustomSceneManager.instance.GoToScene("MainMenu");
+                    inputs.XRIRightHand.A.Disable();
+                }
+            }
+            else
+            {
+                CustomSceneManager.instance.GoToScene("MainMenu");
+                inputs.XRIRightHand.A.Disable();
+            }
         }
-
     }
 }
