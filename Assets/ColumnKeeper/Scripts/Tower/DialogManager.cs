@@ -9,7 +9,7 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private AudioClip postLevelClip;
 
     [Header("AudioSource")]
-    [SerializeField] private AudioSource trapdoorSource;
+    [SerializeField] public AudioSource trapdoorSource;
 
     [HideInInspector] public int clipNum = 0;
 
@@ -27,6 +27,7 @@ public class DialogManager : MonoBehaviour
         {
             trapdoorSource.PlayOneShot(inLevelClips[clipNum]);
             clipNum++;
+            Debug.Log(inLevelClips);
         }
     }
 
