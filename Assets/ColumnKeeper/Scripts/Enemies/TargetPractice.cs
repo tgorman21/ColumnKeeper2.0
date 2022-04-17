@@ -39,8 +39,7 @@ public class TargetPractice : MonoBehaviour
 
         if(dm.clipNum == 6)
         {
-            inputs.XRIRightHand.A.performed += tgb => doneIntro = true;
-            inputs.XRIRightHand.A.Disable();
+            doneIntro = true;
         }
     }
 
