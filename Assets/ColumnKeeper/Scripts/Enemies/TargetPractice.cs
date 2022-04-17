@@ -5,6 +5,7 @@ using TMPro;
 
 public class TargetPractice : MonoBehaviour
 {
+    XRIDefaultInputActions inputs;
     [Header("Target Info")]
     [SerializeField] private float health;
     [SerializeField] private bool hit = false;
@@ -19,9 +20,15 @@ public class TargetPractice : MonoBehaviour
 
     private TargetCounter targetCounter;
     private Rigidbody[] targetPieces;
-
+    private CountDown countDown;
+    private void Awake()
+    {
+        inputs = new XRIDefaultInputActions();
+        
+    }
     private void Start()
     {
+        countDown = GameObject.FindGameObjectWithTag("TargetCounter").GetComponent<CountDown>();
         targetCounter = GameObject.FindGameObjectWithTag("TargetCounter").GetComponent<TargetCounter>();
         targetPieces = GetComponentsInChildren<Rigidbody>();
     }
@@ -32,7 +39,8 @@ public class TargetPractice : MonoBehaviour
 
         if(dm.clipNum == 6)
         {
-            doneIntro = true;
+            inputs.XRIRightHand.A.performed += tgb => doneIntro = true;
+            inputs.XRIRightHand.A.Disable();
         }
     }
 
