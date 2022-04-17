@@ -9,11 +9,15 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private AudioClip postLevelClip;
 
     [Header("AudioSource")]
-    [SerializeField] public AudioSource trapdoorSource;
+    [SerializeField] private AudioSource trapdoorSource;
 
     [HideInInspector] public int clipNum = 0;
 
-    private void Start() => Countdown();
+    private void Start()
+    {
+        Countdown();
+        Debug.Log(Countdown());
+    }
 
     private IEnumerator Countdown()
     {
