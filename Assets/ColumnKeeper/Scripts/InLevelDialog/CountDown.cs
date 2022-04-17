@@ -5,7 +5,7 @@ using TMPro;
 
 public class CountDown : MonoBehaviour
 {
-    [SerializeField] private float countDown;
+    [SerializeField] private float countDown; //In Minutes
     [SerializeField] private TextMeshProUGUI countDownText;
     private float minutes;
     private float seconds;
