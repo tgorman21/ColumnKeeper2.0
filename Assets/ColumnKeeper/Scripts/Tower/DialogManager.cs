@@ -21,6 +21,7 @@ public class DialogManager : MonoBehaviour
     }
     private void Update()
     {
+        
         if (trapdoorSource.isPlaying)
         {
             musicManager.volume = 0.4f;
@@ -36,14 +37,26 @@ public class DialogManager : MonoBehaviour
 
     public void TriggerInLevelAudio()
     {
-        if(clipNum < inLevelClips.Count)
+        if (trapdoorSource.isPlaying)
         {
-            trapdoorSource.PlayOneShot(inLevelClips[clipNum]);
-            clipNum++;
-            Debug.Log(inLevelClips);
+            StartCoroutine(WaitForCliptToEnd());
         }
+        else
+        {
+            if (clipNum < inLevelClips.Count)
+            {
+                trapdoorSource.PlayOneShot(inLevelClips[clipNum]);
+                clipNum++;
+                Debug.Log(inLevelClips);
+            }
+        }
+        
     }
-
+    private IEnumerator WaitForCliptToEnd()
+    {
+        yield return new WaitWhile(() => trapdoorSource.isPlaying);
+        TriggerInLevelAudio();
+    }
     public void TriggerPostLevelAudio()
     {
         trapdoorSource.PlayOneShot(postLevelClip);
