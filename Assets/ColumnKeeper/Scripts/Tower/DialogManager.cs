@@ -10,15 +10,24 @@ public class DialogManager : MonoBehaviour
 
     [Header("AudioSource")]
     [SerializeField] private AudioSource trapdoorSource;
+    [SerializeField] private AudioSource musicManager;
 
     [HideInInspector] public int clipNum = 0;
 
     private void Start()
     {
-        Countdown();
+        StartCoroutine(Countdown());
         Debug.Log(Countdown());
     }
-
+    private void Update()
+    {
+        if (trapdoorSource.isPlaying)
+        {
+            musicManager.volume = 0.4f;
+        }
+        else
+            musicManager.volume = 1;
+    }
     private IEnumerator Countdown()
     {
         yield return new WaitForSeconds(5);
