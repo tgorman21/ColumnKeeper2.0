@@ -6,7 +6,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class TrapDoor : MonoBehaviour
 {
     XRIDefaultInputActions inputs;
-    [SerializeField] GameObject exitCanvas;
+    [SerializeField] private GameObject exitCanvas;
+    [SerializeField] private GameObject challengeCanvas;
 
     [Tooltip("Distance from Trap Door to Player to Activate")]
     [SerializeField] private float distance;
@@ -18,9 +19,9 @@ public class TrapDoor : MonoBehaviour
     Transform cameraTransform;
     private bool switchScene = true;
     public bool playingOutro = false;
+
     [SerializeField] private DialogManager dm;
-    public bool idc = false;    
-    
+    public bool isLevel1 = false;
 
     private void Awake()
     {
@@ -34,10 +35,8 @@ public class TrapDoor : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player");
         cameraTransform = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
-        if(exitCanvas != null)
-        {
-            exitCanvas.SetActive(false);
-        }
+        if(exitCanvas != null) exitCanvas.SetActive(false);
+        if (challengeCanvas != null) challengeCanvas.SetActive(false);
     }
 
     void Update()
@@ -73,19 +72,31 @@ public class TrapDoor : MonoBehaviour
 
     public void DoorActive(bool state)
     {
-        exitCanvas.SetActive(state);
-        exitCanvas.transform.LookAt(cameraTransform.position);
+        if(isLevel1 && dm.clipNum == 5)
+        {
+            challengeCanvas.SetActive(state);
+            challengeCanvas.transform.LookAt(cameraTransform.position);
+        }
+        else
+        {
+            exitCanvas.SetActive(state);
+            exitCanvas.transform.LookAt(cameraTransform.position);
+        }
     }
     //Needs something to trigger (Button, Collider)
     public void SwitchScene()
     {
         if (distanceFromPlayer < distance)
         {
-            if (idc)
+            if (isLevel1)
             {
                 if (dm.clipNum == 5)
                 {
                     dm.clipNum++;
+
+                    // --> THIS IS WHERE START OF CHALLENGE IN LEVEL 1 IS TRIGGERED <--
+
+                    challengeCanvas.SetActive(false); //fix challenge canvas so it doesn't appear anymore
                 }
                 else
                 {

@@ -39,7 +39,7 @@ public class DialogManager : MonoBehaviour
     {
         if (trapdoorSource.isPlaying)
         {
-            StartCoroutine(WaitForCliptToEnd());
+            StartCoroutine(WaitForClipToEnd());
         }
         else
         {
@@ -49,14 +49,15 @@ public class DialogManager : MonoBehaviour
                 clipNum++;
                 Debug.Log(inLevelClips);
             }
-        }
-        
+        } 
     }
-    private IEnumerator WaitForCliptToEnd()
+
+    private IEnumerator WaitForClipToEnd()
     {
         yield return new WaitWhile(() => trapdoorSource.isPlaying);
         TriggerInLevelAudio();
     }
+
     public void TriggerPostLevelAudio()
     {
         trapdoorSource.PlayOneShot(postLevelClip);
