@@ -3206,6 +3206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Smash: {fileID: 1255113191264706106}
   TrollDie: {fileID: 6938885860692139965}
+  healingParticles: {fileID: 5289242215774227343}
 --- !u!114 &2809049533123844516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4071,7 +4072,7 @@ PrefabInstance:
     - target: {fileID: 6009929223683355722, guid: 667e2afe465b6214d8e54980864d3cef,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6463859704989601470, guid: 667e2afe465b6214d8e54980864d3cef,
         type: 3}
@@ -4133,6 +4134,12 @@ PrefabInstance:
 --- !u!4 &7417460918908642769 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6463859704989601470, guid: 667e2afe465b6214d8e54980864d3cef,
+    type: 3}
+  m_PrefabInstance: {fileID: 4558807547686529903}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5289242215774227343 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8512659308834496736, guid: 667e2afe465b6214d8e54980864d3cef,
     type: 3}
   m_PrefabInstance: {fileID: 4558807547686529903}
   m_PrefabAsset: {fileID: 0}

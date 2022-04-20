@@ -6,28 +6,47 @@ public class TrollSmash : MonoBehaviour
 {
     public ParticleSystem Smash;
     public ParticleSystem TrollDie;
+    [SerializeField] private ParticleSystem healingParticles;
+
     private float HP;
     private float t = 0;
+    private float initialHp;
+
     private void Start()
     {
-        HP = gameObject.GetComponent<Enemy>().health;
+       
+        initialHp = gameObject.GetComponent<Enemy>().health;
+        Debug.Log(initialHp);
     }
     private void Update()
     {
-        if (HP >= 200) return;
+        HP = gameObject.GetComponent<Enemy>().health;
+        if (HP >= initialHp) return;
 
         t += Time.deltaTime;
-
-        if(t >= 1)
+        Debug.Log(t);
+        if (t >= 15)
         {
-            t = 0;
-            HP += 3;
-            Debug.Log(HP);
-                Debug.Log(3);
+            StartCoroutine(Heal());
+
         }
     }
+    IEnumerator Heal()
+    {
+        HealingEffect(true);
+        gameObject.GetComponent<Enemy>().health = Mathf.Lerp(HP, HP + 5, Time.deltaTime);//Increases health by 5
+        yield return new WaitForSeconds(5);
+        t = 0;
+        HealingEffect(false);
 
-
+    }
+    void HealingEffect(bool state)
+    {
+        if (state)
+            healingParticles.Play();
+        else if(!state)
+            healingParticles.Stop();
+    }
 
     void SmashParticles()
     {
