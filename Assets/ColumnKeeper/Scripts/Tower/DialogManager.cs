@@ -60,6 +60,6 @@ public class DialogManager : MonoBehaviour
 
     public void TriggerPostLevelAudio()
     {
-        trapdoorSource.PlayOneShot(postLevelClip);
+        if(!trapdoorSource.isPlaying) trapdoorSource.PlayOneShot(postLevelClip);
     }
 }
