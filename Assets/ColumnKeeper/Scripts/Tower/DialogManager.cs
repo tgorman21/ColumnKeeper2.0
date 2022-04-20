@@ -8,7 +8,7 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private List<AudioClip> inLevelClips = new List<AudioClip>();
     [SerializeField] private AudioClip postLevelClip;
 
-    [Header("AudioSource")]
+    [Header("Audio Source")]
     [SerializeField] private AudioSource trapdoorSource;
     [SerializeField] private AudioSource musicManager;
 
@@ -21,13 +21,14 @@ public class DialogManager : MonoBehaviour
     }
     private void Update()
     {
-        
         if (trapdoorSource.isPlaying)
         {
             musicManager.volume = 0.4f;
         }
         else
-            musicManager.volume = 1;
+        {
+            musicManager.volume = 0.7f;
+        }
     }
     private IEnumerator Countdown()
     {

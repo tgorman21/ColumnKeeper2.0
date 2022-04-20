@@ -7,7 +7,7 @@ public class TrapDoor : MonoBehaviour
 {
     XRIDefaultInputActions inputs;
     [SerializeField] private GameObject exitCanvas;
-    [SerializeField] private GameObject challengeCanvas;
+    [SerializeField] private GameObject challengeCanvas; //only for level 1
 
     [Tooltip("Distance from Trap Door to Player to Activate")]
     [SerializeField] private float distance;
@@ -22,6 +22,8 @@ public class TrapDoor : MonoBehaviour
 
     [SerializeField] private DialogManager dm;
     public bool isLevel1 = false;
+
+    private bool tempHide = false; //using this to hide popup right after you've started challenge. it reappears once you approach the trapdoor again
 
     private void Awake()
     {
@@ -46,11 +48,12 @@ public class TrapDoor : MonoBehaviour
         {
             if (distanceFromPlayer < distance)
             {
-                DoorActive(true);
+                if(!tempHide) DoorActive(true);
             }
             else
             {
                 DoorActive(false);
+                tempHide = false;
             }
         }
         //if (levelCompletion != null)
@@ -79,6 +82,8 @@ public class TrapDoor : MonoBehaviour
         }
         else
         {
+            challengeCanvas.SetActive(false);
+
             exitCanvas.SetActive(state);
             exitCanvas.transform.LookAt(cameraTransform.position);
         }
@@ -86,7 +91,7 @@ public class TrapDoor : MonoBehaviour
     //Needs something to trigger (Button, Collider)
     public void SwitchScene()
     {
-        if (distanceFromPlayer < distance)
+        if (distanceFromPlayer < distance && !tempHide)
         {
             if (isLevel1)
             {
@@ -96,7 +101,9 @@ public class TrapDoor : MonoBehaviour
 
                     // --> THIS IS WHERE START OF CHALLENGE IN LEVEL 1 IS TRIGGERED <--
 
-                    challengeCanvas.SetActive(false); //fix challenge canvas so it doesn't appear anymore
+                    challengeCanvas.transform.GetChild(0).gameObject.SetActive(false); //turn off challenge begin popup
+                    challengeCanvas.transform.GetChild(1).gameObject.SetActive(true); //turn on challenge details popup
+                    tempHide = true;
                 }
                 else
                 {

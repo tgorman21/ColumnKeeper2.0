@@ -56,8 +56,7 @@ public class Storybook : MonoBehaviour
 
         //load and play audio clip for selected level
         var audio = Resources.Load<AudioClip>("StorybookAudio/" + fileName);
-        audioSource.clip = audio;
-        audioSource.Play();
+        StartCoroutine(CueStorybookAudio(audio));
         
         // ===OLD APPLICATION.DATA PATH CODE===
         //this will need to be updated in the future because Unity themselves recommends avoiding Resources.Load()
@@ -72,6 +71,14 @@ public class Storybook : MonoBehaviour
 
         levelNum = _levelNum;
         lineNum = 0;
+    }
+
+    private IEnumerator CueStorybookAudio(AudioClip audio)
+    {
+        yield return new WaitForSeconds(9f); //wait 9 seconds for storybook animation to finish before beginning dialog audio
+
+        audioSource.clip = audio;
+        audioSource.Play();
     }
 
     public void TriggerDialog() => StartCoroutine(ProgressDialog(dialog));

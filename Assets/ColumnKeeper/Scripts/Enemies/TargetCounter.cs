@@ -9,25 +9,26 @@ public class TargetCounter : MonoBehaviour
     [SerializeField] TrapDoor trapDoor;
     public int targetsHit = 0;
     [SerializeField] private DialogManager dm;
+    [SerializeField] private Stage1Dialog stage1Dialog;
 
-    private bool switchingScene = false;
+    private bool doneChallenge = false;
 
     private void Update()
     {
         targetHitText.SetText(targetsHit.ToString("## / 9"));
-        if (AllTargetsHit() && switchingScene)
+        if (AllTargetsHit())
         {
-            switchingScene = false;
             dm.TriggerPostLevelAudio();
+            stage1Dialog.challengeComplete = true;
         }
     }
 
     public void TargetHit() => targetsHit++;
 
     public bool AllTargetsHit() {
-        if (targetsHit >= 9 && !switchingScene) 
+        if (targetsHit >= 9 && !doneChallenge) 
         {
-            switchingScene = true;
+            doneChallenge = true;
             return true;
         }
         else
