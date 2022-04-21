@@ -38,7 +38,7 @@ public class TrapDoor : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         cameraTransform = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
         if(exitCanvas != null) exitCanvas.SetActive(false);
-        if (challengeCanvas != null) challengeCanvas.SetActive(false);
+        if (isLevel1) challengeCanvas.SetActive(false);
     }
 
     void Update()
@@ -77,12 +77,12 @@ public class TrapDoor : MonoBehaviour
     {
         if(isLevel1 && dm.clipNum == 5)
         {
-            challengeCanvas.SetActive(state);
-            challengeCanvas.transform.LookAt(cameraTransform.position);
+            if (isLevel1) challengeCanvas.SetActive(state);
+            if (isLevel1) challengeCanvas.transform.LookAt(cameraTransform.position);
         }
         else
         {
-            challengeCanvas.SetActive(false);
+            if (isLevel1) challengeCanvas.SetActive(false);
 
             exitCanvas.SetActive(state);
             exitCanvas.transform.LookAt(cameraTransform.position);
@@ -101,8 +101,8 @@ public class TrapDoor : MonoBehaviour
 
                     // --> THIS IS WHERE START OF CHALLENGE IN LEVEL 1 IS TRIGGERED <--
 
-                    challengeCanvas.transform.GetChild(0).gameObject.SetActive(false); //turn off challenge begin popup
-                    challengeCanvas.transform.GetChild(1).gameObject.SetActive(true); //turn on challenge details popup
+                    if (isLevel1) challengeCanvas.transform.GetChild(0).gameObject.SetActive(false); //turn off challenge begin popup
+                    if (isLevel1) challengeCanvas.transform.GetChild(1).gameObject.SetActive(true); //turn on challenge details popup
                     tempHide = true;
                 }
                 else
