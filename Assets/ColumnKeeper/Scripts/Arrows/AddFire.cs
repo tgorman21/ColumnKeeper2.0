@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AddFire : MonoBehaviour
 {
-
+    [SerializeField] private GameObject fire;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,10 @@ public class AddFire : MonoBehaviour
     {
         if (other.CompareTag("Arrow"))
         {
-            other.GetComponent<ArrowType>().turnonFire = true;
+            Transform tip = other.GetComponent<Arrow>().tip;
+            GameObject arrowFire = Instantiate(fire, other.GetComponent<Arrow>().tip);
+            arrowFire.transform.position = new Vector3(tip.transform.position.x + 0.25f, tip.transform.position.y - 0.25f, tip.transform.position.z);
+            arrowFire.transform.parent = other.transform;
         }
     }
 
