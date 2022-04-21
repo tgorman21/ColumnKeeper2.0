@@ -1,4 +1,4 @@
-Humphry:"Oh no, Hero, we have a dire emergency!" -10
-Humphry:"Princess Maple has disappeared!" -10
-Humphry:"I'm not sure where she could have gone; monsters occupy the surrounding area." -10
-Humphry:"Hero, I need you to hold off the incoming forces so I can investigate her study!" -10
+Humphry:"Oh no, Hero, we have a dire emergency!" -3
+Humphry:"Princess Maple has disappeared!" -4
+Humphry:"I'm not sure where she could have gone; monsters occupy the surrounding area." -5
+Humphry:"Hero, I need you to hold off the incoming forces so I can investigate her study!" -8
