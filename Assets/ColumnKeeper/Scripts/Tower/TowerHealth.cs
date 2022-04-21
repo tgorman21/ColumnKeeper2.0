@@ -8,11 +8,14 @@ public class TowerHealth : MonoBehaviour
     private float baseHealth;
     private RectTransform towerHP;
     bool switchingScene;
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        towerHP = GameObject.FindGameObjectWithTag("TowerHealth").GetComponent<RectTransform>();
+    }
     void Start()
     {
         
-        towerHP = GameObject.FindGameObjectWithTag("TowerHealth").GetComponent<RectTransform>();
+        
         switchingScene = true;
         baseHealth = health;
     }
