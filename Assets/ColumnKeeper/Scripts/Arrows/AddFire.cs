@@ -21,7 +21,9 @@ public class AddFire : MonoBehaviour
     {
         if (other.CompareTag("Arrow"))
         {
+            Transform tip = other.GetComponent<Arrow>().tip;
             GameObject arrowFire = Instantiate(fire, other.GetComponent<Arrow>().tip);
+            arrowFire.transform.position = new Vector3(tip.transform.position.x, tip.transform.position.y - 0.5f, tip.transform.position.z);
             arrowFire.transform.parent = other.transform;
         }
     }
