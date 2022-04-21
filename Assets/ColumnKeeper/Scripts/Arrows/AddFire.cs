@@ -22,7 +22,7 @@ public class AddFire : MonoBehaviour
         {
             Transform tip = other.GetComponent<Arrow>().tip;
             GameObject arrowFire = Instantiate(fire, other.GetComponent<Arrow>().tip);
-            arrowFire.transform.localPosition = new Vector3(tip.transform.localPosition.x, tip.transform.localPosition.y - 0.25f, tip.transform.localPosition.z - 0.25f);
+            arrowFire.transform.localPosition = new Vector3(tip.transform.localPosition.x, tip.transform.localPosition.y + 0.40f, tip.transform.localPosition.z - 0.10f);
             arrowFire.transform.parent = other.transform;
         }
     }
