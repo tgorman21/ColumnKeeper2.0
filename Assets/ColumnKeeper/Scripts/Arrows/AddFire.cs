@@ -17,5 +17,13 @@ public class AddFire : MonoBehaviour
     {
         
     }
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Arrow"))
+        {
+            GameObject arrowFire = Instantiate(fire, other.GetComponent<Arrow>().tip);
+            arrowFire.transform.parent = other.transform;
+        }
+    }
+
 }

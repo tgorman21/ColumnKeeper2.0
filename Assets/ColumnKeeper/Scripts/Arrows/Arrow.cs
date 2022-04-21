@@ -277,12 +277,5 @@ public class Arrow : XRGrabInteractable
         if (hittable != null)
             hittable.Hit(this);
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Torch"))
-        {
-            GameObject arrowFire = Instantiate(other.GetComponent<AddFire>().fire, tip);
-            arrowFire.transform.parent = this.transform;
-        }
-    }
+    
 }
