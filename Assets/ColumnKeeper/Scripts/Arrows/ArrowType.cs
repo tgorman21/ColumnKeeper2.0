@@ -10,10 +10,11 @@ public class ArrowType : MonoBehaviour
     public TypeOfArrow typeOfArrow;
     public float damage;
     public TrailRenderer trail;
-
+    [HideInInspector] public bool turnonFire;
+    [SerializeField] private GameObject fireEffect;
     private void Start()
     {
-
+        turnonFire = false;
         if (GetComponentInChildren<TrailRenderer>() != null)
         {
             trail = GetComponentInChildren<TrailRenderer>();
@@ -44,6 +45,13 @@ public class ArrowType : MonoBehaviour
             case TypeOfArrow.Target:
                 PlayerPrefs.SetFloat(typeOfArrow + "ArrowDamage", damage);
                 break;
+        }
+    }
+    private void Update()
+    {
+        if(turnonFire && fireEffect != null)
+        {
+            fireEffect.SetActive(true);
         }
     }
 }

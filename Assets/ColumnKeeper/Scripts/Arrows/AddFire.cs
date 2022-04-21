@@ -20,8 +20,7 @@ public class AddFire : MonoBehaviour
     {
         if (other.CompareTag("Arrow"))
         {
-            GameObject fireEffect = other.transform.GetChild(0).GetChild(0).gameObject;
-            fireEffect.GetComponentInChildren<GameObject>().SetActive(true);
+            other.GetComponent<ArrowType>().turnonFire = true;
         }
     }
 

@@ -381,6 +381,8 @@ MonoBehaviour:
   typeOfArrow: 0
   damage: 50
   trail: {fileID: 0}
+  turnonFire: 0
+  fireEffect: {fileID: 6028123101510037786}
 --- !u!114 &2099356749525637490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -589,6 +591,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 207becc1ae72c254e91aa8a0b5c2059e, type: 3}
+--- !u!1 &6028123101510037786 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4683098508401871193, guid: 207becc1ae72c254e91aa8a0b5c2059e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1393168427721455683}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &214873041512994371 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1274209358947872256, guid: 207becc1ae72c254e91aa8a0b5c2059e,
