@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 118005092358987083}
   m_Layer: 2
   m_Name: Tower Hp
-  m_TagString: Untagged
+  m_TagString: TowerHealth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class TowerHealth : MonoBehaviour
 {
-    [SerializeField] private float health;
+    private float health = 200;
     private float baseHealth;
-    [SerializeField] RectTransform towerHP;
+    private RectTransform towerHP;
     bool switchingScene;
     // Start is called before the first frame update
     void Start()
     {
+        
+        towerHP = GameObject.FindGameObjectWithTag("TowerHealth").GetComponent<RectTransform>();
         switchingScene = true;
         baseHealth = health;
     }
@@ -47,9 +49,10 @@ public class TowerHealth : MonoBehaviour
     }
 
     //Upgrades Tower
-    public void UpgradeHealth(float health)
+    public void UpgradeHealth()
     {
-        this.health = health;
+        
+        this.health = PlayerPrefs.GetFloat("TowerHealth");
         if (health >= 0)
         {
             if(towerHP != null)

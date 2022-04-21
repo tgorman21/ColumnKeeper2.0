@@ -26,19 +26,27 @@ public class EnemySpawner : MonoBehaviour
     float enemiesSpawned;
     public float spawnRate = 5f; //Rate of spawn
     public float amountOfEnemiesSpawned = 15; //Amount of enemies to spawn in a wave before it switches
+    private float twentyPercent;
+    private float fortyPercent;
+    private float sixtyPercent;
+    private float eightyPercent;
 
-    ////// Start is called before the first frame update
+    [SerializeField] private DialogManager dm;
+
     void Start()
     {
-        
+        twentyPercent = Mathf.Floor(amountOfEnemiesSpawned * 0.2f);
+        fortyPercent = Mathf.Floor(amountOfEnemiesSpawned * 0.4f);
+        sixtyPercent = Mathf.Floor(amountOfEnemiesSpawned * 0.6f);
+        eightyPercent = Mathf.Floor(amountOfEnemiesSpawned * 0.4f);
         enemiesSpawned = 0;
         //Checks if there are towers
-        if(GameObject.FindGameObjectsWithTag("TowerArcher") != null)
+        if (GameObject.FindGameObjectsWithTag("TowerArcher") != null)
         {
             //If there are towers set it to the gameobject Towers
             Towers = GameObject.FindGameObjectsWithTag("TowerArcher");
         }
-        
+
         switch (waves)
         {
             case true:
@@ -55,7 +63,6 @@ public class EnemySpawner : MonoBehaviour
 
     }
 
-    ////// Update is called once per frame
     void Update()
     {
         switch (waves)
@@ -95,6 +102,24 @@ public class EnemySpawner : MonoBehaviour
 
         if (enemiesSpawned < amountOfEnemiesSpawned)
         {
+            
+            switch (enemiesSpawned)
+            {
+                case var value when value == twentyPercent:
+                    //Play Audio
+                    break;
+                case var value when value == fortyPercent:
+                    //Play Audio
+                    break;
+                case var value when value == sixtyPercent:
+                    //Play Audio
+                    break;
+                case var value when value == eightyPercent:
+                    //Play Audio
+                    break;
+                default: return;
+            }
+            
             switch (enemies.Length > 0)
             {
                 case false:
