@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6820915778297295850}
   - component: {fileID: 6344465875511312662}
   - component: {fileID: 2500253098352358815}
+  - component: {fileID: 1479020758220629895}
   m_Layer: 0
   m_Name: TikiTorch
   m_TagString: Torch
@@ -112,6 +113,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1479020758220629895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5019330722401079871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dd8c3b83b60c47eabe7147f6442f9a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fire: {fileID: 5289855321609856079}
 --- !u!1 &5289855320454463746
 GameObject:
   m_ObjectHideFlags: 0
