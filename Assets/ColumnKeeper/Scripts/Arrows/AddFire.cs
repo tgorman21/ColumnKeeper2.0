@@ -20,9 +20,8 @@ public class AddFire : MonoBehaviour
     {
         if (other.CompareTag("Arrow"))
         {
-            GameObject fireEffect = other.transform.GetChild(0).GetChild(1).gameObject;
-            fireEffect.transform.GetChild(0).gameObject.GetComponent<Light>().enabled = true;
-            fireEffect.transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Play();
+            GameObject fireEffect = other.transform.GetChild(0).GetChild(0).gameObject;
+            fireEffect.GetComponentInChildren<GameObject>().SetActive(true);
         }
     }
 
