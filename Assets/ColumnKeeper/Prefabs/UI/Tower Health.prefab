@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 118005092358987076}
   - component: {fileID: 118005092358987082}
   - component: {fileID: 118005092358987083}
+  - component: {fileID: 745509685081231462}
   m_Layer: 2
   m_Name: Tower Hp
   m_TagString: TowerHealth
@@ -192,6 +193,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &745509685081231462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118005092358987077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d94e3a9b3324f5584904e612c100de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerHP: {fileID: 0}
 --- !u!1 &118005092360092487
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class TowerHealth : MonoBehaviour
 {
-    private float health = 200;
+    public float health = 200;
     private float baseHealth;
-    private RectTransform towerHP;
+   
     bool switchingScene;
-    private void Awake()
-    {
-        towerHP = GameObject.FindGameObjectWithTag("TowerHealth").GetComponent<RectTransform>();
-    }
+   
     void Start()
     {
         
@@ -23,6 +20,7 @@ public class TowerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(health <= 0)
         {
             //GameOver
@@ -39,15 +37,7 @@ public class TowerHealth : MonoBehaviour
     public void DealDamage(float damage)
     {
         health -= damage;
-        if (health >= 0)
-        {
-            if(towerHP!= null)
-            towerHP.localScale = new Vector3(health / baseHealth, 1, 1);
-        }
-        if (health < 0)
-        {
-            towerHP.localScale = new Vector3(0, 1, 1);
-        }
+        
 
     }
 
@@ -56,11 +46,7 @@ public class TowerHealth : MonoBehaviour
     {
         
         this.health = PlayerPrefs.GetFloat("TowerHealth");
-        if (health >= 0)
-        {
-            if(towerHP != null)
-                towerHP.localScale = new Vector3(health / 100, 1, 1);
-        }
+        
     }
 
     //Heals Tower
@@ -80,9 +66,6 @@ public class TowerHealth : MonoBehaviour
         {
             health = baseHealth;
         }
-        if (health >= 0)
-        {
-            towerHP.localScale = new Vector3(health / 100, 1, 1);
-        }
+        
     }
 }
