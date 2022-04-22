@@ -20,78 +20,7 @@ public class WantedBoardManager : MonoBehaviour
     private void Awake()
     {
         gameObject.tag = "WantedBoard";
-        float currentDestroyed = 0;
-
-        switch (enemyName)
-        {
-
-            case EnemyName.Goblin:
-                PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
-                PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
-                PlayerPrefs.SetFloat(enemyName + "TotalSpawned", 0);
-
-                break;
-            case EnemyName.Orc:
-                PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
-                PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
-                PlayerPrefs.SetFloat(enemyName + "TotalSpawned", 0);
-
-                break;
-            case EnemyName.Troll:
-                PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
-                PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
-                PlayerPrefs.SetFloat(enemyName + "TotalSpawned", 0);
-                break;
-            case EnemyName.Skeleton:
-                PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
-                PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
-                PlayerPrefs.SetFloat(enemyName + "TotalSpawned", 0);
-                break;
-            case EnemyName.Mushroom:
-                PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
-                PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
-                PlayerPrefs.SetFloat(enemyName + "TotalSpawned", 0);
-                break;
-            case EnemyName.Lich:
-                PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
-                PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
-                PlayerPrefs.SetFloat(enemyName + "TotalSpawned", 0);
-                break;
-            case EnemyName.Witch:
-                PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
-                PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
-                PlayerPrefs.SetFloat(enemyName + "TotalSpawned", 0);
-                break;
-            case EnemyName.Vampire:
-                PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
-                PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
-
-                break;
-            case EnemyName.Derzin:
-                PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
-                PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
-                PlayerPrefs.SetFloat(enemyName + "TotalSpawned", 0);
-                break;
-            case EnemyName.Ingrar:
-                PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
-                PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
-                PlayerPrefs.SetFloat(enemyName + "TotalSpawned", 0);
-                break;
-            case EnemyName.Zarzog:
-                PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
-                PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
-                PlayerPrefs.SetFloat(enemyName + "TotalSpawned", 0);
-                break;
-            case EnemyName.Xenoria:
-                PlayerPrefs.SetFloat(enemyName + "WantedPoster", currentDestroyed);
-                PlayerPrefs.SetFloat(enemyName + "Spawned", 0);
-                PlayerPrefs.SetFloat(enemyName + "TotalSpawned", 0);
-                break;
-
-            default:
-                Debug.Log("Not an enemy");
-                break;
-        }
+        
     }
     // Start is called before the first frame update
     void Start()
