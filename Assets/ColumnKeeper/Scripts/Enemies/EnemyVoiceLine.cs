@@ -19,7 +19,7 @@ public class EnemyVoiceLine : MonoBehaviour
     private void Update()
     {
         t += Time.deltaTime;
-        if (t > voiceLineRate && !play)
+        if (t > voiceLineRate && !play && voiceLines.Count != 0)
         {
             PlayVoiceLine(voiceLines);
         }
@@ -31,7 +31,7 @@ public class EnemyVoiceLine : MonoBehaviour
         play = true;
         t = 0;
         int r = Randomize();
-        if(!audioSource.isPlaying) audioSource.PlayOneShot(clips[r]);
+        if(!audioSource.isPlaying && voiceLines.Count != 0) audioSource.PlayOneShot(clips[r]);
         RemoveVoiceLine(clips, r);
     }
 
