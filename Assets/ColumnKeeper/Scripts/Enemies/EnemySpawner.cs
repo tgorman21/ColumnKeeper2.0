@@ -32,7 +32,6 @@ public class EnemySpawner : MonoBehaviour
     private float eightyPercent;
     [SerializeField] private CharacterDialog characterDialog;
 
-    [SerializeField] private DialogManager dm;
 
     void Start()
     {
