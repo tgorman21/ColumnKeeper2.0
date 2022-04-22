@@ -17,8 +17,10 @@ public class CharacterDialog : MonoBehaviour
 
     public void PlayAudio()
     {
-        audioSource.PlayOneShot(characterVoiceLines[i]);
-        i++;
-
+        if(characterVoiceLines.Count != 0)
+        {
+            audioSource.PlayOneShot(characterVoiceLines[i]);
+            i++;
+        }
     }
 }
