@@ -226,6 +226,7 @@ public class EnemySpawner : MonoBehaviour
 
             }
         }
+        /*
         //Spawner Chooses next enemy (If all enemies are destroyed before Set amount to spawn it will spawn next wave)
          if(enemyCheck.Count == 0)
         {
@@ -234,6 +235,7 @@ public class EnemySpawner : MonoBehaviour
             t = 0;
             ChooseNextEnemy();
         }
+        */
 
 }
     //Checks to Spawn next enemy
