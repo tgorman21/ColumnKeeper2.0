@@ -30,6 +30,7 @@ public class EnemySpawner : MonoBehaviour
     private float fortyPercent;
     private float sixtyPercent;
     private float eightyPercent;
+    [SerializeField] private CharacterDialog characterDialog;
 
     [SerializeField] private DialogManager dm;
 
@@ -65,6 +66,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
+        PlayVoiceLines();
         switch (waves)
         {
             case true:
@@ -76,6 +78,26 @@ public class EnemySpawner : MonoBehaviour
                 break;
         }
         
+    }
+
+    private void PlayVoiceLines()
+    {
+        switch (enemiesSpawned)
+        {
+            case var value when value == twentyPercent:
+                characterDialog.PlayAudio();
+                break;
+            case var value when value == fortyPercent:
+                characterDialog.PlayAudio();
+                break;
+            case var value when value == sixtyPercent:
+                characterDialog.PlayAudio();
+                break;
+            case var value when value == eightyPercent:
+                characterDialog.PlayAudio();
+                break;
+            default: return;
+        }
     }
     //Function for endless mode
     public void Endless()
@@ -102,24 +124,9 @@ public class EnemySpawner : MonoBehaviour
 
         if (enemiesSpawned < amountOfEnemiesSpawned)
         {
+
             
-            //switch (enemiesSpawned)
-            //{
-            //    case var value when value == twentyPercent:
-            //        //Play Audio
-            //        break;
-            //    case var value when value == fortyPercent:
-            //        //Play Audio
-            //        break;
-            //    case var value when value == sixtyPercent:
-            //        //Play Audio
-            //        break;
-            //    case var value when value == eightyPercent:
-            //        //Play Audio
-            //        break;
-            //    default: return;
-            //}
-            
+
             switch (enemies.Length > 0)
             {
                 case false:
