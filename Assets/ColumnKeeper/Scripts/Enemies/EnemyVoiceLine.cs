@@ -13,6 +13,8 @@ public class EnemyVoiceLine : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.minDistance = 5;
+        audioSource.maxDistance = 75;
         play = false;
     }
 
