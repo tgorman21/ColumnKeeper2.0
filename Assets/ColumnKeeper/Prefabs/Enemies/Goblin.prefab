@@ -465,6 +465,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df851ff309fd44e998625e6359cec8e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  voiceLines:
+  - {fileID: 8300000, guid: 6fb703d4fceab1b4a9c11ed6feb0fbab, type: 3}
+  - {fileID: 8300000, guid: 9b900bf9a7afd7a4a8337bcd5abaac4f, type: 3}
+  - {fileID: 8300000, guid: 3d70974e3c3953b4688fe26db5a0619e, type: 3}
+  - {fileID: 8300000, guid: 30208d6c776978247a5f3d1e17acb586, type: 3}
+  - {fileID: 8300000, guid: 8e4f099692352484a989fbde5e7cf7ae, type: 3}
+  - {fileID: 8300000, guid: 8a760dc0f2b729e4194cef42bd4c6e87, type: 3}
+  - {fileID: 8300000, guid: 2e559437cf5fb9f4fa01557dd172bff1, type: 3}
+  - {fileID: 8300000, guid: 3986847444b2b504db538af376c9eeaa, type: 3}
+  - {fileID: 8300000, guid: 721deae8d2065ee42bcfb78e7789f261, type: 3}
+  - {fileID: 8300000, guid: 9cb0f3ae079a48c41867b7ae563e9c22, type: 3}
+  - {fileID: 8300000, guid: d5297a1e87df7eb4797f9369cd4b13b4, type: 3}
+  - {fileID: 8300000, guid: a5b421765c8f7b640b6da11a18141eaa, type: 3}
+  - {fileID: 8300000, guid: 3d3a2e134f8a1184b9416e54130c76b9, type: 3}
+  voiceLineRate: 30
 --- !u!1 &731982150269965361
 GameObject:
   m_ObjectHideFlags: 0
