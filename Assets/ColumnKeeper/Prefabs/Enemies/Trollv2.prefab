@@ -3276,8 +3276,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df851ff309fd44e998625e6359cec8e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  voiceLines: []
-  voiceLineRate: 0
+  voiceLines:
+  - {fileID: 8300000, guid: eedfd09872bb6084e9c04e07bc2f99aa, type: 3}
+  - {fileID: 8300000, guid: 0931e53a496ba5a4490cacb523177a64, type: 3}
+  - {fileID: 8300000, guid: 3aaa98699a02d5f4497d046ea705e537, type: 3}
+  - {fileID: 8300000, guid: 214439602e110d34db4f54d57cdeb627, type: 3}
+  - {fileID: 8300000, guid: 8cb8a5f4649b4f74390af4d57f1be7f3, type: 3}
+  - {fileID: 8300000, guid: 9a935c20676cb424bbe9cad558f078f4, type: 3}
+  voiceLineRate: 40
 --- !u!82 &2527916058867462236
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3298,8 +3304,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 50
+  MaxDistance: 200
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -4056,15 +4062,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79d22ed2471bc94478bd6ccf4cd1a7cc, type: 3}
---- !u!4 &8836743607916395984 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6470145183501570794, guid: 79d22ed2471bc94478bd6ccf4cd1a7cc,
-    type: 3}
-  m_PrefabInstance: {fileID: 2551563781513654074}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &1255113191264706106 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 3603996194698883328, guid: 79d22ed2471bc94478bd6ccf4cd1a7cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 2551563781513654074}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8836743607916395984 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6470145183501570794, guid: 79d22ed2471bc94478bd6ccf4cd1a7cc,
     type: 3}
   m_PrefabInstance: {fileID: 2551563781513654074}
   m_PrefabAsset: {fileID: 0}
