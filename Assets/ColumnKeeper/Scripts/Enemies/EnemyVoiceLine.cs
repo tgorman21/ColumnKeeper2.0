@@ -12,6 +12,7 @@ public class EnemyVoiceLine : MonoBehaviour
 
     private void Start()
     {
+        t = 0;
         audioSource = GetComponent<AudioSource>();
         audioSource.minDistance = 5;
         audioSource.maxDistance = 75;
@@ -30,11 +31,20 @@ public class EnemyVoiceLine : MonoBehaviour
     //Plays the voice line
     private void PlayVoiceLine(List<AudioClip> clips)
     {
-        play = true;
-        t = 0;
         int r = Randomize();
-        if(!audioSource.isPlaying && voiceLines.Count != 0) audioSource.PlayOneShot(clips[r]);
+        StartCoroutine(ResetVoiceLine(clips[r].length, clips, r));
+        
+       
+    }
+    IEnumerator ResetVoiceLine(float t, List<AudioClip> clips, int r)
+    {
+        play = true;
+        
+        if (!audioSource.isPlaying && voiceLines.Count != 0) audioSource.PlayOneShot(clips[r]);
+        yield return new WaitForSeconds(t);
         RemoveVoiceLine(clips, r);
+        play = false;
+        this.t = 0;
     }
 
     //Randomizes Next audio clip to play

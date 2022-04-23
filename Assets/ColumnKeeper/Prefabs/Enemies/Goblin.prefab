@@ -478,7 +478,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3d3a2e134f8a1184b9416e54130c76b9, type: 3}
   - {fileID: 8300000, guid: a5b421765c8f7b640b6da11a18141eaa, type: 3}
   - {fileID: 8300000, guid: 721deae8d2065ee42bcfb78e7789f261, type: 3}
-  voiceLineRate: 30
+  voiceLineRate: 5
 --- !u!1 &731982150269965361
 GameObject:
   m_ObjectHideFlags: 0
