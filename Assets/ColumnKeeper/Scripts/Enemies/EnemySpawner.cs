@@ -35,6 +35,7 @@ public class EnemySpawner : MonoBehaviour
    
     void Start()
     {
+        t = 0;
         //twentyPercent = Mathf.Floor(amountOfEnemiesSpawned * 0.2f);
         //fortyPercent = Mathf.Floor(amountOfEnemiesSpawned * 0.4f);
         //sixtyPercent = Mathf.Floor(amountOfEnemiesSpawned * 0.6f);
