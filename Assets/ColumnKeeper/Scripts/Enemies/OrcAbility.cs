@@ -5,7 +5,9 @@ using UnityEngine;
 public class OrcAbility : MonoBehaviour
 {
     [SerializeField] private ParticleSystem ability;
+    [Header ("Timer to play Ability")]
     [SerializeField] private float timetoPlayAbility;
+    [Header ("How long the ability Plays")]
     [SerializeField] private float abilityCoolDown;
 
     private float t;
@@ -21,7 +23,7 @@ public class OrcAbility : MonoBehaviour
     {
         t += Time.deltaTime;
 
-        if(t > abilityCoolDown)
+        if(t > timetoPlayAbility)
         {
             PlayAbility();
         }
