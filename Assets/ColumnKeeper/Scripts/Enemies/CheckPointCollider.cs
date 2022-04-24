@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CheckPointCollider : MonoBehaviour
     {
@@ -23,10 +24,16 @@ public class CheckPointCollider : MonoBehaviour
                 {
                     if (other.GetComponent<Enemy>().enemyName != Enemy.EnemyName.Carrier)
                     {
-                        if (other.GetComponent<Enemy>().enemyName == Enemy.EnemyName.Derzin || other.GetComponent<Enemy>().enemyName == Enemy.EnemyName.Troll)
+                        if (other.GetComponent<Enemy>().enemyName == Enemy.EnemyName.Troll)
                         {
                             other.GetComponent<DerzinAttack>().activated = true;
                             other.GetComponent<Enemy>().animationType = Enemy.AnimationType.Throw;
+                        }
+                        if (other.GetComponent<Enemy>().enemyName == Enemy.EnemyName.Derzin)
+                        {
+                        other.GetComponent<NavMeshAgent>().speed = 1.5f;
+                        other.GetComponent<DerzinAttack>().activated = true;
+                        other.GetComponent<Enemy>().animationType = Enemy.AnimationType.Throw;
                         }
                         other.GetComponent<EnemyAI>().currentState = EnemyAI.BehaviorState.SeekTower;
                     }

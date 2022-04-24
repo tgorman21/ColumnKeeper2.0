@@ -248,6 +248,10 @@ public class Arrow : XRGrabInteractable
             {
                 hit.collider.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
             }
+            if(GetComponent<ArrowType>() != null)
+            {
+                GetComponent<ArrowType>().PlayArrowEffect();
+            }
         }
 
         return hit.collider != null;

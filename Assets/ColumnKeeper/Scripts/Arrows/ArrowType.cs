@@ -6,12 +6,14 @@ public class ArrowType : MonoBehaviour
 {
    
     public enum TypeOfArrow { Regular, Fire, Ice, MeteorShower, Lightning, Rain, Heal, Target };
-
     public TypeOfArrow typeOfArrow;
     public float damage;
     public TrailRenderer trail;
+    [SerializeField] private AudioClip arrowSoundEffects;
+    private AudioSource audioSource;
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         if (GetComponentInChildren<TrailRenderer>() != null)
         {
             trail = GetComponentInChildren<TrailRenderer>();
@@ -43,6 +45,11 @@ public class ArrowType : MonoBehaviour
                 PlayerPrefs.SetFloat(typeOfArrow + "ArrowDamage", damage);
                 break;
         }
+    }
+    public void PlayArrowEffect()
+    {
+        if(arrowSoundEffects != null)
+            audioSource.PlayOneShot(arrowSoundEffects);
     }
     
 }

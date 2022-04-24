@@ -37,6 +37,16 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.minScalar
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 2470792821853135800, guid: 6038bb5f346a14967a8ab7ab8b0facdc,
+        type: 3}
+      propertyPath: Spatialize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2470792821853135800, guid: 6038bb5f346a14967a8ab7ab8b0facdc,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 4900314468456478437, guid: 6038bb5f346a14967a8ab7ab8b0facdc,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -122,5 +132,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Arrow
       objectReference: {fileID: 0}
+    - target: {fileID: 8858610100002344599, guid: 6038bb5f346a14967a8ab7ab8b0facdc,
+        type: 3}
+      propertyPath: arrowSoundEffects
+      value: 
+      objectReference: {fileID: 8300000, guid: bb18a4de603aa3e4b85079fcf13ad18b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6038bb5f346a14967a8ab7ab8b0facdc, type: 3}

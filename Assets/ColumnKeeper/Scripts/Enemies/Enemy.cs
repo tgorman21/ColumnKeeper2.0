@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
     private GameObject boss;
 
     private float initialHealth; //////Initial health
-    private float initialSpeed; //////Initial speed
+    [HideInInspector] public float initialSpeed; //////Initial speed
 
     [SerializeField] public bool impact; //////initial hit damage
     private bool decay; ///// DOT bool
@@ -58,8 +58,13 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-       
-        
+
+
+        if (enemyName == EnemyName.Derzin)
+        {
+            initialSpeed = GetComponent<NavMeshAgent>().speed;
+            GetComponent<NavMeshAgent>().speed = initialSpeed + 10;
+        }
         enemyAI = GetComponent<EnemyAI>();
         foreach(GameObject tower in GameObject.FindGameObjectsWithTag("TowerArcher"))
         {
