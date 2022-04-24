@@ -17,7 +17,6 @@ public class DialogManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(Countdown());
-        Debug.Log(Countdown());
     }
     private void Update()
     {
