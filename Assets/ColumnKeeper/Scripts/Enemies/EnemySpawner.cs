@@ -17,6 +17,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] Transform[] checkpointsLane3;
     [SerializeField] GameObject[] Towers;
     [SerializeField] bool waves; //Determines if true it will use Wave system and if false it will use endless mode
+    [SerializeField] private bool bossFight;
     public bool archersShoot;
     [HideInInspector]public List<GameObject> enemyCheck = new List<GameObject>(); //List to manage if enemies are destroyed
     int enemyIndex; //Enemy index in enmies array
@@ -59,23 +60,37 @@ public class EnemySpawner : MonoBehaviour
             PlayerPrefs.SetFloat(enemyNames[i] + "Spawned", 0);
             PlayerPrefs.SetFloat(enemyNames[i] + "TotalSpawned", 0);
         }
-
-        switch (waves)
+        if (bossFight)
         {
-            case true:
-                enemyIndex = 0;
-                pointIndex = 0;
-                Randomize("Both");
-                break;
-            case false:
-                // Spawn rate
-                Randomize("Both");
-                break;
+            StartCoroutine(SpawnBoss());
+        }
+        
+        if(!bossFight)
+        {
+            switch (waves)
+            {
+                case true:
+                    enemyIndex = 0;
+                    pointIndex = 0;
+                    Randomize("Both");
+                    break;
+                case false:
+                    // Spawn rate
+                    Randomize("Both");
+                    break;
+            }
         }
 
-
     }
-
+    IEnumerator SpawnBoss()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            Spawn(0, i);
+        }
+        yield return new WaitForSeconds(25);
+        Spawn(1, 0);
+    }
     void Update()
     {
         PlayVoiceLines();
@@ -197,9 +212,11 @@ public class EnemySpawner : MonoBehaviour
         switch(whatToRandomize)
         {
             case "EnemyIndex":
+                pointIndex = 0;
                 enemyIndex = Random.Range(0, enemies.Length);
                 break;
             case "PointIndex":
+                enemyIndex = 0;
                 pointIndex = Random.Range(0, spawnPoints.Length);
                 break;
             case "Both":
