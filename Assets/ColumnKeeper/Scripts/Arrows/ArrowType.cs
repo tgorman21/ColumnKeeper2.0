@@ -50,6 +50,13 @@ public class ArrowType : MonoBehaviour
     {
         if(arrowSoundEffects != null)
             audioSource.PlayOneShot(arrowSoundEffects);
+        StartCoroutine(CheckIfPlaying());
     }
-    
+
+    private IEnumerator CheckIfPlaying()
+    {
+        yield return new WaitForSeconds(3);
+        if(audioSource.isPlaying)
+            audioSource.Stop();
+    }
 }
