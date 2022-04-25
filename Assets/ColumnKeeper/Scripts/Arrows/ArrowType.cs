@@ -55,7 +55,7 @@ public class ArrowType : MonoBehaviour
 
     private IEnumerator CheckIfPlaying()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(10);
         if(audioSource.isPlaying)
             audioSource.Stop();
     }
