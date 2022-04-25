@@ -16,7 +16,6 @@ public class TrollSmash : MonoBehaviour
     {
        
         initialHp = gameObject.GetComponent<Enemy>().health;
-        Debug.Log(initialHp);
     }
     private void Update()
     {
