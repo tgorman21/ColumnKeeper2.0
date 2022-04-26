@@ -1,6 +1,6 @@
-PrincessMaple:"Hero, over here! I have not seen you since the Palace Gala a year ago!"-3
-PrincessMaple:"You still look rather dashing, if I must say."-3
-PrincessMaple:"I was wondering if you could help me out with a small task; I need to collect some mushrooms."-5
-PrincessMaple:"They can be found from jumping Mushrooms of course."-5
-PrincessMaple:"Could you search from the top of the tower and use your archery skills to subdue some jumping Mushrooms?"-5
+PrincessMaple:"Hero, over here! I have not seen you since the Palace Gala a year ago!"-6
+PrincessMaple:"You still look rather dashing, if I must say."-2
+PrincessMaple:"I was wondering if you could help me out with a small task; I need to collect some mushrooms."-4
+PrincessMaple:"They can be found from jumping Mushrooms of course."-3
+PrincessMaple:"Could you search from the top of the tower and use your archery skills to subdue some jumping Mushrooms?"-4
 PrincessMaple:"I can collect the materials after. Five should be plenty, thank you!"-4

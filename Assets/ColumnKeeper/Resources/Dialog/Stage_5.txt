@@ -1,4 +1,4 @@
 Humphry:"More Goblins are coming, dear Hero!" -3
-Humphry:" Oh my, it looks like they are being led by Orcs." -3
-Humphry:"I wonder what is causing them to work together; Orcs supposedly despise Goblins." -6
-Humphry:"Please take care of them, but do be careful. I want to dissect them to discover where they came from." -7
+Humphry:" Oh my, it looks like they are being led by Orcs." -4
+Humphry:"I wonder what is causing them to work together; Orcs supposedly despise Goblins." -5
+Humphry:"Please take care of them, but do be careful. I want to dissect them to discover where they came from." -9

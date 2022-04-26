@@ -1,11 +1,11 @@
-Humphry:"Do you hear that?"-10
-Humphry:"It's the sound of beating drums...war drums!"-10
-Humphry:"Look out there; a large goblin is carried on a litter."-10
-Humphry:"He must be the one in charge; if we beat him, we can save the princess!"-10
-Derzin:"Hear me, humans! I, Derzin, King of the Goblins, have stolen your wonderful princess."-10
-Derzin:"You want her back in one piece, yes? Then submit to me."-10
-Derzin:"Fold your kingdom under my banners, and together we will secure the entire continent."-10
-Derzin:"We will become powerful enough to rival even Demon Lord Sol'gan, and I Derzin will take my rightful place as king of everything. Kekeke"-10
-Humphry:"The hero won't be swayed by your candied words Derzin!"-10
-Humphry:"We only bow to King Harrison and the three Gods."-10
-Humphry:"Prepare yourself; we will rescue Princess Maple from your grubby green hands!"-10
+Humphry:"Do you hear that?"-2
+Humphry:"It's the sound of beating drums...war drums!"-4
+Humphry:"Look out there; a large goblin is carried on a litter."-5
+Humphry:"He must be the one in charge; if we beat him, we can save the princess!"-7
+Derzin:"Hear me, humans! I, Derzin, King of the Goblins, have stolen your wonderful princess."-11
+Derzin:"You want her back in one piece, yes? Then submit to me."-9
+Derzin:"Fold your kingdom under my banners, and together we will secure the entire continent."-8
+Derzin:"We will become powerful enough to rival even Demon Lord Sol'gan, and I Derzin will take my rightful place as king of everything. Kekeke"-16
+Humphry:"The hero won't be swayed by your candied words Derzin!"-3
+Humphry:"We only bow to King Harrison and the three Gods."-4
+Humphry:"Prepare yourself; we will rescue Princess Maple from your grubby green hands!"-7

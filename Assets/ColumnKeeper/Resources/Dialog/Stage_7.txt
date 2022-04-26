@@ -1,4 +1,4 @@
-Humphry:"It seems like the crystals imbued your bow with Fire Magic!" -6
+Humphry:"It seems like the crystals imbued your bow with Fire Magic!" -7
 Humphry:"I'm sure that, with more research, I can upgrade its cohesion, increasing your firepower." -8
 Humphry:"But that would require more funds... it's a good thing these invaders are dropping gold!" -9
 Humphry:"Well, speak of the devils; the Goblins are hiding behind some Trolls!" -8
