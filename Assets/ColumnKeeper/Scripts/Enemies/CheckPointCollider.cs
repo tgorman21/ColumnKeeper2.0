@@ -31,7 +31,7 @@ public class CheckPointCollider : MonoBehaviour
                         }
                         if (other.GetComponent<Enemy>().enemyName == Enemy.EnemyName.Derzin)
                         {
-                        other.GetComponent<NavMeshAgent>().speed = 1.5f;
+                        
                         other.GetComponent<DerzinAttack>().activated = true;
                         other.GetComponent<Enemy>().animationType = Enemy.AnimationType.Throw;
                         }

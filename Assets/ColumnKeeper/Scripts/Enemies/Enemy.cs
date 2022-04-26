@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
     {
 
 
-        if (enemyName == EnemyName.Derzin)
+        if (enemyName == EnemyName.Goblin && GetComponent<EnemySpawner>().bossFight)
         {
             initialSpeed = GetComponent<NavMeshAgent>().speed;
             GetComponent<NavMeshAgent>().speed = initialSpeed + 10;
