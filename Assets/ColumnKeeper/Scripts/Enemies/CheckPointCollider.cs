@@ -35,6 +35,10 @@ public class CheckPointCollider : MonoBehaviour
                         other.GetComponent<DerzinAttack>().activated = true;
                         other.GetComponent<Enemy>().animationType = Enemy.AnimationType.Throw;
                         }
+                        if(other.GetComponent<Enemy>().enemyName == Enemy.EnemyName.Goblin)
+                        {
+                        other.GetComponent<NavMeshAgent>().speed = 2;
+                        }
                         other.GetComponent<EnemyAI>().currentState = EnemyAI.BehaviorState.SeekTower;
                     }
                 }

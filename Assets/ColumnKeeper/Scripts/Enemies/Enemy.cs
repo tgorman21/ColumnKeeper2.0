@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
     {
 
 
-        if (enemyName == EnemyName.Goblin && GetComponent<EnemySpawner>().bossFight)
+        if (enemyName == EnemyName.Goblin && GameObject.FindGameObjectWithTag("Spawner").GetComponent<EnemySpawner>().bossFight)
         {
             initialSpeed = GetComponent<NavMeshAgent>().speed;
             GetComponent<NavMeshAgent>().speed = initialSpeed + 10;

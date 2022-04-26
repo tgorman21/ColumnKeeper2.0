@@ -17,7 +17,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] Transform[] checkpointsLane3;
     [SerializeField] GameObject[] Towers;
     [SerializeField] bool waves; //Determines if true it will use Wave system and if false it will use endless mode
-    [SerializeField] public bool bossFight;
+    public bool bossFight;
     public bool archersShoot;
     [HideInInspector]public List<GameObject> enemyCheck = new List<GameObject>(); //List to manage if enemies are destroyed
     int enemyIndex; //Enemy index in enmies array
