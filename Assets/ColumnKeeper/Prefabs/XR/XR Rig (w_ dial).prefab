@@ -1075,7 +1075,7 @@ MeshCollider:
   m_GameObject: {fileID: 8613167468812705889}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -2012,7 +2012,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8613167469209230244}
-  - component: {fileID: 8613167469209230247}
   m_Layer: 0
   m_Name: CameraOffset
   m_TagString: Untagged
@@ -2037,28 +2036,6 @@ Transform:
   m_Father: {fileID: 8613167469818235506}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!195 &8613167469209230247
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8613167469209230245}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.14
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &8613167469209330313
 GameObject:
   m_ObjectHideFlags: 0
@@ -2419,7 +2396,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8613167469499126580}
-  - component: {fileID: 8613167469499126581}
   - component: {fileID: 8613167469499126578}
   - component: {fileID: 8613167469499126576}
   - component: {fileID: 8613167469499126579}
@@ -2444,20 +2420,6 @@ Transform:
   m_Father: {fileID: 8613167469818235506}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8613167469499126581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8613167469499126577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03a5df2202a8b96488c744be3bd0c33e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Timeout: 10
-  m_XRRig: {fileID: 0}
 --- !u!114 &8613167469499126578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3347,6 +3309,9 @@ GameObject:
   - component: {fileID: 8613167469818235507}
   - component: {fileID: 8613167469818235504}
   - component: {fileID: 8613167469818235505}
+  - component: {fileID: 2713448063847337594}
+  - component: {fileID: 1203089388367430423}
+  - component: {fileID: 5941778705842614716}
   m_Layer: 0
   m_Name: XR Rig (w_ dial)
   m_TagString: Player
@@ -3430,6 +3395,50 @@ MonoBehaviour:
   snapTurn: {fileID: 8613167469499126576}
   dialCanvas: {fileID: 8613167469182523562}
   selector: {fileID: 8613167468370720908}
+--- !u!136 &2713448063847337594
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8613167469818235534}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1203089388367430423
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8613167469818235534}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
+--- !u!114 &5941778705842614716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8613167469818235534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a5df2202a8b96488c744be3bd0c33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Timeout: 10
+  m_XRRig: {fileID: 0}
 --- !u!1 &8613167469826529976
 GameObject:
   m_ObjectHideFlags: 0
